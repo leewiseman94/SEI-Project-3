@@ -4,4 +4,4 @@ Team members
 Lee Wiseman
 Ree
 Issra Hashim
-Ed
+Edward
