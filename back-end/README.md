@@ -4,4 +4,4 @@ Team members
 Lee Wiseman
 Ree Gilling
 Issra Hashim
-Edward
+Edward Steer
