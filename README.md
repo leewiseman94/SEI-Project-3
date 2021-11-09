@@ -4,4 +4,4 @@ Team members
 Lee
 Ree
 Issra
-Ed
+Edward
