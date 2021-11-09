@@ -2,6 +2,6 @@
 
 Team members
 Lee
-Ree
+Ree Gilling
 Issra
 Ed
