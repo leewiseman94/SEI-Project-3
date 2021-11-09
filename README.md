@@ -3,5 +3,5 @@
 Team members
 Lee Wiseman
 Ree
-Issra
+Issra Hashim
 Ed
