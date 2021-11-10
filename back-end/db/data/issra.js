@@ -8,7 +8,6 @@
   cookingTime: '20 min',
   difficulty: 'Easy',
   servingSize: 4,
-  nutritionalInfo: { type: Object, required: false },
   tags: ['Mediterranean', 'Pasta', 'Fish'],
   course: 'main'
 }, 
@@ -22,7 +21,6 @@
   cookingTime: '20 min',
   difficulty: 'Easy',
   servingSize: 4,
-  nutritionalInfo: { type: Object, required: false },
   tags: ['Pasta', 'American'],
   course: 'main',
   allergens: ['Vegetarian', 'Vegan']

@@ -13,7 +13,7 @@ const reviewsSchema = new mongoose.Schema({
 const recipeSchema = new mongoose.Schema({
   name: { type: String, required: true },
   image: { type: String, required: true },
-  description: { type: String, required: true, maxlength: 300 },
+  description: { type: String, required: true },
   ingredients: [{ type: String, required: true }],
   method: [{ type: String, required: true }],
   prepTime: { type: String, required: true },
