@@ -3,7 +3,9 @@ import './styles/App.css';
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
-import Home from './components/Home.js'
+import Home from './components/Home'
+import Login from './components/Login'
+import Register from './components/Register'
 
 function App() {
   const [recipes, setRecipes] = useState([])
@@ -33,8 +35,8 @@ function App() {
 
 
 
-
-
+        <Route exact path='/register' component={Register} />
+        <Route exact path='/login' component={Login} />
       </Switch>
     
     </BrowserRouter>
