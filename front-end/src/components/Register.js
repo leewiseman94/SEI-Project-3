@@ -40,6 +40,9 @@ const Register = () => {
   }
   return (
     <form className='column is-half is-offset-one-quarter box' onSubmit={handleSubmit}>
+      <i class="far fa-window-close"></i>
+    <div className='title'> Login or Sign Up</div>
+    <div className='subtitle'>Welcome to Platester</div>
     <div className='field'>
       <label className='label'>Full Name</label>
       <div className='control'>
