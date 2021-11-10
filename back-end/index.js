@@ -22,8 +22,8 @@ const startServer = async () => {
     app.listen(port, () => console.log(`🏃‍♂️ Express is up and running on port ${port}`))
 
   } catch (err) {
-    console.log(err)
     console.log('🚨 Something has gone wrong with the DB connection')
+    console.log(err)
   }
 
 }
