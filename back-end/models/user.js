@@ -10,13 +10,25 @@ const userSchema = new mongoose.Schema({
   password: { type: String, required: true }
 })
 
+userSchema.virtual('createdRecipes', {
+  ref: 'Recipe',
+  localField: '_id',
+  foreignField: 'owner'
+})
+
+userSchema.virtual('likedRecipes', {
+  ref: 'Recipe',
+  localField: '_id',
+  foreignField: 'likedBy'
+})
+
 userSchema.set('toJSON', {
+  virtuals: true,
   transform(_doc, json) {
     delete json.password
     return json
   }
 })
-
 
 userSchema
   .virtual('passwordConfirmation')

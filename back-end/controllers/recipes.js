@@ -29,7 +29,7 @@ export const addRecipe = async (req, res) => {
 export const getSingleRecipe = async (req, res) => {
   try {
     const { id } = req.params
-    const singleRecipe = await Recipe.findById(id)
+    const singleRecipe = await Recipe.findById(id).populate('owner')
     if (!singleRecipe) throw new Error()
     return res.status(200).json(singleRecipe)
 
