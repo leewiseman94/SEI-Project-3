@@ -11,3 +11,70 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+body {
+  font-family: Futura, sans-serif;
+  /* font-weight: lighter; */
+}
+
+.card-header-title {
+  font-weight: lighter;
+  /* text-overflow: ellipsis "[...]"; */
+  text-overflow: ellipsis "[...]";
+  overflow: hidden;
+  height: 40px;
+}
+
+.card {
+  border-radius: 10px;
+}
+
+.image {
+  border-radius: 15px;
+  
+}
+
+/* .card-image {
+  height: 256px;
+} */
+
+.card-content {
+ margin-top: -10px;
+}
+
+h5 {
+  text-align: right;
+  
+}
+.title {
+  font-weight: lighter;
+  
+}
+
+.card-rating {
+  text-align: right;
+  font-size: 12px;
+
+}
+
+.show-rating {
+  margin-top: -20px;
+  margin-bottom: 10px;
+}
+
+.method-title {
+  font-weight: bold;
+}
+
+.recipe-steps {
+  margin-top: 10px;
+}
+
+.steps {
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.recipe-step-section {
+  font-weight: lighter;
+}
