@@ -126,6 +126,27 @@ export default [
     tags: ['pancakes', 'vegan', 'banana'],
     course: 'Main',
     allergens: ['Vegan', 'Vegetarian', 'Dairy-free', 'Egg-free']
+  },
+  {
+    name: 'Vegan banana cake',
+    image: 'https://images.immediate.co.uk/production/volatile/sites/30/2020/08/vegan-banana-bread-ce14fcd.jpg',
+    description: 'A guaranteed crowd pleaser with a fluffy, light texture, you’d never know they’re vegan',
+    ingredients: ['3 large over-ripe bananas', '75ml vegetable oil or sunflower oil, plus extra for the tin', 
+      '100g brown sugar', '225g plain flour (or use self-raising flour and reduce the baking powder to 2 heaped tsp)', '3 heaped tsp baking powder', 
+      '3 tsp cinnamon or mixed spice', '50g dried fruit or nuts (optional)' ],
+    method: [ 'Heat oven to 200C/180C fan/gas 6. Mash 3 large black peeled bananas with a fork, then mix well with 75g vegetable or sunflower oil and 100g brown sugar. ', 
+      'Add 225g plain flour, 3 heaped tsp baking powder and 3 tsp cinnamon or mixed spice, and combine well. Add 50g dried fruit or nuts, if using.', 
+      'Bake in an oiled, lined 2lb loaf tin for 20 minutes. Check and cover with foil if the cake is browning.',
+      'Bake for another 20 minutes, or until a skewer comes out clean.',
+      'Allow to cool a little before slicing. Its delicious freshly baked, but develops a lovely gooey quality the day after.'],
+    prepTime: '10 mins',
+    cookingTime: '40 mins',
+    difficulty: 'Easy',
+    servingSize: 8,
+    nutritionalInfo: ['kcal: 218', 'fat: 8g', 'saturates: 1g', 'carbs: 33g', 'sugar: 15g', 'fibre: 2g', 'protein: 3g', 'salt: 0.5g'],
+    tags: ['bread', 'vegan', 'banana'],
+    course: 'dessert',
+    allergens: ['Vegan', 'Vegetarian', 'Dairy-free', 'Egg-free']
   }
   
 ]
