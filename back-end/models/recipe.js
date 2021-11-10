@@ -15,7 +15,8 @@ const recipeSchema = new mongoose.Schema({
   nutritionalInfo: { type: Object, required: false },
   tags: [{ type: String, required: false }],
   course: { type: String, required: false },
-  allergens: [{ type: String, required: false }]
+  allergens: [{ type: String, required: false }], 
+  owner: { type: mongoose.Schema.ObjectId, ref: 'User', required: true }
 })
 
 
