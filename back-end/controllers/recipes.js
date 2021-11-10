@@ -68,3 +68,52 @@ export const updateRecipe = async (req, res) => {
   }
 }
 
+export const addAReview = async (req, res) => {
+  try {
+    const { id } = req.params
+    const recipe = await Recipe.findById(id)
+    if (!recipe) throw new Error()
+    const newReview = { ...req.body, owner: req.currentUser._id }
+    recipe.reviews.push(newReview)
+    await recipe.save({ validateModifiedOnly: true })
+    return res.status(200).json(recipe)
+  } catch (err) {
+    console.log(err)
+    return res.status(404).json({ 'message': 'Something went wrong' })
+  }
+}
+
+export const deleteAReview = async (req, res) => {
+  try {
+    const { id, reviewId } = req.params
+    const recipe = await Recipe.findById(id)
+    if (!recipe) throw new Error()
+    const reviewToDelete = recipe.reviews.id(reviewId)
+    if (!reviewToDelete) throw new Error()
+    if (!reviewToDelete.owner.equals(req.currentUser._id)) throw new Error()
+    await reviewToDelete.remove()
+    await recipe.save({ validateModifiedOnly: true })
+    return res.sendStatus(204)
+
+  } catch (err) {
+    console.log(err)
+    return res.status(404).json({ 'message': 'something went wrong' })
+  }
+}
+
+export const updateAReview = async (req, res) => {
+  try {
+    const { id, reviewId } = req.params
+    const recipe = await Recipe.findById(id)
+    if (!recipe) throw new Error() 
+    const reviewToUpdate = recipe.reviews.id(reviewId)
+    if (!reviewToUpdate) throw new Error()
+    if (!reviewToUpdate.owner.equals(req.currentUser._id)) throw new Error()
+    reviewToUpdate.set(req.body)
+    recipe.save({ validateModifiedOnly: true })
+    return res.status(200).json(recipe)
+  } catch (err){
+    console.log(err)
+    return res.status(404).json({ 'message': 'something went wrong' })
+  }
+}

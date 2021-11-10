@@ -1,6 +1,6 @@
 import express from 'express'
 import { loginUser, registerUser } from '../controllers/auth.js'
-import { getAllRecipes, addRecipe, getSingleRecipe, updateRecipe, deleteRecipe } from '../controllers/recipes.js'
+import { getAllRecipes, addRecipe, getSingleRecipe, updateRecipe, deleteRecipe, addAReview, deleteAReview, updateAReview } from '../controllers/recipes.js'
 import { getUserProfile } from '../controllers/users.js'
 import { secureRoute } from './secureRoute.js'
 
@@ -14,6 +14,14 @@ router.route('/recipes/:id')
   .get(getSingleRecipe)
   .put(secureRoute, updateRecipe)
   .delete(secureRoute, deleteRecipe)
+
+
+router.route('/recipes/:id/reviews')
+  .post(secureRoute, addAReview)
+
+router.route('/recipes/:id/reviews/:reviewId')
+  .delete(secureRoute, deleteAReview)
+  .put(secureRoute, updateAReview)
 
 router.route('/register')
   .post(registerUser)
