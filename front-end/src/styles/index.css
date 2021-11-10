@@ -34,9 +34,9 @@ body {
   
 }
 
-/* .card-image {
-  height: 256px;
-} */
+.title-prep {
+  font-weight: bold;
+}
 
 .card-content {
  margin-top: -10px;
@@ -60,10 +60,12 @@ h5 {
 .show-rating {
   margin-top: -20px;
   margin-bottom: 10px;
+  text-transform: lowercase;
 }
 
 .method-title {
   font-weight: bold;
+  /* text-transform: lowercase; */
 }
 
 .recipe-steps {
