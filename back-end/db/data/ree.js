@@ -44,7 +44,7 @@ export default [
   {
     name: 'Vegan pizza Margherita',
     image: 'https://images.immediate.co.uk/production/volatile/sites/30/2020/08/vegan-pizza-67125d6.jpg',
-    description: 'Vegans neednt miss out on pizza Margherita. Our recipe combines the classic flavours of this Italian comfort food using plant-based substitutes',
+    description: 'Vegans needn’t miss out on pizza Margherita. Our recipe combines the classic flavours of this Italian comfort food using plant-based substitutes',
     ingredients: ['500g strong white bread flour, plus extra for dusting', '1 tsp dried yeast', 
       '1 tsp caster sugar', '1 ½ tbsp olive oil, plus extra', '100ml passata', 
       '1 tbsp fresh basil, chopped (or 1/2 tsp dried oregano)', '1 garlic clove, crushed', 
@@ -89,7 +89,7 @@ export default [
   {
     name: 'Vegan Thai green curry',
     image: 'https://images.immediate.co.uk/production/volatile/sites/30/2020/08/thai-green-veggie-curry-de40f07.jpg',
-    description: 'With tofu and lots of veggies, its full of flavour',
+    description: 'With tofu and lots of veggies, it’s full of flavour',
     ingredients: ['200g baby potatoes, halved', '100g green beans, trimmed and halved', 
       '1 tbsp rapeseed oil', '1 garlic clove, finely sliced', '1 tbsp Thai green curry paste (check the label to make sure it’s vegetarian/ vegan)', 
       '400g can light coconut milk', '1 lime, zest pared in thick strips', 
@@ -105,6 +105,25 @@ export default [
     servingSize: 4,
     nutritionalInfo: ['kcal: 436', 'fat: 17g', 'saturates: 7g', 'carbs: 57g', 'sugar: 5g', 'fibre: 3g', 'protein: 13g', 'salt: 0.1g'],
     tags: ['thai', 'vegan', 'ramen'],
+    course: 'Main',
+    allergens: ['Vegan', 'Vegetarian', 'Dairy-free', 'Egg-free']
+  },
+  {
+    name: 'Vegan banana pancakes',
+    image: 'https://images.immediate.co.uk/production/volatile/sites/30/2020/08/banana_pancakes_0-8be4928.jpg',
+    description: 'A guaranteed crowd pleaser with a fluffy, light texture, you’d never know they’re vegan',
+    ingredients: ['1 large ripe banana (around 150g)', '2 tbsp golden caster sugar', 
+      '¼ tsp fine salt', '2 tbsp vegetable oil , plus extra for cooking', '120g self-raising flour', 
+      '½ tsp baking powder', '150ml oat, almond milk or soya milk', 
+      'syrup , sliced banana and berries, to serve (optional)' ],
+    method: [ 'Mash the banana in a mixing bowl. Stir in the sugar, salt and oil. Add the flour and baking powder and mix thoroughly. Make a well in the centre and gradually whisk in the milk. The batter should be a thick, droppable consistency. ', 
+      'Heat a little oil in a frying pan over a medium heat. Add 2 tbsp of the batter to make American-style pancakes. You will be able to make about 4-5 at a time. Fry on each side for 2-3 mins until golden. Serve with syrup, sliced banana and berries, if you like. '],
+    prepTime: '10 mins',
+    cookingTime: '12 mins',
+    difficulty: 'Easy',
+    servingSize: 4,
+    nutritionalInfo: ['kcal: 94', 'fat: 4g', 'saturates: 0g', 'carbs: 14g', 'sugar: 6g', 'fibre: 1g', 'protein: 1g', 'salt: 0.2g'],
+    tags: ['pancakes', 'vegan', 'banana'],
     course: 'Main',
     allergens: ['Vegan', 'Vegetarian', 'Dairy-free', 'Egg-free']
   }
