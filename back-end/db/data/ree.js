@@ -17,7 +17,7 @@ export default [
     difficulty: 'Easy',
     servingSize: 2,
     nutritionalInfo: ['kcal: 644', 'fat: 26g', 'saturates: 4g', 'carbs: 56g', 'sugar: 19g', 'fibre: 11g', 'protein: 41g', 'salt: 3.11g'],
-    tags: ['breakfast', 'vegan', 'british'],
+    tags: ['breakfast', 'vegan', 'british', 'sausages'],
     course: 'Main',
     allergens: ['Vegan']
   },
@@ -37,7 +37,7 @@ export default [
     difficulty: 'Easy',
     servingSize: 6,
     nutritionalInfo: ['kcal: 204', 'fat: 7g', 'saturates: 3g', 'carbs: 20g', 'sugar: 6g', 'fibre: 7g', 'protein: 11g', 'salt: 0.5g'],
-    tags: ['curry', 'vegan'],
+    tags: ['curry', 'vegan', 'chickpeas', 'lentils'],
     course: 'Main',
     allergens: ['Vegan', 'Vegetarian']
   },
@@ -82,7 +82,29 @@ export default [
     difficulty: 'Easy',
     servingSize: 2,
     nutritionalInfo: ['kcal: 556', 'fat: 19g', 'saturates: 3g', 'carbs: 69g', 'sugar: 9g', 'fibre: 9g', 'protein: 22g', 'salt: 3.92g'],
-    tags: ['japanese', 'vegan', 'ramen'],
+    tags: ['japanese', 'vegan', 'ramen', 'tofu'],
+    course: 'Main',
+    allergens: ['Vegan', 'Vegetarian', 'Dairy-free', 'Egg-free']
+  },
+  {
+    name: 'Vegan Thai green curry',
+    image: 'https://images.immediate.co.uk/production/volatile/sites/30/2020/08/thai-green-veggie-curry-de40f07.jpg',
+    description: 'With tofu and lots of veggies, its full of flavour',
+    ingredients: ['200g baby potatoes, halved', '100g green beans, trimmed and halved', 
+      '1 tbsp rapeseed oil', '1 garlic clove, finely sliced', '1 tbsp Thai green curry paste (check the label to make sure it’s vegetarian/ vegan)', 
+      '400g can light coconut milk', '1 lime, zest pared in thick strips', 
+      '80g sugar snap peas, halved lengthways', '150g cherry tomatoes, halved', 
+      '100g firm tofu, chopped into small cubes', 'small bunch coriander, chopped', '200g jasmine rice, cooked following pack instructions' ],
+    method: ['Cook the potatoes in boiling water for 8 mins. Add the green beans and cook for a further 3 mins, then drain.', 
+      'Heat the oil in a wok or pan, fry the garlic for 1 min, add the curry paste and cook for 1 min, or until it starts to darken a little and smell fragrant. Stir in the coconut milk and bring to a simmer, drop in the lime zest and gently bubble for 5 mins to thicken the sauce a little.', 
+      'Add the potatoes and beans followed by the sugar snap peas and cook for 1 min before stirring in the cherry tomatoes and tofu.', 
+      'Cut the lime in half and squeeze the juice into the pan, then stir in the coriander and serve over the rice.'],
+    prepTime: '10 mins',
+    cookingTime: '20 mins',
+    difficulty: 'Easy',
+    servingSize: 4,
+    nutritionalInfo: ['kcal: 436', 'fat: 17g', 'saturates: 7g', 'carbs: 57g', 'sugar: 5g', 'fibre: 3g', 'protein: 13g', 'salt: 0.1g'],
+    tags: ['thai', 'vegan', 'ramen'],
     course: 'Main',
     allergens: ['Vegan', 'Vegetarian', 'Dairy-free', 'Egg-free']
   }
