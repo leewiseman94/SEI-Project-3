@@ -12,14 +12,18 @@ code {
     monospace;
 }
 
-.hero-image {
-  padding-right: 100px;
+#hero {
+  margin-top: 160px;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('https://images.immediate.co.uk/production/volatile/sites/30/2021/02/Harissa-lamb-8ce5e1f.jpg');
+  background-position: center;
+  background-size: cover;
+  position: relative;
 }
 
-.columns {
+/* .columns {
   padding: 50px;
   
-}
+} */
 
 body {
   font-family: Futura, sans-serif;
