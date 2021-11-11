@@ -22,7 +22,7 @@ const Home = () => {
   console.log(recipes)
   return (
     <>
-      <section className="hero is-fullheight-with-navbar">
+      {/* <section className="hero is-fullheight-with-navbar">
           <h1>PLATESTER</h1>
           <div className="hero-body is-flex is-flex-direction-row">
             <div className="box">
@@ -82,7 +82,7 @@ const Home = () => {
                     </div>
                   </Link>
               </div>                            
-            </div>
+            </div> */}
 
             
           

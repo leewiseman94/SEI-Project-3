@@ -18,8 +18,8 @@ const Navbar = () => {
           setScrollState("small")
         }
       } else {
-        if (scrollState !== "big") {
-          setScrollState("big")
+        if (scrollState !== "large") {
+          setScrollState("large")
         }
       }
     })
@@ -40,7 +40,7 @@ const Navbar = () => {
             </a>
           </div>
           <div className="navbar-center">
-          <button className="search-button button"><div className="search-text">Start your search</div><div className="search-icon"><span class="icon has-background-transparent has-text-white"><i class="fas fa-search"></i></span></div></button> 
+            <button className="search-button button"><div className="search-text">Start your search</div><div className="search-icon"><span class="icon has-background-transparent has-text-white"><i class="fas fa-search"></i></span></div></button> 
           </div>
 
           <div className="navbar-end">
@@ -87,9 +87,10 @@ const Navbar = () => {
           </div>
           <div className="navbar-center">
             <div className="navbar-links is-flex is-flex-direction-row">
-              <button className="button nav-transparent nav-center" href="#"><div>Places to stay</div><hr></hr></button>
-              <button className="button nav-transparent nav-center" href="#">Experiences</button>
-              <button className="button nav-transparent nav-center" href="#">Online Experiences</button>
+              <div className="button-container"></div>
+              <button className="button nav-transparent nav-center active" href="#"><div>Search Recipes</div><div className="button-bottom-border active"></div></button>
+              <button className="button nav-transparent nav-center" href="#"><div>Cooking Classes</div><div className="button-bottom-border"></div></button>
+              <button className="button nav-transparent nav-center" href="#"><div>Inspiration</div><div className="button-bottom-border"></div></button>
             </div>
           </div>
           <div className="navbar-end">
@@ -97,8 +98,12 @@ const Navbar = () => {
               <button className="button nav-transparent nav-right" href="#">Become a host</button>
               <button className="button nav-transparent nav-right" href="#"><span class="icon has-background-transparent has-text-white"><i class="fas fa-globe"></i></span></button>
             </div>
-            <div className="navbar-item has-dropdown is-hoverable">
-              <button className="button account-button" aria-label="menu" aria-expanded="false">
+            <div className="navbar-item has-dropdown account-dropdown">
+              <button className="button account-button" aria-label="menu" aria-expanded="false" onClick={() => {
+                const dropdown = document.querySelector('.account-dropdown').classList.toggle('is-active')
+                console.log(dropdown)
+                }
+                }>
                 <div className="menu-icon"><span class="icon has-background-transparent has-text-black"><i class="fas fa-bars"></i></span></div>
                 <div className="user-account-icon"><span class="icon has-background-transparent has-text-white"><i class="fas fa-user"></i></span></div>
                 </button>
@@ -123,9 +128,14 @@ const Navbar = () => {
             </div>
           </div>
         </div>
-        <div className="navbar-bottom">
+        <div className="navbar-bottom p-6">
           <div className="button search-form">
-            <div className="search-icon"><span class="icon has-background-transparent has-text-white"><i class="fas fa-search"></i></span></div>
+            <div className="search-form-container is-flex is-flex-direction-row">
+              <button className="button nav-right search-form-button"><h3><strong>Name</strong></h3><h3>What are you looking for?</h3></button>
+              <button className="button nav-right search-form-button"><h3><strong>Course</strong></h3><h3>Select course</h3></button>
+              <button className="button nav-right search-form-button"><h3><strong>Cuisine</strong></h3><h3>Select cuisine</h3></button>
+            </div>
+            <div className="form-search-icon"><span class="icon has-background-transparent has-text-white"><i class="fas fa-search"></i></span></div>
           </div>
         </div>
       </nav>
