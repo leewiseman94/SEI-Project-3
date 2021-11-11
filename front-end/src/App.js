@@ -6,6 +6,8 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom'
 import Home from './components/Home'
 import Login from './components/Login'
 import Register from './components/Register'
+import RecipeIndex from './components/RecipeIndex'
+import RecipeShow from './components/RecipeShow'
 
 function App() {
   const [recipes, setRecipes] = useState([])
@@ -32,6 +34,8 @@ function App() {
 
       <Switch>
         <Route exact path='/' component={Home}/>
+        <Route exact path='/recipes' component={RecipeIndex}/>
+        <Route exact path='/recipes/:id' component={RecipeShow}/>
 
 
 
