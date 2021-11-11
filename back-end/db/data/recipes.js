@@ -208,7 +208,7 @@ export default [
   {
     name: 'Vegan fry up',
     image: 'https://images.immediate.co.uk/production/volatile/sites/30/2020/08/vegan-fry-up-9c3dc26.jpg',
-    description: 'A vegan take on the classic English breakfast that boasts vegan sausages with hash browns, mushrooms, tomatoes, scrambled tofu and baked beans',
+    description: 'A vegan take on the classic English breakfast that boasts vegan sausages with hash browns, mushrooms, tomatoes, scrambled tofu and baked beans.',
     ingredients: ['1 large potato', '1 ½ tbsp peanut butter', '14 cherry tomatoes', 'sunflower oil',
       '2 tsp maple syrup', '1 tsp soy sauce', '¼ tsp smoked paprika', '1 large Portobello mushroom, sliced',
       '349g pack silken tofu', '2 tbsp nutritional yeast', '½ tsp tumeric', '1 clove garlic, crushed',
@@ -250,7 +250,7 @@ export default [
   {
     name: 'Vegan pizza Margherita',
     image: 'https://images.immediate.co.uk/production/volatile/sites/30/2020/08/vegan-pizza-67125d6.jpg',
-    description: 'Vegans needn’t miss out on pizza Margherita. Our recipe combines the classic flavours of this Italian comfort food using plant-based substitutes',
+    description: 'Vegans needn’t miss out on pizza Margherita. Our recipe combines the classic flavours of this Italian comfort food using plant-based substitutes.',
     ingredients: ['500g strong white bread flour, plus extra for dusting', '1 tsp dried yeast',
       '1 tsp caster sugar', '1 ½ tbsp olive oil, plus extra', '100ml passata',
       '1 tbsp fresh basil, chopped (or 1/2 tsp dried oregano)', '1 garlic clove, crushed',
@@ -272,7 +272,7 @@ export default [
   {
     name: 'Vegan ramen',
     image: 'https://images.immediate.co.uk/production/volatile/sites/30/2020/08/vegan-ramen-c656140.jpg',
-    description: 'Enjoy this vegan ramen for a tasty midweek meal in just 25 minutes. Dried mushrooms and miso paste give the broth plenty of umami flavour',
+    description: 'Enjoy this vegan ramen for a tasty midweek meal in just 25 minutes. Dried mushrooms and miso paste give the broth plenty of umami flavour!',
     ingredients: ['2 garlic cloves', 'thumb-sized piece ginger, sliced, plus a few slices cut into fine matchsticks to serve (optional)',
       '1½ tbsp white miso paste', '1 tbsp neri goma (white sesame paste) or tahini', '15g dried shiitake mushrooms',
       '1l good-quality vegan stock', '2 tbsp soy sauce',
@@ -295,7 +295,7 @@ export default [
   {
     name: 'Vegan Thai green curry',
     image: 'https://images.immediate.co.uk/production/volatile/sites/30/2020/08/thai-green-veggie-curry-de40f07.jpg',
-    description: 'With tofu and lots of veggies, it’s full of flavour',
+    description: 'With tofu and lots of veggies, it’s full of flavour!',
     ingredients: ['200g baby potatoes, halved', '100g green beans, trimmed and halved',
       '1 tbsp rapeseed oil', '1 garlic clove, finely sliced', '1 tbsp Thai green curry paste (check the label to make sure it’s vegetarian/ vegan)',
       '400g can light coconut milk', '1 lime, zest pared in thick strips',
@@ -317,7 +317,7 @@ export default [
   {
     name: 'Vegan banana pancakes',
     image: 'https://images.immediate.co.uk/production/volatile/sites/30/2020/08/banana_pancakes_0-8be4928.jpg',
-    description: 'A guaranteed crowd pleaser with a fluffy, light texture, you’d never know they’re vegan',
+    description: 'A guaranteed crowd pleaser with a fluffy, light texture, you’d never know they’re vegan!',
     ingredients: ['1 large ripe banana (around 150g)', '2 tbsp golden caster sugar',
       '¼ tsp fine salt', '2 tbsp vegetable oil , plus extra for cooking', '120g self-raising flour',
       '½ tsp baking powder', '150ml oat, almond milk or soya milk',
