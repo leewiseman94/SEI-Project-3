@@ -32,13 +32,13 @@ const Register = () => {
     history.push('/')
   }
   return (
-    <form className='column is-offset-one-third box mt-6' onSubmit={handleSubmit}>
+    <form className='column is-offset-one-third box' onSubmit={handleSubmit} id='form'>
     <div>
       <i className="far fa-window-close" onClick={handleClick}></i>
-      <div className='subtitle' id='signuptext'> Login or Sign Up</div>
+      <div className='subtitle is-4' id='signuptext'> Login or Sign Up</div>
     </div>
-    <hr/>
-    <div className='title is-5 mb-5'>Welcome to Platester</div>
+    <hr className='mt-4 mb-5'/>
+    <div className='title is-6 mb-5'>Welcome to Platester</div>
       <div className='field mb-4'>
       <p className='control pb-2'>
       <input className = 'input py-5'

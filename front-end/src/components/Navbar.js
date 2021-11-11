@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 // import { Link } from 'react-router-dom'
 import logoWhite from '../images/platester_logo_white_withText.PNG'
 import logoRed from '../images/platester_logo_red_withText.PNG'
+import { Link } from 'react-router-dom'
 
 
 const Navbar = () => {
@@ -104,10 +105,10 @@ const Navbar = () => {
                 </button>
               <div className="navbar-dropdown">
                 <a className="navbar-item" href="#account">
-                  <strong>Sign up</strong>
+                  <strong><Link to='/account'>Sign up</Link></strong>
                 </a>
                 <a className="navbar-item" href="#account">
-                  Login
+                  <Link to='/account'>Login</Link>
                 </a>
                 <hr className="navbar-divider" />
                 <a className="navbar-item" href="#account">

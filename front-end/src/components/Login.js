@@ -29,34 +29,36 @@ const Login = () => {
   }
 
   return (
-    <form className='column is-offset-one-third box mt-6' onSubmit={handleSubmit}>
+    <form className='column is-offset-one-third box' onSubmit={handleSubmit} id='form'>
     <div>
       <i className="far fa-window-close" onClick={handleClick}></i>
-      <div className='subtitle' id='signuptext'> Login</div>
+      <div className='subtitle is-4' id='signuptext'> Login</div>
     </div>
-    <hr/>
-    <div className='title is-5 mb-5'>Welcome to Platester</div>
+    <hr className='mt-4 mb-5'/>
+    <div className='title is-6 mb-5'>Welcome to Platester</div>
       <div className='field mb-0'>
       <p className='control'>
-      <input className = 'input py-5' id='signupinput1'
+      <input  id='signupinput1'
+      className={`input ${error ? 'is-danger py-5' : 'py-5'}`} 
       placeholder = 'Email'
       name='email'
       value={formData.email}
       onChange={handleChange} />
       </p>
       </div>
-      {error && <p className='is-danger'>Your username or password are incorrect</p>}
-      <div className='field mb-4'>
+      {error && <p className='is-danger subtitle mt-1 mb-1'>Your username or password are incorrect</p>}
+      <div className='field mb-0'>
       <p className='control'>
-      <input className = 'input py-5' id='signupinput2'
+      <input  id='signupinput2'
+      className={`input ${error ? 'is-danger py-5' : 'py-5'}`} 
       placeholder = 'Password'
       name='password'
       value={formData.password}
       onChange={handleChange}/>
       </p>
       </div>
-      {error && <p className='is-danger'>Your username or password are incorrect</p>}
-      <div className='field mb-4'>
+      {error && <p className='is-danger subtitle mt-1 mb-1'>Your username or password are incorrect</p>}
+      <div className='field mb-4 mt-4'>
         <p className='control'>
           <button type='submit' className='button is-danger' id='submit'>Log in</button>
         </p>

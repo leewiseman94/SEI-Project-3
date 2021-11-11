@@ -159,4 +159,10 @@ h5 {
 #signuptext {
   width: 100%;
   text-align: center;
+  display: block;
+  margin-top: -10px;
+}
+
+#form {
+  margin-top: 180px;
 }
