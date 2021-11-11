@@ -38,9 +38,13 @@ const Register = () => {
     }
 
   }
+
+  const handleClick = () => {
+    history.push('/')
+  }
   return (
     <form className='column is-half is-offset-one-quarter box' onSubmit={handleSubmit}>
-      <i class="far fa-window-close"></i>
+      <i class="far fa-window-close" onClick={handleClick}></i>
     <div className='title'> Login or Sign Up</div>
     <div className='subtitle'>Welcome to Platester</div>
     <div className='field'>
@@ -88,7 +92,7 @@ const Register = () => {
       onChange={handleChange} />
       </div>
       {errors.passwordConfirmation && <p className='is-danger'>{errors.passwordConfirmation.message}</p>}
-      <button type='submit'>Submit</button>
+      <button type='submit'>Sign Up </button>
     </div>
     </form>
   )
