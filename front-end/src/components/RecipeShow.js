@@ -22,11 +22,11 @@ const RecipeShow = () => {
   console.log('RECIPE ON STATE', recipe)
 
   return (
-    <section className="section">
+    <section className="section" id="recipe-show">
       <div className="container">
         <div>
-          <h2 className="title">{recipe.name}</h2>
-          <h6 className="show-rating">{recipe.course} · {recipe.difficulty} · Rating: {recipe.averageRating} </h6>
+          <h2 className="title" id="recipe-title">{recipe.name}</h2>
+          <h6 className="show-rating" id="recipe-show-rating">{recipe.course} · {recipe.difficulty} · Rating: {recipe.averageRating} </h6>
           
           
           {/* <h6 className="show-rating"><div class="rating">
