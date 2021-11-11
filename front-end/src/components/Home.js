@@ -35,7 +35,7 @@ const Home = () => {
       <h1>CUISINES</h1>
             <div className="columns">
               <div class="column">
-                <Link to={`/recipes/${_id}`}>
+                <Link to={`/recipes/${recipes.id}`}>
                     <div className="card">
                       <div className="card-header">
                         <div className="card-header-title">{recipes.name}</div>
@@ -47,7 +47,7 @@ const Home = () => {
                   </Link>
               </div>
               <div class="column">
-                <Link to={`/recipes/${_id}`}>
+                <Link to={`/recipes/${recipes.id}`}>
                     <div className="card">
                       <div className="card-header">
                         <div className="card-header-title">{recipes.name}</div>
@@ -59,7 +59,7 @@ const Home = () => {
                   </Link>
               </div>
               <div class="column">
-                <Link to={`/recipes/${_id}`}>
+                <Link to={`/recipes/${recipes.id}`}>
                     <div className="card">
                       <div className="card-header">
                         <div className="card-header-title">{recipes.name}</div>
@@ -71,7 +71,7 @@ const Home = () => {
                   </Link>
               </div>
               <div class="column">
-                <Link to={`/recipes/${_id}`}>
+                <Link to={`/recipes/${recipes.id}`}>
                     <div className="card">
                       <div className="card-header">
                         <div className="card-header-title">{recipes.name}</div>

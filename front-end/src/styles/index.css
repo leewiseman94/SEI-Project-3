@@ -105,7 +105,7 @@ h5 {
 }
 
 .subtitle {
-  margin-left: 5px;
+  margin-left: 55px;
   display: flex;
   font-weight: lighter;
   color: gray;
@@ -114,24 +114,57 @@ h5 {
   align-items: center;
 }
 
-.filter {
-  justify-content: flex-end;
-  
+#recipe-show {
+  padding-top: 180px;
 }
+#recipe-index {
+  padding-top: 180px;
+}
+#index-cards {
+  margin-top: -50px;
+}
+
 
 .container {
   margin-bottom: 20px;
 }
 
 
-.button.filter {
- width: 90px;
+#filter-button {
+ width: 100px;
  height: 40px;
  justify-content: center;
+ margin-right: 50px;
  
 }
 
-.button.filter:hover {
+#recipe-title {
+  margin-left: 50px;
+}
+#recipe-show-rating {
+  margin-left: 50px;
+}
+
+i.fas.fa-filter {
+  margin-left: -5px;
+}
+
+/* .card .card-image,
+.card .card-image .image img {
+  width: 280px;
+} */
+
+.filterbtn {
+  margin-left: 5px;
+}
+
+#filterbtn {
+  width: 100px;
+  height: 40px;
+  margin-right: 50px;
+}
+
+#filter-button:hover {
   border-color: black;
 }
 
