@@ -11,3 +11,13 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.hero-image {
+  padding-right: 100px;
+}
+
+.columns {
+  padding: 50px;
+  
+}
+
