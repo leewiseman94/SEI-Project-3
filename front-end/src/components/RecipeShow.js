@@ -43,10 +43,23 @@ const RecipeShow = () => {
               <p className="desc">{recipe.description}</p>
               <hr/>
               <h4 className="method-title">Method</h4>
+
+
                 <div className="recipe-steps">
-                  <h6 className="steps">Step 1</h6>
-                  <p>{recipe.method}</p>
-              </div>
+                  
+                  {recipe.method && 
+                  recipe.method.map((step, index) => {
+                    return (
+                      <>
+                      <h6 className="steps">Step {index + 1}</h6>
+                      <p>{step}</p>
+                      <br/>
+                      </>
+                    )
+                  
+                  })}
+                  
+                </div>
               </div>
             </div>
 

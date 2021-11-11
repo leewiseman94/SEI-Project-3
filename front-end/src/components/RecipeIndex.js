@@ -20,6 +20,17 @@ const RecipeIndex = () => {
     <>
     <section className="section">
       <div className="container">
+        <div className="subtitle">
+          Starter
+          Main
+          Dessert
+        
+        <div className="filter">
+          <button className="button filter">Filter</button>
+        </div>
+        </div>
+      </div>
+      <div className="container">
         <div className="columns is-multiline">
           {recipes.map(recipe => {
             return (
