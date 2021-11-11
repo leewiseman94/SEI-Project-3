@@ -38,7 +38,7 @@ const Home = () => {
 
 }, [])
 
- 
+
   console.log('recipes', recipes)
   console.log('courses', courses)
   return (
@@ -111,8 +111,6 @@ const Home = () => {
               </div>                            
             </div>
 
-            
-          
     </>
 
   )
