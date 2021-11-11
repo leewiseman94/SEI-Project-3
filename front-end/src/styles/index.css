@@ -21,3 +21,142 @@ code {
   
 }
 
+body {
+  font-family: Futura, sans-serif;
+  /* font-weight: lighter; */
+}
+
+.card-header-title {
+  font-weight: lighter;
+  /* text-overflow: ellipsis "[...]"; */
+  text-overflow: ellipsis "[...]";
+  overflow: hidden;
+  height: 40px;
+}
+
+.card {
+  border-radius: 15px;
+}
+
+.image  {
+  border-radius: 15px;
+  
+}
+#image-index {
+  border-radius: 15px;
+  
+}
+
+.title-prep {
+  font-weight: bold;
+}
+
+.card-content {
+  
+  margin-top: -10px;
+}
+
+#heart-icon {
+  position: absolute;
+  z-index: 2;
+  margin-top: 20px;
+  margin-left: 10px;
+  color: white;
+  fill: black;
+}
+
+
+
+h5 {
+  text-align: right;
+  
+}
+.title {
+  font-weight: lighter;
+}
+
+.card-rating {
+  text-align: right;
+  font-size: 12px;
+
+}
+
+.show-rating {
+  margin-top: -20px;
+  margin-bottom: 10px;
+  text-transform: lowercase;
+}
+
+.method-title {
+  font-weight: bold;
+}
+
+.recipe-steps {
+  margin-top: 10px;
+}
+
+.steps {
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.recipe-step-section {
+  font-weight: lighter;
+}
+
+.subtitle {
+  margin-left: 5px;
+  display: flex;
+  font-weight: lighter;
+  color: gray;
+  font-size: 14px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.filter {
+  justify-content: flex-end;
+  
+}
+
+.container {
+  margin-bottom: 20px;
+}
+
+
+.button.filter {
+ width: 90px;
+ height: 40px;
+ justify-content: center;
+ 
+}
+
+.button.filter:hover {
+  border-color: black;
+}
+
+#submit {
+  border-radius: 7px;
+  height: 6vh;
+}
+
+#signupinput {
+  border-radius: 0;
+}
+
+#signupinput1 {
+  border-radius: 0;
+  border-top-right-radius: 4px;
+  border-top-left-radius: 4px;
+}
+#signupinput2 {
+  border-radius: 0;
+  border-bottom-right-radius: 4px;
+  border-bottom-left-radius: 4px;
+}
+
+
+#signuptext {
+  width: 100%;
+  text-align: center;
+}

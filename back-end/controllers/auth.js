@@ -25,3 +25,14 @@ export const loginUser = async (req, res) => {
     return res.status(402).json({ 'message': 'Unauthorized' })
   }
 }
+
+export const findUser = async (req, res) => {
+  try {
+    const userToFind = await User.findOne( { email: req.body.email })
+    if (!userToFind) throw new Error() 
+    return res.status(200).json(userToFind)
+  } catch (err) {
+    console.log(err)
+    return res.status(404).json({ 'message': 'user not found' })
+  }
+}

@@ -8,11 +8,11 @@ export default [
       'Add the sausagemeat and cook until browned all over, then add the chopped tomatoes and ketchup, along with a pinch of salt and 100ml water. Reduce the heat to low, cover and cook until the sauce is thick, about 20 mins, stirring now and again. Season to taste, then serve with buttery mashed potato, pasta or couscous.'],
     prepTime: '10 mins',
     cookingTime: '25 mins',
-    difficulty: 'easy',
+    difficulty: 'Easy',
     servingSize: 4,
     nutritionalInfo: ['kcal: 303', 'fat: 22g', 'saturates: 7g', 'carbs: 13g', 'sugars: 7g', 'fibre: 3g', 'protein: 11g', 'salt: 1.2g'],
     tags: ['sausages', 'Italian', 'one-pot'],
-    course: 'main'
+    course: 'Main'
   },
   {
     name: 'Peanut butter chicken',
@@ -25,11 +25,11 @@ export default [
       'Serve with the remaining coriander, roasted peanuts and rice, if you like.'],
     prepTime: '10 mins',
     cookingTime: '40 mins',
-    difficulty: 'easy',
+    difficulty: 'Easy',
     servingSize: 4,
     nutritionalInfo: ['kcal: 572', 'fat: 43g', 'saturates: 20g', 'carbs: 11g', 'sugars: 7g', 'fibre: 3g', 'protein: 33g', 'salt: 0.3g'],
     tags: ['curry', 'budget', 'chicken'],
-    course: 'main',
+    course: 'Main',
     allergens: ['Dairy-free', 'Gluten-free']
   },
   {
@@ -43,11 +43,11 @@ export default [
       'Heat the oven to 160C/140C fan/gas 2. Roast the lamb for 4-5 hrs until the meat is fork-tender. Lift the lamb out onto a large board or serving plate. If the tin is flameproof, pour in the stock; if not, tip the contents of the tin into a saucepan first. Bring to the boil, scrape up any browned bits using a wooden spoon, and cook until the liquid is reduced by about a third – it should be a thick, rich onion gravy. Stir in the reserved harissa and the chopped coriander. Serve the lamb with the onion gravy.'],
     prepTime: '30 mins',
     cookingTime: '5 hrs',
-    difficulty: 'easy',
+    difficulty: 'Easy',
     servingSize: 6,
     nutritionalInfo: ['kcal: 716', 'fat: 43g', 'saturates: 13g', 'carbs: 24g', 'sugars: 16g', 'fibre: 10g', 'protein: 53g', 'salt: 1.4g'],
     tags: ['lamb', 'slow-cooked'],
-    course: 'main'
+    course: 'Main'
   },
   {
     name: 'Ultimate sticky toffee pudding',
@@ -72,11 +72,11 @@ export default [
       'When ready to serve, heat oven to 180C/fan 160C/gas 4. Warm the puddings through, still covered, for 15-20 mins or until the sauce is bubbling. Serve them on their own, or with cream or custard.'],
     prepTime: '1 hr',
     cookingTime: '25 mins',
-    difficulty: 'easy',
+    difficulty: 'Easy',
     servingSize: 7,
     nutritionalInfo: ['kcal: 687', 'fat: 36g', 'saturates: 21g', 'carbs: 92g', 'sugars: 71g', 'fibre: 2g', 'protein: 6g', 'salt: 1.1g'],
     tags: ['pudding', 'comfort-food'],
-    course: 'dessert'
+    course: 'Dessert'
   },
   {
     name: 'Potato pancakes',
@@ -89,11 +89,11 @@ export default [
       'Flip the pancakes and cook until golden. Remove from the pan and keep warm while you cook the remaining pancakes in the same way, adding a tiny bit of oil and butter to the pan as and when needed. Serve the pancakes in stacks with creamy scrambled egg and crisp rashers of streaky bacon.'],
     prepTime: '15 mins',
     cookingTime: '30 mins',
-    difficulty: 'easy',
+    difficulty: 'Easy',
     servingSize: 12 - 15,
     nutritionalInfo: ['kcal: 75', 'fat: 3g', 'saturates: 1g', 'carbs: 9g', 'sugars: 0.7g', 'fibre: 0g', 'protein: 3g', 'salt: 0.2g'],
     tags: ['breakfast', 'pancakes'],
-    course: 'main'
+    course: 'Main'
   },
   {
     name: 'Spinach, sweet potato & lentil dhal',
@@ -114,11 +114,11 @@ export default [
     servingSize: 4,
     nutritionalInfo: ['kcal: 397', 'fat: 5g', 'saturates: 1g', 'carbs: 65g', 'sugars: 19g', 'fibre: 11g', 'protein: 18g', 'salt: 0.6g'],
     tags: ['indian'],
-    course: 'main'
+    course: 'Main'
   },
   {
     name: 'Steak burrito bowl',
-    image: 'https://imsrc="https://images.immediate.co.uk/production/volatile/sites/30/2020/08/steak-burrito-bowl-932949f.jpg',
+    image: 'https://images.immediate.co.uk/production/volatile/sites/30/2020/08/steak-burrito-bowl-932949f.jpg',
     description: 'Pack in the flavour with this spicy steak burrito bowl, which takes just 10 minutes from prep to plate. Ideal as a speedy supper on busy weeknights',
     ingredients: ['1 fillet steak , approx 250g', '75g plain flour', '1 sachet fajita seasoning', '2 tbsp olive oil', '250g Mexican-style rice pouch', '2 roasted red peppers , sliced', '1 lemon , ½ juiced, ½ cut into wedges', '½ small pack parsley , roughly chopped, to serve', 'yogurt , to serve'],
     method: ['Coat the steak with half of the fajita seasoning and 1 tbsp of the olive oil. Heat a frying pan over a high heat and add the steak, cook for 2 mins on each side for medium rare, remove from the pan and set aside.',
@@ -130,7 +130,7 @@ export default [
     servingSize: 2,
     nutritionalInfo: ['kcal: 549', 'fat: 24g', 'saturates: 7g', 'carbs: 49g', 'sugars: 10g', 'fibre: 3g', 'protein: 32g', 'salt: 0.8g'],
     tags: ['mexican', 'steak', 'burrito'],
-    course: 'main'
+    course: 'Main'
   },
   {
     name: 'Artichoke & aubergine rice',
@@ -145,7 +145,7 @@ export default [
     servingSize: 6,
     nutritionalInfo: ['kcal: 431', 'fat: 16g', 'saturates: 2g', 'carbs: 58g', 'sugars: 9g', 'fibre: 11g', 'protein: 8g', 'salt: 1.5g'],
     tags: [],
-    course: 'main',
+    course: 'Main',
     allergens: ['Vegan', 'Vegetarian']
   },
   {
@@ -159,7 +159,7 @@ export default [
     difficulty: 'Easy',
     servingSize: 4,
     tags: ['Mediterranean', 'Pasta', 'Fish'],
-    course: 'main'
+    course: 'Main'
   },
   {
     name: 'Pasta With Vegan Cream Sauce',
@@ -172,7 +172,7 @@ export default [
     difficulty: 'Easy',
     servingSize: 4,
     tags: ['Pasta', 'American'],
-    course: 'main',
+    course: 'Main',
     allergens: ['Vegetarian', 'Vegan']
   },
   {
@@ -187,7 +187,7 @@ export default [
     servingSize: 8,
     nutritionalInfo: ['Serving: 110g', 'Calories: 167', 'Carbohydrates: 14.2g', 'Protein: 5.7g', 'Fat: 10g', 'Saturated Fat: 6g', 'Cholesterol: 31mg', 'Sodium: 281mg', 'Potassium: 364mg', 'Fiber: 2.1g', 'Sugar: 1.6g', 'Vitamin A: 300IU', ' Vitamin C: 23.1mg', 'Calcium: 160mg', 'Iron: 0.7mg'],
     tags: ['French', 'Gratin', 'Winter'],
-    course: 'main',
+    course: 'Main',
     allergens: ['Vegetarian', 'Vegan']
   },
   {
@@ -202,13 +202,13 @@ export default [
     servingSize: 4,
     nutritionalInfo: ['Serving: 226g', 'Calories: 264', 'Carbohydrates: 16g', 'Protein: 6.3g', 'Fat: 21g', 'Saturated Fat: 5.1g', 'Cholesterol: 19mg', 'Sodium: 514mg', 'Potassium: 560mg', 'Fiber: 2.8g', 'Sugar: 9.7g', 'Vitamin A: 233%', ' Vitamin C: 17%', 'Calcium: 0.3%', 'Iron:16%'],
     tags: ['Salad', 'Autumn'],
-    course: 'starter',
+    course: 'Starter',
     allergens: ['Vegetarian', 'Vegan']
   },
   {
     name: 'Vegan fry up',
     image: 'https://images.immediate.co.uk/production/volatile/sites/30/2020/08/vegan-fry-up-9c3dc26.jpg',
-    description: 'A vegan take on the classic English breakfast that boasts vegan sausages with hash browns, mushrooms, tomatoes, scrambled tofu and baked beans',
+    description: 'A vegan take on the classic English breakfast that boasts vegan sausages with hash browns, mushrooms, tomatoes, scrambled tofu and baked beans.',
     ingredients: ['1 large potato', '1 ½ tbsp peanut butter', '14 cherry tomatoes', 'sunflower oil',
       '2 tsp maple syrup', '1 tsp soy sauce', '¼ tsp smoked paprika', '1 large Portobello mushroom, sliced',
       '349g pack silken tofu', '2 tbsp nutritional yeast', '½ tsp tumeric', '1 clove garlic, crushed',
@@ -250,7 +250,7 @@ export default [
   {
     name: 'Vegan pizza Margherita',
     image: 'https://images.immediate.co.uk/production/volatile/sites/30/2020/08/vegan-pizza-67125d6.jpg',
-    description: 'Vegans needn’t miss out on pizza Margherita. Our recipe combines the classic flavours of this Italian comfort food using plant-based substitutes',
+    description: 'Vegans needn’t miss out on pizza Margherita. Our recipe combines the classic flavours of this Italian comfort food using plant-based substitutes.',
     ingredients: ['500g strong white bread flour, plus extra for dusting', '1 tsp dried yeast',
       '1 tsp caster sugar', '1 ½ tbsp olive oil, plus extra', '100ml passata',
       '1 tbsp fresh basil, chopped (or 1/2 tsp dried oregano)', '1 garlic clove, crushed',
@@ -272,7 +272,7 @@ export default [
   {
     name: 'Vegan ramen',
     image: 'https://images.immediate.co.uk/production/volatile/sites/30/2020/08/vegan-ramen-c656140.jpg',
-    description: 'Enjoy this vegan ramen for a tasty midweek meal in just 25 minutes. Dried mushrooms and miso paste give the broth plenty of umami flavour',
+    description: 'Enjoy this vegan ramen for a tasty midweek meal in just 25 minutes. Dried mushrooms and miso paste give the broth plenty of umami flavour!',
     ingredients: ['2 garlic cloves', 'thumb-sized piece ginger, sliced, plus a few slices cut into fine matchsticks to serve (optional)',
       '1½ tbsp white miso paste', '1 tbsp neri goma (white sesame paste) or tahini', '15g dried shiitake mushrooms',
       '1l good-quality vegan stock', '2 tbsp soy sauce',
@@ -295,7 +295,7 @@ export default [
   {
     name: 'Vegan Thai green curry',
     image: 'https://images.immediate.co.uk/production/volatile/sites/30/2020/08/thai-green-veggie-curry-de40f07.jpg',
-    description: 'With tofu and lots of veggies, it’s full of flavour',
+    description: 'With tofu and lots of veggies, it’s full of flavour!',
     ingredients: ['200g baby potatoes, halved', '100g green beans, trimmed and halved',
       '1 tbsp rapeseed oil', '1 garlic clove, finely sliced', '1 tbsp Thai green curry paste (check the label to make sure it’s vegetarian/ vegan)',
       '400g can light coconut milk', '1 lime, zest pared in thick strips',
@@ -317,7 +317,7 @@ export default [
   {
     name: 'Vegan banana pancakes',
     image: 'https://images.immediate.co.uk/production/volatile/sites/30/2020/08/banana_pancakes_0-8be4928.jpg',
-    description: 'A guaranteed crowd pleaser with a fluffy, light texture, you’d never know they’re vegan',
+    description: 'A guaranteed crowd pleaser with a fluffy, light texture, you’d never know they’re vegan!',
     ingredients: ['1 large ripe banana (around 150g)', '2 tbsp golden caster sugar',
       '¼ tsp fine salt', '2 tbsp vegetable oil , plus extra for cooking', '120g self-raising flour',
       '½ tsp baking powder', '150ml oat, almond milk or soya milk',
