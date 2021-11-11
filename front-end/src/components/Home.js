@@ -74,11 +74,7 @@ const Home = () => {
                   </Link>
               </div>
               <div class="column">
-<<<<<<< HEAD
-                <Link to={`/recipes/${recipes.id}`}>
-=======
                 <Link to={`/recipes/`}>
->>>>>>> development
                     <div className="card">
                       <div className="card-header">
                         <div className="card-header-title">{recipe.name}</div>
@@ -90,11 +86,7 @@ const Home = () => {
                   </Link>
               </div>
               <div class="column">
-<<<<<<< HEAD
-                <Link to={`/recipes/${recipes.id}`}>
-=======
                 <Link to={`/recipes/`}>
->>>>>>> development
                     <div className="card">
                       <div className="card-header">
                         <div className="card-header-title">{recipe.name}</div>
@@ -106,11 +98,7 @@ const Home = () => {
                   </Link>
               </div>
               <div class="column">
-<<<<<<< HEAD
-                <Link to={`/recipes/${recipes.id}`}>
-=======
                 <Link to={`/recipes/`}>
->>>>>>> development
                     <div className="card">
                       <div className="card-header">
                         <div className="card-header-title">{recipe.name}</div> */}
