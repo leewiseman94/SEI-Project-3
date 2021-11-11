@@ -14,33 +14,67 @@ const RecipeIndex = () => {
     getData()
   }, [])
   // console.log('recipes on state ->', recipes)
-
+  
 
   return (
     <>
-    <section className="section">
-      <div className="container">
-        <div className="subtitle">
-          Starter
-          Main
-          Dessert
-        
-        <div className="filter">
-          <button className="button filter">Filter</button>
-        </div>
-        </div>
-      </div>
-      <div className="container">
-        <div className="columns is-multiline">
-          {recipes.map(recipe => {
-            return (
-              <RecipeCard key={recipe._id} {...recipe}/>
-            )
-          })}
-        </div>
-      </div>
+      <section className="section" id="recipe-index">
+        <div className="container">
+          <div className="subtitle">
+            Starter
+            Main
+            Dessert
 
-    </section>
+            <div className="dropdown is-active">
+              <div className="dropdown-trigger">
+                <button className="button" id="filterbtn" aria-haspopup="true">
+                <span class="icon is-small">
+                    <i class="fas fa-filter fa-sm"> </i>
+                    <span className="filterbtn">Filter</span>
+                  </span>
+                </button>
+              </div>
+              <div className="dropdown-menu" id="dropdown-menu2" role="menu">
+                <div className="dropdown-content">
+                  <div className="dropdown-item">
+                  <a href="/" className="dropdown-item">
+                    American
+                    </a>
+                  </div>
+                
+                  <a href="/" className="dropdown-item">
+                    British
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        
+
+        {/* <div class="dropdown is-active">
+              <div class="dropdown-trigger">
+                <button class="button" id="filter-button" aria-haspopup="true" aria-controls="dropdown-menu3">
+                  <span class="icon is-small">
+                    <i class="fas fa-filter fa-sm"> </i>
+                    <span className="filterbtn">Filter</span>
+                  </span>
+                </button>
+              </div> */}
+
+      
+    </div>
+       
+  <div className="container" id="index-cards">
+    <div className="columns is-multiline">
+      {recipes.map(recipe => {
+        return (
+          <RecipeCard key={recipe._id} {...recipe} />
+        )
+      })}
+    </div>
+  </div>
+
+      </section >
     </>
   )
 }

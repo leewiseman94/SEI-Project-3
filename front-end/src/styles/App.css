@@ -11,11 +11,8 @@
   background-color: tomato;
 }
 
-header {
-  box-shadow: 0px 1px 2px rgb(0 0 0 / 8%), 0px 4px 12px rgb(0 0 0 / 5%) !important;
-}
-
 .navbar {
+  box-shadow: 0px 1px 2px rgb(0 0 0 / 8%), 0px 4px 12px rgb(0 0 0 / 5%) !important;
   display: flex;
   flex-direction: column;
   background: black;
@@ -84,6 +81,7 @@ header {
   box-shadow: 0px 1px 2px rgb(0 0 0 / 8%);
   color: #222222;
   padding: 0.25rem 0.25rem 0.25rem 0.75rem;
+  font-size: 14px;
 }
 
 .button.account-button {
@@ -116,10 +114,23 @@ header {
 .button.nav-transparent.nav-center {
   border: none;
   box-shadow: none;
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
 }
 
 .button.nav-transparent.nav-center:hover {
   color: rgba(225, 225, 225, 90);
+}
+
+.button-bottom-border {
+  margin-top: 10px;
+  width: 40px;
+  border-bottom: 2px solid transparent;
+}
+
+.button-bottom-border.active {
+  border-bottom: 2px solid white;
 }
 
 .search-button {
@@ -135,6 +146,9 @@ header {
 }
 
 .search-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   height: 38px;
   width: 38px;
   background-color: red;
@@ -142,7 +156,12 @@ header {
   border-radius: 50px;
 }
 
+
+
 .user-account-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   height: 38px;
   width: 38px;
   background-color: grey;
@@ -151,6 +170,9 @@ header {
 }
 
 .menu-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   height: 38px;
   width: 38px;
   background-color: transparent;
@@ -165,10 +187,48 @@ header {
 }
 
 .search-form {
+  height: 56px;
   width: 100%;
   max-width: 850px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   background: white ;
+  padding: 0;
+}
+
+.form-search-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+  width: 50px !important;
+  background-color: red;
+  padding: 5px;
+  margin: 0.25rem 0.25rem 0.25rem 0;
+  border-radius: 50px;
+}
+
+.search-form-button {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.search-form-container {
+  height: 100%;
+  flex-grow: 1;
+}
+
+
+@media screen and (max-width: 1050px) {
+  .navbar-center {
+    display: none;
+  }  
+
+  .navbar-bottom {
+    display: none;
+  }  
 }
