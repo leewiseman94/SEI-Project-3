@@ -11,7 +11,7 @@ const Navbar = () => {
 
   useEffect(() => {
     listener = document.addEventListener("scroll", e => {
-      var scrolled = document.scrollingElement.scrollTop
+      const scrolled = document.scrollingElement.scrollTop
       if (scrolled >= 10) {
         // console.log(scrolled)
         if (scrollState !== "small") {
