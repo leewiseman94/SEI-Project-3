@@ -4,6 +4,7 @@ import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
 import Home from './components/Home.js'
+import Navbar from './components/Navbar.js'
 
 function App() {
   const [recipes, setRecipes] = useState([])
@@ -27,7 +28,7 @@ function App() {
   return (
     // <h1>platester</h1>
     <BrowserRouter>
-
+      <Navbar />
       <Switch>
         <Route exact path='/' component={Home}/>
 
