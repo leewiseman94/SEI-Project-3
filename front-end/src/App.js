@@ -9,6 +9,7 @@ import Login from './components/Login'
 import Register from './components/Register'
 import RecipeIndex from './components/RecipeIndex'
 import RecipeShow from './components/RecipeShow'
+import LoginorSignUp from './components/LoginorSignUp'
 
 function App() {
   const [recipes, setRecipes] = useState([])
@@ -27,8 +28,6 @@ function App() {
     getData()
   }, [])
   
-  console.log('recipes', recipes)
-
   return (
     // <h1>platester</h1>
     <BrowserRouter>
@@ -39,7 +38,7 @@ function App() {
         <Route exact path='/recipes/:id' component={RecipeShow}/>
 
 
-
+        <Route exact path='/account' component={LoginorSignUp}/>
         <Route exact path='/register' component={Register} />
         <Route exact path='/login' component={Login} />
       </Switch>

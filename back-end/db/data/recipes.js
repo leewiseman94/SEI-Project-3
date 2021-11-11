@@ -8,11 +8,11 @@ export default [
       'Add the sausagemeat and cook until browned all over, then add the chopped tomatoes and ketchup, along with a pinch of salt and 100ml water. Reduce the heat to low, cover and cook until the sauce is thick, about 20 mins, stirring now and again. Season to taste, then serve with buttery mashed potato, pasta or couscous.'],
     prepTime: '10 mins',
     cookingTime: '25 mins',
-    difficulty: 'easy',
+    difficulty: 'Easy',
     servingSize: 4,
     nutritionalInfo: ['kcal: 303', 'fat: 22g', 'saturates: 7g', 'carbs: 13g', 'sugars: 7g', 'fibre: 3g', 'protein: 11g', 'salt: 1.2g'],
     tags: ['sausages', 'Italian', 'one-pot'],
-    course: 'main'
+    course: 'Main'
   },
   {
     name: 'Peanut butter chicken',
@@ -25,11 +25,11 @@ export default [
       'Serve with the remaining coriander, roasted peanuts and rice, if you like.'],
     prepTime: '10 mins',
     cookingTime: '40 mins',
-    difficulty: 'easy',
+    difficulty: 'Easy',
     servingSize: 4,
     nutritionalInfo: ['kcal: 572', 'fat: 43g', 'saturates: 20g', 'carbs: 11g', 'sugars: 7g', 'fibre: 3g', 'protein: 33g', 'salt: 0.3g'],
     tags: ['curry', 'budget', 'chicken'],
-    course: 'main',
+    course: 'Main',
     allergens: ['Dairy-free', 'Gluten-free']
   },
   {
@@ -43,11 +43,11 @@ export default [
       'Heat the oven to 160C/140C fan/gas 2. Roast the lamb for 4-5 hrs until the meat is fork-tender. Lift the lamb out onto a large board or serving plate. If the tin is flameproof, pour in the stock; if not, tip the contents of the tin into a saucepan first. Bring to the boil, scrape up any browned bits using a wooden spoon, and cook until the liquid is reduced by about a third – it should be a thick, rich onion gravy. Stir in the reserved harissa and the chopped coriander. Serve the lamb with the onion gravy.'],
     prepTime: '30 mins',
     cookingTime: '5 hrs',
-    difficulty: 'easy',
+    difficulty: 'Easy',
     servingSize: 6,
     nutritionalInfo: ['kcal: 716', 'fat: 43g', 'saturates: 13g', 'carbs: 24g', 'sugars: 16g', 'fibre: 10g', 'protein: 53g', 'salt: 1.4g'],
     tags: ['lamb', 'slow-cooked'],
-    course: 'main'
+    course: 'Main'
   },
   {
     name: 'Ultimate sticky toffee pudding',
@@ -72,11 +72,11 @@ export default [
       'When ready to serve, heat oven to 180C/fan 160C/gas 4. Warm the puddings through, still covered, for 15-20 mins or until the sauce is bubbling. Serve them on their own, or with cream or custard.'],
     prepTime: '1 hr',
     cookingTime: '25 mins',
-    difficulty: 'easy',
+    difficulty: 'Easy',
     servingSize: 7,
     nutritionalInfo: ['kcal: 687', 'fat: 36g', 'saturates: 21g', 'carbs: 92g', 'sugars: 71g', 'fibre: 2g', 'protein: 6g', 'salt: 1.1g'],
     tags: ['pudding', 'comfort-food'],
-    course: 'dessert'
+    course: 'Dessert'
   },
   {
     name: 'Potato pancakes',
@@ -89,11 +89,11 @@ export default [
       'Flip the pancakes and cook until golden. Remove from the pan and keep warm while you cook the remaining pancakes in the same way, adding a tiny bit of oil and butter to the pan as and when needed. Serve the pancakes in stacks with creamy scrambled egg and crisp rashers of streaky bacon.'],
     prepTime: '15 mins',
     cookingTime: '30 mins',
-    difficulty: 'easy',
+    difficulty: 'Easy',
     servingSize: 12 - 15,
     nutritionalInfo: ['kcal: 75', 'fat: 3g', 'saturates: 1g', 'carbs: 9g', 'sugars: 0.7g', 'fibre: 0g', 'protein: 3g', 'salt: 0.2g'],
     tags: ['breakfast', 'pancakes'],
-    course: 'main'
+    course: 'Main'
   },
   {
     name: 'Spinach, sweet potato & lentil dhal',
@@ -114,7 +114,7 @@ export default [
     servingSize: 4,
     nutritionalInfo: ['kcal: 397', 'fat: 5g', 'saturates: 1g', 'carbs: 65g', 'sugars: 19g', 'fibre: 11g', 'protein: 18g', 'salt: 0.6g'],
     tags: ['indian'],
-    course: 'main'
+    course: 'Main'
   },
   {
     name: 'Steak burrito bowl',
@@ -130,7 +130,7 @@ export default [
     servingSize: 2,
     nutritionalInfo: ['kcal: 549', 'fat: 24g', 'saturates: 7g', 'carbs: 49g', 'sugars: 10g', 'fibre: 3g', 'protein: 32g', 'salt: 0.8g'],
     tags: ['mexican', 'steak', 'burrito'],
-    course: 'main'
+    course: 'Main'
   },
   {
     name: 'Artichoke & aubergine rice',
@@ -145,7 +145,7 @@ export default [
     servingSize: 6,
     nutritionalInfo: ['kcal: 431', 'fat: 16g', 'saturates: 2g', 'carbs: 58g', 'sugars: 9g', 'fibre: 11g', 'protein: 8g', 'salt: 1.5g'],
     tags: [],
-    course: 'main',
+    course: 'Main',
     allergens: ['Vegan', 'Vegetarian']
   },
   {
@@ -159,7 +159,7 @@ export default [
     difficulty: 'Easy',
     servingSize: 4,
     tags: ['Mediterranean', 'Pasta', 'Fish'],
-    course: 'main'
+    course: 'Main'
   },
   {
     name: 'Pasta With Vegan Cream Sauce',
@@ -172,7 +172,7 @@ export default [
     difficulty: 'Easy',
     servingSize: 4,
     tags: ['Pasta', 'American'],
-    course: 'main',
+    course: 'Main',
     allergens: ['Vegetarian', 'Vegan']
   },
   {
@@ -187,7 +187,7 @@ export default [
     servingSize: 8,
     nutritionalInfo: ['Serving: 110g', 'Calories: 167', 'Carbohydrates: 14.2g', 'Protein: 5.7g', 'Fat: 10g', 'Saturated Fat: 6g', 'Cholesterol: 31mg', 'Sodium: 281mg', 'Potassium: 364mg', 'Fiber: 2.1g', 'Sugar: 1.6g', 'Vitamin A: 300IU', ' Vitamin C: 23.1mg', 'Calcium: 160mg', 'Iron: 0.7mg'],
     tags: ['French', 'Gratin', 'Winter'],
-    course: 'main',
+    course: 'Main',
     allergens: ['Vegetarian', 'Vegan']
   },
   {
@@ -202,7 +202,7 @@ export default [
     servingSize: 4,
     nutritionalInfo: ['Serving: 226g', 'Calories: 264', 'Carbohydrates: 16g', 'Protein: 6.3g', 'Fat: 21g', 'Saturated Fat: 5.1g', 'Cholesterol: 19mg', 'Sodium: 514mg', 'Potassium: 560mg', 'Fiber: 2.8g', 'Sugar: 9.7g', 'Vitamin A: 233%', ' Vitamin C: 17%', 'Calcium: 0.3%', 'Iron:16%'],
     tags: ['Salad', 'Autumn'],
-    course: 'starter',
+    course: 'Starter',
     allergens: ['Vegetarian', 'Vegan']
   },
   {
