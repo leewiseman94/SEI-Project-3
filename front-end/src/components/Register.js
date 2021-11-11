@@ -1,6 +1,6 @@
-import axios from 'axios'
 import React, { useState } from 'react'
 import { useHistory } from 'react-router-dom'
+import axios from 'axios'
 
 
 const Register = () => {
@@ -43,60 +43,69 @@ const Register = () => {
     history.push('/')
   }
   return (
-    <form className='column is-half is-offset-one-quarter box' onSubmit={handleSubmit}>
-      <i class="far fa-window-close" onClick={handleClick}></i>
-    <div className='title'> Login or Sign Up</div>
-    <div className='subtitle'>Welcome to Platester</div>
-    <div className='field'>
-      <label className='label'>Full Name</label>
-      <div className='control'>
-      <input className = 'input'
+    <form className='column is-offset-one-third box mt-6' onSubmit={handleSubmit}>
+    <div>
+      <i className="far fa-window-close" onClick={handleClick} id='close'></i>
+      <div className='subtitle' id='signuptext'> Sign up</div>
+    </div>
+    <hr/>
+    <div className='title is-5 mb-5'>Welcome to Platester</div>
+      <div className='field mb-0'>
+      <p className='control'>
+      <input className = 'input py-5' id='signupinput1'
       placeholder = 'Full Name'
       name='fullName'
       value={formData.fullName}
       onChange={handleChange} />
+      </p>
       </div>
-      <label className='label'>Username</label>
-      <div className='control'>
-      <input className = 'input'
+      <div className='field mb-0'>
+      <p className='control'>
+      <input className = 'input py-5' id='signupinput'
       placeholder = 'Username'
       name='username'
       value={formData.username}
       onChange={handleChange} />
+      </p>
       </div>
       {errors.username && <p className='is-danger'>Username must be unique </p>}
-      <label className='label'>Email</label>
-      <div className='control'>
-      <input className = 'input'
+      <div className='field mb-0'>
+      <p className='control'>
+      <input className = 'input py-5' id='signupinput'
       placeholder = 'Email'
       name='email'
       value={formData.email}
       onChange={handleChange} />
+      </p>
       </div>
       {errors.email && <p className='is-danger'>Email must be unique</p>}
-      <label className='label'>Password</label>
-      <div className='control'>
-      <input className = 'input'
+      <div className='field mb-0'>
+      <p className='control'>
+      <input className = 'input py-5' id='signupinput'
       placeholder = 'Password'
       name='password'
       value={formData.password}
       onChange={handleChange}/>
+      </p>
       </div>
       {errors.password && <p className='is-danger'>{errors.password}</p>}
-      <label className='label'>Password Confirmation</label>
-      <div className='control'>
-      <input className = 'input'
+      <div className='field mb-4'>
+      <p className='control'>
+      <input className = 'input py-5' id='signupinput2'
       placeholder = 'Password Confirmation'
       name='passwordConfirmation'
       value={formData.passwordConfirmation}
       onChange={handleChange} />
+      </p>
       </div>
       {errors.passwordConfirmation && <p className='is-danger'>{errors.passwordConfirmation.message}</p>}
-      <button type='submit'>Sign Up </button>
-    </div>
+      <div className='field mb-4'>
+        <p className='control'>
+          <button type='submit' className='button is-danger' id='submit'>Sign Up </button>
+        </p>
+      </div>
     </form>
   )
-
 }
 
 export default Register

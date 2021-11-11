@@ -3,9 +3,12 @@ import React from 'react'
 const Home = () => {
 
   return (
-    <h1>home page</h1>
-
+    <>
+    <div className="homepage"></div>
+    <div className="homepage1"></div>
+    </>
   )
 }
 
 export default Home
+
