@@ -25,21 +25,21 @@ const Navbar = () => {
             </div>
             <div className="navbar-item has-dropdown is-hoverable">
               <button className="button">Account</button>
-              <div class="navbar-dropdown">
-                <a class="navbar-item" href="#account">
+              <div className="navbar-dropdown">
+                <a className="navbar-item" href="#account">
                   <strong>Sign up</strong>
                 </a>
-                <a class="navbar-item" href="#account">
+                <a className="navbar-item" href="#account">
                   Login
                 </a>
-                <hr class="navbar-divider" />
-                <a class="navbar-item" href="#account">
+                <hr className="navbar-divider" />
+                <a className="navbar-item" href="#account">
                   Host your home
                 </a>
-                <a class="navbar-item" href="#account">
+                <a className="navbar-item" href="#account">
                   Host an experience
                 </a>
-                <a class="navbar-item" href="#account">
+                <a className="navbar-item" href="#account">
                   Help
                 </a>
               </div>

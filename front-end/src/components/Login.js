@@ -24,30 +24,43 @@ const Login = () => {
       setError(true)
     }
   }
+  const handleClick = () => {
+    history.push('/')
+  }
+
   return (
-    <form className='column is-half is-offset-one-quarter box' onSubmit={handleSubmit}>
-    <i class="far fa-window-close"></i>
-    <div className='field'>
-      <label className='label'>Email</label>
-      <div className='control'>
-      <input className = 'input'
+    <form className='column is-offset-one-third box mt-6' onSubmit={handleSubmit}>
+    <div>
+      <i className="far fa-window-close" onClick={handleClick}></i>
+      <div className='subtitle' id='signuptext'> Login</div>
+    </div>
+    <hr/>
+    <div className='title is-5 mb-5'>Welcome to Platester</div>
+      <div className='field mb-0'>
+      <p className='control'>
+      <input className = 'input py-5' id='signupinput1'
       placeholder = 'Email'
       name='email'
       value={formData.email}
       onChange={handleChange} />
+      </p>
       </div>
       {error && <p className='is-danger'>Your username or password are incorrect</p>}
-      <label className='label'>Password</label>
-      <div className='control'>
-      <input className = 'input'
+      <div className='field mb-4'>
+      <p className='control'>
+      <input className = 'input py-5' id='signupinput2'
       placeholder = 'Password'
       name='password'
       value={formData.password}
       onChange={handleChange}/>
+      </p>
       </div>
       {error && <p className='is-danger'>Your username or password are incorrect</p>}
-      <button type='submit'>Log in</button>
-    </div>
+      <div className='field mb-4'>
+        <p className='control'>
+          <button type='submit' className='button is-danger' id='submit'>Log in</button>
+        </p>
+      </div>
     </form>
   )
 }
