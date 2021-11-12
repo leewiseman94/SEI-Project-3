@@ -1,13 +1,12 @@
 import { Link } from 'react-router-dom'
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
-// import bulmaCarousel from 'bulma-carousel'
 import bulmaCarousel from 'bulma-carousel/dist/js/bulma-carousel.min.js'
 
 
 const Home = () => {  
   const [courses, setCourses] = useState([])
-  const [recipes, setRecipes] = useState({})
+  const [recipes, setRecipes] = useState([])
   // const { id } = useParams()
   
   // console.log('ID', id)
@@ -20,7 +19,7 @@ const Home = () => {
         const getCourses = data.map(recipe => {
           return(recipe.course.toLowerCase()) 
         }) 
-        console.log(getCourses)
+        console.log(data)
         const newArray = []
         for(let i = 0; i<getCourses.length; i++){
           if (!newArray.includes(getCourses[i])) newArray.push(getCourses[i])
@@ -45,7 +44,7 @@ const Home = () => {
 
   
 
-  console.log('recipes', courses)
+  console.log('recipes', recipes)
   return (
     <>
       <section className="hero-carousel is-large">
@@ -65,7 +64,6 @@ const Home = () => {
           <div className="hero-body"></div>
           </div>
       </section>
-      <script src="~bulma-carousel/dist/js/bulma-carousel.min.js"></script>
 
       <h1>Courses</h1>
         <div className="columns">
