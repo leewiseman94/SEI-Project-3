@@ -1,7 +1,6 @@
 import { Link } from 'react-router-dom'
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
-// import bulmaCarousel from 'bulma-carousel'
 import bulmaCarousel from 'bulma-carousel/dist/js/bulma-carousel.min.js'
 
 
@@ -17,10 +16,17 @@ const Home = () => {
       try {
         const { data } = await axios.get(`/api/recipes`)
         setRecipes(data)
+<<<<<<< HEAD
         // const getCourses = data.map(recipe => {
         //   return(recipe.course.toLowerCase()) 
         // }) 
         // console.log(getCourses)
+=======
+        const getCourses = data.map(recipe => {
+          return(recipe.course.toLowerCase()) 
+        }) 
+        console.log(data)
+>>>>>>> development
         const newArray = []
         for(let i = 0; i<data.length; i++){
           let coursesOnly = false
@@ -56,7 +62,7 @@ const Home = () => {
 
   
 
-  console.log('recipes', courses)
+  console.log('recipes', recipes)
   return (
     <>
       <section className="hero-carousel is-large">
@@ -76,7 +82,6 @@ const Home = () => {
           <div className="hero-body"></div>
           </div>
       </section>
-      <script src="~bulma-carousel/dist/js/bulma-carousel.min.js"></script>
 
       
       
