@@ -23,7 +23,7 @@
   align-items: center;
   justify-content: flex-start;
   margin-top: 0px;
-  padding: 0px 20px 20px !important;
+  padding: 3px 20px 10px 20px !important;
 }
 
 .navbar-bottom.clicked {
@@ -207,6 +207,7 @@
   padding: 5px;
   margin: 0.25rem 0.25rem 0.25rem 0;
   border-radius: 50px;
+  color: white;
 }
 
 .search-form-button {
@@ -249,6 +250,20 @@
   background: white ;
 }
 
+.course-dropdown-menu {
+  left: 0;
+  right: auto;
+}
+
+.course-dropdown-content {
+  max-height: 200px;
+  overflow: auto;
+}
+
+.course-dropdown, .dropdown-trigger {
+  width: 100%;
+}
+
 .bottom-search-text {
   text-align: left;
 }
@@ -274,9 +289,11 @@
   align-items: space-between;
   background: white ;
   padding: 0;
+  border-radius: 30px;
 }
 
 .bottom-search-form-container {
+  margin-top: 10px;
   width: 100%;
   height: 100%;
 }
@@ -315,6 +332,18 @@
   border: none;
 }
 
+.bottom-search-form-buttons {
+  display: flex;
+  color: white;
+}
+
+.search-input-box {
+  width: 100%;
+  background: transparent;
+  border: 0 !important;
+  cursor: pointer;
+  outline: none;
+}
 
 
 @media screen and (max-width: 1050px) {
