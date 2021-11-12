@@ -5,7 +5,7 @@ import logoRed from '../images/platester_logo_red_withText.PNG'
 import smallLogoRed from '../images/platester_smalllogo_red_withText.PNG'
 import smallLogoWhite from '../images/platester_smalllogo_white_withText.PNG'
 import { Link } from 'react-router-dom'
-import 'animate.css';
+
 
 const Navbar = () => {
 
@@ -92,7 +92,7 @@ const Navbar = () => {
               </div>
             </div>
           </div>
-        </div>
+        
       </nav>
     </header>
     :
