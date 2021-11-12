@@ -10,6 +10,7 @@ import RecipeIndex from './components/RecipeIndex'
 import RecipeShow from './components/RecipeShow'
 import LoginorSignUp from './components/LoginorSignUp'
 
+
 function App() {
   const [recipes, setRecipes] = useState([])
   // const [hasError, setHasError] = useState(false)
@@ -26,7 +27,7 @@ function App() {
     }
     getData()
   }, [])
-  
+  console.log('recipes', recipes)
   return (
     // <h1>platester</h1>
     <BrowserRouter>
@@ -35,7 +36,7 @@ function App() {
         <Route exact path='/' component={Home}/>
         <Route exact path='/recipes' component={RecipeIndex}/>
         <Route exact path='/recipes/:id' component={RecipeShow}/>
-
+      
 
         <Route exact path='/account' component={LoginorSignUp}/>
         <Route exact path='/register' component={Register} />

@@ -11,6 +11,7 @@ const Navbar = () => {
   const [scrollState, setScrollState] = useState("big")
 
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     listener = document.addEventListener("scroll", e => {
       const scrolled = document.scrollingElement.scrollTop
       if (scrolled >= 10) {
@@ -41,18 +42,18 @@ const Navbar = () => {
             </a>
           </div>
           <div className="navbar-center">
-            <button className="search-button button"><div className="search-text">Start your search</div><div className="search-icon"><span class="icon has-background-transparent has-text-white"><i class="fas fa-search"></i></span></div></button> 
+            <button className="search-button button"><div className="search-text">Start your search</div><div className="search-icon"><span className="icon has-background-transparent has-text-white"><i className="fas fa-search"></i></span></div></button> 
           </div>
 
           <div className="navbar-end">
             <div className="navbar-links is-flex is-flex-direction-row mr-4">
               <button className="button nav-white nav-right" href="#">Become a host</button>
-              <button className="button nav-white nav-right" href="#"><span class="icon has-background-transparent has-text-black"><i class="fas fa-globe"></i></span></button>
+              <button className="button nav-white nav-right" href="#"><span className="icon has-background-transparent has-text-black"><i className="fas fa-globe"></i></span></button>
             </div>
             <div className="navbar-item has-dropdown is-hoverable">
               <button className="button account-button" aria-label="menu" aria-expanded="false">
-                <div className="menu-icon"><span class="icon has-background-transparent has-text-black"><i class="fas fa-bars"></i></span></div>
-                <div className="user-account-icon"><span class="icon has-background-transparent has-text-white"><i class="fas fa-user"></i></span></div>
+                <div className="menu-icon"><span className="icon has-background-transparent has-text-black"><i className="fas fa-bars"></i></span></div>
+                <div className="user-account-icon"><span className="icon has-background-transparent has-text-white"><i className="fas fa-user"></i></span></div>
                 </button>
               <div className="navbar-dropdown">
                 <a className="navbar-item" href="#account">
@@ -82,7 +83,7 @@ const Navbar = () => {
       <nav className="navbar is-fixed-top" role="navigation" aria-label="main navigation">
         <div className="navbar-top">
           <div className="navbar-brand">
-            <a className="navbar-item p-0" href="https://bulma.io">
+            <a className="navbar-item p-0" href="/">
               <img src={logoWhite} alt="platester" />
             </a>
           </div>
@@ -97,7 +98,7 @@ const Navbar = () => {
           <div className="navbar-end">
             <div className="navbar-links is-flex is-flex-direction-row mr-4">
               <button className="button nav-transparent nav-right" href="#">Become a host</button>
-              <button className="button nav-transparent nav-right" href="#"><span class="icon has-background-transparent has-text-white"><i class="fas fa-globe"></i></span></button>
+              <button className="button nav-transparent nav-right" href="#"><span className="icon has-background-transparent has-text-white"><i className="fas fa-globe"></i></span></button>
             </div>
             <div className="navbar-item has-dropdown account-dropdown">
               <button className="button account-button" aria-label="menu" aria-expanded="false" onClick={() => {
@@ -105,8 +106,8 @@ const Navbar = () => {
                 console.log(dropdown)
                 }
                 }>
-                <div className="menu-icon"><span class="icon has-background-transparent has-text-black"><i class="fas fa-bars"></i></span></div>
-                <div className="user-account-icon"><span class="icon has-background-transparent has-text-white"><i class="fas fa-user"></i></span></div>
+                <div className="menu-icon"><span className="icon has-background-transparent has-text-black"><i className="fas fa-bars"></i></span></div>
+                <div className="user-account-icon"><span className="icon has-background-transparent has-text-white"><i className="fas fa-user"></i></span></div>
                 </button>
               <div className="navbar-dropdown">
                 <a className="navbar-item" href="#account">
