@@ -10,11 +10,11 @@ import axios from 'axios'
 
 const Navbar = () => {
 
-  let listener = null
   const [scrollState, setScrollState] = useState("big")
   const [searching, setSearching] = useState(false)
   const [recipeData, setRecipeData] = useState([])
   const [courses, setCourses] = useState([])
+  const [cuisines, setCuisines] = useState([])
 
   useEffect(() => {
     const getRecipeData = async () => {
@@ -22,17 +22,22 @@ const Navbar = () => {
       setRecipeData(data)
       
       const coursesArray = []
+      const cuisinesArray = []
       for(let i = 0; i < data.length; i++) {
         if (coursesArray.length > 0) {
           const coursesLowerCase = coursesArray.map(course => course.toLowerCase())
           if (!coursesLowerCase.includes(data[i].course.toLowerCase())) coursesArray.push(data[i].course)
+          // const cuisinesLowerCase = cuisinesArray.map(cuisine => cuisine.toLowerCase())
+          // if (!cuisinesLowerCase.includes(data[i].cuisine.toLowerCase())) cuisinesArray.push(data[i].cuisine)
         } else {
           coursesArray.push(data[i].course)
+          // cuisinesArray.push(data[i].cuisine)
         }
       }
-      coursesArray.sort((a, b) => a - b)
+      coursesArray.sort()
+      cuisinesArray.sort()
       setCourses(coursesArray)
-
+      setCuisines(cuisinesArray)
     }
     getRecipeData()
   }, [])
@@ -67,6 +72,7 @@ const Navbar = () => {
   console.log(scrollState)
   console.log(recipeData)
   console.log(courses)
+  console.log(cuisines)
   return (
     scrollState === 'small' ? 
     <header>
@@ -143,7 +149,8 @@ const Navbar = () => {
         <div className="navbar-top">
           <div className="navbar-brand">
             <a className="navbar-item p-0" href="/">
-              <img src={logoWhite} alt="platester" />
+              <img className="logo-main" src={logoWhite} alt="platester" />
+              <img className="logo-small" src={smallLogoWhite} alt="platester" />
             </a>
           </div>
           <div className="navbar-center">
@@ -162,8 +169,8 @@ const Navbar = () => {
             <div className="dropdown account-dropdown">
               <div className="dropdown-trigger">
                 <button className="button account-button" aria-haspopup="true" aria-controls="dropdown-menu" onClick={() => {
-                const dropdown = document.querySelector('.account-dropdown').classList.toggle('is-active')
-                console.log(dropdown)
+                  const dropdown = document.querySelector('.account-dropdown')
+                  dropdown.classList.toggle('is-active')
                 }
                 }>
                     <div className="menu-icon"><span className="icon has-background-transparent has-text-black"><i className="fas fa-bars"></i></span></div>
@@ -242,7 +249,7 @@ const Navbar = () => {
                   <button className="button search-form-dropdown search-form-button" onClick={() => {
                     document.querySelector('.course-dropdown').classList.toggle('is-active')
                   }}>
-                    <h3><strong>Course</strong></h3><input type="text" className="search-input-box" id="course-input" name="course-name" placeholder="Select course"></input>
+                    <h3><strong>Course</strong></h3><input readOnly className="search-input-box" id="course-input" name="course-name" placeholder="Select course"></input>
                   </button>
                 </div>
                 <div className="dropdown-menu course-dropdown-menu" id="dropdown-menu" role="menu">
@@ -268,7 +275,6 @@ const Navbar = () => {
         </div>
       </nav>
     </header>
-    
   )
 }
 

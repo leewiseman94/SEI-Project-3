@@ -52,7 +52,7 @@ const Home = () => {
       <div className="hero-head"></div>
           <div className='carousel-container'>
             <div className='carousel'>
-            {recipes.map((recipe, index) => {
+            {recipes.length && recipes.map((recipe, index) => {
               return (
                 // <div  className={`item-${index+1}`}>
                   <div key={recipe._id} className='carousel-item has-background'>
