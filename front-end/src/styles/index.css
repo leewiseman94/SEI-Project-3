@@ -12,13 +12,13 @@ code {
     monospace;
 }
 
-#hero {
+/* #hero {
   margin-top: 160px;
   background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('https://images.immediate.co.uk/production/volatile/sites/30/2021/02/Harissa-lamb-8ce5e1f.jpg');
   background-position: center;
   background-size: cover;
   position: relative;
-}
+} */
 
 /* .columns {
   padding: 50px;
@@ -109,7 +109,8 @@ h5 {
 }
 
 .subtitle {
-  margin-left: 5px;
+  margin-bottom: 40px;
+  /* margin-left: 40px; */
   display: flex;
   font-weight: lighter;
   color: gray;
@@ -118,24 +119,57 @@ h5 {
   align-items: center;
 }
 
-.filter {
-  justify-content: flex-end;
-  
+#recipe-show {
+  padding-top: 180px;
 }
+#recipe-index {
+  padding-top: 180px;
+}
+#index-cards {
+  margin-top: -50px;
+}
+
 
 .container {
   margin-bottom: 20px;
 }
 
 
-.button.filter {
- width: 90px;
+#filter-button {
+ width: 100px;
  height: 40px;
  justify-content: center;
+ margin-right: 50px;
  
 }
 
-.button.filter:hover {
+#recipe-title {
+  margin-left: 50px;
+}
+#recipe-show-rating {
+  margin-left: 50px;
+}
+
+i.fas.fa-filter {
+  margin-left: -5px;
+}
+
+/* .card .card-image,
+.card .card-image .image img {
+  width: 280px;
+} */
+
+.filterbtn {
+  margin-left: 5px;
+}
+
+#filterbtn {
+  width: 100px;
+  height: 40px;
+  margin-right: 50px;
+}
+
+#filter-button:hover {
   border-color: black;
 }
 
@@ -163,4 +197,21 @@ h5 {
 #signuptext {
   width: 100%;
   text-align: center;
+  display: block;
+  margin-top: -10px;
+  margin-left: 0;
+}
+
+#form {
+  margin-top: 180px;
+}
+
+.hero-carousel {
+  margin-top: 170px;
+}
+.is-background {
+  height: 400px
+}
+.hero-body {
+  padding: 0px
 }

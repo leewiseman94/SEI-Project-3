@@ -12,7 +12,7 @@ const RecipeCard = ({ _id, name, image, averageRating }) => {
       <Link to={`/recipes/${_id}`}>
         <div className="card is-shadowless">                
           <div className="card-image">
-            <figure className="image image-is-5by4">
+            <figure className="image is-1by1">
             
               <img className="image" id="image-index" src={image} alt={name}></img>
             </figure>
