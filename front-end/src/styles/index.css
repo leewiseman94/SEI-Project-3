@@ -336,3 +336,15 @@ i.fas.fa-filter {
 .hero-body {
   padding: 0px
 }
+
+@media screen and (max-width: 790px){
+  #form {
+    width: 70%;
+    margin-left: 14%;
+  }
+
+}
+
+.addRecipe {
+  margin-top: 200px;
+}

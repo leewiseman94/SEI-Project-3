@@ -41,6 +41,7 @@ const Register = () => {
   const handleClick = () => {
     history.push('/')
   }
+
   return (
     <form className='column is-offset-one-third box ' onSubmit={handleSubmit} id='form'>
     <div>
@@ -52,13 +53,15 @@ const Register = () => {
     <div className='title is-6 mb-5'>Welcome to Platester</div>
       <div className='field mb-0'>
       <p className='control'>
-      <input className = 'input py-5' id='signupinput1'
+      <input id='signupinput1'
+      className={`input ${errors.username ? 'is-danger py-5' : 'py-5'}`} 
       placeholder = 'Full Name'
       name='fullName'
       value={formData.fullName}
       onChange={handleChange} />
       </p>
       </div>
+      {errors.username && <p className='is-danger subtitle mt-1 mb-1 ml-0'></p>}
       <div className='field mb-0'>
       <p className='control'>
       <input id='signupinput'
@@ -91,7 +94,7 @@ const Register = () => {
       onChange={handleChange}/>
       </p>
       </div>
-      {errors.password && <p className='is-danger subtitle mt-1 mb-1 ml-0'>{errors.password}</p>}
+      {errors.password && <p className='is-danger subtitle mt-1 mb-1 ml-0'>{errors.password.message}</p>}
       <div className='field mb-0'>
       <p className='control'>
       <input id='signupinput2'
