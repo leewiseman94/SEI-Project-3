@@ -5,18 +5,17 @@ import axios from 'axios'
 // import bulmaCarousel from 'bulma-carousel'
 
 
-const Home = () => {
-  
-  
+const Home = () => {  
   const [courses, setCourses] = useState([])
-  const [recipes, setRecipes] = useState([])
+  const [recipe, setRecipe] = useState({})
   // const { id } = useParams()
+  
   // console.log('ID', id)
   useEffect(() => {
     const getData = async () => {
       try {
         const { data } = await axios.get(`/api/recipes/`)
-        setRecipes(data)
+        setRecipe(data)
         const getCourses = data.map(recipe => {
           return(recipe.course.toLowerCase()) 
         }) 
@@ -38,8 +37,8 @@ const Home = () => {
 
 }, [])
 
- 
-  console.log('recipes', recipes)
+// console.log('RECIPE ON STATE', recipe)
+  
   console.log('courses', courses)
   return (
     <>
@@ -55,61 +54,92 @@ const Home = () => {
       </section>
 
       <h1>Courses</h1>
-            <div className="columns">
-              <div class="column">
-                <Link to={`/recipes/`}>
-                    <div className="card is-shadowless">
-                      <div className="card-header">
-                        { courses.map(course => {
-                          return(
-                            <div key={course}>{course}</div>
-                          )
-                        })}
-                        {/* <div className="card-header-title">{recipe.name}</div>
+        <div className="columns">
+          <div class="column">
+            <Link to={`/recipes/`}>
+                <div className="card is-shadowless">
+                  <div className="card">
+                    { courses.map(course => {
+                      return(
+                        <div key={course}>{course}</div>
+                      )
+                    })}
+                    { recipe.length && recipe.map(recipe => {
+                    return(
+                    <div key={recipe._id} className="card">
+                      <div className="media-content">
+                        <p className="title">{recipe.name}</p>
                       </div>
-                        <figure className="image image-is-1by1">
+                      <div className="card-image">
+                        <figure className="image is-4by3">
                           <img src={recipe.image} alt={recipe.name}></img>
                         </figure>
-                    </div>
-                  </Link>
-              </div>
-              <div class="column">
-                <Link to={`/recipes/`}>
-                    <div className="card">
-                      <div className="card-header">
-                        <div className="card-header-title">{recipe.name}</div>
                       </div>
-                        <figure className="image image-is-1by1">
+                    </div>
+                      )
+                    })}                  
+                  </div>
+                </div>
+              </Link>
+          </div>
+          <div class="column">
+            <Link to={`/recipes/`}>
+                <div className="card is-shadowless">
+                  <div className="card">
+                    { courses.map(course => {
+                      return(
+                        <div key={course}>{course}</div>
+                      )
+                    })}
+                    { recipe.length && recipe.map(recipe => {
+                    return(
+                    <div key={recipe._id} className="card">
+                      <div className="media-content">
+                        <p className="title">{recipe.name}</p>
+                      </div>
+                      <div className="card-image">
+                        <figure className="image is-4by3">
                           <img src={recipe.image} alt={recipe.name}></img>
                         </figure>
-                    </div>
-                  </Link>
-              </div>
-              <div class="column">
-                <Link to={`/recipes/`}>
-                    <div className="card">
-                      <div className="card-header">
-                        <div className="card-header-title">{recipe.name}</div>
                       </div>
-                        <figure className="image image-is-1by1">
+                    </div>
+                      )
+                    })}                  
+                  </div>
+                </div>
+              </Link>
+          </div>
+          <div class="column">
+            <Link to={`/recipes/`}>
+                <div className="card is-shadowless">
+                  <div className="card">
+                    { courses.map(course => {
+                      return(
+                        <div key={course}>{course}</div>
+                      )
+                    })}
+                    { recipe.length && recipe.map(recipe => {
+                    return(
+                    <div key={recipe._id} className="card">
+                      <div className="media-content">
+                        <p className="title">{recipe.name}</p>
+                      </div>
+                      <div className="card-image">
+                        <figure className="image is-4by3">
                           <img src={recipe.image} alt={recipe.name}></img>
                         </figure>
-                    </div>
-                  </Link>
-              </div>
-              <div class="column">
-                <Link to={`/recipes/`}>
-                    <div className="card">
-                      <div className="card-header">
-                        <div className="card-header-title">{recipe.name}</div> */}
                       </div>
-                        {/* <figure className="image image-is-1by1">
-                          <img src={recipe.image} alt={recipe.name}></img>
-                        </figure> */}
                     </div>
-                  </Link>
-              </div>                            
-            </div>
+                      )
+                    })}                  
+                  </div>
+                </div>
+              </Link>
+          </div>
+          
+          
+          
+        </div>
 
             
           
