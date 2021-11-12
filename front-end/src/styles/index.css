@@ -109,7 +109,8 @@ h5 {
 }
 
 .subtitle {
-  margin-left: 55px;
+  margin-bottom: 40px;
+  /* margin-left: 40px; */
   display: flex;
   font-weight: lighter;
   color: gray;
