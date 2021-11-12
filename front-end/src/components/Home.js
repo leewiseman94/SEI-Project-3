@@ -16,17 +16,10 @@ const Home = () => {
       try {
         const { data } = await axios.get(`/api/recipes`)
         setRecipes(data)
-<<<<<<< HEAD
         // const getCourses = data.map(recipe => {
         //   return(recipe.course.toLowerCase()) 
         // }) 
         // console.log(getCourses)
-=======
-        const getCourses = data.map(recipe => {
-          return(recipe.course.toLowerCase()) 
-        }) 
-        console.log(data)
->>>>>>> development
         const newArray = []
         for(let i = 0; i<data.length; i++){
           let coursesOnly = false
