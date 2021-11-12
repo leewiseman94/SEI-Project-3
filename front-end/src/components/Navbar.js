@@ -18,6 +18,9 @@ const Navbar = () => {
       const scrolled = document.scrollingElement.scrollTop
       if (scrolled > 0) {
         setSearching(false)
+        if (searching) {
+          document.querySelector('.navbar-bottom').classList.remove('clicked')
+        }
         // console.log(scrolled)
         if (scrollState !== "small") {
           setScrollState("small")
@@ -169,7 +172,10 @@ const Navbar = () => {
         <div className="navbar-bottom p-6">
           <div className="bottom-search">
             {!searching ? 
-            <button className="bottom-search-button button" onClick={() => {setSearching(true)}
+            <button className="bottom-search-button button" onClick={() => {
+              setSearching(true)
+              document.querySelector('.navbar-bottom').classList.add('clicked')
+            }
           }><div className="bottom-search-text">Start your search</div><div className="bottom-search-icon"><span class="icon has-background-transparent has-text-white"><i class="fas fa-search"></i></span></div></button>
             :
             <div className="button bottom-search-form">
