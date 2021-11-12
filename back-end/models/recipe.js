@@ -20,7 +20,7 @@ const recipeSchema = new mongoose.Schema({
   cookingTime: { type: String, required: true },
   difficulty: { type: String, required: true },
   servingSize: { type: Number, required: true },
-  nutritionalInfo: { type: Object, required: false },
+  nutritionalInfo: [{ type: String, required: false }],
   tags: [{ type: String, required: false }],
   course: { type: String, required: false },
   allergens: [{ type: String, required: false }], 

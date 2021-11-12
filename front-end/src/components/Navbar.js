@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react'
 import logoWhite from '../images/platester_logo_white_withText.PNG'
 import logoRed from '../images/platester_logo_red_withText.PNG'
 import smallLogoRed from '../images/platester_smalllogo_red_withText.PNG'
-import smallLogoWhite from '../images/platester_smalllogo_white_withText.PNG'
+// import smallLogoWhite from '../images/platester_smalllogo_white_withText.PNG'
 import { Link } from 'react-router-dom'
 // import 'animate.css';
 import axios from 'axios'
