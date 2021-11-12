@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom'
 const Navbar = () => {
 
   let listener = null
-  const [scrollState, setScrollState] = useState("big")
+  const [scrollState, setScrollState] = useState('big')
 
   useEffect(() => {
     listener = document.addEventListener("scroll", e => {
@@ -41,18 +41,18 @@ const Navbar = () => {
             </a>
           </div>
           <div className="navbar-center">
-            <button className="search-button button"><div className="search-text">Start your search</div><div className="search-icon"><span class="icon has-background-transparent has-text-white"><i class="fas fa-search"></i></span></div></button> 
+            <button className="search-button button"><div className="search-text">Start your search</div><div className="search-icon"><span className="icon has-background-transparent has-text-white"><i className="fas fa-search"></i></span></div></button> 
           </div>
 
           <div className="navbar-end">
             <div className="navbar-links is-flex is-flex-direction-row mr-4">
               <button className="button nav-white nav-right" href="#">Become a host</button>
-              <button className="button nav-white nav-right" href="#"><span class="icon has-background-transparent has-text-black"><i class="fas fa-globe"></i></span></button>
+              <button className="button nav-white nav-right" href="#"><span className="icon has-background-transparent has-text-black"><i className="fas fa-globe"></i></span></button>
             </div>
             <div className="navbar-item has-dropdown is-hoverable">
               <button className="button account-button" aria-label="menu" aria-expanded="false">
-                <div className="menu-icon"><span class="icon has-background-transparent has-text-black"><i class="fas fa-bars"></i></span></div>
-                <div className="user-account-icon"><span class="icon has-background-transparent has-text-white"><i class="fas fa-user"></i></span></div>
+                <div className="menu-icon"><span className="icon has-background-transparent has-text-black"><i className="fas fa-bars"></i></span></div>
+                <div className="user-account-icon"><span className="icon has-background-transparent has-text-white"><i className="fas fa-user"></i></span></div>
                 </button>
               <div className="navbar-dropdown">
                 <a className="navbar-item" href="#account">
@@ -97,7 +97,7 @@ const Navbar = () => {
           <div className="navbar-end">
             <div className="navbar-links is-flex is-flex-direction-row mr-4">
               <button className="button nav-transparent nav-right" href="#">Become a host</button>
-              <button className="button nav-transparent nav-right" href="#"><span class="icon has-background-transparent has-text-white"><i class="fas fa-globe"></i></span></button>
+              <button className="button nav-transparent nav-right" href="#"><span className="icon has-background-transparent has-text-white"><i className="fas fa-globe"></i></span></button>
             </div>
             <div className="navbar-item has-dropdown account-dropdown">
               <button className="button account-button" aria-label="menu" aria-expanded="false" onClick={() => {
@@ -105,8 +105,8 @@ const Navbar = () => {
                 console.log(dropdown)
                 }
                 }>
-                <div className="menu-icon"><span class="icon has-background-transparent has-text-black"><i class="fas fa-bars"></i></span></div>
-                <div className="user-account-icon"><span class="icon has-background-transparent has-text-white"><i class="fas fa-user"></i></span></div>
+                <div className="menu-icon"><span className="icon has-background-transparent has-text-black"><i className="fas fa-bars"></i></span></div>
+                <div className="user-account-icon"><span className="icon has-background-transparent has-text-white"><i className="fas fa-user"></i></span></div>
                 </button>
               <div className="navbar-dropdown">
                 <a className="navbar-item" href="#account">
@@ -136,7 +136,7 @@ const Navbar = () => {
               <button className="button nav-right search-form-button"><h3><strong>Course</strong></h3><h3>Select course</h3></button>
               <button className="button nav-right search-form-button"><h3><strong>Cuisine</strong></h3><h3>Select cuisine</h3></button>
             </div>
-            <div className="form-search-icon"><span class="icon has-background-transparent has-text-white"><i class="fas fa-search"></i></span></div>
+            <div className="form-search-icon"><span className="icon has-background-transparent has-text-white"><i className="fas fa-search"></i></span></div>
           </div>
         </div>
       </nav>

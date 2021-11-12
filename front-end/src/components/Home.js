@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 // import { useParams } from 'react-router-dom'
 // import bulmaCarousel from 'bulma-carousel'
+import bulmaCarousel from 'bulma-carousel/dist/js/bulma-carousel.min.js'
 
 
 const Home = () => {
@@ -12,21 +13,27 @@ const Home = () => {
   const [recipes, setRecipes] = useState([])
   // const { id } = useParams()
   // console.log('ID', id)
+
   useEffect(() => {
     const getData = async () => {
       try {
-        const { data } = await axios.get(`/api/recipes/`)
+        const { data } = await axios.get(`/api/recipes`)
         setRecipes(data)
         const getCourses = data.map(recipe => {
           return(recipe.course.toLowerCase()) 
         }) 
+        console.log(getCourses)
         const newArray = []
         for(let i = 0; i<getCourses.length; i++){
           if (!newArray.includes(getCourses[i])) newArray.push(getCourses[i])
         }
-
         setCourses(newArray)
-        
+        bulmaCarousel.attach('.carousel', {
+          slidesToScroll: 1, 
+          slidesToShow: 3,
+          autoplay: true,
+          autoplaySpeed: 2000,
+        })
       } catch (err) {
         // setHasError(true)
         console.log(err)
@@ -38,25 +45,33 @@ const Home = () => {
 
 }, [])
 
+  
 
-  console.log('recipes', recipes)
-  console.log('courses', courses)
+  console.log('recipes', courses)
   return (
     <>
-      <section className="hero is-medium" id="hero">
-          <h1>PLATESTER</h1>
-          <div className="hero-body">
-            {/* <div className="box"> */}
-              {/* <figure className="image is-fullwidth">
-                <img className = "placeholder" src="https://images.immediate.co.uk/production/volatile/sites/30/2021/02/Harissa-lamb-8ce5e1f.jpg" alt="placeholder"></img>
-              </figure> */}
-            {/* </div>             */}
+      <section className="hero-carousel is-large">
+      <div className="hero-head"></div>
+          <div className='carousel-container'>
+            <div className='carousel'>
+            {recipes.map((recipe, index) => {
+              return (
+                // <div  className={`item-${index+1}`}>
+                  <div key={recipe._id} className='carousel-item has-background'>
+                  <img className='is-background' src={recipe.image} alt={recipe.name}/>
+                  </div>
+                // </div>
+              )
+            })}
+          </div>
+          <div className="hero-body"></div>
           </div>
       </section>
+      <script src="~bulma-carousel/dist/js/bulma-carousel.min.js"></script>
 
       <h1>Courses</h1>
             <div className="columns">
-              <div class="column">
+              <div className="column">
                 <Link to={`/recipes/`}>
                     <div className="card is-shadowless">
                       <div className="card-header">
@@ -110,7 +125,6 @@ const Home = () => {
                   </Link>
               </div>                            
             </div>
-
     </>
 
   )
