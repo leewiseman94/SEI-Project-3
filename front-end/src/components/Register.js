@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { useHistory } from 'react-router-dom'
 import axios from 'axios'
-
+import { Link } from 'react-router-dom'
 
 const Register = () => {
   const history = useHistory()
@@ -46,6 +46,7 @@ const Register = () => {
     <div>
       <i className="far fa-window-close" onClick={handleClick} id='close'></i>
       <div className='subtitle is-4 ' id='signuptext'> Sign up</div>
+      <Link to='/account'><i className="fas fa-long-arrow-alt-left"></i></Link>
     </div>
     <hr className='mt-4 mb-5'/>
     <div className='title is-6 mb-5'>Welcome to Platester</div>
@@ -68,7 +69,7 @@ const Register = () => {
       onChange={handleChange} />
       </p>
       </div>
-      {errors.username && <p className='is-danger subtitle mt-1 mb-1'>username must be unique </p>}
+      {errors.username && <p className='is-danger subtitle mt-1 mb-1 ml-0'>username must be unique </p>}
       <div className='field mb-0'>
       <p className='control'>
       <input  id='signupinput'
@@ -79,7 +80,7 @@ const Register = () => {
       onChange={handleChange} />
       </p>
       </div>
-      {errors.email && <p className='is-danger subtitle mt-1 mb-1'>email must be unique</p>}
+      {errors.email && <p className='is-danger subtitle mt-1 mb-1 ml-0'>email must be unique</p>}
       <div className='field mb-0'>
       <p className='control'>
       <input id='signupinput'
@@ -90,7 +91,7 @@ const Register = () => {
       onChange={handleChange}/>
       </p>
       </div>
-      {errors.password && <p className='is-danger subtitle mt-1 mb-1'>{errors.password}</p>}
+      {errors.password && <p className='is-danger subtitle mt-1 mb-1 ml-0'>{errors.password}</p>}
       <div className='field mb-0'>
       <p className='control'>
       <input id='signupinput2'
@@ -101,7 +102,7 @@ const Register = () => {
       onChange={handleChange} />
       </p>
       </div>
-      {errors.passwordConfirmation && <p className='is-danger subtitle'>{errors.passwordConfirmation.message}</p>}
+      {errors.passwordConfirmation && <p className='is-danger subtitle subtitle mt-1 mb-1 ml-0'>{errors.passwordConfirmation.message}</p>}
       <div className='field mb-4 mt-4'>
         <p className='control'>
           <button type='submit' className='button is-danger' id='submit'>Sign Up </button>

@@ -1,6 +1,7 @@
 import axios from 'axios'
 import React, { useState } from 'react'
 import { useHistory } from 'react-router'
+import { Link } from 'react-router-dom'
 
 const Login = () => {
   const history = useHistory()
@@ -33,6 +34,7 @@ const Login = () => {
     <div>
       <i className="far fa-window-close" onClick={handleClick}></i>
       <div className='subtitle is-4' id='signuptext'> Login</div>
+      <Link to='/account'><i className="fas fa-long-arrow-alt-left"></i></Link>
     </div>
     <hr className='mt-4 mb-5'/>
     <div className='title is-6 mb-5'>Welcome to Platester</div>
@@ -46,7 +48,7 @@ const Login = () => {
       onChange={handleChange} />
       </p>
       </div>
-      {error && <p className='is-danger subtitle mt-1 mb-1'>Your username or password are incorrect</p>}
+      {error && <p className='is-danger subtitle mt-1 mb-1 ml-0'>Your username or password are incorrect</p>}
       <div className='field mb-0'>
       <p className='control'>
       <input  id='signupinput2'
@@ -57,7 +59,7 @@ const Login = () => {
       onChange={handleChange}/>
       </p>
       </div>
-      {error && <p className='is-danger subtitle mt-1 mb-1'>Your username or password are incorrect</p>}
+      {error && <p className='is-danger subtitle mt-1 mb-1 ml-0'>Your username or password are incorrect</p>}
       <div className='field mb-4 mt-4'>
         <p className='control'>
           <button type='submit' className='button is-danger' id='submit'>Log in</button>

@@ -6,6 +6,7 @@
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
+    "animate.css": "^4.1.1",
     "axios": "^0.24.0",
     "bulma": "^0.9.3",
     "bulma-carousel": "^4.0.24",
@@ -39,5 +40,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@types/rx": "^4.1.2"
   }
 }

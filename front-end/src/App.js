@@ -9,6 +9,7 @@ import Register from './components/Register'
 import RecipeIndex from './components/RecipeIndex'
 import RecipeShow from './components/RecipeShow'
 import LoginorSignUp from './components/LoginorSignUp'
+import AddRecipe from './components/AddRecipe';
 
 
 function App() {
@@ -41,6 +42,7 @@ function App() {
         <Route exact path='/account' component={LoginorSignUp}/>
         <Route exact path='/register' component={Register} />
         <Route exact path='/login' component={Login} />
+        <Route exact path='/add' component={AddRecipe}/>
       </Switch>
     
     </BrowserRouter>

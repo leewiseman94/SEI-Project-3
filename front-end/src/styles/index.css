@@ -273,8 +273,19 @@ i.fas.fa-filter {
   text-align: center;
   display: block;
   margin-top: -10px;
+  margin-left: 0;
 }
 
 #form {
   margin-top: 180px;
+}
+
+.hero-carousel {
+  margin-top: 170px;
+}
+.is-background {
+  height: 400px
+}
+.hero-body {
+  padding: 0px
 }
