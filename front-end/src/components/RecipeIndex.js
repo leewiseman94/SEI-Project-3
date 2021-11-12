@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import RecipeCard from './RecipeCard'
+import { Link } from 'react-router-dom'
 
 
 const RecipeIndex = () => {
@@ -21,9 +22,11 @@ const RecipeIndex = () => {
       <section className="section" id="recipe-index">
         <div className="container">
           <div className="subtitle">
-            Starter
-            Main
-            Dessert
+            <div className="index-links">
+            <Link to="/recipes/starters" className="has-text-grey">Starter</Link>&nbsp;
+            <Link to="/recipes/mains" className="has-text-grey">Main</Link>&nbsp;
+            <Link to="/recipes/desserts" className="has-text-grey">Dessert</Link>
+            </div>
 
             <div className="dropdown dropdown-filter">
               <div className="dropdown-trigger">
@@ -40,19 +43,19 @@ const RecipeIndex = () => {
               </div>
               <div className="dropdown-menu" id="dropdown-menu" role="menu">
                 <div className="dropdown-content">
-                  <a href="/" className="dropdown-item">
+                  <a href="/recipes/dairy-free" className="dropdown-item">
                     Dairy-Free
                   </a>
-                  <a href="/" className="dropdown-item">
+                  <a href="/recipes/gluten-free" className="dropdown-item">
                     Gluten Free
                   </a>
-                  <a href="/" className="dropdown-item">
+                  <a href="/recipes/vegan" className="dropdown-item">
                     Vegan
                   </a>
-                  <a href="/" className="dropdown-item">
+                  <a href="/recipes/vegetarian" className="dropdown-item">
                     Vegetarian
                   </a>                 
-                  <a href="/" className="dropdown-item">
+                  <a href="/recipes/rating" className="dropdown-item">
                     Rating
                   </a>                 
                 </div>

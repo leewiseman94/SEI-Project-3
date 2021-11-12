@@ -7,7 +7,7 @@ import bulmaCarousel from 'bulma-carousel/dist/js/bulma-carousel.min.js'
 
 const Home = () => {  
   const [courses, setCourses] = useState([])
-  const [recipes, setRecipes] = useState({})
+  const [recipes, setRecipes] = useState([])
   // const { id } = useParams()
   
   // console.log('ID', id)
