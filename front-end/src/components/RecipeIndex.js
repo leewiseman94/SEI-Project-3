@@ -14,7 +14,7 @@ const RecipeIndex = () => {
     getData()
   }, [])
   // console.log('recipes on state ->', recipes)
-  
+
 
   return (
     <>
@@ -25,56 +25,55 @@ const RecipeIndex = () => {
             Main
             Dessert
 
-            <div className="dropdown is-active">
+            <div className="dropdown dropdown-filter">
               <div className="dropdown-trigger">
-                <button className="button" id="filterbtn" aria-haspopup="true">
-                <span class="icon is-small">
-                    <i class="fas fa-filter fa-sm"> </i>
+                <button className="button filter" id="filterbtn" aria-haspopup="true" aria-controls="dropdown-menu" aria-pressed="false" onClick={() => {
+                const dropdown = document.querySelector('.dropdown-filter').classList.toggle('is-active')
+                console.log(dropdown)
+              }
+            }>
+                  <span className="icon is-small">
+                    <i className="fas fa-filter fa-sm" aria-hidden="true"> </i>
                     <span className="filterbtn">Filter</span>
                   </span>
                 </button>
               </div>
-              <div className="dropdown-menu" id="dropdown-menu2" role="menu">
+              <div className="dropdown-menu" id="dropdown-menu" role="menu">
                 <div className="dropdown-content">
-                  <div className="dropdown-item">
                   <a href="/" className="dropdown-item">
-                    American
-                    </a>
-                  </div>
-                
-                  <a href="/" className="dropdown-item">
-                    British
+                    Dairy-Free
                   </a>
+                  <a href="/" className="dropdown-item">
+                    Gluten Free
+                  </a>
+                  <a href="/" className="dropdown-item">
+                    Vegan
+                  </a>
+                  <a href="/" className="dropdown-item">
+                    Vegetarian
+                  </a>                 
+                  <a href="/" className="dropdown-item">
+                    Rating
+                  </a>                 
                 </div>
               </div>
+              
             </div>
           </div>
-        
+        </div>
 
-        {/* <div class="dropdown is-active">
-              <div class="dropdown-trigger">
-                <button class="button" id="filter-button" aria-haspopup="true" aria-controls="dropdown-menu3">
-                  <span class="icon is-small">
-                    <i class="fas fa-filter fa-sm"> </i>
-                    <span className="filterbtn">Filter</span>
-                  </span>
-                </button>
-              </div> */}
 
-      
-    </div>
-       
-  <div className="container" id="index-cards">
-    <div className="columns is-multiline">
-      {recipes.map(recipe => {
-        return (
-          <RecipeCard key={recipe._id} {...recipe} />
-        )
-      })}
-    </div>
-  </div>
+      <div className="container" id="index-cards">
+        <div className="columns is-multiline">
+          {recipes.map(recipe => {
+            return (
+              <RecipeCard key={recipe._id} {...recipe} />
+            )
+          })}
+        </div>
+      </div>
 
-      </section >
+    </section >
     </>
   )
 }

@@ -5,7 +5,7 @@ import logoRed from '../images/platester_logo_red_withText.PNG'
 import smallLogoRed from '../images/platester_smalllogo_red_withText.PNG'
 import smallLogoWhite from '../images/platester_smalllogo_white_withText.PNG'
 import { Link } from 'react-router-dom'
-import 'animate.css';
+// import 'animate.css';
 import axios from 'axios'
 
 const Navbar = () => {
@@ -142,10 +142,9 @@ const Navbar = () => {
       <nav className="navbar is-fixed-top" role="navigation" aria-label="main navigation">
         <div className="navbar-top">
           <div className="navbar-brand">
-            <Link className="navbar-item p-0" to="/">
-              <img className="logo-main" src={logoWhite} alt="platester" />
-              <img className="logo-small" src={smallLogoWhite} alt="platester" />
-            </Link>
+            <a className="navbar-item p-0" href="/">
+              <img src={logoWhite} alt="platester" />
+            </a>
           </div>
           <div className="navbar-center">
             <div className="navbar-links is-flex is-flex-direction-row">
@@ -269,8 +268,6 @@ const Navbar = () => {
         </div>
       </nav>
     </header>
-    
-    
     
   )
 }

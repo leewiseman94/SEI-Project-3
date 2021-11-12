@@ -177,7 +177,7 @@ export default [
   },
   {
     name: 'Gratin Dauphinois',
-    image: 'https://assets.afcdn.com/recipe/20201217/116563_w1200h722c1cx1116cy671cxb2232cyb1342.webp',
+    image: 'https://www.cuisinedaubery.com/wp-content/uploads/2020/03/gratin-dauphinois_ALTERN04.jpg',
     description: 'The ultimate potato bake, created by the French!!! Potato + cream + cheese with a hint of garlic and thyme = pure heaven This is THE perfect make ahead potato dish, the most luxurious of all potato casseroles, the better version of Scalloped Potatoes!',
     ingredients: ['1 1/2 cups cream', '2 garlic cloves , minced', '30g / 2 tbsp unsalted butter , melted', '1.25 kg / 2.5 lb starchy potatoes', '1 tsp salt', '1/4 tsp pepper', '2 1/2 cups gruyere cheese (or mozzarella) , freshly grated ', '2 tsp thyme leaves'],
     method: ['Cream Mixture: Place butter, cream and garlic in a jug. Mix until combined.', 'Preheat oven to 180°C/350°F.', 'Slice potatoes: Peel the potatoes and slice them 1/8"/3 mm thick. Or use a slicer!', 'Layer 1: Spread 1/3 of the potatoes in a baking dish (Note 3), then pour over 1/3 of the Cream Mixture, scatter with 1/3 of the salt, pepper and thyme. Sprinkle with 3/4 cups cheese.', 'Layers 2 & 3: Repeat for the 2nd and third layer, but do not finish with cheese on the top layer (will add later).', 'Cover & bake: Cover with lid or foil, and bake for 1 hr 15 min or until the potatoes in the middle are soft (use knife to test).', 'Top with cheese, bake again: Remove foil, top with cheese. Bake for a further 10 to 15 minutes until golden and bubbly. Stand 5 minutes before serving.'],
@@ -192,7 +192,7 @@ export default [
   },
   {
     name: 'Roast Pumpkin, Spinach and Feta Salad',
-    image: 'https://www.cookitrealgood.com/wp-content/uploads/2019/01/psalad5.jpg',
+    image: 'https://www.weightwatchers.com.au/images/3081/dynamic/foodandrecipes/2014/12/W80513_COOK%20FOR%20ONE_RoastedPumpkinLentilSpinachRicottaSalad0343%20HRC_XL.jpg',
     description: 'Try this Roast Pumpkin, Spinach and Feta Salad for your next Sunday lunch! Drizzled with a Honey Balsamic Dressing, this is a magical combination of ingredients. I usually serve this at room temperature but it is also great warm.',
     ingredients: ['600 g / 1.2 lb pumpkin (after peeling), cut into 3cm / 1.25', '1 1/2 tbsp olive oil', 'Salt and pepper', '2.5 tbsp extra virgin olive oil', '2 tbsp balsamic vinegar', '1 tbsp honey', 'Salt and pepper', '1/4 cup pine nuts', '150 g baby spinach leaves', '60 g feta'],
     method: ['Preheat oven to 220C/430F (standard) or 200C/390F (fan/convection).', 'Toss pumpkin with olive oil, salt and pepper. Spread on baking tray, bake for 20 minutes. Remove from oven, flip, then bake for a further 7 - 10 minutes until golden but not mushy. Loosen pumpkin with egg flip (it can adhere as it cools), then if serving salad at room temperature, leave to cool.', 'Shake Dressing in a jar. Taste and adjust to taste. I like it a bit sharp because it balances out the flavours in this salad.', 'Toast pine nuts in a dry skillet over medium heat until light golden and it smells nutty. Remove pine nuts from skillet as soon as it is ready.', 'Place Spinach in a bowl. Drizzle with a bit of dressing then toss.', 'Add pumpkin, just a bit of feta and pine nuts, then GENTLY BRIEFLY toss just to disperse the feta. (If you toss vigorously, the feta can make it look messy).', 'Transfer to serving plate. Sprinkle over remaining feta and pine nuts. Just before serving, drizzle with remaining dressing. Serve!'],
