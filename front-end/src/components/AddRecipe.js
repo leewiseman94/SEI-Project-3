@@ -108,9 +108,8 @@ const AddRecipe = () => {
     </div>
     <div className="field-body">
       <div className="field is-expanded mr-6">
-        
           <p className="control is-expanded">
-            <input className="textarea pl-2 pt-0" type="text" name='description' placeholder='Short description' value={newRecipe.description}/>
+            <input className="input" type="text" name='description' placeholder='Short description of your dish' value={newRecipe.description}/>
           </p>
       </div>
     </div>
@@ -118,7 +117,7 @@ const AddRecipe = () => {
 
   <div className="field is-horizontal">
     <div className="field-label is-normal">
-      <label className="label">Department</label>
+      <label className="label">Ingredients</label>
     </div>
     <div className="field-body">
       <div className="field is-narrow mr-5">

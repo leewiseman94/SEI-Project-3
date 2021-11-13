@@ -106,5 +106,62 @@
   tags: ['Salad', 'Autumn'],
   course: 'starter',
   allergens: ['Vegetarian', 'Vegan']
+},
+{
+  name: 'Easy Doughnuts',
+  image: 'https://christinascucina.com/wp-content/uploads/2014/01/IMG_4471-660.jpg',
+  description: 'This is the easiest doughnut recipe you will find!',
+  ingredients: ['¾ cup vegetable oil','1 8-count package large refrigerated biscuits (such as Pillsbury Grands)','½ cup sugar', '¼ teaspoon ground cinnamon'],
+  method: ['Heat ½ cup of the oil in a medium skillet over medium-low heat.','Place the biscuits on a cutting board. Using a 1-inch round cookie cutter or shot glass, cut a hole in the center of each biscuit, reserving the extra dough for "holes."','Test the heat of the oil by dipping the edge of a doughnut in the pan. When the oil is hot enough, the edge will bubble. Place 4 of the doughnuts and holes in the skillet and cook until golden brown, 1 to 1½ minutes per side. Transfer to a wire rack or paper towel–lined plate to drain. Add the remaining oil to the skillet, reheat, and cook the remaining doughnuts and holes.','In a large bowl, combine the sugar and cinnamon. Gently toss the warm doughnuts in the mixture a few at a time. Serve warm or at room temperature. This recipe makes 8 doughnuts, plus holes.'],
+  prepTime: '15 min',
+  cookingTime: '15 min',
+  difficulty: 'Easy',
+  servingSize: 8,
+  nutritionalInfo: ['Calories: 126', 'Carbohydrates: 19g', 'Protein: 2g', 'Fat: 5g', 'Saturated Fat: 1g', 'Sodium: 332mg','Fiber: 1g', 'Sugar: 7g'],
+  tags: ['American'],
+  course: 'dessert',
+  allergens: ['Vegetarian', 'Vegan']
+},
+{
+  name: 'Sweet Potato Buttermilk Pancakes',
+  image: 'https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F23%2F2021%2F10%2F10%2Fsweet-potato-buttermilk-pancakes-recipe-1121bfy.jpg',
+  description: 'These fluffy pancakes are perfect for a fall breakfast. Pro tip: While cooking these sweet potato pancakes, be patient and let the undersides turn a deep golden brown before flipping.',
+  ingredients: ['1 9-oz. sweet potato or ¾ cup cooked and mashed sweet potato','2 large eggs','2 cups whole buttermilk','2 tablespoons pure maple syrup, plus more for serving','2 cups all-purpose flour','1 ½ teaspoons baking powder','1 ¼ teaspoons kosher salt','1 teaspoon baking soda','½ teaspoon ground cinnamon','¼ teaspoon ground nutmeg','2 tablespoons unsalted butter, melted','canola oil, for cooking','toasted pecans, chopped, for serving'],
+  method: ['Preheat oven to 200°F. Set a wire rack inside a rimmed baking sheet. Prick potato all over with a fork. Place in a microwave-safe bowl with 1 teaspoon water and cover. Microwave on high until tender when pierced with a fork, 5 to 7 minutes. Let cool. Discard water. Split potato and scoop flesh into bowl; discard skin. Mash to make ¾ cup.','Beat eggs and buttermilk in a large bowl. Add potato and syrup; whisk until well combined.','Whisk flour, baking powder, salt, baking soda, cinnamon, and nutmeg in a medium bowl. Add to buttermilk mixture. Gently stir until few dry spots remain. Add melted butter and stir gently until just combined. (Do not over mix; lumps are OK.)','Heat a large nonstick skillet or griddle over medium-high. Brush with oil; reduce heat to medium. Cooking in batches, add ⅓-cupfuls of batter to skillet, flattening tops slightly. Cook until bubbles rise to surface and underside is golden brown, 2 to 4 minutes. Flip and cook until puffed and golden brown on other side, 2 to 4 minutes. Transfer to wire rack; keep warm in oven. Repeat with oil and remaining batter. Serve with pecans and syrup.'],
+  prepTime: '15 min',
+  cookingTime: '15 min',
+  difficulty: 'Easy',
+  servingSize: 4,
+  course: 'breakfast',
+  allergens: ['Vegetarian']
+},
+{
+  name: 'Lahmacun',
+  image: 'https://www.themediterraneandish.com/wp-content/uploads/2018/10/Easy-Turkish-Lahmacun-Recipe-2.jpg',
+  description: 'Think of Lahmacun (Lahamajoun) as super thin, crispy Turkish pizza (or flatbread) topped with a flavor-packed mixture of minced meat with peppers, tomato, fresh herbs and earthy spices. I take a major shortcut by using quality store-bought pizza dough. But the secret is in the spice mixture.',
+  ingredients: ['½ lb uncooked store-bought organic pizza dough','½ sweet red pepper, cored, cut into chunks','1 shallot, halved','2 garlic cloves, peeled','½ oz fresh parsley leaves with some stem','7 oz ground lamb or ground beef','1 teaspoon smoked paprika','1 teaspoon ground allspice','½ teaspoon ground cumin','½ teaspoon Aleppo-style pepper','½ teaspoon ground cinnamon','½ teaspoon cayenne pepper','½ teaspoon salt','4 tablespoon tomato paste','2 tablespoon Private Reserve Greek extra virgin olive oil','Lemon wedges for later'],
+  method: ['Heat oven to 450 degrees F. Adjust oven rack to the middle.' ,'Prepare the meat mixture. In the large bowl of a food processor, fitted with blade, add red peppers, shallot, garlic, and parsley. Pulse a few times to chop. To the mixture, add ground lamb (or beef). Season with spices and salt. Add tomato paste and extra virgin olive oil. Now pulse again until well-combined (about 8 to 10 pulses.)','Prepare two large rimmed baking sheets lined with parchment paper (you\'ll be using these to bake the Lahmacun in batches.)','Divide the pizza dough into 4 equal balls (about 2 oz each.) Working with one ball of dough at a time, place on a floured surface. Using a rolling pin, roll dough out into as thin as you can to a disk that\'s about 8 or 9 inches in diameter.','Assemble Lahmacun. Place one flatbread disk on one of the prepared pans. Reshape as needed.  Spoon 3–4 tablespoon topping onto dough and spread topping evenly to edges, leaving a thin boarder.','Bake in heated oven for about 5 to 7 minutes or until dough and meat are fully cooked (dough will be a little crusty around the edges.)','Repeat steps 5 and 6 with the remaining dough.','Squeeze a little lemon juice on top. Serve Lahmacun hot or at room temperature.'],
+  prepTime: '25 min',
+  cookingTime: '10 min',
+  difficulty: 'Medium',
+  servingSize: 6,
+  nutritionalInfo: ['Calories: 167', 'Carbohydrates: 16.1g', 'Protein: 9.9g', 'Fat: 6.3g',  'Sodium: 82.5mg','Fiber: 1.2g', 'Sugar: 0.8g', 'Calcium: 3%', 'Iron: 15%', 'Vitamin C: 25%'],
+  tags: ['Middle Eastern', 'Turkish'],
+  course: 'starter'
+},
+{
+  name: 'Baba Ganoush',
+  image: 'https://www.themediterraneandish.com/wp-content/uploads/2019/08/baba-ganoush-4.jpg',
+  description: 'Here is how to make the best baba ganoush, the smoky, rich, and extra creamy eggplant dip, packed with flavor thanks to tahini, garlic, and lemon juice. Grilling the eggplant over open flame will give you the deepest flavor. And if you have the time, allow the dip to chill in the fridge for 30 minutes to 1 hour. It will thicken and the flavors will meld',
+  ingredients: ['2 Italian eggplants or small globe eggplants','¼ cup tahini paste I used Soom tahini','1 lemon, juice','1 garlic clove, minced','1 tablespoon plain Greek yogurt, optional','Kosher salt and black pepper','1 teaspoon sumac','¾ teaspoon Aleppo pepper or red pepper flakes, optional','Extra virgin olive oil','Toasted pine nuts for garnish, optional'],
+  method: ['First, smoke or grill the eggplant. Turn one gas burner on medium-high. Place the eggplant directly over the flame. Using a pair of tongs, turn the eggplant every 5 minutes or so until it is tender and the skin is charred and crispy on all sides (20 minutes.) The eggplant should deflate and become super tender. supposed to. If you don\'t have a gas burner you can use a grill. You can also roast the eggplant in the oven.','Remove the eggplant from the heat and transfer it to a large colander over a bowl. Allow it to sit and drain for a few minutes until fully cooled and all excess water has been drained (it helps if you open the eggplant up a bit and push on it with a knife or a spoon to help it release its juices).','Once the eggplant is cool enough to touch, peel the charred crispy skin off (it should come right off). Discard the skin and the stem (don\'t worry if a few bits of the skin remain, that is just added flavor).','Transfer the cooked and fully drained eggplant to a bowl. Use a fork to break it down into smaller pieces. Add the tahini paste, garlic, lemon juice, Greek yogurt (if using) salt, pepper, sumac, Aleppo pepper or crushed red pepper flakes. Mix gently with a wooden spoon or a fork until well-combined.','Cover the baba ganoush and chill in the fridge for 30 minutes to an hour.','To serve, transfer the baba ganoush to a rimmed serving dish or a bowl. Top with a good drizzle of extra virgin olive oil and toasted pine nuts, if you like. Serve with pita wedges or pita chips and veggies of your choice.'],
+  prepTime: '15 min',
+  cookingTime: '20 min',
+  difficulty: 'Easy',
+  servingSize: 6,
+  nutritionalInfo: ['Calories: 86.6', 'Carbohydrates: 8.6g', 'Protein: 3g', 'Fat: 5.6g', 'Saturated Fat: 0.8g', 'Cholesterol: 0.1mg', 'Sodium: 204.4mg','Fiber: 3.3g', 'Calcium: 30.3mg', 'Iron: 0.8mg'],
+  tags: ['Middle Eastern', 'Mediterranean'],
+  course: 'appetizer',
+  allergens: ['Vegetarian', 'Vegan']
 }
 ]
