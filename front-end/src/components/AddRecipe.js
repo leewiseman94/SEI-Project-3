@@ -1,7 +1,10 @@
 import React, { useState } from 'react'
+import recipeMethod from '../assets/recipeMethod.PNG'
+import ingredientsIMG from '../assets/ingredientsIMG.PNG'
 
 
 const AddRecipe = () => {
+  const [description, setDescription] = useState('')
   const [ingredients, setIngredients] = useState([])
   const [method, setMethod] = useState([])
   const [newRecipe, setNewRecipe] = useState({
@@ -27,7 +30,10 @@ const AddRecipe = () => {
     setNewRecipe(newFormData)
   }
 
-
+  const displayDescription = () => {
+    setDescription(newRecipe.description)
+    newRecipe.description = ''
+  }
   const displayIngredient = () => {
     const newIngredient = newRecipe.ingredients
     setIngredients([ ...ingredients, newIngredient ])
@@ -43,6 +49,7 @@ const AddRecipe = () => {
   const handleSubmit = (event) => {
     event.preventDefault()
     try {
+      newRecipe.description = description
       newRecipe.ingredients = ingredients
       newRecipe.method = method
       if (newRecipe.tags !== '') {
@@ -63,6 +70,7 @@ const AddRecipe = () => {
     }
   }
 
+  console.log(description)
   return (
     <>
     
@@ -147,94 +155,78 @@ const AddRecipe = () => {
       </div>
     </div>
   </div>
+
+  <div className="field is-horizontal">
+      <div className="field-label is-normal" id='label'>
+      <label className="label" >Description</label>
+      </div>
+    <div className="field-body">
+        <div className="control ">
+          <textarea className="input" id='addDescriptionBox' type='text' name='description' placeholder='Short description of your dish' value={newRecipe.description} onChange={handleChange}/>
+        </div>
+        <div className='control'>
+        <a className='button' id='addIngredientButton' onClick={displayDescription}>Add
+        </a>
+      </div>
+    </div>
+    <div className="field-body ">
+        <h4 className='mr-6'>Description: {description && description}
+        </h4>
+        </div>
+  </div>
+
   <div className="field is-horizontal">
   <div className="field-label is-normal " id='label'>
     <label className="label " >Ingredients</label>
     </div>
     <div className="field-body">
-    <div className='control'>
+      <div className='control'>
       <input className='input' id='addIngredientBox' type='text' name='ingredients' placeholder='eg: 2 eggs' value={newRecipe.ingredients} onChange={handleChange}/>
       </div>
       <div className='control'>
         <a className='button' id='addIngredientButton' onClick={displayIngredient}>Add 
         </a>
       </div>
-      
   </div>
+  <div className="field-body ">
+        <h4 ><img src={ingredientsIMG} alt="method-icon" width="40px"></img><strong>Ingredients added </strong>
+        <hr/>
+          {ingredients && ingredients.map((ingredient, index) => <li key={index}>{ingredient}</li>)}
+        </h4>
+        </div>
   </div>
     
     <br/>
-    <div className="field is-horizontal mb-0">
-      <div className="field-label is-normal" id='label'>
-      <label className="label" >Description</label>
-      </div>
-    <div className="field-body">
-        <div className="control ">
-          <textarea className="textarea" id='addDescriptionBox' name='description' placeholder='Short description of your dish' value={newRecipe.description} onChange={handleChange}/>
-        </div>
-      <div className="field-body">
-        
-    </div>
-    </div>
-  </div>
-  <div className="field is-horizontal">
-  <div className="field-label is-normal">
-    <label className="label"></label>
-    </div>
-  <div className="field-body">
-  <div className='control'>
-        <a className='button' id='addIngredientButton' >Add
-        </a>
-      </div>
-      </div>
-      </div>
+    
 
 
 
-      <div className="field is-horizontal mb-0">
+      <div className="field is-horizontal">
     <div className="field-label is-normal" id='label'>
       <label className="label" >Method</label>
     </div>
     <div className="field-body">
-      <div className="field mr-5">
         <div className="control">
-          <textarea className="textarea" name='method' placeholder="Write each step here" value={newRecipe.method} onChange={handleChange}></textarea>
+          <textarea className="textarea" id='method' name='method' placeholder="Write each step here" value={newRecipe.method} onChange={handleChange}></textarea>
         </div>
-      </div>
-    </div>
-  </div>
-  <div className="field is-horizontal">
-  <div className="field-label is-normal">
-    <label className="label"></label>
-    </div>
-  <div className="field-body">
-    <div className='control'>
+        <div className='control'>
           <a className='button' id='addStepButton' onClick={displayMethod}>Add another Step</a>
         </div>
-    </div>
-  </div>
-  <div className="field is-horizontal">
-    <div className="field-label">
-    </div>
-    <div className="field-body ml-4">
-    <div className="field-body pd-6 ml-4">
-        <h4 className='mr-6'>Ingredients added: {ingredients && ingredients.map((ingredient, index) => <li key={index}>{ingredient}</li>)}
-        </h4>
-        <h4 className='ml-6'>
+    </div> 
+    <div className="field-body">
+      <h4><img src={recipeMethod} alt="method-icon" width="40px"></img><strong>Method</strong>
+        <hr/>
         {method && method.map((step, index) => {
           return(
             <div key={index}>
-            <h3 ><strong>Step {index + 1 }</strong></h3>
-            <br/>
+            <div ><strong>Step {index + 1 }</strong></div>
             <div >{step}</div>
             <br/>
             </div>
           )})}
           </h4>
-      </div>
     </div>
-  </div>
-
+    </div>
 </form>
 </section>
     </>
