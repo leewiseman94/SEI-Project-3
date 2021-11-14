@@ -296,6 +296,62 @@ course: 'main',
   course: 'Starter',
   allergens: []
 },
+{
+  name: 'Hot wings',
+  image: 'https://images.immediate.co.uk/production/volatile/sites/30/2020/08/toms-hot-wings-dafc66d.jpg',
+  description: 'Who doesn\'t love hot wings? They\'re the perfect help-yourself starter. These are roasted to give them that distinctive crunch and glazed with soy and Sriracha',
+  ingredients: ['12 jumbo chicken wings', '280ml buttermilk', '¼ tsp salt', '1 tsp vegetable bouillon powder', '¼ tsp ground turmeric', '¼ tsp baking powder',
+                'For the dipping sauce', '1 ½ tbsp golden caster sugar', 'For the spice mix', '75g cornflour', '1 tbsp smoked paprika', '1 tsp dried basil', '1 tsp dried oregano', '1 tsp dried sage', '2 tsp chilli powder', '2 tsp garlic powder', '2 tsp onion salt', '½ tsp ground white pepper',
+                'For the glaze', '100g honey','1 tbsp soy sauce', '3 tbsp ketchup', '100ml sriracha', 'blue cheese dip , to serve (optional)'],
+  method: ['Put the chicken wings, buttermilk and 1/2 tsp salt in a bowl and toss together to coat. Cover and leave in the fridge overnight.',
+          'Heat oven to 200C/180C fan/ gas 6. Put all the ingredients for the spice mix in another large mixing bowl with a pinch of salt and mix well. Remove the wings from the fridge and, one at a time, roll them in the spice mix. Once fully coated, tip onto a baking tray lined with baking parchment, and roast for 35 mins. Meanwhile, mix the ingredients for the glaze together.',
+          'Once the wings have browned, remove them from the oven and generously brush with the glaze. Reduce oven to 180C/160C fan/ gas 4, put the wings back in and cook for a further 15 mins or until the glaze has gone sticky and is starting to caramelise. Remove the wings from the oven and rest for a minute or so. Serve with a blue cheese dip, if you like.'],
+  prepTime: '30 mins',
+  cookingTime: '50 mins',
+  difficulty: 'More effort',
+  servingSize: 4,
+  nutritionalInfo: ['kcal: 518', 'fat: 19g', 'saturates: 5g', 'carbs: 52g', 'sugars: 34g', 'fibre: 2g', 'protein: 33g', 'salt: 4.9g'],
+  tags: ['Party'],
+  course: 'Starter',
+  allergens: []
+},
+{
+  name: 'Stuffed mushrooms',
+  image: 'https://images.immediate.co.uk/production/volatile/sites/30/2020/08/stuffed-mushrooms-fd50faf.jpg?',
+  description: 'Serve these easy stuffed mushrooms with melted cheese, bacon lardons and breadcrumbs alongside a simple salad and crusty bread for a quick, fuss-free dinner',
+  ingredients: ['4-6 medium-large portobello mushrooms', '125g unsmoked bacon lardons', '1 shallot, finely chopped', '1 garlic clove, finely chopped', '4 tbsp dried breadcrumbs', '1 tsp dried sage', '50g medium cheddar, grated'],
+  method: ['Heat oven to 220C/200C fan/gas 7. Wipe the mushrooms to remove any dirt, then turn upside down and remove the stalks. Place on a baking tray top-side down.',
+          'Fry the lardons for 8-10 mins until just starting to crisp up, then finely chop the shallot, mushroom stalks and garlic. Add to the bacon and fry on a moderate heat for about 5 mins until all the ingredients are cooked.',
+          'Take off the heat and add the breadcrumbs and sage, then stir to make an even mixture. Spoon into the hollows of the mushrooms and sprinkle with the grated cheese.',
+          'Bake for approximately 8-10 mins until the cheese has melted. Serve with crusty bread and a green salad.'],
+  prepTime: '15 mins',
+  cookingTime: '30 mins',
+  difficulty: 'Easy',
+  servingSize: 2,
+  nutritionalInfo: ['kcal: 518', 'fat: 19g', 'saturates: 5g', 'carbs: 52g', 'sugars: 34g', 'fibre: 2g', 'protein: 33g', 'salt: 4.9g'],
+  tags: ['70s'],
+  course: 'Starter',
+  allergens: []
+},
+{
+  name: 'Baked feta with sesame & honey',
+  image: 'https://images.immediate.co.uk/production/volatile/sites/30/2020/08/baked-feta-with-sesame-and-honey-ba491a5.jpg?',
+  description: 'Combine the flavours of salty cheese and sweet honey to create a dish that’s so much more than the sum of its parts. Rich and decadent, serve with warm pitta',
+  ingredients: ['1 tbsp sesame seeds , toasted', '200g block feta', '2 tbsp honey , plus extra to serve', '1 tsp roughly chopped oregano', 'olive oil , for drizzling', 'warmed pitta breads , to serve'],
+  method: ['Heat the oven to 200C/180C fan/gas 6. Put the sesame seeds in a shallow dish and brush the block of feta all over with the honey. Carefully press the honey-coated feta into the sesame seeds, turning so that it’s well crusted with seeds.',
+          'Put the feta in a baking dish (it should fit snugly), then sprinkle over the oregano and a pinch of sea salt. Drizzle with some olive oil. Bake for 15-20 mins until the feta is soft, then drizzle with a little extra honey and serve with the pitta breads on the side.'],
+  prepTime: '5 mins',
+  cookingTime: '20 mins',
+  difficulty: 'Easy',
+  servingSize: 4,
+  nutritionalInfo: ['kcal: 518', 'fat: 19g', 'saturates: 5g', 'carbs: 52g', 'sugars: 34g', 'fibre: 2g', 'protein: 33g', 'salt: 4.9g'],
+  tags: ['Greek'],
+  course: 'Starter',
+  allergens: ['Gluten-free, Vegetarian']
+},
+
+
+
 
 
 
