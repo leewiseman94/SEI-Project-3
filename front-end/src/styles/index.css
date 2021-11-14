@@ -347,3 +347,39 @@ i.fas.fa-filter {
 .addRecipe {
   margin-top: 200px;
 }
+
+#addIngredientButton {
+  height: 36px;
+  width: 65px;
+  font-size: 16px;
+  border-radius: 0;
+  padding-left: 0;
+}
+
+#addIngredientBox {
+  width: 230px
+}
+
+#addDescriptionBox {
+  width: 296px;
+  height: 100px;
+}
+
+#addStepButton {
+  width: 180px;
+  border-radius:0;
+  font-size: 16px;
+  padding-left: 0;
+
+}
+#addRecipeSubmit {
+  width: 300px;
+  border-radius: 6px;
+  height: 75px;
+  font-size: 25px;
+}
+
+#label {
+  text-align: left;
+  margin-right: -50;
+}
