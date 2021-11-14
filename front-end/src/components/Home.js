@@ -195,7 +195,7 @@ const Home = () => {
       <section className="box is-shadowless" id="box-two">
         <div className="box">
           <p className="title">
-            Want to up your kitchen skills game?
+            Want to sharpen your knife skills?
           </p>
           <p className="subtitle">
             Take a butchers at one of our cooking class events.
