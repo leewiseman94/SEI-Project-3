@@ -16,17 +16,10 @@ const Home = () => {
       try {
         const { data } = await axios.get(`/api/recipes`)
         setRecipes(data)
-<<<<<<< HEAD
         // const getCourses = data.map(recipe => {
         //   return(recipe.course.toLowerCase()) 
         // }) 
         // console.log(getCourses)
-=======
-        const getCourses = data.map(recipe => {
-          return(recipe.course.toLowerCase()) 
-        }) 
-        console.log(data)
->>>>>>> development
         const newArray = []
         for(let i = 0; i<data.length; i++){
           let coursesOnly = false
@@ -142,8 +135,8 @@ const Home = () => {
           
           
         </div>
-      <section className="hero is-medium is-danger">
-        <div className="hero-body">
+      <section className="box is-shadowless" id="box-one">
+        <div className="box">
           <p className="title">
             What's in your fridge?
           </p>
@@ -151,10 +144,14 @@ const Home = () => {
             Let our ingredients search help you find your perfect recipe.
           </p>
         </div>
+        <Link to={`/recipes/`}>
+          <button class="button">Ingredients</button>
+        </Link>
+
       </section>
 
-      {/* <section className="columns">
-        <div className="column">
+      <section className="columns">
+        <div className="column is-one-third">
           <Link to={`/recipes/`}>
             <div className="card is-shadowless">
               <div className="card">
@@ -162,25 +159,41 @@ const Home = () => {
                   <p className="title">Fancy yourself as the next Gordon or Pru?</p>
                 </div>
                   <div className="card-image">
-                    <figure className="image is-4by3">
-                      <img src=""></img>
-                    </figure>
+                    {/* <figure className="image is-4by3">
+                      <img src="front-end/src/assets/pru.jpeg"></img>
+                    </figure> */}
                   </div>
                   <div className="card-content">
                     <p className="content">Upload a pic of your latest creations to our "Rate My Plate" page</p>                       
                   </div>
-                </div>
-          
-                                
               </div>
             </div>
           </Link>
+          <Link to={`/recipes/`}>
+            <div className="card is-shadowless">
+              <div className="card">
+                <div className="media-content">
+                  <p className="title">Fancy yourself as the next Gordon or Pru?</p>
+                </div>
+                  <div className="card-image">
+                    {/* <figure className="image is-4by3">
+                      <img src="front-end/src/assets/pru.jpeg"></img>
+                    </figure> */}
+                  </div>
+                  <div className="card-content">
+                    <p className="content">Upload a pic of your latest creations to our "Rate My Plate" page</p>                       
+                  </div>
+              </div>
+            </div>
+          </Link>          
         </div>
-      </section>              */}
+      </section>
+      
+                   
       
 
-      <section className="hero is-medium is-link">
-        <div className="hero-body">
+      <section className="box is-shadowless" id="box-two">
+        <div className="box">
           <p className="title">
             Want to up your kitchen skills game?
           </p>
@@ -188,6 +201,9 @@ const Home = () => {
             Take a butchers at one of our cooking class events.
           </p>
         </div>
+        <Link to={`/recipes/`}>
+          <button class="button">Cooking Classes</button>
+        </Link>
       </section>
 
             

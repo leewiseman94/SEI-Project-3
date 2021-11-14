@@ -347,3 +347,13 @@ i.fas.fa-filter {
 .addRecipe {
   margin-top: 200px;
 }
+
+#box-one {
+  background: url('../assets/fridge.jpeg');
+    
+  }
+
+#box-two {
+  background: url('../assets/chef.jpeg');
+    
+  }
