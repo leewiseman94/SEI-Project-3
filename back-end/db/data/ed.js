@@ -116,7 +116,7 @@ course: 'main',
 },
 {
   name: 'Steak burrito bowl',
-  image: 'https://imsrc="https://images.immediate.co.uk/production/volatile/sites/30/2020/08/steak-burrito-bowl-932949f.jpg',
+  image: 'https://images.immediate.co.uk/production/volatile/sites/30/2020/08/steak-burrito-bowl-932949f.jpg',
   description: 'Pack in the flavour with this spicy steak burrito bowl, which takes just 10 minutes from prep to plate. Ideal as a speedy supper on busy weeknights',
   ingredients: ['1 fillet steak , approx 250g', '75g plain flour', '1 sachet fajita seasoning', '2 tbsp olive oil', '250g Mexican-style rice pouch', '2 roasted red peppers , sliced', '1 lemon , ½ juiced, ½ cut into wedges', '½ small pack parsley , roughly chopped, to serve', 'yogurt , to serve'],
   method: ['Coat the steak with half of the fajita seasoning and 1 tbsp of the olive oil. Heat a frying pan over a high heat and add the steak, cook for 2 mins on each side for medium rare, remove from the pan and set aside.',

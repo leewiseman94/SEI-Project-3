@@ -388,12 +388,40 @@ i.fas.fa-filter {
 #method {
   width: 400px
 }
+
 #box-one {
-  background: url('../assets/fridge.jpeg');
-    
+  background: url('../assets/fridge3.jpeg');
+  background-size: 100%;
+  background-repeat: no-repeat;    
   }
 
 #box-two {
   background: url('../assets/chef.jpeg');
-    
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
+
+#box-twop{
+  text-shadow: 2px 2px black;
+}
+
+#box-onep {
+  text-shadow: 2px 2px black;
+}
+
+#column-one {
+  background: url('../assets/pru.jpeg');
+  background-size: 100%;
+  background-repeat: no-repeat;
+  /* margin: 100px;     */
   }
+
+#column-two {
+  background: url('../assets/GraceDent.jpeg');
+  background-size: 100%;
+  background-repeat: no-repeat;    
+  }
+
+#logos {
+  
+}

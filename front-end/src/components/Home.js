@@ -2,6 +2,9 @@ import { Link } from 'react-router-dom'
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import bulmaCarousel from 'bulma-carousel/dist/js/bulma-carousel.min.js'
+import fbLogo from '../assets/f_logo_RGB-Black_58.png'
+import twitterLogo from '../assets/2021 Twitter logo - black.png'
+import instagramLogo from '../assets/glyph-logo_May2016.png'
 
 
 const Home = () => {  
@@ -78,31 +81,7 @@ const Home = () => {
 
       
       
-      {/* <div className="dropdown is-active">
-        <div className="dropdown-trigger">
-          <button className="button" aria-haspopup="true" aria-controls="dropdown-menu">
-            <span>Courses</span>
-            <span className="icon is-small">
-              <i className="fas fa-angle-down" aria-hidden="true"></i>
-            </span>
-          </button>
-        </div>
-        <div className="dropdown-menu" id="dropdown-courses">
-          <div className="dropdown-content">
-            <Link to="/recipes" className="dropdown-item">
-              Starter
-            </Link>
-            <Link to="/recipes" className="dropdown-item">
-              Main
-            </Link>
-            <Link to="/recipes" className="dropdown-item">
-              Dessert
-            </Link>
-          </div>
-        </div>
-
-      </div> */}
-      <h1>Inspiration for your next meal</h1>
+        <h1>Inspiration for your next meal</h1>
         <div className="columns">
           <div class="column is-one-third">
             <Link to={`/recipes/`}>
@@ -135,83 +114,110 @@ const Home = () => {
           
           
         </div>
-      <section className="box is-shadowless" id="box-one">
-        <div className="box">
-          <p className="title">
-            What's in your fridge?
-          </p>
-          <p className="subtitle">
-            Let our ingredients search help you find your perfect recipe.
-          </p>
+      <div className="hero is-medium" id="box-one">
+        <div className="hero-body">
+          <p className="title has-text-white" id="box-onep">
+            Not sure what to make for dinner?
+          </p>          
         </div>
         <Link to={`/recipes/`}>
-          <button class="button">Ingredients</button>
+          <button class="button is-normal is-rounded is-ghost has-text-white" id="box-one-button">Let our recipe search help you find your perfect meal</button>
         </Link>
 
-      </section>
+      </div>
 
-      <section className="columns">
+      <div className="columns justfy-content-space-between">
         <div className="column is-one-third">
           <Link to={`/recipes/add`}>
             <div className="card is-shadowless">
-              <div className="card">
+              <div className="card" id="column-one">
                 <div className="media-content">
                   <p className="title">Fancy yourself as the next Gordon or Pru?</p>
                 </div>
-                  <div className="card-image">
+                  {/* <div className="card-image"> */}
                     {/* <figure className="image is-4by3">
                       <img src="front-end/src/assets/pru.jpeg"></img>
                     </figure> */}
-                  </div>
+                  {/* </div> */}
                   <div className="card-content">
                     <p className="content">Upload a your latest creation to our Add Recipe page</p>                       
                   </div>
               </div>
             </div>
           </Link>
+        </div>
+        <div className="column is-one-third">
           <Link to={`/recipes/`}>
             <div className="card is-shadowless">
-              <div className="card">
+              <div className="card" id="column-two">
                 <div className="media-content">
-                  <p className="title">Are you more Jay Rayner or Grace Dent? Rate and comment on recipes</p>
+                  <p className="title">Are you a budding Jay Rayner or Grace Dent?</p>
                 </div>
-                  <div className="card-image">
+                  {/* <div className="card-image"> */}
                     {/* <figure className="image is-4by3">
                       <img src="front-end/src/assets/pru.jpeg"></img>
                     </figure> */}
-                  </div>
+                  {/* </div> */}
                   <div className="card-content">
-                    <p className="content">Upload a pic of your latest creations to our "Rate My Plate" page</p>                       
+                    <p className="content">Rate and comment on recipes</p>                       
                   </div>
               </div>
             </div>
-          </Link>          
-        </div>
-      </section>
+          </Link>
+        </div>          
+      </div>
       
-                   
+                
       
-
-      <section className="box is-shadowless" id="box-two">
-        <div className="box">
-          <p className="title">
-            Want to sharpen your knife skills?
-          </p>
-          <p className="subtitle">
-            Take a butchers at one of our cooking class events.
+    <div className="column is-one-half">
+      <div className="box is-shadowless is-large" id="box-two">
+        <div className="media">
+          <p className="title has-text-white" id="box-twop">
+            Want to sharpen up your knife skills?
           </p>
         </div>
         <Link to={`/recipes/`}>
-          <button class="button">Cooking Classes</button>
+          <button class="button is-normal is-rounded is-ghost has-text-white" id="button-two">Checkout one of our masterclasses</button>
         </Link>
-      </section>
+      </div>
+    </div>
 
+      <div className=" footer is-flex is-flex-direction-row">        
+        <div className="content has-text-left has-text-grey">          
+            <strong className="has-text-grey mx-6">© 2021 Platester</strong> 
+            <a className="has-text-grey mx-6 px-4" href="/recipes/">Privacy</a>
+            <a className="has-text-grey mx-6 px-4" href="/recipes/">Terms</a> 
+            <a className="has-text-grey mx-6 ml-6 px-4" href="/recipes/">Company details</a>
+            <div className="footer links is-flex is-flex-direction-row" id="logos">
+              <a className="footer-item" href="https://twitter.com">
+              <figure className="image is-24x24">
+                <img className="twitter-logo" src={twitterLogo} alt="twitter" />
+              </figure>
+              </a>
+              <a className="footer-item" href="https://instagram.com">
+              <figure className="image is-24x24">
+                <img className="instagram-logo" src={instagramLogo} alt="instagram" />
+              </figure>
+              </a>
+              <a className="footer-item" href="https://facebook.com">
+                <figure className="image is-24x24">
+                  <img className="facebook-logo" src={fbLogo} alt="facebook" />
+                </figure>
+              </a>
+            </div>          
+        </div>
+        
+          
+        
+      </div>
             
           
     </>
 
   )
+ 
 }
+
 
 export default Home
 

@@ -5,7 +5,7 @@ import edData from './data/ed.js'
 import issraData from './data/issra.js'
 import leeData from './data/lee.js'
 import reeData from './data/ree.js'
-import recipeData from './data/recipes.js'
+// import recipeData from './data/recipes.js'
 import UserData from './data/users.js'
 import User from '../models/user.js'
 
