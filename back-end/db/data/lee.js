@@ -75,15 +75,15 @@ export default [{
   nutritionalInfo: ['kcal: 309', 'fat: 22g', 'saturates: 14g', 'carbs: 14g', 'sugar: 5g', 'fibre: 3g', 'protein: 11g', 'salt: 1.8g'],
   tags: ['Soup', 'Mushroom'],
   course: 'Starter'
-}
+},
 {
   name: 'Chocolate brownie trifle',
   image: 'https://images.immediate.co.uk/production/volatile/sites/30/2020/08/brownie_trifle_square_lr-bf3c1d9.jpg?quality=90&webp=true&resize=440,400',
   description: 'A naughty chocolate version of a traditional trifle, and so easy to make. Layer chocolate brownies, custard, Irish cream liqueur and whipped cream for an indulgent treat',
   ingredients: [
     '500ml pot ready-made chilled custard (look for one with real vanilla)', '100g dark chocolate, broken into pieces',
-  '400g shop-bought chocolate brownies', '3 tbsp coffee', '100ml Irish cream liqueur, plus 1 tbsp extra for soaking the brownies',
-  '121g bag Maltesers', '500ml double cream', '25g icing sugar'
+    '400g shop-bought chocolate brownies', '3 tbsp coffee', '100ml Irish cream liqueur, plus 1 tbsp extra for soaking the brownies',
+    '121g bag Maltesers', '500ml double cream', '25g icing sugar'
   ],
   method: [
     'Put the custard and chocolate in a saucepan. Gently heat, stirring, until the chocolate has completely melted into the custard. Cover the surface with cling film to stop the custard forming a skin, then cool.',

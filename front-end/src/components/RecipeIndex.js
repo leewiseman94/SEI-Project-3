@@ -1,21 +1,65 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import RecipeCard from './RecipeCard'
-import { Link } from 'react-router-dom'
-
+import { Link, useHistory, useLocation } from 'react-router-dom'
+import * as QueryString from "query-string"
 
 const RecipeIndex = () => {
   const [recipes, setRecipes] = useState([])
+  const [filteredRecipes, setFilteredRecipes] = useState([])
+  const [difficulties, setDifficulties] = useState([])
+  const [difficultySearch, setDifficultySearch] = useState('')
+  
+
+  const props = useLocation()
+  const history = useHistory()
+  const params = QueryString.parse(props.search)
+  
+  const [query, setQuery] = useState(QueryString.parse(props.search))
 
   useEffect(() => {
     const getData = async () => {
       const { data } = await axios.get('/api/recipes')
       setRecipes(data)
+
+      const difficultyArray = ['All']
+      // const allergensArray  = ['All']
+      for(let i = 0; i < data.length; i++) {
+        // Add to difficulty array if no duplicate
+        const difficultyLowerCase = difficultyArray.map(difficulty => difficulty.toLowerCase())
+        if (!difficultyLowerCase.includes(data[i].difficulty.toLowerCase())) difficultyArray.push(data[i].difficulty)
+      }
+
+      setDifficulties(difficultyArray)
+
+      const filtered = data.filter(recipe => {
+        const allergenArrayLowerCase = recipe.allergens.map(allergen => allergen.toLowerCase())
+        return (
+          ((params.name ? recipe.name.toLowerCase().includes(params.name) : recipe))
+          &&
+          (params.course ? (recipe.course.toLowerCase().includes(params.course) || params.course === 'all') : recipe)
+          && 
+          (params.allergens ? (allergenArrayLowerCase.includes(params.allergens) || params.allergens === 'all') : recipe)
+          && 
+          (params.difficulty ? (recipe.difficulty.toLowerCase().includes(params.difficulty) || params.difficulty === 'all') : recipe)
+        )
+      })
+      console.log(filtered)
+      setFilteredRecipes(filtered)
     }
     getData()
-  }, [])
+  }, [props])
   // console.log('recipes on state ->', recipes)
 
+  const getSearchLink = (event) => {
+    const queryParams = QueryString.parse(props.search)
+    queryParams.difficulty = `${event.target.innerHTML.toLowerCase()}`
+    setQuery(queryParams)
+  }
+
+  useEffect(() => {
+    history.push(`recipes?${QueryString.stringify(query)}`)
+  }, [query])
 
   return (
     <>
@@ -37,27 +81,18 @@ const RecipeIndex = () => {
             }>
                   <span className="icon is-small">
                     <i className="fas fa-filter fa-sm" aria-hidden="true"> </i>
-                    <span className="filterbtn">Filter</span>
+                    <span className="filterbtn">Difficulty</span>
                   </span>
                 </button>
               </div>
               <div className="dropdown-menu" id="dropdown-menu" role="menu">
                 <div className="dropdown-content">
-                  <a href="/recipes/dairy-free" className="dropdown-item">
-                    Dairy-Free
-                  </a>
-                  <a href="/recipes/gluten-free" className="dropdown-item">
-                    Gluten Free
-                  </a>
-                  <a href="/recipes/vegan" className="dropdown-item">
-                    Vegan
-                  </a>
-                  <a href="/recipes/vegetarian" className="dropdown-item">
-                    Vegetarian
-                  </a>                 
-                  <a href="/recipes/rating" className="dropdown-item">
-                    Rating
-                  </a>                 
+                  {difficulties.map(difficulty => {
+                    return (
+                      <Link to={`/recipes`} onClick={(event) => getSearchLink(event)} id="diffulty-name-input" className="dropdown-item">{difficulty}</Link>
+                      // <Link to={`/recipes${props.search + '&difficulty=' + difficulty.toLowerCase()}`} onClick={(event) => getSearchLink(event)} id="diffulty-name-input" className="dropdown-item">{difficulty}</Link>
+                    )
+                  })}              
                 </div>
               </div>
               
@@ -68,7 +103,7 @@ const RecipeIndex = () => {
 
       <div className="container" id="index-cards">
         <div className="columns is-multiline">
-          {recipes.map(recipe => {
+          {filteredRecipes.map(recipe => {
             return (
               <RecipeCard key={recipe._id} {...recipe} />
             )
