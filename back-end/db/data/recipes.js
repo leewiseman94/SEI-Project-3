@@ -332,5 +332,10 @@ export default [
     tags: ['pancakes', 'vegan', 'banana'],
     course: 'Main',
     allergens: ['Vegan', 'Vegetarian', 'Dairy-free', 'Egg-free']
+<<<<<<< HEAD
+  },
+=======
   }
+>>>>>>> development
+  
 ]

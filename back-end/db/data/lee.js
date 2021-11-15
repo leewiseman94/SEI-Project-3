@@ -1,5 +1,5 @@
 
-[{
+export default [{
   name: 'Millionaire’s cheesecake',
   image: 'https://images.immediate.co.uk/production/volatile/sites/30/2020/08/millionaires-cheesecake-f6bb0f4.jpg?quality=90&webp=true&resize=300,272',
   description: 'Indulge in this no-bake chocolate cheesecake after a special dinner. Whether its for New Years Eve or a birthday, its sure to impress',
