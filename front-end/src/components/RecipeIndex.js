@@ -52,6 +52,7 @@ const RecipeIndex = () => {
   // console.log('recipes on state ->', recipes)
 
   const getSearchLink = (event) => {
+    console.log(event.target.name)
     const queryParams = QueryString.parse(props.search)
     queryParams.difficulty = `${event.target.innerHTML.toLowerCase()}`
     setQuery(queryParams)
@@ -89,7 +90,7 @@ const RecipeIndex = () => {
                 <div className="dropdown-content">
                   {difficulties.map(difficulty => {
                     return (
-                      <Link to={`/recipes`} onClick={(event) => getSearchLink(event)} id="diffulty-name-input" className="dropdown-item">{difficulty}</Link>
+                      <Link to={`/recipes`} onClick={(event) => getSearchLink(event)} id="diffulty-name-input" className="dropdown-item" name={difficulty}>{difficulty}</Link>
                       // <Link to={`/recipes${props.search + '&difficulty=' + difficulty.toLowerCase()}`} onClick={(event) => getSearchLink(event)} id="diffulty-name-input" className="dropdown-item">{difficulty}</Link>
                     )
                   })}              
