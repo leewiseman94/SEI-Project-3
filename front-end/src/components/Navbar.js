@@ -10,7 +10,7 @@ import axios from 'axios'
 
 const Navbar = () => {
 
-  let listener = null
+  // let listener = null
   const [scrollState, setScrollState] = useState("big")
   const [searching, setSearching] = useState(false)
   const [recipeData, setRecipeData] = useState([])
