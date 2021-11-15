@@ -250,17 +250,17 @@
   background: white ;
 }
 
-.course-dropdown-menu, .cuisine-dropdown-menu {
+.course-dropdown-menu, .allergens-dropdown-menu {
   left: 0;
   right: auto;
 }
 
-.course-dropdown-content, .cuisine-dropdown-content {
+.course-dropdown-content, .allergens-dropdown-content {
   max-height: 200px;
   overflow: auto;
 }
 
-.course-dropdown, .cuisine-dropdown, .dropdown-trigger {
+.course-dropdown, .allergens-dropdown, .dropdown-trigger {
   width: 100%;
 }
 
