@@ -11,6 +11,7 @@
     "bulma": "^0.9.3",
     "bulma-carousel": "^4.0.24",
     "http-proxy-middleware": "^2.0.1",
+    "query-string": "^7.0.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-onclickoutside": "^6.12.0",
