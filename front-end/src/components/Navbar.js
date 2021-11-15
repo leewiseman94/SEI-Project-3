@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react'
 import logoWhite from '../images/platester_logo_white_withText.PNG'
 import logoRed from '../images/platester_logo_red_withText.PNG'
 import smallLogoRed from '../images/platester_smalllogo_red_withText.PNG'
-// import smallLogoWhite from '../images/platester_smalllogo_white_withText.PNG'
+import smallLogoWhite from '../images/platester_smalllogo_white_withText.PNG'
 import { Link } from 'react-router-dom'
 // import 'animate.css';
 import axios from 'axios'
@@ -15,7 +15,10 @@ const Navbar = () => {
   const [recipeData, setRecipeData] = useState([])
   const [courses, setCourses] = useState([])
   const [cuisines, setCuisines] = useState([])
-
+  const [recipeNameSearch, setRecipeNameSearch] = useState('')
+  const [courseSearch, setCourseSearch] = useState('')
+  const [cuisineSearch, setCuisineSearch] = useState('')
+  
   useEffect(() => {
     const getRecipeData = async () => {
       const { data } = await axios.get('/api/recipes')
@@ -69,6 +72,24 @@ const Navbar = () => {
     setSearching(false)
   }
 
+  const setFilterLink = (event) => {
+    if (event.target.id === 'recipe-name-input') {
+      setRecipeNameSearch(event.target.value)
+    }
+
+    if (event.target.classList.contains('course-dropdown-item')) {
+      setCourseSearch(event.target.innerText)
+    }
+
+    if (event.target.classList.contains('cuisine-dropdown-item')) {
+      setCuisineSearch(event.target.innerText)
+    }
+  }
+
+  const getSearchLink = () => {
+    return `?name=${recipeNameSearch.toLowerCase()}&?course=${courseSearch.toLowerCase()}&?cuisine=${cuisineSearch.toLowerCase()}`
+  }
+
   console.log(scrollState)
   console.log(recipeData)
   console.log(courses)
@@ -96,12 +117,12 @@ const Navbar = () => {
             <div className="dropdown account-dropdown">
               <div className="dropdown-trigger">
                 <button className="button account-button" aria-haspopup="true" aria-controls="dropdown-menu" onClick={() => {
-                const dropdown = document.querySelector('.account-dropdown').classList.toggle('is-active')
-                console.log(dropdown)
+                const dropdown = document.querySelector('.account-dropdown')
+                dropdown.classList.toggle('is-active')
                 }
                 }>
-                    <div className="menu-icon"><span className="icon has-background-transparent has-text-black"><i className="fas fa-bars"></i></span></div>
-                    <div className="user-account-icon"><span className="icon has-background-transparent has-text-white"><i className="fas fa-user"></i></span></div>
+                  <div className="menu-icon"><span className="icon has-background-transparent has-text-black"><i className="fas fa-bars"></i></span></div>
+                  <div className="user-account-icon"><span className="icon has-background-transparent has-text-white"><i className="fas fa-user"></i></span></div>
                 </button>
               </div>
               <div className="dropdown-menu" id="dropdown-menu" role="menu">
@@ -225,16 +246,62 @@ const Navbar = () => {
             :
             <div className="button bottom-search-form">
               <div className="bottom-search-form-container is-flex is-flex-direction-column">
-                
                 <button className="button bottom-search-form-dropdown search-form-button" onClick={() => {document.querySelector("#recipe-name-input").focus() }}>
-                  <h3><strong>Recipe Name</strong></h3><input type="text" id="recipe-name-input" name="name" placeholder="What are you looking for?"></input>
+                  <h3><strong>Recipe Name</strong></h3><input type="text" className="search-input-box" id="recipe-name-input" name="recipe-name" placeholder="What are you looking for?" onChange={(event) => setFilterLink(event)}></input>
                 </button>
-                <button className="button bottom-search-form-dropdown search-form-button"><h3><strong>Course</strong></h3><h3>Select course</h3></button>
-                <button className="button bottom-search-form-dropdown search-form-button"><h3><strong>Cuisine</strong></h3><h3>Select cuisine</h3></button>
+                <div className="dropdown course-dropdown bottom-dropdown">
+                  <div className="dropdown-trigger">
+                    <button className="button bottom-search-form-dropdown search-form-button" onClick={() => {
+                      document.querySelector('.course-dropdown').classList.toggle('is-active')
+                    }}>
+                      <h3><strong>Course</strong></h3><input readOnly className="search-input-box" id="course-input" name="course-name" placeholder="Select course"></input>
+                    </button>
+                  </div>
+                  <div className="dropdown-menu course-dropdown-menu" id="dropdown-menu" role="menu">
+                    <div className="dropdown-content course-dropdown-content">
+                      {courses.map(course => {
+                        return (
+                        <Link key={course} to="#" className="dropdown-item course-dropdown-item" onClick={(event) => {
+                          setFilterLink(event)
+                          document.querySelector("#course-input").value = event.target.innerText
+                          document.querySelector('.course-dropdown').classList.remove('is-active')
+                          }}>
+                          {course[0].toUpperCase() + course.slice(1)}
+                        </Link>
+                        )
+                      })}
+                    </div>
+                  </div>
+                </div>
+                <div className="dropdown cuisine-dropdown bottom-dropdown">
+                  <div className="dropdown-trigger">
+                    <button className="button bottom-search-form-dropdown search-form-button" onClick={() => {
+                      document.querySelector('.cuisine-dropdown').classList.toggle('is-active')
+                    }}>
+                      <h3><strong>Cuisine</strong></h3><input readOnly className="search-input-box" id="cuisine-input" name="cuisine-name" placeholder="Select cuisine"></input>
+                    </button>
+                  </div>
+                  <div className="dropdown-menu cuisine-dropdown-menu" id="dropdown-menu" role="menu">
+                    <div className="dropdown-content cuisine-dropdown-content">
+                      {courses.map(cuisine => {
+                        return (
+                        <Link key={cuisine} to="#" className="dropdown-item cuisine-dropdown-item" onClick={(event) => {
+                          setFilterLink(event)
+                          document.querySelector("#cuisine-input").value = event.target.innerText
+                          document.querySelector('.cuisine-dropdown').classList.remove('is-active')
+                          }}>
+                          {cuisine[0].toUpperCase() + cuisine.slice(1)}
+                        </Link>
+                        )
+                      })}
+                    </div>
+                  </div>
+                </div>
+
               </div>
               <div className="bottom-search-form-buttons">
                 <Link to='#' onClick={closeSearchMobile} className="form-search-icon">Close</Link>
-                <Link to='/recipes' onClick={closeSearchMobile} className="form-search-icon"><span className="icon has-background-transparent has-text-white"><i className="fas fa-search"></i></span></Link>
+                <Link to={`/recipes/${getSearchLink()}`} onClick={() => getSearchLink()} className="form-search-icon"><span className="icon has-background-transparent has-text-white"><i className="fas fa-search"></i></span></Link>
               </div>
             </div>
             }
@@ -242,7 +309,7 @@ const Navbar = () => {
           <div className="button search-form">
             <div className="search-form-container is-flex is-flex-direction-row">
               <button className="button bottom-search-form-dropdown search-form-button" onClick={() => {document.querySelector("#recipe-name-input").focus() }}>
-                <h3><strong>Recipe Name</strong></h3><input type="text" className="search-input-box" id="recipe-name-input" name="recipe-name" placeholder="What are you looking for?"></input>
+                <h3><strong>Recipe Name</strong></h3><input type="text" className="search-input-box" id="recipe-name-input" name="recipe-name" placeholder="What are you looking for?" onChange={(event) => setFilterLink(event)}></input>
               </button>
               <div className="dropdown course-dropdown">
                 <div className="dropdown-trigger">
@@ -256,7 +323,8 @@ const Navbar = () => {
                   <div className="dropdown-content course-dropdown-content">
                     {courses.map(course => {
                       return (
-                      <Link key={course} to="#" className="dropdown-item" onClick={(event) => {
+                      <Link key={course} to="#" className="dropdown-item course-dropdown-item" onClick={(event) => {
+                        setFilterLink(event)
                         document.querySelector("#course-input").value = event.target.innerText
                         document.querySelector('.course-dropdown').classList.remove('is-active')
                         }}>
@@ -268,9 +336,33 @@ const Navbar = () => {
                 </div>
               </div>
 
-              <button className="button search-form-dropdown search-form-button"><h3><strong>Cuisine</strong></h3><h3>Select cuisine</h3></button>
+              <div className="dropdown cuisine-dropdown bottom-dropdown">
+                <div className="dropdown-trigger">
+                  <button className="button bottom-search-form-dropdown search-form-button" onClick={() => {
+                    document.querySelector('.cuisine-dropdown').classList.toggle('is-active')
+                  }}>
+                    <h3><strong>Cuisine</strong></h3><input readOnly className="search-input-box" id="cuisine-input" name="cuisine-name" placeholder="Select cuisine"></input>
+                  </button>
+                </div>
+                <div className="dropdown-menu cuisine-dropdown-menu" id="dropdown-menu" role="menu">
+                  <div className="dropdown-content cuisine-dropdown-content">
+                    {courses.map(cuisine => {
+                      return (
+                      <Link key={cuisine} to="#" className="dropdown-item cuisine-dropdown-item" onClick={(event) => {
+                        setFilterLink(event)
+                        document.querySelector("#cuisine-input").value = event.target.innerText
+                        document.querySelector('.cuisine-dropdown').classList.remove('is-active')
+                        }}>
+                        {cuisine[0].toUpperCase() + cuisine.slice(1)}
+                      </Link>
+                      )
+                    })}
+                  </div>
+                </div>
+              </div>
+              
             </div>
-            <Link to='/recipes' className="form-search-icon"><span className="icon has-background-transparent has-text-white"><i className="fas fa-search"></i></span></Link>
+            <Link to={`/recipes/${getSearchLink()}`} onClick={() => getSearchLink()} className="form-search-icon"><span className="icon has-background-transparent has-text-white"><i className="fas fa-search"></i></span></Link>
           </div>
         </div>
       </nav>
