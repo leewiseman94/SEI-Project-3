@@ -152,7 +152,7 @@ const Home = () => {
 
       <section className="columns">
         <div className="column is-one-third">
-          <Link to={`/recipes/`}>
+          <Link to={`/recipes/add`}>
             <div className="card is-shadowless">
               <div className="card">
                 <div className="media-content">
@@ -164,7 +164,7 @@ const Home = () => {
                     </figure> */}
                   </div>
                   <div className="card-content">
-                    <p className="content">Upload a pic of your latest creations to our "Rate My Plate" page</p>                       
+                    <p className="content">Upload a your latest creation to our Add Recipe page</p>                       
                   </div>
               </div>
             </div>
@@ -173,7 +173,7 @@ const Home = () => {
             <div className="card is-shadowless">
               <div className="card">
                 <div className="media-content">
-                  <p className="title">Fancy yourself as the next Gordon or Pru?</p>
+                  <p className="title">Are you more Jay Rayner or Grace Dent? Rate and comment on recipes</p>
                 </div>
                   <div className="card-image">
                     {/* <figure className="image is-4by3">
