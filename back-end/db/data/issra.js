@@ -1,4 +1,4 @@
-[{
+export default [{
   name: 'Mackerel Pasta',
   image: 'https://assets.bonappetit.com/photos/61099235416061002aabbb86/1:1/w_1600,c_limit/Pantry-0921-Mackerel%20Pantry%20Pasta.jpg',
   description: 'Whether it’s mackerel, tuna, sardines, or trout that floats your boat in the tinned fish aisle, a couple of cans of good-quality fish turn a bare-bones pasta into something company-worthy. Tinned fish most often comes packed in either water or olive oil; we prefer them oil-packed because they’re much more flavorful out of the can. The technique for this no-cook sauce, in which you warm the tinned fish in a heatproof bowl set over your pasta pot as the water boils, is borrowed from Joie Warner’s No-Cook Pasta Sauces, and ensures the fish won’t dry out or become tough.',

@@ -1,4 +1,4 @@
-[{
+export default [{
   name: 'Sausage & mushroom ragu',
   image: 'https://images.immediate.co.uk/production/volatile/sites/30/2021/08/Sausage-and-mushroom-ragu-203c7d4.jpg',
   description: 'Do something different with sausages and transform them into this veg-packed ragu. Great for a family dinner, serve with couscous, mash or pasta',
@@ -145,7 +145,7 @@ course: 'main',
   tags: [],
   course: 'main',
   allergens: ['Vegan', 'Vegetarian']
-},
+}
 
 
 
