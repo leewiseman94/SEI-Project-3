@@ -1,82 +1,192 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import RecipeCard from './RecipeCard'
-import { Link } from 'react-router-dom'
-
+import { Link, useHistory, useLocation } from 'react-router-dom'
+import * as QueryString from "query-string"
 
 const RecipeIndex = () => {
   const [recipes, setRecipes] = useState([])
+  const [filteredRecipes, setFilteredRecipes] = useState([])
+  const [difficulties, setDifficulties] = useState([])
+  const [difficultySearch, setDifficultySearch] = useState('')
+
+
+  const props = useLocation()
+  const history = useHistory()
+  const params = QueryString.parse(props.search)
+
+  const [query, setQuery] = useState(QueryString.parse(props.search))
 
   useEffect(() => {
     const getData = async () => {
       const { data } = await axios.get('/api/recipes')
       setRecipes(data)
+
+      const difficultyArray = ['All']
+      // const allergensArray  = ['All']
+      for (let i = 0; i < data.length; i++) {
+        // Add to difficulty array if no duplicate
+        const difficultyLowerCase = difficultyArray.map(difficulty => difficulty.toLowerCase())
+        if (!difficultyLowerCase.includes(data[i].difficulty.toLowerCase())) difficultyArray.push(data[i].difficulty)
+      }
+
+      setDifficulties(difficultyArray)
+
+      const filtered = data.filter(recipe => {
+        const allergenArrayLowerCase = recipe.allergens.map(allergen => allergen.toLowerCase())
+        console.log(recipe.averageRating)
+        return (
+          ((params.name ? recipe.name.toLowerCase().includes(params.name) : recipe))
+          &&
+          (params.course ? (recipe.course.toLowerCase().includes(params.course) || params.course === 'all') : recipe)
+          &&
+          (params.allergens ? (allergenArrayLowerCase.includes(params.allergens) || params.allergens === 'all') : recipe)
+          &&
+          (params.difficulty ? (recipe.difficulty.toLowerCase().includes(params.difficulty) || params.difficulty === 'all') : recipe)
+          &&
+          (params.rating ? (parseInt(recipe.averageRating) >= parseInt(params.rating)) : recipe)
+
+        )
+      })
+      console.log(filtered)
+      setFilteredRecipes(filtered)
     }
     getData()
-  }, [])
+  }, [props])
   // console.log('recipes on state ->', recipes)
 
+  const getSearchLink = (event) => {
+    const queryParams = QueryString.parse(props.search)
+    console.log(event)
+    if (event.target.id === 'difficulty-name-input') queryParams.difficulty = `${event.target.innerHTML.toLowerCase()}`
+    if (event.target.id === 'rating-input') queryParams.rating = `${event.target.ariaLabel}`
+    if (event.target.id === 'remove-recipe-name' || event.target.parentElement.id === 'remove-recipe-name') delete queryParams.name
+    if (event.target.id === 'remove-course-name' || event.target.parentElement.id === 'remove-course-name') delete queryParams.course
+    if (event.target.id === 'remove-allergens-name' || event.target.parentElement.id === 'remove-allergens-name') delete queryParams.allergens
+    if (event.target.id === 'remove-difficulty-name' || event.target.parentElement.id === 'remove-difficulty-name') delete queryParams.difficulty
+    if (event.target.id === 'remove-rating-name' || event.target.parentElement.id === 'remove-rating-name') delete queryParams.rating
+    console.log(queryParams)
 
+    setQuery(queryParams)
+  }
+
+  useEffect(() => {
+    history.push(`recipes?${QueryString.stringify(query)}`)
+  }, [query])
+  console.log(query)
   return (
     <>
       <section className="section" id="recipe-index">
         <div className="container">
-          <div className="subtitle">
-            <div className="index-links">
-            <Link to="/recipes/starters" className="has-text-grey">Starter</Link>&nbsp;
-            <Link to="/recipes/mains" className="has-text-grey">Main</Link>&nbsp;
-            <Link to="/recipes/desserts" className="has-text-grey">Dessert</Link>
+          <div className="subtitle is-flex is-flex-direction-column is-align-items-start">
+            <div className="filter-container is-flex is-flex-direction-row">
+              <div className="current-filter-links is-flex is-flex-direction-row is-justify-content-space-between">
+                <div className="current-filter-title">
+                  <h3>{params.name || params.course || params.allergens || params.difficulty || params.rating ? 'Active Filters' : 'Active Filters: None'}</h3>
+                </div>
+                <div className="current-filters is-flex is-flex-direction-row">
+                  {params.name && <div className="active-name-filter current-filter-container">Recipe Name: {params.name}<Link to={'/recipes'} id="remove-recipe-name" onClick={(event) => { getSearchLink(event) }}><i className="far fa-times-circle"></i></Link></div>}
+                  {(params.course && params.course !== 'all') && <div className="active-course-filter current-filter-container">Course: {params.course}<Link to={'/recipes'} id="remove-course-name" onClick={(event) => { getSearchLink(event) }}><i className="far fa-times-circle"></i></Link></div>}
+                  {(params.allergens && params.allergens !== 'all') && <div className="active-allergens-filter current-filter-container">Allergens: {params.allergens}<Link to={'/recipes'} id="remove-allergens-name" onClick={(event) => { getSearchLink(event) }}><i className="far fa-times-circle"></i></Link></div>}
+                  {(params.difficulty && params.difficulty !== 'all') && <div className="active-difficulty-filter current-filter-container">Difficulty: {params.difficulty}<Link to={'/recipes'} id="remove-difficulty-name" onClick={(event) => { getSearchLink(event) }}><i className="far fa-times-circle"></i></Link></div>}
+                  {params.rating && <div className="active-rating-filter current-filter-container">Rating: {params.rating}<Link to={'/recipes'} id="remove-rating-name" onClick={(event) => { getSearchLink(event) }}><i className="far fa-times-circle"></i></Link></div>}
+
+                </div>
+
+              </div>
+
+              <div className="filter-buttons">
+                <div className="dropdown dropdown-filter">
+                  <div className="dropdown-trigger">
+                    <button className="button filter" id="filterbtn" aria-haspopup="true" aria-controls="dropdown-menu" aria-pressed="false" onClick={() => {
+                      const dropdown = document.querySelector('.dropdown-filter').classList.toggle('is-active')
+                      console.log(dropdown)
+                    }
+                    }>
+                      <span className="icon is-small">
+                        <i className="fas fa-filter fa-sm" aria-hidden="true"> </i>
+                        <span className="filterbtn">Difficulty</span>
+                      </span>
+                    </button>
+                  </div>
+                  <div className="dropdown-menu" id="dropdown-menu" role="menu">
+                    <div className="dropdown-content">
+                      {difficulties.map(difficulty => {
+                        return (
+                          <Link to={`/recipes`} onClick={(event) => getSearchLink(event)} id="difficulty-name-input" className="dropdown-item">{difficulty}</Link>
+                          // <Link to={`/recipes${props.search + '&difficulty=' + difficulty.toLowerCase()}`} onClick={(event) => getSearchLink(event)} id="diffulty-name-input" className="dropdown-item">{difficulty}</Link>
+                        )
+                      })}
+                    </div>
+                  </div>
+
+                </div>
+
+                <div className="dropdown dropdown-rating">
+                  <div className="dropdown-trigger">
+                    <button className="button rating" id="ratingbtn" aria-haspopup="true" aria-controls="rating-dropdown-menu" aria-pressed="false" onClick={() => {
+                      const dropdown = document.querySelector('.dropdown-rating').classList.toggle('is-active')
+                      console.log(dropdown)
+                    }
+                    }>
+                      <span className="icon is-small">
+                        <i className="fas fa-star fa-sm" aria-hidden="true"> </i>
+                        <span className="ratingbtn">&nbsp;Minimum Rating</span>
+                      </span>
+                    </button>
+                  </div>
+                  <div className="rating-dropdown-menu dropdown-menu" id="rating-dropdown-menu" role="menu">
+                    <div className="rating-dropdown-content dropdown-content">
+                      <Link to={`/recipes`} onClick={(event) => getSearchLink(event)} id="rating-input" className="dropdown-item" name="1">
+                        1 <span className="icon has-background-transparent has-text-black"><i className="fas fa-star"></i></span>
+                      </Link>
+                      <Link to={`/recipes`} onClick={(event) => getSearchLink(event)} id="rating-input" className="dropdown-item" name="2">
+                        2 <span className="icon has-background-transparent has-text-black"><i className="fas fa-star"></i></span>
+                        <span className="icon has-background-transparent has-text-black"><i className="fas fa-star"></i></span>
+                      </Link>
+                      <Link to={`/recipes`} onClick={(event) => getSearchLink(event)} id="rating-input" className="dropdown-item" name="3">
+                        3 <span className="icon has-background-transparent has-text-black"><i className="fas fa-star"></i></span>
+                        <span className="icon has-background-transparent has-text-black"><i className="fas fa-star"></i></span>
+                        <span className="icon has-background-transparent has-text-black"><i className="fas fa-star"></i></span>
+                      </Link>
+                      <Link to={`/recipes`} onClick={(event) => getSearchLink(event)} id="rating-input" className="dropdown-item" name="4">
+                        4 <span className="icon has-background-transparent has-text-black"><i className="fas fa-star"></i></span>
+                        <span className="icon has-background-transparent has-text-black"><i className="fas fa-star"></i></span>
+                        <span className="icon has-background-transparent has-text-black"><i className="fas fa-star"></i></span>
+                        <span className="icon has-background-transparent has-text-black"><i className="fas fa-star"></i></span>
+                      </Link>
+                      <Link to={`/recipes`} onClick={(event) => getSearchLink(event)} id="rating-input" className="dropdown-item" name="5">
+                        5 <span className="icon has-background-transparent has-text-black"><i className="fas fa-star"></i></span>
+                        <span className="icon has-background-transparent has-text-black"><i className="fas fa-star"></i></span>
+                        <span className="icon has-background-transparent has-text-black"><i className="fas fa-star"></i></span>
+                        <span className="icon has-background-transparent has-text-black"><i className="fas fa-star"></i></span>
+                        <span className="icon has-background-transparent has-text-black"><i className="fas fa-star"></i></span>
+                      </Link>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
             </div>
 
-            <div className="dropdown dropdown-filter">
-              <div className="dropdown-trigger">
-                <button className="button filter" id="filterbtn" aria-haspopup="true" aria-controls="dropdown-menu" aria-pressed="false" onClick={() => {
-                const dropdown = document.querySelector('.dropdown-filter').classList.toggle('is-active')
-                console.log(dropdown)
-              }
-            }>
-                  <span className="icon is-small">
-                    <i className="fas fa-filter fa-sm" aria-hidden="true"> </i>
-                    <span className="filterbtn">Filter</span>
-                  </span>
-                </button>
-              </div>
-              <div className="dropdown-menu" id="dropdown-menu" role="menu">
-                <div className="dropdown-content">
-                  <a href="/recipes/dairy-free" className="dropdown-item">
-                    Dairy-Free
-                  </a>
-                  <a href="/recipes/gluten-free" className="dropdown-item">
-                    Gluten Free
-                  </a>
-                  <a href="/recipes/vegan" className="dropdown-item">
-                    Vegan
-                  </a>
-                  <a href="/recipes/vegetarian" className="dropdown-item">
-                    Vegetarian
-                  </a>                 
-                  <a href="/recipes/rating" className="dropdown-item">
-                    Rating
-                  </a>                 
-                </div>
-              </div>
-              
+            <div className="showing-count">
+              <h3>Showing {filteredRecipes.length} of {recipes.length}</h3>
             </div>
           </div>
         </div>
 
 
-      <div className="container" id="index-cards">
-        <div className="columns is-multiline">
-          {recipes.map(recipe => {
-            return (
-              <RecipeCard key={recipe._id} {...recipe} />
-            )
-          })}
+        <div className="container" id="index-cards">
+          <div className="columns is-multiline">
+            {filteredRecipes.map(recipe => {
+              return (
+                <RecipeCard key={recipe._id} {...recipe} />
+              )
+            })}
+          </div>
         </div>
-      </div>
 
-    </section >
+      </section >
     </>
   )
 }

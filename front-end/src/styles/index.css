@@ -278,6 +278,18 @@ i.fas.fa-filter {
   margin-left: -5px;
 }
 
+.current-filter-container {
+  background-color: lightgrey;
+  margin-left: 5px;
+  border-radius: 50px;
+  padding: 5px 10px;
+}
+
+.filter-container {
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+}
 
 
 .filterbtn {
@@ -285,7 +297,12 @@ i.fas.fa-filter {
 }
 
 #filterbtn {
-  width: 100px;
+  width: 120px;
+  height: 40px;
+  /* margin-right: 50px; */
+}
+#ratingbtn {
+  width: 160px;
   height: 40px;
   /* margin-right: 50px; */
 }
@@ -396,11 +413,38 @@ i.fas.fa-filter {
 
 
 #box-one {
-  background: url('../assets/fridge.jpeg');
-    
+  background: url('../assets/fridge3.jpeg');
+  background-size: 100%;
+  background-repeat: no-repeat;    
   }
 
 #box-two {
   background: url('../assets/chef.jpeg');
-    
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
+
+#box-twop{
+  text-shadow: 2px 2px black;
+}
+
+#box-onep {
+  text-shadow: 2px 2px black;
+}
+
+#column-one {
+  background: url('../assets/pru.jpeg');
+  background-size: 100%;
+  background-repeat: no-repeat;
+  /* margin: 100px;     */
   }
+
+#column-two {
+  background: url('../assets/GraceDent.jpeg');
+  background-size: 100%;
+  background-repeat: no-repeat;    
+  }
+
+#logos {
+  
+}

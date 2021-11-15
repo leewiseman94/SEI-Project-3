@@ -8,40 +8,39 @@ import { Link } from 'react-router-dom'
 // import 'animate.css';
 import axios from 'axios'
 import { getPayload } from './helpers/auth'
+import * as QueryString from "query-string"
 
 const Navbar = () => {
 
   const [scrollState, setScrollState] = useState("big")
   const [searching, setSearching] = useState(false)
-  const [recipeData, setRecipeData] = useState([])
+  // const [recipeData, setRecipeData] = useState([])
   const [courses, setCourses] = useState([])
-  const [cuisines, setCuisines] = useState([])
-  const [recipeNameSearch, setRecipeNameSearch] = useState('')
-  const [courseSearch, setCourseSearch] = useState('')
-  const [cuisineSearch, setCuisineSearch] = useState('')
-
+  const [allergens, setAllergens] = useState([])
+  const [query, setQuery] = useState({})
+  
   useEffect(() => {
     const getRecipeData = async () => {
       const { data } = await axios.get('/api/recipes')
-      setRecipeData(data)
+      // setRecipeData(data)
       
-      const coursesArray = []
-      const cuisinesArray = []
+      const coursesArray = ['All']
+      const allergensArray  = ['All']
       for(let i = 0; i < data.length; i++) {
-        if (coursesArray.length > 0) {
-          const coursesLowerCase = coursesArray.map(course => course.toLowerCase())
-          if (!coursesLowerCase.includes(data[i].course.toLowerCase())) coursesArray.push(data[i].course)
-          // const cuisinesLowerCase = cuisinesArray.map(cuisine => cuisine.toLowerCase())
-          // if (!cuisinesLowerCase.includes(data[i].cuisine.toLowerCase())) cuisinesArray.push(data[i].cuisine)
-        } else {
-          coursesArray.push(data[i].course)
-          // cuisinesArray.push(data[i].cuisine)
-        }
+        // Add to courses array if no duplicate
+        const coursesLowerCase = coursesArray.map(course => course.toLowerCase())
+        if (!coursesLowerCase.includes(data[i].course.toLowerCase())) coursesArray.push(data[i].course)
+
+        // Add to allergens array if no duplicate
+        const allergensLowerCase = allergensArray.map(allergen => allergen.toLowerCase())
+        data[i].allergens.forEach(allergen => {
+          if (!allergensLowerCase.includes(allergen.toLowerCase())) allergensArray.push(allergen)
+        })
       }
       coursesArray.sort()
-      cuisinesArray.sort()
       setCourses(coursesArray)
-      setCuisines(cuisinesArray)
+      allergensArray.sort()
+      setAllergens(allergensArray)
     }
     getRecipeData()
   }, [])
@@ -75,20 +74,20 @@ const Navbar = () => {
 
   const setFilterLink = (event) => {
     if (event.target.id === 'recipe-name-input') {
-      setRecipeNameSearch(event.target.value)
+      setQuery({ ...query, name: event.target.value.toLowerCase() })
     }
 
     if (event.target.classList.contains('course-dropdown-item')) {
-      setCourseSearch(event.target.innerText)
+      setQuery({ ...query, course: event.target.innerText.toLowerCase() })
     }
 
-    if (event.target.classList.contains('cuisine-dropdown-item')) {
-      setCuisineSearch(event.target.innerText)
+    if (event.target.classList.contains('allergens-dropdown-item')) {
+      setQuery({ ...query, allergens: event.target.innerText.toLowerCase() })
     }
   }
 
   const getSearchLink = () => {
-    return `?name=${recipeNameSearch.toLowerCase()}&?course=${courseSearch.toLowerCase()}&?cuisine=${cuisineSearch.toLowerCase()}`
+    return `?${QueryString.stringify(query)}`
   }
 
   const userIsAuthenticated = () => {
@@ -99,10 +98,10 @@ const Navbar = () => {
   } 
 
 
-  console.log(scrollState)
-  console.log(recipeData)
-  console.log(courses)
-  console.log(cuisines)
+  // console.log(scrollState)
+  // console.log(recipeData)
+  // console.log(courses)
+  // console.log(cuisines)
   return (
     scrollState === 'small' ? 
     <header>
@@ -289,24 +288,24 @@ const Navbar = () => {
                     </div>
                   </div>
                 </div>
-                <div className="dropdown cuisine-dropdown bottom-dropdown">
+                <div className="dropdown allergens-dropdown bottom-dropdown">
                   <div className="dropdown-trigger">
                     <button className="button bottom-search-form-dropdown search-form-button" onClick={() => {
-                      document.querySelector('.cuisine-dropdown').classList.toggle('is-active')
+                      document.querySelector('.allergens-dropdown').classList.toggle('is-active')
                     }}>
-                      <h3><strong>Cuisine</strong></h3><input readOnly className="search-input-box" id="cuisine-input" name="cuisine-name" placeholder="Select cuisine"></input>
+                      <h3><strong>Cuisine</strong></h3><input readOnly className="search-input-box" id="allergens-input" name="allergens-name" placeholder="Select allergens"></input>
                     </button>
                   </div>
-                  <div className="dropdown-menu cuisine-dropdown-menu" id="dropdown-menu" role="menu">
-                    <div className="dropdown-content cuisine-dropdown-content">
-                      {courses.map(cuisine => {
+                  <div className="dropdown-menu allergens-dropdown-menu" id="dropdown-menu" role="menu">
+                    <div className="dropdown-content allergens-dropdown-content">
+                      {courses.map(allergen => {
                         return (
-                        <Link key={cuisine} to="#" className="dropdown-item cuisine-dropdown-item" onClick={(event) => {
+                        <Link key={allergen} to="#" className="dropdown-item allergens-dropdown-item" onClick={(event) => {
                           setFilterLink(event)
-                          document.querySelector("#cuisine-input").value = event.target.innerText
-                          document.querySelector('.cuisine-dropdown').classList.remove('is-active')
+                          document.querySelector("#allergens-input").value = event.target.innerText
+                          document.querySelector('.allergens-dropdown').classList.remove('is-active')
                           }}>
-                          {cuisine[0].toUpperCase() + cuisine.slice(1)}
+                          {allergen[0].toUpperCase() + allergen.slice(1)}
                         </Link>
                         )
                       })}
@@ -317,7 +316,7 @@ const Navbar = () => {
               </div>
               <div className="bottom-search-form-buttons">
                 <Link to='#' onClick={closeSearchMobile} className="form-search-icon">Close</Link>
-                <Link to={`/recipes/${getSearchLink()}`} onClick={() => getSearchLink()} className="form-search-icon"><span className="icon has-background-transparent has-text-white"><i className="fas fa-search"></i></span></Link>
+                <Link to={`/recipes${getSearchLink()}`} onClick={() => getSearchLink()} className="form-search-icon"><span className="icon has-background-transparent has-text-white"><i className="fas fa-search"></i></span></Link>
               </div>
             </div>
             }
@@ -340,6 +339,7 @@ const Navbar = () => {
                     {courses.map(course => {
                       return (
                       <Link key={course} to="#" className="dropdown-item course-dropdown-item" onClick={(event) => {
+                        event.preventDefault()
                         setFilterLink(event)
                         document.querySelector("#course-input").value = event.target.innerText
                         document.querySelector('.course-dropdown').classList.remove('is-active')
@@ -352,24 +352,25 @@ const Navbar = () => {
                 </div>
               </div>
 
-              <div className="dropdown cuisine-dropdown bottom-dropdown">
+              <div className="dropdown allergens-dropdown bottom-dropdown">
                 <div className="dropdown-trigger">
                   <button className="button bottom-search-form-dropdown search-form-button" onClick={() => {
-                    document.querySelector('.cuisine-dropdown').classList.toggle('is-active')
+                    document.querySelector('.allergens-dropdown').classList.toggle('is-active')
                   }}>
-                    <h3><strong>Cuisine</strong></h3><input readOnly className="search-input-box" id="cuisine-input" name="cuisine-name" placeholder="Select cuisine"></input>
+                    <h3><strong>Cuisine</strong></h3><input readOnly className="search-input-box" id="allergens-input" name="allergens-name" placeholder="Select allergens"></input>
                   </button>
                 </div>
-                <div className="dropdown-menu cuisine-dropdown-menu" id="dropdown-menu" role="menu">
-                  <div className="dropdown-content cuisine-dropdown-content">
-                    {courses.map(cuisine => {
+                <div className="dropdown-menu allergens-dropdown-menu" id="dropdown-menu" role="menu">
+                  <div className="dropdown-content allergens-dropdown-content">
+                    {allergens.map(allergen => {
                       return (
-                      <Link key={cuisine} to="#" className="dropdown-item cuisine-dropdown-item" onClick={(event) => {
+                      <Link key={allergen} to="#" className="dropdown-item allergens-dropdown-item" onClick={(event) => {
+                        event.preventDefault()
                         setFilterLink(event)
-                        document.querySelector("#cuisine-input").value = event.target.innerText
-                        document.querySelector('.cuisine-dropdown').classList.remove('is-active')
+                        document.querySelector("#allergens-input").value = event.target.innerText
+                        document.querySelector('.allergens-dropdown').classList.remove('is-active')
                         }}>
-                        {cuisine[0].toUpperCase() + cuisine.slice(1)}
+                        {allergen[0].toUpperCase() + allergen.slice(1)}
                       </Link>
                       )
                     })}
@@ -378,7 +379,7 @@ const Navbar = () => {
               </div>
               
             </div>
-            <Link to={`/recipes/${getSearchLink()}`} onClick={() => getSearchLink()} className="form-search-icon"><span className="icon has-background-transparent has-text-white"><i className="fas fa-search"></i></span></Link>
+            <Link to={`/recipes${getSearchLink()}`} onClick={() => getSearchLink()} className="form-search-icon"><span className="icon has-background-transparent has-text-white"><i className="fas fa-search"></i></span></Link>
           </div>
         </div>
       </nav>
