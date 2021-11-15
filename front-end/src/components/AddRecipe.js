@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { useState } from 'react'
 import recipeMethod from '../assets/recipeMethod.PNG'
 import ingredientsIMG from '../assets/ingredientsIMG.PNG'
