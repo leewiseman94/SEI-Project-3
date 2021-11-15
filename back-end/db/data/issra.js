@@ -27,7 +27,7 @@ export default [{
 },
 {
   name: 'Gratin Dauphinois',
-  image: 'https://assets.afcdn.com/recipe/20201217/116563_w1200h722c1cx1116cy671cxb2232cyb1342.webp',
+  image: 'https://images.immediate.co.uk/production/volatile/sites/30/2010/06/ultimate-gratin-dauphinois-939cddd.jpg?quality=90&webp=true&resize=300,272',
   description: 'The ultimate potato bake, created by the French!!! Potato + cream + cheese with a hint of garlic and thyme = pure heaven This is THE perfect make ahead potato dish, the most luxurious of all potato casseroles, the better version of Scalloped Potatoes!',
   ingredients: ['1 1/2 cups cream','2 garlic cloves , minced', '30g / 2 tbsp unsalted butter , melted', '1.25 kg / 2.5 lb starchy potatoes', '1 tsp salt', '1/4 tsp pepper', '2 1/2 cups gruyere cheese (or mozzarella) , freshly grated ', '2 tsp thyme leaves' ],
   method: ['Cream Mixture: Place butter, cream and garlic in a jug. Mix until combined.', 'Preheat oven to 180°C/350°F.', 'Slice potatoes: Peel the potatoes and slice them 1/8"/3 mm thick. Or use a slicer!', 'Layer 1: Spread 1/3 of the potatoes in a baking dish (Note 3), then pour over 1/3 of the Cream Mixture, scatter with 1/3 of the salt, pepper and thyme. Sprinkle with 3/4 cups cheese.', 'Layers 2 & 3: Repeat for the 2nd and third layer, but do not finish with cheese on the top layer (will add later).', 'Cover & bake: Cover with lid or foil, and bake for 1 hr 15 min or until the potatoes in the middle are soft (use knife to test).', 'Top with cheese, bake again: Remove foil, top with cheese. Bake for a further 10 to 15 minutes until golden and bubbly. Stand 5 minutes before serving.'],
@@ -41,19 +41,30 @@ export default [{
   allergens: ['Vegetarian', 'Vegan']
 },
 {
-  name: 'Roast Pumpkin, Spinach and Feta Salad',
-  image: 'https://www.cookitrealgood.com/wp-content/uploads/2019/01/psalad5.jpg',
-  description: 'Try this Roast Pumpkin, Spinach and Feta Salad for your next Sunday lunch! Drizzled with a Honey Balsamic Dressing, this is a magical combination of ingredients. I usually serve this at room temperature but it is also great warm.',
-  ingredients: ['600 g / 1.2 lb pumpkin (after peeling), cut into 3cm / 1.25', '1 1/2 tbsp olive oil','Salt and pepper', '2.5 tbsp extra virgin olive oil', '2 tbsp balsamic vinegar', '1 tbsp honey', 'Salt and pepper', '1/4 cup pine nuts', '150 g baby spinach leaves', '60 g feta'],
-  method: ['Preheat oven to 220C/430F (standard) or 200C/390F (fan/convection).', 'Toss pumpkin with olive oil, salt and pepper. Spread on baking tray, bake for 20 minutes. Remove from oven, flip, then bake for a further 7 - 10 minutes until golden but not mushy. Loosen pumpkin with egg flip (it can adhere as it cools), then if serving salad at room temperature, leave to cool.', 'Shake Dressing in a jar. Taste and adjust to taste. I like it a bit sharp because it balances out the flavours in this salad.', 'Toast pine nuts in a dry skillet over medium heat until light golden and it smells nutty. Remove pine nuts from skillet as soon as it is ready.', 'Place Spinach in a bowl. Drizzle with a bit of dressing then toss.', 'Add pumpkin, just a bit of feta and pine nuts, then GENTLY BRIEFLY toss just to disperse the feta. (If you toss vigorously, the feta can make it look messy).', 'Transfer to serving plate. Sprinkle over remaining feta and pine nuts. Just before serving, drizzle with remaining dressing. Serve!'],
+  name: 'Feta, Beetroot & Pomegranate salad',
+  image: 'https://images.immediate.co.uk/production/volatile/sites/30/2020/08/feta-beetroot-pomegranate-salad-3ba84c9.jpg?quality=90&webp=true&resize=300,272',
+  description: 'Enjoy something lighter for lunch with this bright salad. It\'s low-calorie and full of flavour thanks to mint, parsley, cinnamon and cumin',
+  ingredients: ['2 tsp rapeseed oil',
+    '1 tbsp pomegranate molasses',
+    'pinch of ground cinnamon',
+    '1 tsp cumin seeds , toasted',
+    'squeeze of lemon juice',
+    'handful of parsley , finely chopped',
+    'handful of mint leaves, torn',
+    '2 cooked beetroot , cut into thin wedges',
+    '30g feta , crumbled',
+    'handful of rocket leaves',
+    '½ romaine lettuce , torn into bite-sized pieces',
+    '20g pomegranate seeds'],
+  method: ['Whisk the oil, pomegranate molasses, cinnamon, cumin seeds and lemon juice together in a bowl. Add 1 tbsp water to loosen, and season.','Toss in the herbs, beetroot, feta, rocket and lettuce, and toss to coat in the dressing. Sprinkle over the pomegranate seeds to serve.'],
   prepTime: '10 min',
-  cookingTime: '25 min',
+  cookingTime: '0',
   difficulty: 'Easy',
-  servingSize: 4,
+  servingSize: 1,
   nutritionalInfo: ['Serving: 226g', 'Calories: 264', 'Carbohydrates: 16g', 'Protein: 6.3g', 'Fat: 21g', 'Saturated Fat: 5.1g', 'Cholesterol: 19mg', 'Sodium: 514mg', 'Potassium: 560mg','Fiber: 2.8g', 'Sugar: 9.7g', 'Vitamin A: 233%',' Vitamin C: 17%','Calcium: 0.3%', 'Iron:16%'],
-  tags: ['Salad', 'Autumn'],
+  tags: ['Salad', 'Autumn', 'Healthy'],
   course: 'starter',
-  allergens: ['Vegetarian', 'Vegan']
+  allergens: ['Vegetarian', 'Gluten-free']
 },
 
 
@@ -64,7 +75,7 @@ export default [{
 
 {
   name: 'Butter Chicken',
-  image: 'https://www.recipetineats.com/wp-content/uploads/2015/07/Butter-Chicken_5.jpg?resize=650,910',
+  image: 'https://images.immediate.co.uk/production/volatile/sites/30/2021/02/butter-chicken-ac2ff98.jpg?quality=90&webp=true&resize=300,272',
   description: 'This is a Chef recipe and is one of the easiest Indian curries to make. The Butter Chicken Sauce is so good that you will want it on tap! Many restaurants take it over the top by adding copious amounts of ghee or butter into the sauce, but you\'ll find this rich enough as it is with the rich, creamy sauce!',
   ingredients: ['1/2 cup plain yoghurt , full fat','1 tbsp lemon juice','1 tsp tumeric powder','2 tsp garam masala ','1/2 tsp chilli powder or cayenne pepper powder', '1 tsp ground cumin','1 tbsp ginger, freshly grated','2 cloves garlic, crushed','1.5 lb / 750 g chicken thigh fillets, cut into bite size pieces', '2 tbsp (30 g) ghee or butter, OR 1 tbsp vegetable oil','1 cup tomato passata (aka tomato puree)','1 cup heavy / thickened cream','1 tbsp sugar', '1/4 tsp salt','Basmati rice'],
   method: ['Marinade: Combine the Marinade ingredients with the chicken in a bowl. Cover and refrigerate overnight, or up to 24 hours (minimum 3 hrs).','Cook chicken: Heat the ghee (butter or oil) over high heat in a large fry pan. Take the chicken out of the Marinade but do not wipe or shake off the marinade from the chicken (but don\'t pour the Marinade left in the bowl into the fry pan).','Place chicken in the fry pan and cook for around 3 minutes, or until the chicken is white all over (it doesn\'t really brown because of the Marinade).','Sauce: Add the tomato passata, cream, sugar and salt. Also add any remaining marinade left in the bowl. Turn down to low and simmer for 20 minutes. Do a taste test to see if it needs more salt.','Garnish with coriander/cilantro leaves if using. Serve with basmati rice.','The Butter Chicken is pictured with my very easy No Yeast Flatbread and no-fry papadums.'],
@@ -79,7 +90,7 @@ export default [{
 },
 {
   name: 'Dal (Indian Lentil Curry)',
-  image: 'https://www.thecuriouschickpea.com/wp-content/uploads/2019/04/masoor-tadka-dal-4.jpg.webp',
+  image: 'https://images.immediate.co.uk/production/volatile/sites/30/2020/08/dhal-6cc4aa6.jpg?quality=90&webp=true&resize=300,272',
   description: 'There are countless variations of Dal all across India. This is a northern Indian version called "dal tadka" that\'s akin to what is served in Indian restaurants. "Tadka" refers to spices sizzling in hot oil that\'s poured over the dal. It\'s dramatic and gives it a flavour bump - but is optional. I include it for company, and leave it out for midweek or if being served alongside other punchy flavoured curries. Heat level in this recipe is mild - just a tickle. If you like it fiery, try leaving in the seeds in the chillies and/or adding some chilli powder. This is a dal that\'s flavourful to have as a main!',
   ingredients: ['2 tbsp / 30 g ghee , or 1 tbsp oil + 1 tbsp/15g butter ','2 green cayenne chillies , deseeded and cut into chunks (optional) ','1 medium onion , finely chopped (brown or yellow)','6 garlic cloves , finely chopped','1 tbsp ginger , finely chopped ','8 fresh curry leaves , or 6 dried ','1 tomato , chopped','1/2 tsp ground cumin','1 cup dried chana dal , yellow split peas or other yellow lentils','4 cups / 1 litre water','1/2 tsp turmeric powder','1/8 tsp garam marsala','3/4 tsp salt','1 1/2 tbsp / 20g ghee , or half each butter + oil ','1 eschalot or 1/4 small onion , halved lengthways and sliced ','1 tsp cumin seeds','1/2 tsp black mustard seeds (optional)','3 dried chillies , broken in half, seeds removed (optional)','Fresh coriander/cilantro sprigs (optional)','Steamed basmati rice'],
   method: ['Preheat oven to 220C/430F (standard) or 200C/390F (fan/convection).', 'Toss pumpkin with olive oil, salt and pepper. Spread on baking tray, bake for 20 minutes. Remove from oven, flip, then bake for a further 7 - 10 minutes until golden but not mushy. Loosen pumpkin with egg flip (it can adhere as it cools), then if serving salad at room temperature, leave to cool.', 'Shake Dressing in a jar. Taste and adjust to taste. I like it a bit sharp because it balances out the flavours in this salad.', 'Toast pine nuts in a dry skillet over medium heat until light golden and it smells nutty. Remove pine nuts from skillet as soon as it is ready.', 'Place Spinach in a bowl. Drizzle with a bit of dressing then toss.', 'Add pumpkin, just a bit of feta and pine nuts, then GENTLY BRIEFLY toss just to disperse the feta. (If you toss vigorously, the feta can make it look messy).', 'Transfer to serving plate. Sprinkle over remaining feta and pine nuts. Just before serving, drizzle with remaining dressing. Serve!'],
@@ -94,7 +105,7 @@ export default [{
 },
 {
   name: 'French Toast',
-  image: 'https://natashaskitchen.com/wp-content/uploads/2021/03/French-Toast-8-1024x1536.jpg',
+  image: 'https://images.immediate.co.uk/production/volatile/sites/30/2020/08/french-toast_1-5bbce73.jpg?quality=90&webp=true&resize=300,272',
   description: 'A recipe everyone should know! Made for using up leftover bread, but if you want the ultimate French Toast experience, use brioche bread. There’s no need to use sugar if you’re dousing with maple syrup – plus it burns easily.',
   ingredients: ['2 egg whites','1 egg yolk','¼ cup skim or low-fat milk','2 slices whole-wheat bread','1 tablespoon maple syrup','¼ cup sliced strawberries'],
   method: ['In a shallow bowl, combine the egg whites, yolk, and milk. Soak each slice of bread in the egg mixture for 30 seconds per side.', 'Heat a nonstick skillet over medium heat. Cook the bread until golden brown, 2 to 3 minutes per side.', 'Transfer to a plate, drizzle with the syrup, and top with the strawberries.' ],
@@ -109,7 +120,7 @@ export default [{
 },
 {
   name: 'Easy Doughnuts',
-  image: 'https://christinascucina.com/wp-content/uploads/2014/01/IMG_4471-660.jpg',
+  image: 'https://images.immediate.co.uk/production/volatile/sites/30/2020/08/doughnut-dough-59a499e.jpg?quality=90&webp=true&resize=300,272',
   description: 'This is the easiest doughnut recipe you will find!',
   ingredients: ['¾ cup vegetable oil','1 8-count package large refrigerated biscuits (such as Pillsbury Grands)','½ cup sugar', '¼ teaspoon ground cinnamon'],
   method: ['Heat ½ cup of the oil in a medium skillet over medium-low heat.','Place the biscuits on a cutting board. Using a 1-inch round cookie cutter or shot glass, cut a hole in the center of each biscuit, reserving the extra dough for "holes."','Test the heat of the oil by dipping the edge of a doughnut in the pan. When the oil is hot enough, the edge will bubble. Place 4 of the doughnuts and holes in the skillet and cook until golden brown, 1 to 1½ minutes per side. Transfer to a wire rack or paper towel–lined plate to drain. Add the remaining oil to the skillet, reheat, and cook the remaining doughnuts and holes.','In a large bowl, combine the sugar and cinnamon. Gently toss the warm doughnuts in the mixture a few at a time. Serve warm or at room temperature. This recipe makes 8 doughnuts, plus holes.'],
@@ -137,7 +148,7 @@ export default [{
 },
 {
   name: 'Lahmacun',
-  image: 'https://www.themediterraneandish.com/wp-content/uploads/2018/10/Easy-Turkish-Lahmacun-Recipe-2.jpg',
+  image: 'https://images.immediate.co.uk/production/volatile/sites/30/2020/08/pide-696b45e.jpg?quality=90&webp=true&resize=300,272',
   description: 'Think of Lahmacun (Lahamajoun) as super thin, crispy Turkish pizza (or flatbread) topped with a flavor-packed mixture of minced meat with peppers, tomato, fresh herbs and earthy spices. I take a major shortcut by using quality store-bought pizza dough. But the secret is in the spice mixture.',
   ingredients: ['½ lb uncooked store-bought organic pizza dough','½ sweet red pepper, cored, cut into chunks','1 shallot, halved','2 garlic cloves, peeled','½ oz fresh parsley leaves with some stem','7 oz ground lamb or ground beef','1 teaspoon smoked paprika','1 teaspoon ground allspice','½ teaspoon ground cumin','½ teaspoon Aleppo-style pepper','½ teaspoon ground cinnamon','½ teaspoon cayenne pepper','½ teaspoon salt','4 tablespoon tomato paste','2 tablespoon Private Reserve Greek extra virgin olive oil','Lemon wedges for later'],
   method: ['Heat oven to 450 degrees F. Adjust oven rack to the middle.' ,'Prepare the meat mixture. In the large bowl of a food processor, fitted with blade, add red peppers, shallot, garlic, and parsley. Pulse a few times to chop. To the mixture, add ground lamb (or beef). Season with spices and salt. Add tomato paste and extra virgin olive oil. Now pulse again until well-combined (about 8 to 10 pulses.)','Prepare two large rimmed baking sheets lined with parchment paper (you\'ll be using these to bake the Lahmacun in batches.)','Divide the pizza dough into 4 equal balls (about 2 oz each.) Working with one ball of dough at a time, place on a floured surface. Using a rolling pin, roll dough out into as thin as you can to a disk that\'s about 8 or 9 inches in diameter.','Assemble Lahmacun. Place one flatbread disk on one of the prepared pans. Reshape as needed.  Spoon 3–4 tablespoon topping onto dough and spread topping evenly to edges, leaving a thin boarder.','Bake in heated oven for about 5 to 7 minutes or until dough and meat are fully cooked (dough will be a little crusty around the edges.)','Repeat steps 5 and 6 with the remaining dough.','Squeeze a little lemon juice on top. Serve Lahmacun hot or at room temperature.'],
@@ -151,7 +162,7 @@ export default [{
 },
 {
   name: 'Baba Ganoush',
-  image: 'https://www.themediterraneandish.com/wp-content/uploads/2019/08/baba-ganoush-4.jpg',
+  image: 'https://images.immediate.co.uk/production/volatile/sites/30/2020/08/baba-ganoush-5159138.jpg?quality=90&webp=true&resize=300,272',
   description: 'Here is how to make the best baba ganoush, the smoky, rich, and extra creamy eggplant dip, packed with flavor thanks to tahini, garlic, and lemon juice. Grilling the eggplant over open flame will give you the deepest flavor. And if you have the time, allow the dip to chill in the fridge for 30 minutes to 1 hour. It will thicken and the flavors will meld',
   ingredients: ['2 Italian eggplants or small globe eggplants','¼ cup tahini paste I used Soom tahini','1 lemon, juice','1 garlic clove, minced','1 tablespoon plain Greek yogurt, optional','Kosher salt and black pepper','1 teaspoon sumac','¾ teaspoon Aleppo pepper or red pepper flakes, optional','Extra virgin olive oil','Toasted pine nuts for garnish, optional'],
   method: ['First, smoke or grill the eggplant. Turn one gas burner on medium-high. Place the eggplant directly over the flame. Using a pair of tongs, turn the eggplant every 5 minutes or so until it is tender and the skin is charred and crispy on all sides (20 minutes.) The eggplant should deflate and become super tender. supposed to. If you don\'t have a gas burner you can use a grill. You can also roast the eggplant in the oven.','Remove the eggplant from the heat and transfer it to a large colander over a bowl. Allow it to sit and drain for a few minutes until fully cooled and all excess water has been drained (it helps if you open the eggplant up a bit and push on it with a knife or a spoon to help it release its juices).','Once the eggplant is cool enough to touch, peel the charred crispy skin off (it should come right off). Discard the skin and the stem (don\'t worry if a few bits of the skin remain, that is just added flavor).','Transfer the cooked and fully drained eggplant to a bowl. Use a fork to break it down into smaller pieces. Add the tahini paste, garlic, lemon juice, Greek yogurt (if using) salt, pepper, sumac, Aleppo pepper or crushed red pepper flakes. Mix gently with a wooden spoon or a fork until well-combined.','Cover the baba ganoush and chill in the fridge for 30 minutes to an hour.','To serve, transfer the baba ganoush to a rimmed serving dish or a bowl. Top with a good drizzle of extra virgin olive oil and toasted pine nuts, if you like. Serve with pita wedges or pita chips and veggies of your choice.'],

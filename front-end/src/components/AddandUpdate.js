@@ -1,136 +1,12 @@
-/* eslint-disable jsx-a11y/anchor-is-valid */
-import React, { useState } from 'react'
-import { useHistory } from 'react-router-dom'
-import axios from 'axios'
-import { getTokenFromLocalStorage } from './helpers/auth'
-import AddandUpdate from './AddandUpdate'
+import React from 'react'
+import logoIMG from '../images/IMG_0630.PNG'
+import ingredientsIMG from '../assets/ingredientsIMG.PNG'
+import recipeMethod from '../assets/recipeMethod.PNG'
 
-
-const AddRecipe = () => {
-  const history = useHistory()
-  const [image, setImage] = useState(null)
-  const [description, setDescription] = useState('')
-  const [ingredients, setIngredients] = useState([])
-  const [method, setMethod] = useState([])
-  const [newRecipe, setNewRecipe] = useState({
-    name: '',
-    image: '',
-    description: '',
-    ingredients: null,
-    method: null,
-    prepTime: '',
-    cookingTime: '',
-    difficulty: '',
-    servingSize: null,
-    nutritionalInfo: '',
-    tags: '',
-    course: '',
-    allergens: ''
-  })
-
-  const [errors, setErrors] = useState({
-    name: '',
-    image: '',
-    description: '',
-    ingredients: '',
-    method: '',
-    prepTime: '',
-    cookingTime: '',
-    difficulty: '',
-    servingSize: null,
-    nutritionalInfo: [],
-    tags: [],
-    course: '',
-    allergens: []
-  })
-
-
-  const displayImage =(event) => {
-      let img = event.target.files[0];
-      // setImageUrl(img.name)
-      setImage(URL.createObjectURL(img))
-
-  }
-  const handleChange =(event) => {
-    const newFormData = { ...newRecipe, [event.target.name]: event.target.value }
-    setNewRecipe(newFormData)
-  }
-
-  const displayDescription = () => {
-    setDescription(newRecipe.description)
-    newRecipe.description = ''
-  }
-  const displayIngredient = () => {
-    const newIngredient = newRecipe.ingredients
-    setIngredients([ ...ingredients, newIngredient ])
-    newRecipe.ingredients =''
-  }
-
-  const displayMethod = () => {
-    const newStep = newRecipe.method
-    setMethod([ ...method, newStep])
-    newRecipe.method = ''
-  }
-
-
-  const handleSubmit = async (event) => {
-    event.preventDefault()
-    newRecipe.description = description
-      if (ingredients.length === 0) {
-        newRecipe.ingredients = ''
-      } else {
-        newRecipe.ingredients = ingredients
-      }
-      if (method.length === 0 ) {
-        newRecipe.method = ''
-      } else {
-        newRecipe.method = method
-      }
-      newRecipe.image = image
-      if (newRecipe.tags !== '') {
-        const tagsArray = newRecipe.tags.split(',')
-        newRecipe.tags = tagsArray
-      }
-      if (newRecipe.nutritionalInfo !== '') {
-        const nutritionalInfoArray = newRecipe.nutritionalInfo.split(',')
-        newRecipe.nutritionalInfo = nutritionalInfoArray
-      }
-      if (newRecipe.allergens !== '') {
-        const allergensArray = newRecipe.allergens.split(',')
-        newRecipe.allergens = allergensArray
-      }
-    try {
-      console.log(newRecipe)
-      const { data } = await axios.post('/api/recipes', newRecipe, {
-        headers: { Authorization: `Bearer ${getTokenFromLocalStorage()}` }
-      }
-      )
-      const newRecipeId = data._id
-      console.log(data._id)
-      history.push(`/recipes/${newRecipeId}`)
-    } catch (err){
-      console.log(err.response.data.errors)
-      setErrors(err.response.data.errors)
-    }
-  }
+const AddandUpdate = ( { newRecipe, image, description, ingredients, method, errors, displayImage, handleChange, displayDescription, displayIngredient, displayMethod, handleSubmit } ) => {
 
   return (
-    <>
-    <AddandUpdate
-      image={image}
-      description={description}
-      ingredients={ingredients}
-      method={method}
-      newRecipe={newRecipe}
-      errors={errors}
-      displayImage={displayImage}
-      displayDescription={displayDescription}
-      displayIngredient={displayIngredient}
-      displayMethod={displayMethod}
-      handleChange={handleChange}
-      handleSubmit={handleSubmit}
-    />
-  {/* <section className='addRecipe'>
+    <section className='addRecipe'>
       <form className='form' onSubmit={handleSubmit}>
       <div className="field is-vertical">
         <div className='is-flex is-justify-content-space-around	'>
@@ -158,7 +34,7 @@ const AddRecipe = () => {
         <label className='label ml-4 mr-5 mt-1'>Course</label>
         <p className="control">
           <span class="select is-fullwidth">
-            <select onClick={handleChange} name='course'
+            <select onChange={handleChange} name='course'
             >
               <option value=''></option>
               <option value='Starter'>Starter</option>
@@ -171,7 +47,7 @@ const AddRecipe = () => {
         <label className='label ml-4 mr-5 mt-1'>Serves</label>
         <p className="control">
           <span class="select is-fullwidth">
-            <select onClick={handleChange} name='servingSize'
+            <select onChange={handleChange} name='servingSize'
               className={`input ${errors.servingSize && 'is-danger' } `} 
               >
               <option value=''></option>
@@ -327,10 +203,8 @@ const AddRecipe = () => {
     </div>
     </div>
 </form>
-</section> */}
-    
-    </>
+</section>
   )
 }
 
-export default AddRecipe
+export default AddandUpdate

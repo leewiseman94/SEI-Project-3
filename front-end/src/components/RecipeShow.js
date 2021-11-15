@@ -5,10 +5,10 @@ import recipeMethod from '../assets/recipeMethod.PNG'
 import cookingTime from '../assets/cookingTime.PNG'
 import prepTime from '../assets/prepTime.PNG'
 import ingredientsIMG from '../assets/ingredientsIMG.PNG'
-
+import { getPayload } from './helpers/auth'
 
 const RecipeShow = () => {
-  const [recipe, setRecipe] = useState({})
+  const [recipe, setRecipe] = useState([])
   const { id } = useParams()
   // console.log('ID', id)
 
@@ -22,18 +22,27 @@ const RecipeShow = () => {
       }
     }
     getData()
-  }, [id])
+  })
+
+    const userIsOwner = (currentUserId) => {
+      const payload = getPayload()
+      console.log(payload)
+      if (!payload) return false
+      return currentUserId === payload.sub
+    }
+
 
   console.log('RECIPE ON STATE', recipe)
-
+  
   return (
+
+    recipe && 
     <section className="section" id="recipe-show">
       <div className="container">
         <section className="section recipe-subtitle">
           <div>
             <h2 className="title" id="recipe-title">{recipe.name}</h2>
             <div className="container show-links">
-
               <h6 className="show-rating" id="recipe-show-rating"><i class="fas fa-utensils"></i>&nbsp;{recipe.course} · {recipe.difficulty} · <i class="far fa-star"></i>Rating: {recipe.averageRating} </h6>
               <div className="save-share">
                 <div className="share">
@@ -44,6 +53,8 @@ const RecipeShow = () => {
                 </div>
               </div>
             </div>
+            {userIsOwner(recipe.owner._id) && <button className='button is-danger'>Edit Recipe</button>}
+
           </div>
 
         </section>
@@ -175,6 +186,7 @@ const RecipeShow = () => {
     </div>
 
     </section >
+    
   )
 }
 

@@ -3,7 +3,7 @@ export default [{
   name: 'Millionaire’s cheesecake',
   image: 'https://images.immediate.co.uk/production/volatile/sites/30/2020/08/millionaires-cheesecake-f6bb0f4.jpg?quality=90&webp=true&resize=300,272',
   description: 'Indulge in this no-bake chocolate cheesecake after a special dinner. Whether its for New Years Eve or a birthday, its sure to impress',
-  ingredients: ['75g butter, melted, plus extra for the tin', '250g shortbread biscuits', '250g mascarpone', '300g full-fat soft cheese', '50g icing sugar', 
+  ingredients: ['75g butter, melted, plus extra for the tin', '250g shortbread biscuits', '250g mascarpone', '300g full-fat soft cheese', '50g icing sugar',
     '40g cocoa powder', '300ml double cream', '½ x 397g can caramel or 200g dulce de leche', '50g dark chocolate, chopped', 'star sprinkles or chocolate stars, to decorate'],
   method: ['Butter and line the base of a 20cm springform cake tin. Blitz the biscuits in a food processor into fine crumbs, then add the butter and blitz again. Tip the mixture into the tin and press down firmly with the back of a spoon. Chill while you make the filling.',
     'Gently mix the mascarpone, soft cheese, icing sugar and cocoa until smooth. In a separate bowl, whip the cream until it is stiff, then fold into the mascarpone mixture. Spoon the mixture over the biscuit base and level the top. Chill for 1 hr.',
@@ -21,7 +21,7 @@ export default [{
   name: 'Mexican chicken burger',
   image: 'https://images.immediate.co.uk/production/volatile/sites/30/2020/08/mexican-chicken-burger-092a6e0.jpg?quality=90&webp=true&resize=300,272',
   description: 'Ready in under 20 minutes, this burger with spiced chipotle chicken breast, in toasted brioche with guacamole, makes for a satisfying weeknight treat for one',
-  ingredients: ['1 chicken breast', '1 tsp chipotle paste', '1 lime, juiced', '1-2 slices cheese', '1 brioche bun, split', '½ avocado', '2 cherry tomatoes, chopped', 
+  ingredients: ['1 chicken breast', '1 tsp chipotle paste', '1 lime, juiced', '1-2 slices cheese', '1 brioche bun, split', '½ avocado', '2 cherry tomatoes, chopped',
     '3-4 pickled jalapeño slices, chopped', '½ small garlic clove, finely grated'],
   method: [
     'Put the chicken breast between two pieces of cling film and bash with a rolling pin or pan to about 1cm thick. Mix the chipotle paste with half the lime juice and spread over the chicken.',
