@@ -75,7 +75,7 @@ export default [{
   nutritionalInfo: ['kcal: 309', 'fat: 22g', 'saturates: 14g', 'carbs: 14g', 'sugar: 5g', 'fibre: 3g', 'protein: 11g', 'salt: 1.8g'],
   tags: ['Soup', 'Mushroom'],
   course: 'Starter'
-}
+},
 {
   name: 'Chocolate brownie trifle',
   image: 'https://images.immediate.co.uk/production/volatile/sites/30/2020/08/brownie_trifle_square_lr-bf3c1d9.jpg?quality=90&webp=true&resize=440,400',

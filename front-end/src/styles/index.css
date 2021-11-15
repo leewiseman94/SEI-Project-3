@@ -358,7 +358,7 @@ i.fas.fa-filter {
 }
 
 #addIngredientBox {
-  width: 230px
+  width: 295px
 }
 
 #addDescriptionBox {
@@ -386,8 +386,15 @@ i.fas.fa-filter {
 }
 
 #method {
-  width: 400px
+  width: 425px
 }
+
+#addimage {
+  padding-right: 100px;
+  border-radius: 0px;
+}
+
+
 #box-one {
   background: url('../assets/fridge.jpeg');
     

@@ -7,6 +7,7 @@ import smallLogoWhite from '../images/platester_smalllogo_white_withText.PNG'
 import { Link } from 'react-router-dom'
 // import 'animate.css';
 import axios from 'axios'
+import { getPayload } from './helpers/auth'
 
 const Navbar = () => {
 
@@ -18,7 +19,7 @@ const Navbar = () => {
   const [recipeNameSearch, setRecipeNameSearch] = useState('')
   const [courseSearch, setCourseSearch] = useState('')
   const [cuisineSearch, setCuisineSearch] = useState('')
-  
+
   useEffect(() => {
     const getRecipeData = async () => {
       const { data } = await axios.get('/api/recipes')
@@ -90,6 +91,14 @@ const Navbar = () => {
     return `?name=${recipeNameSearch.toLowerCase()}&?course=${courseSearch.toLowerCase()}&?cuisine=${cuisineSearch.toLowerCase()}`
   }
 
+  const userIsAuthenticated = () => {
+    const payload = getPayload()
+    if (!payload) return false
+    const now = Math.round(Date.now() / 1000)
+    return now < payload.exp
+  } 
+
+
   console.log(scrollState)
   console.log(recipeData)
   console.log(courses)
@@ -134,7 +143,7 @@ const Navbar = () => {
                     Login
                   </Link>
                   <hr className="dropdown-divider" />
-                  <Link to="/recipes" className="dropdown-item">
+                  <Link to="/add" className="dropdown-item">
                     Create a recipe
                   </Link>
                   <Link to="/recipes" className="dropdown-item">
@@ -207,7 +216,9 @@ const Navbar = () => {
                     Login
                   </Link>
                   <hr className="dropdown-divider" />
-                  <Link to="/recipes" className="dropdown-item">
+                  {userIsAuthenticated() ? 
+                  <>
+                  <Link to="/add" className="dropdown-item">
                     Create a recipe
                   </Link>
                   <Link to="/recipes" className="dropdown-item">
@@ -216,6 +227,11 @@ const Navbar = () => {
                   <Link to="/recipes" className="dropdown-item">
                     Help
                   </Link>
+                  </>
+                  :
+                  <Link to="/recipes" className="dropdown-item">
+                    Help
+                  </Link>}
                   <hr className="dropdown-divider bottom-divider" />
                   <Link to="#" onClick={() => {
                     setScrollState("large")
