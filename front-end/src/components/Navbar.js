@@ -13,7 +13,7 @@ const Navbar = () => {
 
   const [scrollState, setScrollState] = useState("big")
   const [searching, setSearching] = useState(false)
-  const [recipeData, setRecipeData] = useState([])
+  // const [recipeData, setRecipeData] = useState([])
   const [courses, setCourses] = useState([])
   const [allergens, setAllergens] = useState([])
   const [query, setQuery] = useState({})
@@ -21,7 +21,7 @@ const Navbar = () => {
   useEffect(() => {
     const getRecipeData = async () => {
       const { data } = await axios.get('/api/recipes')
-      setRecipeData(data)
+      // setRecipeData(data)
       
       const coursesArray = ['All']
       const allergensArray  = ['All']
