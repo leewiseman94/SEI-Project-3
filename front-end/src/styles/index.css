@@ -220,10 +220,12 @@ p.subtitle.method {
   margin-left: 40px;
   margin-top: -20px;
   margin-bottom: 20px;
+  width: 80px
 }
 
 .extra-info {
   margin-left: 5px;
+  width: 80px
 }
 .save-share {
   display: flex;
