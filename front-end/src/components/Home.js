@@ -62,7 +62,7 @@ const Home = () => {
       <div className="hero-head"></div>
           <div className='carousel-container'>
             <div className='carousel'>
-            {recipes.map((recipe, index) => {
+            {recipes.length && recipes.map((recipe, index) => {
               return (
                 // <div  className={`item-${index+1}`}>
                   <div key={recipe._id} className='carousel-item has-background'>
@@ -135,8 +135,8 @@ const Home = () => {
           
           
         </div>
-      <section className="hero is-medium is-danger">
-        <div className="hero-body">
+      <section className="box is-shadowless" id="box-one">
+        <div className="box">
           <p className="title">
             What's in your fridge?
           </p>
@@ -144,43 +144,66 @@ const Home = () => {
             Let our ingredients search help you find your perfect recipe.
           </p>
         </div>
+        <Link to={`/recipes/`}>
+          <button class="button">Ingredients</button>
+        </Link>
+
       </section>
 
-      {/* <section className="columns">
-        <div className="column">
-          <Link to={`/recipes/`}>
+      <section className="columns">
+        <div className="column is-one-third">
+          <Link to={`/recipes/add`}>
             <div className="card is-shadowless">
               <div className="card">
                 <div className="media-content">
                   <p className="title">Fancy yourself as the next Gordon or Pru?</p>
                 </div>
                   <div className="card-image">
-                    <figure className="image is-4by3">
-                      <img src=""></img>
-                    </figure>
+                    {/* <figure className="image is-4by3">
+                      <img src="front-end/src/assets/pru.jpeg"></img>
+                    </figure> */}
+                  </div>
+                  <div className="card-content">
+                    <p className="content">Upload a your latest creation to our Add Recipe page</p>                       
+                  </div>
+              </div>
+            </div>
+          </Link>
+          <Link to={`/recipes/`}>
+            <div className="card is-shadowless">
+              <div className="card">
+                <div className="media-content">
+                  <p className="title">Are you more Jay Rayner or Grace Dent? Rate and comment on recipes</p>
+                </div>
+                  <div className="card-image">
+                    {/* <figure className="image is-4by3">
+                      <img src="front-end/src/assets/pru.jpeg"></img>
+                    </figure> */}
                   </div>
                   <div className="card-content">
                     <p className="content">Upload a pic of your latest creations to our "Rate My Plate" page</p>                       
                   </div>
-                </div>
-          
-                                
               </div>
             </div>
-          </Link>
+          </Link>          
         </div>
-      </section>              */}
+      </section>
+      
+                   
       
 
-      <section className="hero is-medium is-link">
-        <div className="hero-body">
+      <section className="box is-shadowless" id="box-two">
+        <div className="box">
           <p className="title">
-            Want to up your kitchen skills game?
+            Want to sharpen your knife skills?
           </p>
           <p className="subtitle">
             Take a butchers at one of our cooking class events.
           </p>
         </div>
+        <Link to={`/recipes/`}>
+          <button class="button">Cooking Classes</button>
+        </Link>
       </section>
 
             
