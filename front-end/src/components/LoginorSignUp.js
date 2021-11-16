@@ -30,6 +30,10 @@ const LoginOrSignUp = ({ isShowLoginOrRegister, handleLoginClick, handleLoginOrR
     }
   }
 
+  // const handleClick = () => {
+  //   history.push('/')
+  // }
+
   const handleLoginPopup = () => {
     handleLoginClick()
   }

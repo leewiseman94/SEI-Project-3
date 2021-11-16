@@ -515,3 +515,32 @@
   }
 }
 
+
+
+
+/* * MY PROFILE PAGE */
+
+.my-profile {
+  padding-top: 220px;
+  padding-bottom: 20px;
+}
+.page-title {
+  font-size: 28px;
+}
+.page-title hr {
+  margin-top: 30px;
+}
+/* My Recipes */
+.my-recipes, .my-liked-recipes {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  min-height: 200px;
+}
+
+.my-recipes-title, .my-liked-recipes-title {
+  font-size: 18px;
+  margin-bottom: 20px;
+}

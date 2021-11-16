@@ -20,8 +20,8 @@ const RecipeCard = ({ _id, name, image, averageRating }) => {
             <div className="card-header">
               <div className="card-header-title">{name}</div>
             </div>
-            </div>
           </div>
+        </div>
       </Link>
             <div className="card-content">
               <h6 className="card-rating">Rating: {averageRating}</h6>
