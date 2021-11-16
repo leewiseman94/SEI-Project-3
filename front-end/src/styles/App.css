@@ -367,6 +367,24 @@
   background-color: rgba(0, 0, 0, 0.8);
 }
 
+.loginOrRegister-popup.hide {
+  transform: translateY(100px) scale(0) rotateY(180deg);
+  opacity: 0;
+}
+
+.loginOrRegister-popup {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  transition: 800ms;
+  opacity: 1;
+  z-index: 999;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
 .form-container {
   display: flex;
   flex-direction: column;
@@ -420,6 +438,11 @@
 
 .current-filters {
   flex-wrap: wrap;
+}
+
+.fa-long-arrow-alt-left {
+  color: white;
+  font-size: 26px;
 }
 
 @media screen and (max-width: 1050px) {
