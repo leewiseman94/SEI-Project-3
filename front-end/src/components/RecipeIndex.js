@@ -32,7 +32,6 @@ const RecipeIndex = () => {
 
       const filtered = data.filter(recipe => {
         const allergenArrayLowerCase = recipe.allergens.map(allergen => allergen.toLowerCase())
-
         return (
           ((params.name ? recipe.name.toLowerCase().includes(params.name) : recipe))
           &&
@@ -53,7 +52,6 @@ const RecipeIndex = () => {
 
   const getSearchLink = (event) => {
     const queryParams = QueryString.parse(props.search)
-
     if (event.target.id === 'difficulty-name-input') queryParams.difficulty = `${event.target.innerHTML.toLowerCase()}`
     if (event.target.id === 'rating-input') queryParams.rating = `${event.target.name}`
     if (event.target.parentElement.id === 'rating-input') queryParams.rating = `${event.target.parentElement.name}`
@@ -69,7 +67,7 @@ const RecipeIndex = () => {
   useEffect(() => {
     history.push(`recipes?${QueryString.stringify(query)}`)
   }, [query])
-
+  
   return (
     <>
       <section className="section" id="recipe-index">

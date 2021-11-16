@@ -27,17 +27,13 @@ const Home = () => {
         for(let i = 0; i<data.length; i++){
           let coursesOnly = false
           coursesOnly = (newArray.some(course => {
-            console.log('COURSE', course.course)
-            console.log(data[i].course)
             return (course.course === (data[i].course))
           } ))
-          console.log('courses only', coursesOnly)
           if (!coursesOnly) newArray.push(data[i])
 
           
           // if (!newArray.map(course => course.course.toLowerCase().includes(data[i].course.toLowerCase()))) newArray.push(data[i])
         }
-        console.log('newArray', newArray)
         setCourses(newArray)
         bulmaCarousel.attach('.carousel', {
           slidesToScroll: 1, 
@@ -58,7 +54,6 @@ const Home = () => {
 
   
 
-  console.log('recipes', recipes)
   return (
     <>
       <section className="hero-carousel is-large">

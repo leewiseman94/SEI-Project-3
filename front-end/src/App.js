@@ -10,6 +10,7 @@ import RecipeIndex from './components/RecipeIndex'
 import RecipeShow from './components/RecipeShow'
 import LoginorSignUp from './components/LoginorSignUp'
 import AddRecipe from './components/AddRecipe';
+import UpdateRecipe from './components/UpdateRecipe';
 
 
 
@@ -45,6 +46,7 @@ function App() {
         <Route exact path='/' component={Home}/>
         <Route exact path='/recipes' component={RecipeIndex}/>
         <Route exact path='/recipes/:id' component={RecipeShow}/>
+        <Route exact path='/recipes/:id/edit' component={UpdateRecipe}/>
       
 
         <Route exact path='/account' component={LoginorSignUp}/>
