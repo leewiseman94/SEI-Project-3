@@ -1,10 +1,14 @@
 import axios from 'axios'
 import React, { useState } from 'react'
 import { useHistory } from 'react-router-dom'
+import Login from './Login'
+import Register from './Register'
 
 
-const LoginOrSignUp = ({ isShowLogin, handleLoginClick }) => {
+const LoginOrSignUp = ({ isShowLoginOrRegister, handleLoginClick, handleLoginOrRegister }) => {
   const history = useHistory()
+  const [isShowLogin, setIsShowLogin] = useState(false)
+  const [isShowRegister, setIsShowRegister] = useState(false)
 
   const [formData, setFormData ] = useState({
     username: '',
@@ -20,10 +24,10 @@ const LoginOrSignUp = ({ isShowLogin, handleLoginClick }) => {
     event.preventDefault()
     try {
       await axios.post('/api/users', formData)
-      history.push('/login')
+      setIsShowLogin(true)
     } catch (err) {
       console.log(err)
-      history.push('/register')
+      setIsShowRegister(true)
     }
   }
 
@@ -35,9 +39,15 @@ const LoginOrSignUp = ({ isShowLogin, handleLoginClick }) => {
     handleLoginClick()
   }
 
+  const handleLoginOrRegisterPopup = (showLoginOrRegister, showLogin, showRegister) => {
+    handleLoginOrRegister(showLoginOrRegister)
+    setIsShowLogin(showLogin)
+    setIsShowRegister(showRegister)
+  }
+
   return (
-    <div className={`${isShowLogin ? '' : 'hide'} login-background`}>
-      <div className={`${isShowLogin ? '' : 'hide'} login-popup`}>
+    <div className={`${isShowLoginOrRegister ? '' : 'hide'} login-background`}>
+      <div className={`${isShowLoginOrRegister && !isShowLogin && !isShowRegister  ? '' : 'hide'} login-popup`}>
         <form className='form-container' onSubmit={handleSubmit} id='form'>
           <div className="close-login-popup" onClick={handleLoginPopup}>
             <i className="far fa-times-circle login-close-icon"></i>
@@ -61,8 +71,13 @@ const LoginOrSignUp = ({ isShowLogin, handleLoginClick }) => {
               </p>
             </div>
           </div>
-          
         </form>
+      </div>
+      <div className={`${isShowLoginOrRegister && isShowLogin && !isShowRegister  ? '' : 'hide'} loginOrRegister-popup`}>
+        <Login handleLoginOrRegisterPopup={handleLoginOrRegisterPopup}/>
+      </div>
+      <div className={`${isShowLoginOrRegister && !isShowLogin && isShowRegister  ? '' : 'hide'} loginOrRegister-popup`}>
+        <Register handleLoginOrRegisterPopup={handleLoginOrRegisterPopup}/>
       </div>
     </div>
     

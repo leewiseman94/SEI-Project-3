@@ -13,7 +13,7 @@ export default [
     nutritionalInfo: ['kcal: 303', 'fat: 22g', 'saturates: 7g', 'carbs: 13g', 'sugars: 7g', 'fibre: 3g', 'protein: 11g', 'salt: 1.2g'],
     tags: ['sausages', 'Italian', 'one-pot'],
     course: 'Main',
-    review: {
+    reviews: {
       subject: 'tester',
       comments: 'comment test',
       rating: 2
@@ -53,7 +53,7 @@ export default [
     nutritionalInfo: ['kcal: 716', 'fat: 43g', 'saturates: 13g', 'carbs: 24g', 'sugars: 16g', 'fibre: 10g', 'protein: 53g', 'salt: 1.4g'],
     tags: ['lamb', 'slow-cooked'],
     course: 'Main',
-    review: [{
+    reviews: [{
       subject: 'tester',
       comments: 'comment test',
       rating: 4
@@ -170,7 +170,7 @@ export default [
     servingSize: 4,
     tags: ['Mediterranean', 'Pasta', 'Fish'],
     course: 'Main',
-    review: {
+    reviews: {
       subject: 'tester',
       comments: 'commen test',
       rating: 4
