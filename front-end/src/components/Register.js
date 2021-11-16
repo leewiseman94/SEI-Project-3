@@ -44,10 +44,10 @@ const Register = () => {
 
   return (
     <form className='column is-offset-one-third box ' onSubmit={handleSubmit} id='form'>
-    <div>
-      <i className="far fa-window-close" onClick={handleClick} id='close'></i>
-      <div className='subtitle is-4 ' id='signuptext'> Sign up</div>
-      <Link to='/account'><i className="fas fa-long-arrow-alt-left"></i></Link>
+    <div className="close-login-popup" onClick={handleClick}>
+      <i className="far fa-window-close" id='close'></i>
+    <div className='subtitle is-4 ' id='signuptext'> Sign up</div>
+    <Link to='/account'><i className="fas fa-long-arrow-alt-left"></i></Link>
     </div>
     <hr className='mt-4 mb-5'/>
     <div className='title is-6 mb-5'>Welcome to Platester</div>

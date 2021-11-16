@@ -143,7 +143,7 @@ const AddRecipe = () => {
       <div className='field is-grouped ml-6'>
   <label className='label mr-6 mt-1'>Difficulty</label>
         <p className="control">
-          <span class="select is-fullwidth">
+          <span className="select is-fullwidth">
             <select onChange={handleChange} name='difficulty' 
             className={`input ${errors.difficulty && 'is-danger' } `} 
             >
@@ -157,7 +157,7 @@ const AddRecipe = () => {
         </p>
         <label className='label ml-4 mr-5 mt-1'>Course</label>
         <p className="control">
-          <span class="select is-fullwidth">
+          <span className="select is-fullwidth">
             <select onClick={handleChange} name='course'
             >
               <option value=''></option>
@@ -170,7 +170,7 @@ const AddRecipe = () => {
         </p>
         <label className='label ml-4 mr-5 mt-1'>Serves</label>
         <p className="control">
-          <span class="select is-fullwidth">
+          <span className="select is-fullwidth">
             <select onClick={handleChange} name='servingSize'
               className={`input ${errors.servingSize && 'is-danger' } `} 
               >

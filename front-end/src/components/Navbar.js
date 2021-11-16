@@ -10,7 +10,7 @@ import axios from 'axios'
 import { getPayload } from './helpers/auth'
 import * as QueryString from "query-string"
 
-const Navbar = () => {
+const Navbar = ({ handleLoginClick }) => {
 
   const [scrollState, setScrollState] = useState("big")
   const [searching, setSearching] = useState(false)
@@ -48,9 +48,9 @@ const Navbar = () => {
   useEffect(() => {
     document.addEventListener("scroll", e => {
       const scrolled = document.scrollingElement.scrollTop
+      setQuery({})
       if (scrolled > 0) {
         setSearching(false)
-        // console.log(scrolled)
         if (scrollState !== "small") {
           setScrollState("small")
         }
@@ -97,11 +97,10 @@ const Navbar = () => {
     return now < payload.exp
   } 
 
+  const handleLoginPopup = () => {
+    handleLoginClick()
+  }
 
-  // console.log(scrollState)
-  // console.log(recipeData)
-  // console.log(courses)
-  // console.log(cuisines)
   return (
     scrollState === 'small' ? 
     <header>
@@ -135,10 +134,16 @@ const Navbar = () => {
               </div>
               <div className="dropdown-menu" id="dropdown-menu" role="menu">
                 <div className="dropdown-content">
-                  <Link to="/account" className="dropdown-item">
+                  <Link to="#" onClick={() => {
+                    handleLoginPopup()
+                    document.querySelector('.account-dropdown').classList.toggle('is-active')
+                  }} className="dropdown-item">
                     <strong>Sign up</strong>
                   </Link>
-                  <Link to="/account" className="dropdown-item">
+                  <Link to="#" onClick={() => {
+                    handleLoginPopup()
+                    document.querySelector('.account-dropdown').classList.toggle('is-active')
+                  }} className="dropdown-item">
                     Login
                   </Link>
                   <hr className="dropdown-divider" />
@@ -208,10 +213,16 @@ const Navbar = () => {
               </div>
               <div className="dropdown-menu" id="dropdown-menu" role="menu">
                 <div className="dropdown-content">
-                  <Link to="/account" className="dropdown-item">
+                  <Link to="#" onClick={() => {
+                    handleLoginPopup()
+                    document.querySelector('.account-dropdown').classList.toggle('is-active')
+                  }} className="dropdown-item">
                     <strong>Sign up</strong>
                   </Link>
-                  <Link to="/account" className="dropdown-item">
+                  <Link to="#" onClick={() => {
+                    handleLoginPopup()
+                    document.querySelector('.account-dropdown').classList.toggle('is-active')
+                  }} className="dropdown-item">
                     Login
                   </Link>
                   <hr className="dropdown-divider" />
@@ -293,7 +304,7 @@ const Navbar = () => {
                     <button className="button bottom-search-form-dropdown search-form-button" onClick={() => {
                       document.querySelector('.allergens-dropdown').classList.toggle('is-active')
                     }}>
-                      <h3><strong>Cuisine</strong></h3><input readOnly className="search-input-box" id="allergens-input" name="allergens-name" placeholder="Select allergens"></input>
+                      <h3><strong>Allergens</strong></h3><input readOnly className="search-input-box" id="allergens-input" name="allergens-name" placeholder="Select allergens"></input>
                     </button>
                   </div>
                   <div className="dropdown-menu allergens-dropdown-menu" id="dropdown-menu" role="menu">
@@ -357,7 +368,7 @@ const Navbar = () => {
                   <button className="button bottom-search-form-dropdown search-form-button" onClick={() => {
                     document.querySelector('.allergens-dropdown').classList.toggle('is-active')
                   }}>
-                    <h3><strong>Cuisine</strong></h3><input readOnly className="search-input-box" id="allergens-input" name="allergens-name" placeholder="Select allergens"></input>
+                    <h3><strong>Allergens</strong></h3><input readOnly className="search-input-box" id="allergens-input" name="allergens-name" placeholder="Select allergens"></input>
                   </button>
                 </div>
                 <div className="dropdown-menu allergens-dropdown-menu" id="dropdown-menu" role="menu">

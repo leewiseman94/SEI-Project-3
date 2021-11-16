@@ -19,7 +19,7 @@ const AddandUpdate = ( { newRecipe, image, description, ingredients, method, err
       <div className='field is-grouped ml-6'>
   <label className='label mr-6 mt-1'>Difficulty</label>
         <p className="control">
-          <span class="select is-fullwidth">
+          <span className="select is-fullwidth">
             <select onChange={handleChange} name='difficulty' 
             className={`input ${errors.difficulty && 'is-danger' } `} 
             >
@@ -33,7 +33,7 @@ const AddandUpdate = ( { newRecipe, image, description, ingredients, method, err
         </p>
         <label className='label ml-4 mr-5 mt-1'>Course</label>
         <p className="control">
-          <span class="select is-fullwidth">
+          <span className="select is-fullwidth">
             <select onChange={handleChange} name='course'
             >
               <option value=''></option>
@@ -46,7 +46,7 @@ const AddandUpdate = ( { newRecipe, image, description, ingredients, method, err
         </p>
         <label className='label ml-4 mr-5 mt-1'>Serves</label>
         <p className="control">
-          <span class="select is-fullwidth">
+          <span className="select is-fullwidth">
             <select onChange={handleChange} name='servingSize'
               className={`input ${errors.servingSize && 'is-danger' } `} 
               >

@@ -15,6 +15,7 @@ import AddRecipe from './components/AddRecipe';
 
 function App() {
   const [recipes, setRecipes] = useState([])
+  const [isShowLogin, setIsShowLogin] = useState(false)
   // const [hasError, setHasError] = useState(false)
 
   useEffect(() => {
@@ -29,11 +30,17 @@ function App() {
     }
     getData()
   }, [])
-  console.log('recipes', recipes)
+
+  const handleLoginClick = () => {
+    setIsShowLogin((isShowLogin) => !isShowLogin)
+  }
+
+
   return (
     // <h1>platester</h1>
     <BrowserRouter>
-      <Navbar />
+      <Navbar handleLoginClick={handleLoginClick}/>
+      <LoginorSignUp isShowLogin={isShowLogin} handleLoginClick={handleLoginClick}/>
       <Switch>
         <Route exact path='/' component={Home}/>
         <Route exact path='/recipes' component={RecipeIndex}/>

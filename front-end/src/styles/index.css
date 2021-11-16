@@ -279,8 +279,10 @@ i.fas.fa-filter {
 }
 
 .current-filter-container {
+  color: black;
   background-color: lightgrey;
   margin-left: 5px;
+  margin-top: 5px;
   border-radius: 50px;
   padding: 5px 10px;
 }
@@ -345,7 +347,7 @@ i.fas.fa-filter {
 }
 
 .hero-carousel {
-  margin-top: 170px;
+  padding-top: 170px;
 }
 .is-background {
   height: 400px
@@ -355,10 +357,10 @@ i.fas.fa-filter {
 }
 
 @media screen and (max-width: 790px){
-  #form {
+  /* #form {
     width: 70%;
     margin-left: 14%;
-  }
+  } */
 
 }
 

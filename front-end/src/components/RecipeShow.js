@@ -43,7 +43,7 @@ const RecipeShow = () => {
           <div>
             <h2 className="title" id="recipe-title">{recipe.name}</h2>
             <div className="container show-links">
-              <h6 className="show-rating" id="recipe-show-rating"><i class="fas fa-utensils"></i>&nbsp;{recipe.course} · {recipe.difficulty} · <i class="far fa-star"></i>Rating: {recipe.averageRating} </h6>
+              <h6 className="show-rating" id="recipe-show-rating"><i className="fas fa-utensils"></i>&nbsp;{recipe.course} · {recipe.difficulty} · <i className="far fa-star"></i>Rating: {recipe.averageRating} </h6>
               <div className="save-share">
                 <div className="share">
                   <Link className="has-text-black" to="/share"><h6><i className="far fa-share-square"></i>Share</h6></Link>
