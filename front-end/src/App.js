@@ -16,7 +16,7 @@ import UpdateRecipe from './components/UpdateRecipe';
 
 function App() {
   const [recipes, setRecipes] = useState([])
-  const [isShowLogin, setIsShowLogin] = useState(false)
+  const [isShowLoginOrRegister, setIsShowLoginOrRegister] = useState(false)
   // const [hasError, setHasError] = useState(false)
 
   useEffect(() => {
@@ -33,15 +33,20 @@ function App() {
   }, [])
 
   const handleLoginClick = () => {
-    setIsShowLogin((isShowLogin) => !isShowLogin)
+    setIsShowLoginOrRegister((isShowLoginOrRegister) => !isShowLoginOrRegister)
   }
+
+  const handleLoginOrRegister = (bool) => {
+    setIsShowLoginOrRegister(bool)
+  }
+
 
 
   return (
     // <h1>platester</h1>
     <BrowserRouter>
       <Navbar handleLoginClick={handleLoginClick}/>
-      <LoginorSignUp isShowLogin={isShowLogin} handleLoginClick={handleLoginClick}/>
+      <LoginorSignUp isShowLoginOrRegister={isShowLoginOrRegister} handleLoginClick={handleLoginClick} handleLoginOrRegister={handleLoginOrRegister} />
       <Switch>
         <Route exact path='/' component={Home}/>
         <Route exact path='/recipes' component={RecipeIndex}/>
@@ -49,7 +54,7 @@ function App() {
         <Route exact path='/recipes/:id/edit' component={UpdateRecipe}/>
       
 
-        <Route exact path='/account' component={LoginorSignUp}/>
+        {/* <Route exact path='/account' component={LoginorSignUp}/> */}
         <Route exact path='/register' component={Register} />
         <Route exact path='/login' component={Login} />
         <Route exact path='/add' component={AddRecipe}/>

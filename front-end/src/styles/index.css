@@ -344,9 +344,9 @@ i.fas.fa-filter {
   margin-left: 0;
 }
 
-#form {
+/* #form {
   margin-top: 180px;
-}
+} */
 
 .hero-carousel {
   padding-top: 170px;
@@ -367,7 +367,7 @@ i.fas.fa-filter {
 }
 
 .addRecipe {
-  margin-top: 200px;
+  padding-top: 200px;
 }
 
 #addIngredientButton {

@@ -4,7 +4,7 @@ import logoWhite from '../images/platester_logo_white_withText.PNG'
 import logoRed from '../images/platester_logo_red_withText.PNG'
 import smallLogoRed from '../images/platester_smalllogo_red_withText.PNG'
 import smallLogoWhite from '../images/platester_smalllogo_white_withText.PNG'
-import { Link } from 'react-router-dom'
+import { Link, useHistory, useLocation } from 'react-router-dom'
 // import 'animate.css';
 import axios from 'axios'
 import { getPayload } from './helpers/auth'
@@ -18,6 +18,12 @@ const Navbar = ({ handleLoginClick }) => {
   const [courses, setCourses] = useState([])
   const [allergens, setAllergens] = useState([])
   const [query, setQuery] = useState({})
+  const history = useHistory() 
+  const location = useLocation()
+
+  useEffect(() => {
+    
+  }, [location.pathname])
   
   useEffect(() => {
     const getRecipeData = async () => {
@@ -101,6 +107,11 @@ const Navbar = ({ handleLoginClick }) => {
     handleLoginClick()
   }
 
+  const handleLogout = () => {
+    window.localStorage.removeItem('token')
+    document.querySelector('.account-dropdown').classList.toggle('is-active')
+  }
+
   return (
     scrollState === 'small' ? 
     <header>
@@ -134,28 +145,45 @@ const Navbar = ({ handleLoginClick }) => {
               </div>
               <div className="dropdown-menu" id="dropdown-menu" role="menu">
                 <div className="dropdown-content">
-                  <Link to="#" onClick={() => {
-                    handleLoginPopup()
-                    document.querySelector('.account-dropdown').classList.toggle('is-active')
-                  }} className="dropdown-item">
-                    <strong>Sign up</strong>
-                  </Link>
-                  <Link to="#" onClick={() => {
-                    handleLoginPopup()
-                    document.querySelector('.account-dropdown').classList.toggle('is-active')
-                  }} className="dropdown-item">
-                    Login
-                  </Link>
-                  <hr className="dropdown-divider" />
+                {!userIsAuthenticated() ? 
+                  <>
+                    <Link to="#" onClick={() => {
+                      handleLoginPopup()
+                      document.querySelector('.account-dropdown').classList.toggle('is-active')
+                    }} className="dropdown-item">
+                      <strong>Sign up</strong>
+                    </Link>
+                    <Link to="#" onClick={() => {
+                      handleLoginPopup()
+                      document.querySelector('.account-dropdown').classList.toggle('is-active')
+                    }} className="dropdown-item">
+                      Login
+                    </Link>
+                    <hr className="dropdown-divider" />
+                  </> :
+                  <>
+                    <Link to="#" onClick={handleLogout} className="dropdown-item">
+                      <strong>Logout</strong>
+                    </Link>
+                    <hr className="dropdown-divider" />
+                  </>
+                  }
+                  {userIsAuthenticated() ? 
+                  <>
                   <Link to="/add" className="dropdown-item">
                     Create a recipe
                   </Link>
                   <Link to="/recipes" className="dropdown-item">
-                    My Recipes
+                    My Profile
                   </Link>
                   <Link to="/recipes" className="dropdown-item">
                     Help
                   </Link>
+                  </>
+                  :
+                  <Link to="/recipes" className="dropdown-item">
+                    Help
+                  </Link>}
                   <hr className="dropdown-divider" />
                   <Link to="#" onClick={() => {
                     setScrollState("large")
@@ -213,26 +241,36 @@ const Navbar = ({ handleLoginClick }) => {
               </div>
               <div className="dropdown-menu" id="dropdown-menu" role="menu">
                 <div className="dropdown-content">
-                  <Link to="#" onClick={() => {
-                    handleLoginPopup()
-                    document.querySelector('.account-dropdown').classList.toggle('is-active')
-                  }} className="dropdown-item">
-                    <strong>Sign up</strong>
-                  </Link>
-                  <Link to="#" onClick={() => {
-                    handleLoginPopup()
-                    document.querySelector('.account-dropdown').classList.toggle('is-active')
-                  }} className="dropdown-item">
-                    Login
-                  </Link>
-                  <hr className="dropdown-divider" />
+                  {!userIsAuthenticated() ? 
+                  <>
+                    <Link to="#" onClick={() => {
+                      handleLoginPopup()
+                      document.querySelector('.account-dropdown').classList.toggle('is-active')
+                    }} className="dropdown-item">
+                      <strong>Sign up</strong>
+                    </Link>
+                    <Link to="#" onClick={() => {
+                      handleLoginPopup()
+                      document.querySelector('.account-dropdown').classList.toggle('is-active')
+                    }} className="dropdown-item">
+                      Login
+                    </Link>
+                    <hr className="dropdown-divider" />
+                  </> :
+                  <>
+                    <Link to="#" onClick={handleLogout} className="dropdown-item">
+                      <strong>Logout</strong>
+                    </Link>
+                    <hr className="dropdown-divider" />
+                  </>
+                  }
                   {userIsAuthenticated() ? 
                   <>
                   <Link to="/add" className="dropdown-item">
                     Create a recipe
                   </Link>
                   <Link to="/recipes" className="dropdown-item">
-                    My Recipes
+                    My Profile
                   </Link>
                   <Link to="/recipes" className="dropdown-item">
                     Help

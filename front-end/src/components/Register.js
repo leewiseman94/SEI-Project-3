@@ -3,7 +3,7 @@ import { useHistory } from 'react-router-dom'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
 
-const Register = () => {
+const Register = ({ handleLoginOrRegisterPopup }) => {
   const history = useHistory()
 
   const [formData, setFormData ] = useState({
@@ -31,24 +31,35 @@ const Register = () => {
     event.preventDefault()
     try {
       await axios.post('/api/register', formData)
-      history.push('/login')
+      handleLoginOrRegisterPopup(true, true, false)
     } catch (err) {
       setErrors(err.response.data.errors)
     }
 
   }
 
-  const handleClick = () => {
-    history.push('/')
+  const handleRegisterClose = () => {
+    handleLoginOrRegisterPopup(false, false, false)
+  }
+
+  const handleRegisterBack = () => {
+    handleLoginOrRegisterPopup(true, false, false)
   }
 
   return (
     <form className='column is-offset-one-third box ' onSubmit={handleSubmit} id='form'>
-    <div className="close-login-popup" onClick={handleClick}>
-      <i className="far fa-window-close" id='close'></i>
+      <div className="is-flex is-flex-direction-row is-justify-content-space-between is-align-items-center">
+        <div className="close-login-popup" onClick={handleRegisterBack}>
+          <i className="fas fa-long-arrow-alt-left"></i>
+        </div>
+        <div className="close-login-popup" onClick={handleRegisterClose}>
+              <i className="far fa-times-circle login-close-icon"></i>
+        </div>
+      </div>
+
     <div className='subtitle is-4 ' id='signuptext'> Sign up</div>
-    <Link to='/account'><i className="fas fa-long-arrow-alt-left"></i></Link>
-    </div>
+    
+
     <hr className='mt-4 mb-5'/>
     <div className='title is-6 mb-5'>Welcome to Platester</div>
       <div className='field mb-0'>

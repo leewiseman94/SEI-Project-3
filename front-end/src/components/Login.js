@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 import { useHistory } from 'react-router'
 import { Link } from 'react-router-dom'
 
-const Login = () => {
+const Login = ({ handleLoginOrRegisterPopup }) => {
   const history = useHistory()
   const [formData, setFormData] = useState({
     email: '', 
@@ -24,22 +24,34 @@ const Login = () => {
     try {
       const { data } = await axios.post('/api/login', formData)
       setItemToLocalStorage(data.token)
-      history.push('/')
+      handleLoginOrRegisterPopup(false, false, false)
     } catch (err) {
       setError(true)
     }
   }
-  const handleClick = () => {
-    history.push('/')
+ 
+  const handleLoginClose = () => {
+    handleLoginOrRegisterPopup(false, false, false)
   }
+
+  const handleLoginBack = () => {
+    handleLoginOrRegisterPopup(true, false, false)
+  }
+
 
   return (
     <form className='column is-offset-one-third box' onSubmit={handleSubmit} id='form'>
-    <div>
-      <i className="far fa-window-close" onClick={handleClick}></i>
+      <div className="is-flex is-flex-direction-row is-justify-content-space-between is-align-items-center">
+        <div className="close-login-popup" onClick={handleLoginBack}>
+          <i className="fas fa-long-arrow-alt-left"></i>
+        </div>
+        <div className="close-login-popup" onClick={handleLoginClose}>
+              <i className="far fa-times-circle login-close-icon"></i>
+        </div>
+      </div>
       <div className='subtitle is-4' id='signuptext'> Login</div>
-      <Link to='/account'><i className="fas fa-long-arrow-alt-left"></i></Link>
-    </div>
+
+
     <hr className='mt-4 mb-5'/>
     <div className='title is-6 mb-5'>Welcome to Platester</div>
       <div className='field mb-0'>
@@ -70,6 +82,7 @@ const Login = () => {
         </p>
       </div>
     </form>
+
   )
 }
 
