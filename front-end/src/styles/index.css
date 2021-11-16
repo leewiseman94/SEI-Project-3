@@ -419,13 +419,23 @@ i.fas.fa-filter {
 #box-one {
   background: url('../assets/fridge3.jpeg');
   background-size: 100%;
-  background-repeat: no-repeat;    
+  background-repeat: no-repeat;
+  height: 500px;    
   }
 
+#box-one-button{
+  justify-content: flex-start;
+}
+
+#box-two-button{
+  justify-content: flex-start;
+}
+
 #box-two {
-  background: url('../assets/chef.jpeg');
+  background: url('../assets/chef2.jpeg');
   background-size: 100%;
   background-repeat: no-repeat;
+  height: 500px;
 }
 
 #box-twop{
@@ -437,18 +447,20 @@ i.fas.fa-filter {
 }
 
 #column-one {
-  background: url('../assets/pru.jpeg');
-  background-size: 100%;
+  background: url('../assets/pru2.jpeg');
+  background-size: cover;
   background-repeat: no-repeat;
-  /* margin: 100px;     */
+  height: 350px;
   }
 
 #column-two {
   background: url('../assets/GraceDent.jpeg');
   background-size: 100%;
-  background-repeat: no-repeat;    
+  background-repeat: no-repeat;
+  height: 350px;    
   }
 
-/* #logos {
-  
-} */
+.courses-container {
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
