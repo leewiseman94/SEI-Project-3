@@ -4,15 +4,12 @@ import axios from 'axios'
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
 import Home from './components/Home'
 import Navbar from './components/Navbar'
-import Login from './components/Login'
-import Register from './components/Register'
 import RecipeIndex from './components/RecipeIndex'
 import RecipeShow from './components/RecipeShow'
 import LoginorSignUp from './components/LoginorSignUp'
 import AddRecipe from './components/AddRecipe';
 import UpdateRecipe from './components/UpdateRecipe';
-
-
+import UserProfile from './components/UserProfile';
 
 function App() {
   const [recipes, setRecipes] = useState([])
@@ -52,12 +49,12 @@ function App() {
         <Route exact path='/recipes' component={RecipeIndex}/>
         <Route exact path='/recipes/:id' component={RecipeShow}/>
         <Route exact path='/recipes/:id/edit' component={UpdateRecipe}/>
-      
+        <Route exact path='/profile' component={UserProfile} />
 
         {/* <Route exact path='/account' component={LoginorSignUp}/> */}
-        <Route exact path='/register' component={Register} />
+        {/* <Route exact path='/register' component={Register} />
         <Route exact path='/login' component={Login} />
-        <Route exact path='/add' component={AddRecipe}/>
+        <Route exact path='/add' component={AddRecipe}/> */}
       </Switch>
     
     </BrowserRouter>
