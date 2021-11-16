@@ -111,7 +111,7 @@ console.log(courses)
             Not sure what to make for dinner?
           </p> 
           <Link to={`/recipes/`}>
-            <button class="button is-normal is-rounded is-ghost has-text-black" id="box-one-button">Let our recipe search help you find your perfect meal</button>
+            <button class="button is-normal is-rounded is-ghost has-text-black is-shadowless" id="box-one-button">Let our recipe search help you find your perfect meal</button>
           </Link>         
         </div>
         
