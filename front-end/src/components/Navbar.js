@@ -173,7 +173,7 @@ const Navbar = ({ handleLoginClick }) => {
                   <Link to="/add" className="dropdown-item">
                     Create a recipe
                   </Link>
-                  <Link to="/recipes" className="dropdown-item">
+                  <Link to="/profile" className="dropdown-item">
                     My Profile
                   </Link>
                   <Link to="/recipes" className="dropdown-item">
@@ -269,7 +269,7 @@ const Navbar = ({ handleLoginClick }) => {
                   <Link to="/add" className="dropdown-item">
                     Create a recipe
                   </Link>
-                  <Link to="/recipes" className="dropdown-item">
+                  <Link to="/profile" className="dropdown-item">
                     My Profile
                   </Link>
                   <Link to="/recipes" className="dropdown-item">

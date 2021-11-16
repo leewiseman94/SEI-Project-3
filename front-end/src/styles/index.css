@@ -252,9 +252,10 @@ p.subtitle.method {
 #recipe-index {
   padding-top: 180px;
 }
-#index-cards {
+
+/* #index-cards {
   margin-top: -50px;
-}
+} */
 
 #ingredients-list {
   height: 200px;

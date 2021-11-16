@@ -19,14 +19,12 @@ const AddandDeleteReview = () => {
     console.log(newFormData)
   }
   const handleRatingClick = (event) => {
-    console.log(event.target)
+    console.log(event)
     if (event.target.classList.contains('rating')) {
       const newFormData = { ...formData, [event.target.name]: event.target.value }
       setFormData(newFormData)
-      console.log(newFormData)
     } else if (event.target.parentElement.classList.contains('rating')) {
-      console.log(event.target.parentNode.name)
-      const newFormData = { ...formData, [event.target.parentElement.name]: event.target.parentElement.value }
+      const newFormData = { ...formData , [event.target.parentNode.attributes.name.value]: event.target.parentNode.attributes.value.value }
       setFormData(newFormData)
       console.log(newFormData)
     }
@@ -68,11 +66,9 @@ const AddandDeleteReview = () => {
           <br />
 
           <div className="is-flex is-flex-direction-row">
-            <div className="rating" onClick={handleRatingClick} name="rating" value="1">
-
+            <div className="rating" id="rating-1" onClick={handleRatingClick} name="rating" value="1">
               <i className="far fa-star fa-2x" onMouseOver={({ target }) => target.style.color = "black"}
                 onMouseOut={({ target }) => target.style.color = "yellow"}></i>
-
             </div>
             <div>
               <i className="far fa-star fa-2x"></i>
