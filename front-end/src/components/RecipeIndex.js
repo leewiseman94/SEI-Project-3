@@ -74,7 +74,8 @@ const RecipeIndex = () => {
   useEffect(() => {
     history.push(`recipes?${QueryString.stringify(query)}`)
   }, [query])
-  console.log(query)
+  
+
   return (
     <>
       <section className="section" id="recipe-index">
