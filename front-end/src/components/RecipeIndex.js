@@ -8,7 +8,7 @@ const RecipeIndex = () => {
   const [recipes, setRecipes] = useState([])
   const [filteredRecipes, setFilteredRecipes] = useState([])
   const [difficulties, setDifficulties] = useState([])
-  const [difficultySearch, setDifficultySearch] = useState('')
+  // const [difficultySearch, setDifficultySearch] = useState('')
 
 
   const props = useLocation()
@@ -34,7 +34,6 @@ const RecipeIndex = () => {
 
       const filtered = data.filter(recipe => {
         const allergenArrayLowerCase = recipe.allergens.map(allergen => allergen.toLowerCase())
-        console.log(recipe.averageRating)
         return (
           ((params.name ? recipe.name.toLowerCase().includes(params.name) : recipe))
           &&
@@ -48,7 +47,6 @@ const RecipeIndex = () => {
 
         )
       })
-      console.log(filtered)
       setFilteredRecipes(filtered)
     }
     getData()
@@ -58,7 +56,6 @@ const RecipeIndex = () => {
   const getSearchLink = (event) => {
     console.log(event.target.name)
     const queryParams = QueryString.parse(props.search)
-    console.log(event)
     if (event.target.id === 'difficulty-name-input') queryParams.difficulty = `${event.target.innerHTML.toLowerCase()}`
     if (event.target.id === 'rating-input') queryParams.rating = `${event.target.ariaLabel}`
     if (event.target.id === 'remove-recipe-name' || event.target.parentElement.id === 'remove-recipe-name') delete queryParams.name
@@ -75,7 +72,6 @@ const RecipeIndex = () => {
     history.push(`recipes?${QueryString.stringify(query)}`)
   }, [query])
   
-
   return (
     <>
       <section className="section" id="recipe-index">

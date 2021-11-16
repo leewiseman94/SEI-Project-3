@@ -5,6 +5,7 @@ import recipeMethod from '../assets/recipeMethod.PNG'
 
 const AddandUpdate = ( { newRecipe, image, description, ingredients, method, errors, displayImage, handleChange, displayDescription, displayIngredient, displayMethod, handleSubmit } ) => {
 
+  console.log(newRecipe)
   return (
     <section className='addRecipe'>
       <form className='form' onSubmit={handleSubmit}>
@@ -20,7 +21,7 @@ const AddandUpdate = ( { newRecipe, image, description, ingredients, method, err
   <label className='label mr-6 mt-1'>Difficulty</label>
         <p className="control">
           <span class="select is-fullwidth">
-            <select onChange={handleChange} name='difficulty' 
+            <select onChange={handleChange} name='difficulty'  value={newRecipe.difficulty}
             className={`input ${errors.difficulty && 'is-danger' } `} 
             >
               <option value=''></option>
@@ -34,7 +35,7 @@ const AddandUpdate = ( { newRecipe, image, description, ingredients, method, err
         <label className='label ml-4 mr-5 mt-1'>Course</label>
         <p className="control">
           <span class="select is-fullwidth">
-            <select onChange={handleChange} name='course'
+            <select onChange={handleChange} name='course' value={newRecipe.course}
             >
               <option value=''></option>
               <option value='Starter'>Starter</option>
@@ -47,7 +48,7 @@ const AddandUpdate = ( { newRecipe, image, description, ingredients, method, err
         <label className='label ml-4 mr-5 mt-1'>Serves</label>
         <p className="control">
           <span class="select is-fullwidth">
-            <select onChange={handleChange} name='servingSize'
+            <select onChange={handleChange} name='servingSize' value={newRecipe.servingSize}
               className={`input ${errors.servingSize && 'is-danger' } `} 
               >
               <option value=''></option>

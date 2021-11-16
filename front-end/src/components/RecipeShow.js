@@ -9,6 +9,7 @@ import { getPayload } from './helpers/auth'
 
 const RecipeShow = () => {
   const [recipe, setRecipe] = useState([])
+  const [owner, setOwner] = useState([])
   const { id } = useParams()
   // console.log('ID', id)
 
@@ -17,26 +18,26 @@ const RecipeShow = () => {
       try {
         const { data } = await axios.get(`/api/recipes/${id}`)
         setRecipe(data)
+        setOwner(data.owner)
       } catch (err) {
         console.log(err)
       }
     }
     getData()
-  })
+  }, [id])
 
     const userIsOwner = (currentUserId) => {
       const payload = getPayload()
-      console.log(payload)
+      console.log('PAYLOAD',payload.sub)
+      console.log(currentUserId)
       if (!payload) return false
       return currentUserId === payload.sub
     }
 
 
-  console.log('RECIPE ON STATE', recipe)
-  
   return (
 
-    recipe && 
+    
     <section className="section" id="recipe-show">
       <div className="container">
         <section className="section recipe-subtitle">
@@ -53,7 +54,8 @@ const RecipeShow = () => {
                 </div>
               </div>
             </div>
-            {userIsOwner(recipe.owner._id) && <button className='button is-danger'>Edit Recipe</button>}
+            { userIsOwner(owner._id) && 
+            <Link to={`/recipes/${id}/edit`}><button className='button is-danger'>Edit Recipe</button></Link>}
 
           </div>
 
@@ -148,7 +150,6 @@ const RecipeShow = () => {
               </div>
               <hr />
             </div>
-         
 
           <div className="column is-one-half">
             <div className="card" id="ingredients-list">
@@ -186,7 +187,7 @@ const RecipeShow = () => {
     </div>
 
     </section >
-    
+  
   )
 }
 
