@@ -13,6 +13,8 @@ const RecipeShow = () => {
   const { id } = useParams()
   // console.log('ID', id)
 
+  window.scrollTo(0,0)
+
   useEffect(() => {
     const getData = async () => {
       try {

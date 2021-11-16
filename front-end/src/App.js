@@ -55,9 +55,6 @@ function App() {
         <Route exact path='/profile' component={UserProfile} />
         <Route exact path='/recipes/:id/reviews' component={AddandDeleteReview}/>
 
-        {/* <Route exact path='/account' component={LoginorSignUp}/> */}
-        {/* <Route exact path='/register' component={Register} />
-        <Route exact path='/login' component={Login} />
         <Route exact path='/add' component={AddRecipe}/> */}
       </Switch>
     
