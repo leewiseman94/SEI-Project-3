@@ -55,7 +55,7 @@ const UpdateRecipe = () => {
 
   const displayDescription = () => {
   setDescription(recipe.description)
-  recipe.description = ''
+  // recipe.description = ''
   }
   const displayIngredient = () => {
   const newIngredient = recipe.ingredients
@@ -109,7 +109,7 @@ const UpdateRecipe = () => {
     }
   }
 
-  console.log(recipe.ingredients)
+  console.log(description)
   return (
     <AddandUpdate
       newRecipe={recipe}

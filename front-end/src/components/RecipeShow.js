@@ -28,8 +28,6 @@ const RecipeShow = () => {
 
     const userIsOwner = (currentUserId) => {
       const payload = getPayload()
-      console.log('PAYLOAD',payload.sub)
-      console.log(currentUserId)
       if (!payload) return false
       return currentUserId === payload.sub
     }
