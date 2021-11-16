@@ -1,11 +1,12 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useHistory } from 'react-router-dom'
 import axios from 'axios'
-import { Link } from 'react-router-dom'
 
-const Register = () => {
-  const history = useHistory()
 
+
+const Register = ({ handleLoginOrRegisterPopup, emailData }) => {
+  
+  
   const [formData, setFormData ] = useState({
     fullName: '',
     username: '',
@@ -14,6 +15,11 @@ const Register = () => {
     passwordConfirmation: ''
     })
 
+    
+    useEffect(() => {
+      setFormData({ ...formData, email : emailData })
+    }, [emailData])
+    
     const [ errors, setErrors] = useState ({
       fullName: '',
       username: '',
@@ -31,24 +37,36 @@ const Register = () => {
     event.preventDefault()
     try {
       await axios.post('/api/register', formData)
-      history.push('/login')
+      handleLoginOrRegisterPopup(true, true, false)
     } catch (err) {
       setErrors(err.response.data.errors)
     }
 
   }
 
-  const handleClick = () => {
-    history.push('/')
+  const handleRegisterClose = () => {
+    handleLoginOrRegisterPopup(false, false, false)
+  }
+
+  const handleRegisterBack = () => {
+    handleLoginOrRegisterPopup(true, false, false)
   }
 
   return (
+    emailData &&
     <form className='column is-offset-one-third box ' onSubmit={handleSubmit} id='form'>
-    <div className="close-login-popup" onClick={handleClick}>
-      <i className="far fa-window-close" id='close'></i>
+      <div className="is-flex is-flex-direction-row is-justify-content-space-between is-align-items-center">
+        <div className="close-login-popup" onClick={handleRegisterBack}>
+          <i className="fas fa-long-arrow-alt-left"></i>
+        </div>
+        <div className="close-login-popup" onClick={handleRegisterClose}>
+              <i className="far fa-times-circle login-close-icon"></i>
+        </div>
+      </div>
+
     <div className='subtitle is-4 ' id='signuptext'> Sign up</div>
-    <Link to='/account'><i className="fas fa-long-arrow-alt-left"></i></Link>
-    </div>
+    
+
     <hr className='mt-4 mb-5'/>
     <div className='title is-6 mb-5'>Welcome to Platester</div>
       <div className='field mb-0'>
@@ -86,7 +104,7 @@ const Register = () => {
       {errors.email && <p className='is-danger subtitle mt-1 mb-1 ml-0'>email must be unique</p>}
       <div className='field mb-0'>
       <p className='control'>
-      <input id='signupinput'
+      <input id='signupinput' type='password'
       className={`input ${errors.password ? 'is-danger py-5' : 'py-5'}`} 
       placeholder = 'Password'
       name='password'
@@ -96,8 +114,8 @@ const Register = () => {
       </div>
       {errors.password && <p className='is-danger subtitle mt-1 mb-1 ml-0'>{errors.password.message}</p>}
       <div className='field mb-0'>
-      <p className='control'>
-      <input id='signupinput2'
+      <p className='control'> 
+      <input id='signupinput2' type='password'
       className={`input ${errors.passwordConfirmation ? 'is-danger py-5' : 'py-5'}`} 
       placeholder = 'Password Confirmation'
       name='passwordConfirmation'

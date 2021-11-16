@@ -36,7 +36,7 @@ recipeSchema.virtual('averageRating')
       if (!review.rating) return acc
       return acc + review.rating
     }, 0)
-    return (sumOfRatings / this.reviews.length.toFixed(1))
+    return ((sumOfRatings / this.reviews.length).toFixed(1))
   })
 
 recipeSchema.set('toJSON', { virtuals: true })

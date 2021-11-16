@@ -4,19 +4,19 @@ import axios from 'axios'
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
 import Home from './components/Home'
 import Navbar from './components/Navbar'
-import Login from './components/Login'
-import Register from './components/Register'
 import RecipeIndex from './components/RecipeIndex'
 import RecipeShow from './components/RecipeShow'
 import LoginorSignUp from './components/LoginorSignUp'
 import AddRecipe from './components/AddRecipe';
 import UpdateRecipe from './components/UpdateRecipe';
+import UserProfile from './components/UserProfile';
+import AddandDeleteReview from './components/AddandDeleteReview'
 
 
 
 function App() {
   const [recipes, setRecipes] = useState([])
-  const [isShowLogin, setIsShowLogin] = useState(false)
+  const [isShowLoginOrRegister, setIsShowLoginOrRegister] = useState(false)
   // const [hasError, setHasError] = useState(false)
 
   useEffect(() => {
@@ -31,28 +31,34 @@ function App() {
     }
     getData()
   }, [])
-
+  console.log(recipes)
   const handleLoginClick = () => {
-    setIsShowLogin((isShowLogin) => !isShowLogin)
+    setIsShowLoginOrRegister((isShowLoginOrRegister) => !isShowLoginOrRegister)
   }
+
+  const handleLoginOrRegister = (bool) => {
+    setIsShowLoginOrRegister(bool)
+  }
+
 
 
   return (
     // <h1>platester</h1>
     <BrowserRouter>
       <Navbar handleLoginClick={handleLoginClick}/>
-      <LoginorSignUp isShowLogin={isShowLogin} handleLoginClick={handleLoginClick}/>
+      <LoginorSignUp isShowLoginOrRegister={isShowLoginOrRegister} handleLoginClick={handleLoginClick} handleLoginOrRegister={handleLoginOrRegister} />
       <Switch>
         <Route exact path='/' component={Home}/>
         <Route exact path='/recipes' component={RecipeIndex}/>
         <Route exact path='/recipes/:id' component={RecipeShow}/>
         <Route exact path='/recipes/:id/edit' component={UpdateRecipe}/>
-      
+        <Route exact path='/profile' component={UserProfile} />
+        <Route exact path='/recipes/:id/reviews' component={AddandDeleteReview}/>
 
-        <Route exact path='/account' component={LoginorSignUp}/>
-        <Route exact path='/register' component={Register} />
+        {/* <Route exact path='/account' component={LoginorSignUp}/> */}
+        {/* <Route exact path='/register' component={Register} />
         <Route exact path='/login' component={Login} />
-        <Route exact path='/add' component={AddRecipe}/>
+        <Route exact path='/add' component={AddRecipe}/> */}
       </Switch>
     
     </BrowserRouter>
