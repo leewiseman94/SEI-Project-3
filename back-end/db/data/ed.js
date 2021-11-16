@@ -11,7 +11,24 @@ export default [{
   servingSize: 4,
   nutritionalInfo: ['kcal: 303', 'fat: 22g', 'saturates: 7g', 'carbs: 13g', 'sugars: 7g', 'fibre: 3g', 'protein: 11g', 'salt: 1.2g'],
   tags: ['sausages', 'Italian', 'one-pot'],
-  course: 'main'
+  course: 'main',
+  reviews: [
+    {
+      subject: 'tester 1',
+      comments: 'comment 1',
+      rating: 4
+    },
+    {
+      subject: 'tester 2',
+      comments: 'comment 2',
+      rating: 3
+    },
+    {
+      subject: 'tester 3',
+      comments: 'comment 3',
+      rating: 1
+    }
+  ]
 },
 {
   name: 'Peanut butter chicken',

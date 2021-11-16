@@ -35,6 +35,13 @@ const seedDatabase = async () => {
 
     const edsRecipes = edData.map(recipe => {
       recipe.owner = users[1]._id
+      if (recipe.reviews) {
+        recipe.reviews.map(review => {
+          const randomIndex = Math.floor(Math.random() * users.length)
+          review.owner = users[randomIndex]._id
+          return review
+        })
+      }
       return recipe
     })
 
@@ -45,6 +52,13 @@ const seedDatabase = async () => {
 
     const issrasRecipes = issraData.map(recipe => {
       recipe.owner = users[2]._id
+      if (recipe.reviews) {
+        recipe.reviews.map(review => {
+          const randomIndex = Math.floor(Math.random() * users.length)
+          review.owner = users[randomIndex]._id
+          return review
+        })
+      }
       return recipe
     })
 
@@ -56,6 +70,13 @@ const seedDatabase = async () => {
 
     const leesRecipes = leeData.map(recipe => {
       recipe.owner = users[3]._id
+      if (recipe.reviews) {
+        recipe.reviews.map(review => {
+          const randomIndex = Math.floor(Math.random() * users.length)
+          review.owner = users[randomIndex]._id
+          return review
+        })
+      }
       return recipe
     })
 
@@ -66,6 +87,13 @@ const seedDatabase = async () => {
 
     const reesRecipes = reeData.map(recipe => {
       recipe.owner = users[4]._id
+      if (recipe.reviews) {
+        recipe.reviews.map(review => {
+          const randomIndex = Math.floor(Math.random() * users.length)
+          review.owner = users[randomIndex]._id
+          return review
+        })
+      }
       return recipe
     })
 
