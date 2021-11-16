@@ -8,7 +8,7 @@ const RecipeIndex = () => {
   const [recipes, setRecipes] = useState([])
   const [filteredRecipes, setFilteredRecipes] = useState([])
   const [difficulties, setDifficulties] = useState([])
-  const [difficultySearch, setDifficultySearch] = useState('')
+  // const [difficultySearch, setDifficultySearch] = useState('')
 
 
   const props = useLocation()
