@@ -12,12 +12,16 @@ export default [
     servingSize: 4,
     nutritionalInfo: ['kcal: 303', 'fat: 22g', 'saturates: 7g', 'carbs: 13g', 'sugars: 7g', 'fibre: 3g', 'protein: 11g', 'salt: 1.2g'],
     tags: ['sausages', 'Italian', 'one-pot'],
+<<<<<<< HEAD
+    course: 'Main'
+=======
     course: 'Main',
     reviews: {
       subject: 'tester',
       comments: 'comment test',
       rating: 2
     }
+>>>>>>> development
   },
   {
     name: 'Peanut butter chicken',
@@ -52,12 +56,16 @@ export default [
     servingSize: 6,
     nutritionalInfo: ['kcal: 716', 'fat: 43g', 'saturates: 13g', 'carbs: 24g', 'sugars: 16g', 'fibre: 10g', 'protein: 53g', 'salt: 1.4g'],
     tags: ['lamb', 'slow-cooked'],
+<<<<<<< HEAD
+    course: 'Main'
+=======
     course: 'Main',
     reviews: [{
       subject: 'tester',
       comments: 'comment test',
       rating: 4
     }]
+>>>>>>> development
   },
   {
     name: 'Ultimate sticky toffee pudding',
@@ -169,12 +177,16 @@ export default [
     difficulty: 'Easy',
     servingSize: 4,
     tags: ['Mediterranean', 'Pasta', 'Fish'],
+<<<<<<< HEAD
+    course: 'Main'
+=======
     course: 'Main',
     reviews: {
       subject: 'tester',
       comments: 'commen test',
       rating: 4
     }
+>>>>>>> development
   },
   {
     name: 'Pasta With Vegan Cream Sauce',

@@ -11,7 +11,6 @@ const LoginOrSignUp = ({ isShowLoginOrRegister, handleLoginClick, handleLoginOrR
   const [isShowRegister, setIsShowRegister] = useState(false)
 
   const [formData, setFormData ] = useState({
-    username: '',
     email: ''
     })
 
@@ -74,10 +73,10 @@ const LoginOrSignUp = ({ isShowLoginOrRegister, handleLoginClick, handleLoginOrR
         </form>
       </div>
       <div className={`${isShowLoginOrRegister && isShowLogin && !isShowRegister  ? '' : 'hide'} loginOrRegister-popup`}>
-        <Login handleLoginOrRegisterPopup={handleLoginOrRegisterPopup}/>
+        <Login handleLoginOrRegisterPopup={handleLoginOrRegisterPopup} emailData={formData.email} />
       </div>
       <div className={`${isShowLoginOrRegister && !isShowLogin && isShowRegister  ? '' : 'hide'} loginOrRegister-popup`}>
-        <Register handleLoginOrRegisterPopup={handleLoginOrRegisterPopup}/>
+        <Register handleLoginOrRegisterPopup={handleLoginOrRegisterPopup} emailData={formData.email}/>
       </div>
     </div>
     
