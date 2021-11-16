@@ -201,7 +201,7 @@ i.far {
 }
 
 #icon-info2 {
-  margin-left: 200px;
+  /* margin-left: 200px; */
   margin-right: 270px;
 }
 
@@ -257,9 +257,9 @@ p.subtitle.method {
 }
 
 #ingredients-list {
-  height: 400px;
-  overflow: scroll;
-  width: 580px;
+  height: 200px;
+  /* overflow: scroll; */
+  width: 500px;
 }
 
 .container {
@@ -313,6 +313,43 @@ i.fas.fa-filter {
 
 #filter-button:hover {
   border-color: black;
+}
+.title.is-4 {
+  align-self: flex-start;
+}
+
+#submit-review {
+  font-weight: bold;
+  font-size: 16px;
+  text-transform: lowercase;
+}
+
+/* .ingre-list {
+  display: none;
+} */
+
+/* .changeColor {
+  color: white;
+  
+}
+.changeColor:hover {
+  color: black;
+} */
+
+
+.textarea.is-medium {
+  width: 400px;
+}
+
+.input.comment {
+  height: 0px;
+}
+
+.review {
+  margin-top: 180px
+}
+#review-form {
+  width: 400px;
 }
 
 #submit {

@@ -27,9 +27,9 @@ const LoginOrSignUp = ({ isShowLogin, handleLoginClick }) => {
     }
   }
 
-  const handleClick = () => {
-    history.push('/')
-  }
+  // const handleClick = () => {
+  //   history.push('/')
+  // }
 
   const handleLoginPopup = () => {
     handleLoginClick()

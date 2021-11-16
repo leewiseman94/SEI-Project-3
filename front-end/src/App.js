@@ -11,6 +11,7 @@ import RecipeShow from './components/RecipeShow'
 import LoginorSignUp from './components/LoginorSignUp'
 import AddRecipe from './components/AddRecipe';
 import UpdateRecipe from './components/UpdateRecipe';
+import AddandDeleteReview from './components/AddandDeleteReview'
 
 
 
@@ -31,7 +32,7 @@ function App() {
     }
     getData()
   }, [])
-
+  console.log(recipes)
   const handleLoginClick = () => {
     setIsShowLogin((isShowLogin) => !isShowLogin)
   }
@@ -47,7 +48,7 @@ function App() {
         <Route exact path='/recipes' component={RecipeIndex}/>
         <Route exact path='/recipes/:id' component={RecipeShow}/>
         <Route exact path='/recipes/:id/edit' component={UpdateRecipe}/>
-      
+        <Route exact path='/recipes/:id/reviews' component={AddandDeleteReview}/>
 
         <Route exact path='/account' component={LoginorSignUp}/>
         <Route exact path='/register' component={Register} />
