@@ -137,7 +137,7 @@ h5 {
 
 .recipe-steps {
   margin-top: 10px;
-  height: 400px;
+  height: 370px;
   overflow: scroll;
 }
 
@@ -325,9 +325,29 @@ i.fas.fa-filter {
   text-transform: lowercase;
 }
 
-/* .ingre-list {
-  display: none;
-} */
+#click-review {
+  width: 140px;
+  padding-right: 11px;
+  font-weight: bold;
+}
+
+#nutri-info {
+  width: 60px;
+  height: 80px;
+  margin-right: 10px;
+  font-size: 14px;
+}
+
+.container.nutrition-info {
+  /* display: flex; */
+  /* justify-content: center; */
+}
+
+.card.nutritional {
+  margin-right: 10px;
+  background-color: rgba(231, 231, 231, 0.493);
+  box-shadow: none;
+}
 
 /* .changeColor {
   color: white;

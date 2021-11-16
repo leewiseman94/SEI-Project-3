@@ -26,18 +26,18 @@ const RecipeShow = () => {
     getData()
   }, [id])
 
-    const userIsOwner = (currentUserId) => {
-      const payload = getPayload()
-      // console.log('PAYLOAD',payload.sub)
-      // console.log(currentUserId)
-      if (!payload) return false
-      return currentUserId === payload.sub
-    }
+  const userIsOwner = (currentUserId) => {
+    const payload = getPayload()
+    // console.log('PAYLOAD',payload.sub)
+    // console.log(currentUserId)
+    if (!payload) return false
+    return currentUserId === payload.sub
+  }
 
 
   return (
 
-    
+
     <section className="section" id="recipe-show">
       <div className="container">
         <section className="section recipe-subtitle">
@@ -54,8 +54,8 @@ const RecipeShow = () => {
                 </div>
               </div>
             </div>
-            { userIsOwner(owner._id) && 
-            <Link to={`/recipes/${id}/edit`}><button className='button is-danger'>Edit Recipe</button></Link>}
+            {userIsOwner(owner._id) &&
+              <Link to={`/recipes/${id}/edit`}><button className='button is-danger'>Edit Recipe</button></Link>}
 
           </div>
 
@@ -92,6 +92,27 @@ const RecipeShow = () => {
                 })}
 
             </div>
+            <br />
+            <div className="container nutrition-info">
+              <div className="info is-flex justify-content-space-evenly">
+                <div className="info is-flex is-flex-direction-row">
+                  {recipe.nutritionalInfo &&
+                    recipe.nutritionalInfo.map((nutritionalInfo) => {
+                      return (
+                        <>
+                          <div className="card nutritional" >
+                            <div className="card-content" id="nutri-info">
+                              <p className="nutri-p">{nutritionalInfo}</p>
+                            </div>
+                          </div>
+                          <br />
+                        </>
+                      )
+
+                    })}
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -110,9 +131,9 @@ const RecipeShow = () => {
                 <div className="extra-info">
                   <p className="subtitle method">{recipe.prepTime}</p>
                 </div>
-                
-            </div>
-            
+
+              </div>
+
 
               <div>
                 <div className="info-icons">
@@ -123,12 +144,12 @@ const RecipeShow = () => {
                   <p className="subtitle method">{recipe.cookingTime}</p>
                 </div>
               </div>
-              <hr/>
+              <hr />
             </div>
 
 
             <div className="column" id="icon-info2">
-              <hr/>
+              <hr />
               <div className="icon-info-space">
                 <div className="info-icons">
                   <img src={cookingTime} className="method-icon" alt="method-icon" width="40px"></img>
@@ -151,48 +172,63 @@ const RecipeShow = () => {
               <hr />
             </div>
 
-          <div className="column is-one-half">
-            <div className="card" id="ingredients-list">
-              <div className="card-content">
-                <div className="content">
-                  <div className="buttons recipe-info">
-                  <button class="button is-danger" id="ingredients-button" >
-                    <img src={ingredientsIMG} className="method-icon" alt="method-icon" width="40px"></img>
-                    <h5 className="method-title has-text-white">Ingredients</h5>
-                    </button>
+            <div className="column is-one-half">
+              <div className="card" id="ingredients-list">
+                <div className="card-content">
+                  <div className="content">
+                    <div className="buttons recipe-info">
+                      <button class="button is-danger" id="ingredients-button" >
+                        <img src={ingredientsIMG} className="method-icon" alt="method-icon" width="40px"></img>
+                        <h5 className="method-title has-text-white">Ingredients</h5>
+                      </button>
 
+                    </div>
+                    <br />
+                    {recipe.ingredients &&
+                      recipe.ingredients.map((ingredients) => {
+                        return (
+                          <>
+                            <p style={{ display: { ingredients } ? "none" : "block" }}>{ingredients}</p>
+                            <br />
+                          </>
+                        )
+
+                      })}
                   </div>
-                  <br />
-                  {recipe.ingredients &&
-                    recipe.ingredients.map((ingredients) => {
-                      return (
-                        <>
-                          <p style={{ display: {ingredients} ? "none" : "block" }}>{ingredients}</p>
-                          <br />
-                        </>
-                      )
-
-                    })}
                 </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+
+        <section className="is-flex">
+          <div className="button-container">
+            <Link to={`/recipes/${id}/reviews`}><button className="button is-danger has-text-white" id="click-review">Leave a review</button></Link>
+          </div>
+          <div className="container">
+            <div className="columns">
+              <div className="column is-full">
+                <h3>{recipe.name}</h3>
+              </div>
+            </div>
+            <div className="columns">
+              <div className="column is-full">
+                <h3>{recipe.review}</h3>
               </div>
             </div>
 
+
           </div>
-        </div>
+        </section>
+
+
 
       </div>
-      
-      <div className="is-flex">
-        <Link to={`/recipes/${id}/reviews`}><button className="button is-danger has-text-white" id="click-review">Leave a review</button></Link>
-          
-        </div>
-
-    
-
-    </div>
 
     </section >
-  
+
   )
 }
 

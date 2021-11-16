@@ -24,11 +24,11 @@ const AddandDeleteReview = () => {
       const newFormData = { ...formData, [event.target.name]: event.target.value }
       setFormData(newFormData)
     } else if (event.target.parentElement.classList.contains('rating')) {
-      const newFormData = { ...formData , [event.target.parentNode.attributes.name.value]: event.target.parentNode.attributes.value.value }
+      const newFormData = { ...formData, [event.target.parentNode.attributes.name.value]: event.target.parentNode.attributes.value.value }
       setFormData(newFormData)
       console.log(newFormData)
     }
-    
+
   }
 
   const handleSubmit = async (event) => {
@@ -67,21 +67,26 @@ const AddandDeleteReview = () => {
 
           <div className="is-flex is-flex-direction-row">
             <div className="rating" id="rating-1" onClick={handleRatingClick} name="rating" value="1">
-              <i className="far fa-star fa-2x" onMouseOver={({ target }) => target.style.color = "black"}
-                onMouseOut={({ target }) => target.style.color = "yellow"}></i>
+              <i className="far fa-star fa-2x" onMouseOver={({ target }) => target.style.color = "yellow"}
+                onMouseOut={({ target }) => target.style.color = "black"}></i>
             </div>
-            <div>
-              <i className="far fa-star fa-2x"></i>
+            <div className="rating" id="rating-1" onClick={handleRatingClick} name="rating" value="2">
+              <i className="far fa-star fa-2x" onMouseOver={({ target }) => target.style.color = "yellow"}
+                onMouseOut={({ target }) => target.style.color = "black"}></i>
             </div>
-            <div>
-              <i className="far fa-star fa-2x"></i>
+            <div className="rating" id="rating-1" onClick={handleRatingClick} name="rating" value="3">
+              <i className="far fa-star fa-2x" onMouseOver={({ target }) => target.style.color = "yellow"}
+                onMouseOut={({ target }) => target.style.color = "black"}></i>
             </div>
-            <div>
-              <i className="far fa-star fa-2x"></i>
+            <div className="rating" id="rating-1" onClick={handleRatingClick} name="rating" value="4">
+              <i className="far fa-star fa-2x" onMouseOver={({ target }) => target.style.color = "yellow"}
+                onMouseOut={({ target }) => target.style.color = "black"}></i>
             </div>
-            <div>
-              <i className="far fa-star fa-2x"></i>
+            <div className="rating" id="rating-1" onClick={handleRatingClick} name="rating" value="5">
+              <i className="far fa-star fa-2x" onMouseOver={({ target }) => target.style.color = "yellow"}
+                onMouseOut={({ target }) => target.style.color = "black"}></i>
             </div>
+
           </div>
 
         </div>
