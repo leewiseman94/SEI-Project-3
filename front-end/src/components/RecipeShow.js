@@ -167,7 +167,7 @@ const RecipeShow = () => {
                     recipe.ingredients.map((ingredients) => {
                       return (
                         <>
-                          <p className="ingre-list" style={{ display: {ingredients} ? "none" : "block" }}>{ingredients}</p>
+                          <p style={{ display: {ingredients} ? "none" : "block" }}>{ingredients}</p>
                           <br />
                         </>
                       )
@@ -182,8 +182,9 @@ const RecipeShow = () => {
 
       </div>
       
-      <div>
-          <input className="button is-danger has-text-white" id="click-review" type="submit" value="Leave a review"></input>
+      <div className="is-flex">
+        <Link to={`/recipes/${id}/reviews`}><button className="button is-danger has-text-white" id="click-review">Leave a review</button></Link>
+          
         </div>
 
     
