@@ -421,7 +421,7 @@ export default [{
   tags: ['fish, pasta'],
   course: 'main',
   allergens: []
-},
+}
 
 
 
