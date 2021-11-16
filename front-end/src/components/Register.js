@@ -1,11 +1,12 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useHistory } from 'react-router-dom'
 import axios from 'axios'
-import { Link } from 'react-router-dom'
 
-const Register = ({ handleLoginOrRegisterPopup }) => {
-  const history = useHistory()
 
+
+const Register = ({ handleLoginOrRegisterPopup, emailData }) => {
+  
+  
   const [formData, setFormData ] = useState({
     fullName: '',
     username: '',
@@ -14,6 +15,11 @@ const Register = ({ handleLoginOrRegisterPopup }) => {
     passwordConfirmation: ''
     })
 
+    
+    useEffect(() => {
+      setFormData({ ...formData, email : emailData })
+    }, [emailData])
+    
     const [ errors, setErrors] = useState ({
       fullName: '',
       username: '',
@@ -47,6 +53,7 @@ const Register = ({ handleLoginOrRegisterPopup }) => {
   }
 
   return (
+    emailData &&
     <form className='column is-offset-one-third box ' onSubmit={handleSubmit} id='form'>
       <div className="is-flex is-flex-direction-row is-justify-content-space-between is-align-items-center">
         <div className="close-login-popup" onClick={handleRegisterBack}>
@@ -97,7 +104,7 @@ const Register = ({ handleLoginOrRegisterPopup }) => {
       {errors.email && <p className='is-danger subtitle mt-1 mb-1 ml-0'>email must be unique</p>}
       <div className='field mb-0'>
       <p className='control'>
-      <input id='signupinput'
+      <input id='signupinput' type='password'
       className={`input ${errors.password ? 'is-danger py-5' : 'py-5'}`} 
       placeholder = 'Password'
       name='password'
@@ -107,8 +114,8 @@ const Register = ({ handleLoginOrRegisterPopup }) => {
       </div>
       {errors.password && <p className='is-danger subtitle mt-1 mb-1 ml-0'>{errors.password.message}</p>}
       <div className='field mb-0'>
-      <p className='control'>
-      <input id='signupinput2'
+      <p className='control'> 
+      <input id='signupinput2' type='password'
       className={`input ${errors.passwordConfirmation ? 'is-danger py-5' : 'py-5'}`} 
       placeholder = 'Password Confirmation'
       name='passwordConfirmation'

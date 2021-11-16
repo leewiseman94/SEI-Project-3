@@ -5,7 +5,6 @@ import recipeMethod from '../assets/recipeMethod.PNG'
 
 const AddandUpdate = ( { newRecipe, image, description, ingredients, method, errors, displayImage, handleChange, displayDescription, displayIngredient, displayMethod, handleSubmit } ) => {
 
-  console.log(newRecipe)
   return (
     <section className='addRecipe'>
       <form className='form' onSubmit={handleSubmit}>

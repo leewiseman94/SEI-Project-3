@@ -1,14 +1,17 @@
 import axios from 'axios'
-import React, { useState } from 'react'
-import { useHistory } from 'react-router'
-import { Link } from 'react-router-dom'
+import React, { useState, useEffect } from 'react'
 
-const Login = ({ handleLoginOrRegisterPopup }) => {
-  const history = useHistory()
+
+const Login = ({ handleLoginOrRegisterPopup, emailData }) => {
   const [formData, setFormData] = useState({
     email: '', 
     password: ''
   })
+  
+  useEffect(() => {
+    setFormData({ ...formData, email : emailData })
+  }, [emailData])
+
   const [error, setError] = useState(false)
 
   const handleChange = (event) => {
@@ -67,7 +70,7 @@ const Login = ({ handleLoginOrRegisterPopup }) => {
       {error && <p className='is-danger subtitle mt-1 mb-1 ml-0'>Your username or password are incorrect</p>}
       <div className='field mb-0'>
       <p className='control'>
-      <input  id='signupinput2'
+      <input  id='signupinput2' type='password'
       className={`input ${error ? 'is-danger py-5' : 'py-5'}`} 
       placeholder = 'Password'
       name='password'
