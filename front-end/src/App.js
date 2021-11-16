@@ -10,6 +10,9 @@ import LoginorSignUp from './components/LoginorSignUp'
 import AddRecipe from './components/AddRecipe';
 import UpdateRecipe from './components/UpdateRecipe';
 import UserProfile from './components/UserProfile';
+import AddandDeleteReview from './components/AddandDeleteReview'
+
+
 
 function App() {
   const [recipes, setRecipes] = useState([])
@@ -28,7 +31,7 @@ function App() {
     }
     getData()
   }, [])
-
+  console.log(recipes)
   const handleLoginClick = () => {
     setIsShowLoginOrRegister((isShowLoginOrRegister) => !isShowLoginOrRegister)
   }
@@ -50,6 +53,7 @@ function App() {
         <Route exact path='/recipes/:id' component={RecipeShow}/>
         <Route exact path='/recipes/:id/edit' component={UpdateRecipe}/>
         <Route exact path='/profile' component={UserProfile} />
+        <Route exact path='/recipes/:id/reviews' component={AddandDeleteReview}/>
 
         {/* <Route exact path='/account' component={LoginorSignUp}/> */}
         {/* <Route exact path='/register' component={Register} />

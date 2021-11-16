@@ -28,6 +28,8 @@ const RecipeShow = () => {
 
     const userIsOwner = (currentUserId) => {
       const payload = getPayload()
+      // console.log('PAYLOAD',payload.sub)
+      // console.log(currentUserId)
       if (!payload) return false
       return currentUserId === payload.sub
     }
@@ -153,9 +155,11 @@ const RecipeShow = () => {
             <div className="card" id="ingredients-list">
               <div className="card-content">
                 <div className="content">
-                  <div className="recipe-info">
+                  <div className="buttons recipe-info">
+                  <button class="button is-danger" id="ingredients-button" >
                     <img src={ingredientsIMG} className="method-icon" alt="method-icon" width="40px"></img>
-                    <h5 className="method-title">Ingredients</h5>
+                    <h5 className="method-title has-text-white">Ingredients</h5>
+                    </button>
 
                   </div>
                   <br />
@@ -163,7 +167,7 @@ const RecipeShow = () => {
                     recipe.ingredients.map((ingredients) => {
                       return (
                         <>
-                          <p>{ingredients}</p>
+                          <p className="ingre-list" style={{ display: {ingredients} ? "none" : "block" }}>{ingredients}</p>
                           <br />
                         </>
                       )
@@ -173,14 +177,16 @@ const RecipeShow = () => {
               </div>
             </div>
 
-
           </div>
         </div>
 
-
-
-
       </div>
+      
+      <div>
+          <input className="button is-danger has-text-white" id="click-review" type="submit" value="Leave a review"></input>
+        </div>
+
+    
 
     </div>
 
