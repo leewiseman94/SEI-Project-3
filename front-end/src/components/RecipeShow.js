@@ -9,7 +9,7 @@ import difficultyIMG from '../assets/difficultyIMG.PNG'
 import servingSize from '../assets/servingSize.PNG'
 import { getPayload } from './helpers/auth'
 
-const RecipeShow = ({ ingredients }) => {
+const RecipeShow = () => {
   const [recipe, setRecipe] = useState([])
   const [owner, setOwner] = useState([])
   const { id } = useParams()
