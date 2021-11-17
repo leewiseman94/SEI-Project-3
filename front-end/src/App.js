@@ -1,5 +1,5 @@
 import './styles/App.css';
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
 import Home from './components/Home'
 import Navbar from './components/Navbar'
@@ -64,7 +64,7 @@ function App() {
           
 
 
-          <Route exact path='/add' component={AddRecipe}/> */}
+          <Route exact path='/add' component={AddRecipe}/> 
         </Switch>
         <Footer />
       </div>
