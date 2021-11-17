@@ -4,13 +4,13 @@ import { Link } from 'react-router-dom'
 const CompanyDetails = () => {
   return(
     <>
-      <div className="columns">
-        <div className="column is-half is-offset-one-quarter mt-6">
-          <h1 id="cd">
-          BLAH BLAH BLAH SOMETHING SOMETHING BLAHHHHHHH
+      <div className="columns" id="cd">
+        <div className="column is-full is-offset-one-quarter">
+          <h1 id="cdh1">
+          This brilliant website was hand crafted by Ed Steer, Issra Hashim, Lee Wiseman & Ree Gilling.
           </h1>
           <Link to={`/`}>
-            <button class="button is-normal is-rounded is-danger is-ghost has-text-black is-shadowless mt-6" id="box-one-button">Enough of the boring bits, take me back to the food</button>
+            <button className="button is-centered is-normal is-rounded is-danger is-ghost has-text-black is-shadowless mt-6" id="cd-button">These guys sound really great but please take me back to the food!</button>
           </Link>
         </div>
       </div>

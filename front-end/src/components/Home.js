@@ -5,14 +5,27 @@ import bulmaCarousel from 'bulma-carousel/dist/js/bulma-carousel.min.js'
 // import fbLogo from '../assets/f_logo_RGB-Black_58.png'
 // import twitterLogo from '../assets/2021 Twitter logo - black.png'
 // import instagramLogo from '../assets/glyph-logo_May2016.png'
-
+import heroImage1 from '../assets/heroImages/1.png'
+import heroImage2 from '../assets/heroImages/2.png'
+import heroImage3 from '../assets/heroImages/3.png'
+// import heroImage4 from '../assets/heroImages/4.png'
 
 const Home = () => {  
   const [courses, setCourses] = useState([])
   const [recipes, setRecipes] = useState([])
   // const { id } = useParams()
-  
   // console.log('ID', id)
+  
+  // * Import all images from the Hero Images folder so we can use them in the carosel
+  const heroImages = [{ name: "1", image: heroImage1 }, { name: "2", image: heroImage2 }, { name: "3", image: heroImage3 }]
+
+  bulmaCarousel.attach('.carousel', {
+    slidesToScroll: 1, 
+    slidesToShow: 1,
+    autoplay: true,
+    autoplaySpeed: 5000,
+    loop: true,
+  })
 
   useEffect(() => {
     const getData = async () => {
@@ -36,36 +49,37 @@ const Home = () => {
         }
         newArray.sort((a, b) => b.course.toLowerCase() - a.course.toLowerCase())
         setCourses(newArray)
-        bulmaCarousel.attach('.carousel', {
-          slidesToScroll: 1, 
-          slidesToShow: 3,
-          autoplay: true,
-          autoplaySpeed: 2000,
-        })
+
       } catch (err) {
         // setHasError(true)
         console.log(err)
       }
     }
-    
-  
   getData()
-
 }, [])
+  
 
   
-console.log(courses)
+console.log(heroImages)
   return (
     <>
-      <section className="hero-carousel is-large">
+      <section class="hero home-hero is-large is-white">
+        <div class="hero-body home-hero-body">
+          <div class='hero-background fade'>
+          </div>
+        </div>
+      </section>
+
+      {/* <section className="hero-carousel is-medium">
       <div className="hero-head"></div>
           <div className='carousel-container'>
             <div className='carousel'>
-            {recipes.length && recipes.map((recipe, index) => {
+            {heroImages.length && heroImages.map((image, index) => {
+
               return (
                 // <div  className={`item-${index+1}`}>
-                  <div key={recipe._id} className='carousel-item has-background'>
-                  <img className='is-background' src={recipe.image} alt={recipe.name}/>
+                  <div key={image._id} className='carousel-item has-background'>
+                  <img className='carousel-image is-background' src={image.image} alt={image.name}/>
                   </div>
                 // </div>
               )
@@ -73,7 +87,7 @@ console.log(courses)
           </div>
           <div className="hero-body"></div>
           </div>
-      </section>      
+      </section>       */}
       
       <h1 className="is-size-3 ha-text-weight-medium ml-5">Inspiration for your next meal</h1>              
             
@@ -160,7 +174,7 @@ console.log(courses)
             Want to sharpen up your knife skills?
           </p>
         </div>
-        <Link to={`/recipes`}>
+        <Link to={`/Masterclass`}>
           <button class="button is-normal is-rounded is-danger is-ghost has-text-grey-light is-shadowless mt-5" id="box-two-button">Check out one of our masterclasses</button>
         </Link>
       </div>

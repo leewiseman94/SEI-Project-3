@@ -410,10 +410,18 @@ i.fas.fa-filter {
 } */
 
 .hero-carousel {
-  padding-top: 170px;
+  padding-top: 80px;
 }
-.is-background {
-  height: 400px
+
+.carousel-item {
+  height: 600px;
+}
+
+.carousel-image {
+  /* width: 100vw; */
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: 50% 100%;
 }
 .hero-body {
   padding: 0px
@@ -476,7 +484,7 @@ i.fas.fa-filter {
   border-radius: 0px;
 }
 
-
+/* Home */
 #box-one {
   background: url('../assets/fridge3.jpeg');
   background-size: 100%;
@@ -541,10 +549,6 @@ i.fas.fa-filter {
   text-shadow: 2px 2px white;
 }
 
-#social {
-  align-items: center;
-}
-
 #tandc {
   margin-top: 100px;
 }
@@ -553,10 +557,39 @@ i.fas.fa-filter {
   margin-top: 100px;
 }
 
+
+.lineIngredients {
+  list-style-type: none;
+}
+
+/* Footer */
+#footer {
+  justify-content: space-around;
+  background-color: white;
+}
+/* Company Details */
 #cd {
+  margin-top: 200px;
+  align-items: center;
+}
+
+#cd-button {
+  justify-content: center;
+  text-decoration: none;
+  max-width: 550px;
+}
+
+#cdh1 {
+  justify-content: center;
+}
+
+/* Masterclass */
+
+/* #master-class-card {
+  margin-top: 200px;
+} */
+
+#master-breadcrumb {
   margin-top: 200px;
 }
 
-/* .lineIngredients {
-  list-style-type: none;
-}  */
