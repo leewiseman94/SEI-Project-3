@@ -64,7 +64,7 @@ function App() {
         
 
 
-        <Route exact path='/add' component={AddRecipe}/> */}
+        <Route exact path='/add' component={AddRecipe}/> */
       </Switch>
     
     </BrowserRouter>
