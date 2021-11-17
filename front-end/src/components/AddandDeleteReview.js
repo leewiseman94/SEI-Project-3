@@ -97,23 +97,23 @@ const AddandDeleteReview = () => {
 
           <div className="is-flex is-flex-direction-row">
             <div className="rating" id="rating-1" onClick={handleRatingClick} name="rating" value="1">
-              <i className="far fa-star fa-2x" onMouseOver={({ target }) => target.style.color = "yellow"}
+              <i className="fas fa-star fa-2x" onMouseOver={({ target }) => target.style.color = "yellow"}
                 onMouseOut={({ target }) => target.style.color = "black"}></i>
             </div>
             <div className="rating" id="rating-1" onClick={handleRatingClick} name="rating" value="2">
-              <i className="far fa-star fa-2x" onMouseOver={({ target }) => target.style.color = "yellow"}
+              <i className="fas fa-star fa-2x" onMouseOver={({ target }) => target.style.color = "yellow"}
                 onMouseOut={({ target }) => target.style.color = "black"}></i>
             </div>
             <div className="rating" id="rating-1" onClick={handleRatingClick} name="rating" value="3">
-              <i className="far fa-star fa-2x" onMouseOver={({ target }) => target.style.color = "yellow"}
+              <i className="fas fa-star fa-2x" onMouseOver={({ target }) => target.style.color = "yellow"}
                 onMouseOut={({ target }) => target.style.color = "black"}></i>
             </div>
             <div className="rating" id="rating-1" onClick={handleRatingClick} name="rating" value="4">
-              <i className="far fa-star fa-2x" onMouseOver={({ target }) => target.style.color = "yellow"}
+              <i className="fas fa-star fa-2x" onMouseOver={({ target }) => target.style.color = "yellow"}
                 onMouseOut={({ target }) => target.style.color = "black"}></i>
             </div>
             <div className="rating" id="rating-1" onClick={handleRatingClick} name="rating" value="5">
-              <i className="far fa-star fa-2x" onMouseOver={({ target }) => target.style.color = "yellow"}
+              <i className="fas fa-star fa-2x" onMouseOver={({ target }) => target.style.color = "yellow"}
                 onMouseOut={({ target }) => target.style.color = "black"}></i>
             </div>
 
