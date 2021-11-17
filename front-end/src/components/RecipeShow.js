@@ -17,6 +17,8 @@ const RecipeShow = ({ ingredients }) => {
   const { id } = useParams()
   const history = useHistory()
   const [error, setError] = useState(false)
+  const [liked, setLiked] = useState(false)
+  const [reviews, setReviews] = useState([])
   // console.log('ID', id)
 
   // window.scrollTo(0, 0)
@@ -31,6 +33,8 @@ const RecipeShow = ({ ingredients }) => {
         const { data } = await axios.get(`/api/recipes/${id}`)
         setRecipe(data)
         setOwner(data.owner)
+        recipeLiked(data)
+        setReviews(data.reviews)
       } catch (err) {
         console.log(err)
       }
@@ -65,7 +69,61 @@ const RecipeShow = ({ ingredients }) => {
       setError(true)
     }
   }
+  const getUserData = async () => {
+    try {
+      const token = window.localStorage.getItem('token')
+      if (!token) throw new Error()
+      if (!userIsAuthenticated()) throw new Error()
+      const header = { "Authorization": `Bearer ${token}` }
+      const { data } = await axios.get('/api/profile', { headers: header })
+      return data
+    } catch (err) {
+      console.log(err)
+    }
+  }
 
+  const userIsAuthenticated = () => {
+    const payload = getPayload()
+    if (!payload) return false
+    const now = Math.round(Date.now() / 1000)
+    return now < payload.exp
+  } 
+
+  const recipeLiked = async (data) => {
+    const user = await getUserData()
+    if (!user) return false
+    if (!data.likedBy.includes(user._id)) {
+      setLiked(false)
+      return false
+    }
+    setLiked(true)
+    return true
+  }
+
+  const likeRecipe = async (event) => {
+    const user = await getUserData()
+    try {
+      const { data } = await axios.get(`/api/recipes/${id}`)
+      if (event.target.classList.contains('liked') || event.target.parentElement.classList.contains('liked')) {
+        const index = data.likedBy.indexOf(user._id)
+        data.likedBy.splice(index, 1)
+      } else {
+        if (data.likedBy) data.likedBy = [ ...data.likedBy, user._id ]
+        if(!data.likedBy) data.likedBy = [user._id]
+      }
+
+      if (!data) throw new Error()
+      const token = window.localStorage.getItem('token')
+      if (!token) throw new Error()
+      if (!userIsAuthenticated()) throw new Error()
+      const header = { "Authorization": `Bearer ${token}` }
+      const response = await axios.put(`/api/recipes/${id}`, data, { headers: header })
+      if (!response) throw new Error()
+      setLiked(!liked)
+    } catch (err) {
+      console.log(err)
+    }
+  }
 
   return (
 
@@ -78,39 +136,42 @@ const RecipeShow = ({ ingredients }) => {
               <div className="container show-links">
                 <h6 className="show-rating" id="recipe-show-rating"><i className="fas fa-utensils"></i>&nbsp;{recipe.course} · {recipe.difficulty} · <i className="far fa-star"></i>Rating: {recipe.averageRating} </h6>
                 <div className="save-share">
-                  <div className="share">
-                    <Link className="has-text-black" to="/share"><h6><i className="far fa-share-square"></i>Share</h6></Link>
-                  </div>
-                  <div className="save">
-                    <h6><i className="far fa-heart"></i>Save</h6>
-                  </div>
+                  <Link to="/share" className={`${liked ? 'liked' : ''} show-share-button`}>
+                    <i className="far fa-share-square"></i>Share
+                  </Link>
+                  {userIsAuthenticated() &&
+                    <div onClick={(event) => likeRecipe(event)} className={`${liked ? 'liked' : ''} show-like-button`}>
+                      <i className="far fa-heart" id="show-heart-icon"></i>{liked ? 'Saved' : 'Save'}
+                    </div>
+                  }
                 </div>
               </div>
-              {userIsOwner(owner._id) &&
-                <>
-                  <hr />
-                  <Link to={`/recipes/${id}/edit`}><button className='button is-danger'>Edit Recipe</button></Link>
-                  <br />
-                  <button className='button is-danger' onClick={displayDelete}>Delete Recipe</button>
-                  {deleteOptions &&
-                    <div className='is-flex is-justify-content-space-around	is-align-items-center mt-4'>
-                      <div className='title is-5 pt-5'>Are you Sure you want to delete your recipe?</div>
-                      <div className='field is-grouped is-justify-content-center '>
-                        <p className='control'>
-                          <button className='button is-danger pl-6 pr-6' onClick={handleDelete}>Yes</button>
-                        </p>
-                        <p className='control'>
-                          <button className='button is-danger pl-6 pr-6' onClick={handleClose}>No</button>
-                        </p>
-                        {error && <p className='is-danger'>Something went wrong</p>}
+              <div className="is-flex is-justify-content-flex-end">
+                {userIsOwner(owner._id) &&
+                  <>
+                    <hr />
+                    <Link to={`/recipes/${id}/edit`}><button id="edit-button" className='button is-danger'>Edit Recipe</button></Link>
+                    <br />
+                    <button className='button is-danger' id="delete-button" onClick={displayDelete}>Delete Recipe</button>
+                    {deleteOptions &&
+                      <div className='is-flex is-justify-content-space-around	is-align-items-center mt-4'>
+                        <div className='title is-5 pt-5'>Are you Sure you want to delete your recipe?</div>
+                        <div className='field is-grouped is-justify-content-center '>
+                          <p className='control'>
+                            <button className='button is-danger pl-6 pr-6' onClick={handleDelete}>Yes</button>
+                          </p>
+                          <p className='control'>
+                            <button className='button is-danger pl-6 pr-6' onClick={handleClose}>No</button>
+                          </p>
+                          {error && <p className='is-danger'>Something went wrong</p>}
+                        </div>
                       </div>
-                    </div>
 
-                  }
-                  <hr />
-                </>
-              }
-
+                    }
+                    <hr />
+                  </>
+                }
+              </div>
 
             </div>
 
@@ -243,9 +304,9 @@ const RecipeShow = ({ ingredients }) => {
 
                       </div>
                       <br />
-                      
-                      {visible&& 
-                      recipe.ingredients &&
+
+                      {visible &&
+                        recipe.ingredients &&
                         recipe.ingredients.map((ingredients) => {
                           return (
                             <>
@@ -265,28 +326,31 @@ const RecipeShow = ({ ingredients }) => {
           </div>
 
           <section className="is-flex">
-     
-              <div className="button-container">
-                {userIsOwner(owner._id) &&
-                  <Link to={`/recipes/${id}/reviews`}><button className="button is-danger has-text-white" id="click-review">Leave a review</button></Link>}
-              </div>
+
+            <div className="button-container">
+              {userIsOwner(owner._id) &&
+                <Link to={`/recipes/${id}/reviews`}><button className="button is-danger has-text-white" id="click-review">Leave a review</button></Link>}
+            </div>
+
 
 
             <div className="columns">
               <div className="column is-full">
                 <div>
+                
 
-
-                  {/* {recipe.reviews &&
-                recipe.reviews.map((reviews) => {
+                  {reviews &&
+                reviews.map((review) => {
                     return (
                       <>
-                        <p key={reviews}>{reviews}</p>
+                        <h3 key={review._id}>{review.subject}</h3>
+                        <p>{review.comments}</p>
+                        <p>{review.rating}</p>
                         <br />
                       </>
                     )
 
-                  })} */}
+                  })}
 
                 </div>
               </div>
