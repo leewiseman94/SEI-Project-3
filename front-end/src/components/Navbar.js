@@ -219,7 +219,7 @@ const Navbar = ({ handleLoginClick }) => {
             <div className="navbar-links is-flex is-flex-direction-row">
               <div className="button-container"></div>
               <button className="button nav-transparent nav-center active" href="#"><div>Search Recipes</div><div className="button-bottom-border active"></div></button>
-              <button className="button nav-transparent nav-center" href="#"><div>Cooking Classes</div><div className="button-bottom-border"></div></button>
+              <Link to='/Masterclass'><button className="button nav-transparent nav-center" href="#"><div>Cooking Classes</div><div className="button-bottom-border"></div></button></Link>
               <button className="button nav-transparent nav-center" href="#"><div>Inspiration</div><div className="button-bottom-border"></div></button>
             </div>
           </div>

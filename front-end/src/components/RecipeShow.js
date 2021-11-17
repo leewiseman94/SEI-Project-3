@@ -149,7 +149,14 @@ const RecipeShow = ({ ingredients }) => {
   return (
 
     <>
+        
       <section className="section" id="recipe-show">
+      <nav className="breadcrumb pl-6" aria-label="breadcrumbs" id="master-breadcrumb">
+        <ul>
+          <li><a href="/recipes">Recipes</a></li>
+          <li class="is-active"><a href={`/recipes/${recipe.name}`} aria-current="page">{recipe.name}</a></li>
+        </ul>
+      </nav>
         <div className="container">
           <section className="section recipe-subtitle">
             <div>
@@ -171,13 +178,13 @@ const RecipeShow = ({ ingredients }) => {
                 {userIsOwner(owner._id) &&
                   <>
                     <hr />
-                    <div className="field is-grouped is-flex is-justify-content-end is-align-items-center	">
+                    <div className="field is-grouped is-flex is-justify-content-center is-align-items-center	">
                       <p className='control'>
-                    <Link to={`/recipes/${id}/edit`}><button id="edit-button" className='button is-danger pl-6 pr-6'>Edit Recipe</button></Link>
+                    <Link to={`/recipes/${id}/edit`}><button className='button is-danger pl-6 pr-6'>Edit Recipe</button></Link>
                     </p>
                     <br />
                     <p className='control'>
-                    <button className='button is-danger pl-6 pr-6' id="delete-button" onClick={displayDelete}>Delete Recipe</button>
+                    <button className='button is-danger pl-6 pr-6' onClick={displayDelete}>Delete Recipe</button>
                     </p>
                     </div>
                     {deleteOptions &&
@@ -236,9 +243,9 @@ const RecipeShow = ({ ingredients }) => {
 
               </div>
               <br />
-              <div className="container nutrition-info">
+              <div className="container nutrition-info is-flex-wrap-wrap">
                 <div className="info is-flex justify-content-space-evenly">
-                  <div className="info is-flex is-flex-direction-row">
+                  <div className="info is-flex is-flex-direction-row ">
                     {recipe.nutritionalInfo &&
                       recipe.nutritionalInfo.map((nutritionalInfo) => {
                         return (
@@ -338,7 +345,6 @@ const RecipeShow = ({ ingredients }) => {
                           return (
                             <>
                               <p>{ingredients}</p>
-                              <br />
                             </>
                           )
 
@@ -381,9 +387,9 @@ const RecipeShow = ({ ingredients }) => {
                   }
                     return (
                       <>
-                        <h3 key={review._id}>{review.subject}</h3>
-                        <p>{review.comments}</p>
-                        <p>{review.rating}</p>
+                        <p key={review._id} className='title is-5  ml-4'>{review.subject}</p>
+                        <p className='subtitle is-5 mt-3 mb-2  ml-4'>{review.comments}</p>
+                        <p className='mb-3  ml-3'> <i className="far fa-star"></i>{review.rating}</p>
                         <br />
                       </>
                     )

@@ -8,7 +8,7 @@ import AddandUpdate from './AddandUpdate'
 
 const AddRecipe = () => {
   const history = useHistory()
-  const [image, setImage] = useState(null)
+  const [image, setImage] = useState('')
   const [description, setDescription] = useState('')
   const [ingredients, setIngredients] = useState([])
   const [method, setMethod] = useState([])

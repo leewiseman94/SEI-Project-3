@@ -73,6 +73,7 @@ const UpdateRecipe = () => {
     let img = event.target.files[0];
     // setImageUrl(img.name)
     setImage(URL.createObjectURL(img))
+    console.log(image)
   }
 
   
@@ -97,6 +98,7 @@ const UpdateRecipe = () => {
   // const newIngredient = newRecipe.ingredients
   setIngredients([ ...ingredients, newRecipe.ingredients ])
   setNewRecipe({...newRecipe, ingredients: ''})
+  
   }
 
   const editIngredient = (ingredient) => {
@@ -162,6 +164,7 @@ const UpdateRecipe = () => {
       //   const allergensArray = newRecipe.allergens.split(',')
       //   newRecipe.allergens = allergensArray
       // }
+  
     try {
       await axios.put(`/api/recipes/${id}`, newRecipe, {
         headers: { Authorization: `Bearer ${getTokenFromLocalStorage()}` }
@@ -174,6 +177,7 @@ const UpdateRecipe = () => {
     }
   }
 
+  console.log(newRecipe)
   return (
     // <AddandUpdate
     //   newRecipe={recipe}
