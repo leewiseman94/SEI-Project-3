@@ -35,7 +35,7 @@ const AddandDeleteReview = () => {
     event.preventDefault()
     try {
       const { data } = await axios.post(`/api/recipes/${id}/reviews`)
-
+      console.log(data)
     } catch (err) {
       console.log(err)
     }
