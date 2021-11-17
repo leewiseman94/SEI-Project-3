@@ -10,6 +10,7 @@ const RecipeCard = ({ _id, name, image, averageRating, likedBy }) => {
   useEffect(() => {
     const recipeLiked = async () => {
       const user = await getUserData()
+      if (!user) return false
       if (!likedBy.includes(user._id)) {
         setLiked(false)
         return false
