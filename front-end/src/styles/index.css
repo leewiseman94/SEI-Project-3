@@ -359,6 +359,10 @@ i.fas.fa-filter {
   width: 150px;
   height: 30px;
 }
+#delete-button {
+  width: 150px;
+  height: 30px;
+}
 
 .textarea.is-medium {
   width: 400px;
