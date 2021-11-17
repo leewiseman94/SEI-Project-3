@@ -18,6 +18,7 @@ const RecipeShow = ({ ingredients }) => {
   const history = useHistory()
   const [error, setError] = useState(false)
   const [liked, setLiked] = useState(false)
+  const [reviews, setReviews] = useState([])
   // console.log('ID', id)
 
   // window.scrollTo(0, 0)
@@ -32,10 +33,8 @@ const RecipeShow = ({ ingredients }) => {
         const { data } = await axios.get(`/api/recipes/${id}`)
         setRecipe(data)
         setOwner(data.owner)
-
         recipeLiked(data)
-
-
+        setReviews(data.reviews)
       } catch (err) {
         console.log(err)
       }
@@ -147,31 +146,32 @@ const RecipeShow = ({ ingredients }) => {
                   }
                 </div>
               </div>
-              {userIsOwner(owner._id) &&
-                <>
-                  <hr />
-                  <Link to={`/recipes/${id}/edit`}><button className='button is-danger'>Edit Recipe</button></Link>
-                  <br />
-                  <button className='button is-danger' onClick={displayDelete}>Delete Recipe</button>
-                  {deleteOptions &&
-                    <div className='is-flex is-justify-content-space-around	is-align-items-center mt-4'>
-                      <div className='title is-5 pt-5'>Are you Sure you want to delete your recipe?</div>
-                      <div className='field is-grouped is-justify-content-center '>
-                        <p className='control'>
-                          <button className='button is-danger pl-6 pr-6' onClick={handleDelete}>Yes</button>
-                        </p>
-                        <p className='control'>
-                          <button className='button is-danger pl-6 pr-6' onClick={handleClose}>No</button>
-                        </p>
-                        {error && <p className='is-danger'>Something went wrong</p>}
+              <div className="is-flex is-justify-content-flex-end">
+                {userIsOwner(owner._id) &&
+                  <>
+                    <hr />
+                    <Link to={`/recipes/${id}/edit`}><button id="edit-button" className='button is-danger'>Edit Recipe</button></Link>
+                    <br />
+                    <button className='button is-danger' id="delete-button" onClick={displayDelete}>Delete Recipe</button>
+                    {deleteOptions &&
+                      <div className='is-flex is-justify-content-space-around	is-align-items-center mt-4'>
+                        <div className='title is-5 pt-5'>Are you Sure you want to delete your recipe?</div>
+                        <div className='field is-grouped is-justify-content-center '>
+                          <p className='control'>
+                            <button className='button is-danger pl-6 pr-6' onClick={handleDelete}>Yes</button>
+                          </p>
+                          <p className='control'>
+                            <button className='button is-danger pl-6 pr-6' onClick={handleClose}>No</button>
+                          </p>
+                          {error && <p className='is-danger'>Something went wrong</p>}
+                        </div>
                       </div>
-                    </div>
 
-                  }
-                  <hr />
-                </>
-              }
-
+                    }
+                    <hr />
+                  </>
+                }
+              </div>
 
             </div>
 
@@ -304,9 +304,9 @@ const RecipeShow = ({ ingredients }) => {
 
                       </div>
                       <br />
-                      
-                      {visible&& 
-                      recipe.ingredients &&
+
+                      {visible &&
+                        recipe.ingredients &&
                         recipe.ingredients.map((ingredients) => {
                           return (
                             <>
@@ -326,37 +326,31 @@ const RecipeShow = ({ ingredients }) => {
           </div>
 
           <section className="is-flex">
+
             <div className="button-container">
-              <Link to={`/recipes/${id}/reviews`}><button className="button is-danger has-text-white" id="click-review">Leave a review</button></Link>
+              {userIsOwner(owner._id) &&
+                <Link to={`/recipes/${id}/reviews`}><button className="button is-danger has-text-white" id="click-review">Leave a review</button></Link>}
             </div>
-            <div className="container">
-              <div className="columns">
-                <div className="column is-full">
-                  <h3>{recipe.name}</h3>
-                </div>
-              </div>
-              <div className="button-container">
-                {userIsOwner(owner._id) &&
-                  <Link to={`/recipes/${id}/reviews`}><button className="button is-danger has-text-white" id="click-review">Leave a review</button></Link>}
-              </div>
-            </div>
+
 
 
             <div className="columns">
               <div className="column is-full">
                 <div>
+                
 
-
-                  {/* {recipe.reviews &&
-                recipe.reviews.map((reviews) => {
+                  {reviews &&
+                reviews.map((review) => {
                     return (
                       <>
-                        <p key={reviews}>{reviews}</p>
+                        <h3 key={review._id}>{review.subject}</h3>
+                        <p>{review.comments}</p>
+                        <p>{review.rating}</p>
                         <br />
                       </>
                     )
 
-                  })} */}
+                  })}
 
                 </div>
               </div>
