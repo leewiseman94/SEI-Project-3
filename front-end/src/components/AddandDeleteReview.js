@@ -1,6 +1,7 @@
 import axios from 'axios'
 import React, { useState } from 'react'
-import { useParams, Link } from 'react-router-dom'
+import { useParams, Link, useHistory } from 'react-router-dom'
+import { getTokenFromLocalStorage } from './helpers/auth'
 
 
 
@@ -9,10 +10,10 @@ import { useParams, Link } from 'react-router-dom'
 const AddandDeleteReview = () => {
   const { id } = useParams()
   const [error, setError] = useState(false)
-
+  const history = useHistory()
   const [formData, setFormData] = useState({
     subject: '',
-    comment: '',
+    comments: '',
     rating: 0
   })
 
@@ -35,30 +36,32 @@ const AddandDeleteReview = () => {
 
   }
 
-  const setItemToLocalStorage = (token) => {
-    window.localStorage.setItem('token', token)
-  }
   
   const handleSubmit = async (event) => {
     event.preventDefault()
     try {
-      const { data } = await axios.post(`/api/recipes/${id}/reviews`, formData)
-      setItemToLocalStorage(data.token)
       
+      console.log(formData)
+      const { data } = await axios.post(`/api/recipes/${id}/reviews`, formData, {
+        headers: { Authorization: `Bearer ${getTokenFromLocalStorage()}` }
+      })
       console.log(data)
+      history.push(`/api/recipes/${id}`)
+      
+      console.log(id)
     } catch (err) {
-      console.log(err)
+      console.log(err.response)
       setError(true)
     }
   }
-  console.log('form data', formData)
+  // console.log('form data', formData)
 
   return (
     <section className="review">
 
       <form className="review column is-offset-one-third box" onSubmit={handleSubmit}>
         <div className="close-review-popup" >
-          <Link to={`/recipes/:id`}>
+          <Link to={`/recipes/${id}`}>
           <i className="far fa-times-circle"></i></Link>
         </div>
 
@@ -81,8 +84,8 @@ const AddandDeleteReview = () => {
               <textarea 
               className="textarea is-medium" 
               id="review-form"
-              name="comment" 
-              value={formData.comment} 
+              name="comments" 
+              value={formData.comments} 
               onChange={handleChange} 
               placeholder="Type your comment here"></textarea>
               {error && <p className="is-danger subtitle mt-1 mb-1 ml-0">You need to put a comment</p>}
