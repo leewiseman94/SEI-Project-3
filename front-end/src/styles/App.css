@@ -597,3 +597,44 @@
   color: white !important;
   background-color: #FF385C;
 }
+
+
+/* Hero Section */
+.home-hero {
+  width: 100%;
+  padding-top: 75px;
+}
+
+.home-hero-body {
+  width: 100% !important;
+  height: 600px;
+  padding: 0 !important;
+}
+
+.hero-background {
+  display: block;
+  width: 100% !important;
+  height: 600px;
+  background-size: cover;
+  background-image: URL('../assets/heroImages/1.png');
+  background-repeat: no-repeat;
+  background-position: bottom;
+}
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
