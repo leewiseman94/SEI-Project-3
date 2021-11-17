@@ -544,3 +544,35 @@
   font-size: 18px;
   margin-bottom: 20px;
 }
+
+
+/* * LIKE RECIPE */
+.like-recipe-container {
+
+  background-color: black;
+}
+
+.like-recipe-button {
+  justify-content: flex-end;
+  display: flex;
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  background-color: rgba(0, 0, 0,0.15);
+  justify-content: center;
+  align-items: center;
+  border-radius: 50px !important;
+  margin: 10px;
+  padding: 20px;
+  z-index: 10;
+}
+
+.like-recipe-button:hover, .like-recipe-button.liked {
+  background-color: #FF385C;
+}
+
+#heart-icon {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+

@@ -1,6 +1,9 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect, useState } from 'react'
+<<<<<<< HEAD
 // import { useHistory } from 'react-router-dom'
+=======
+>>>>>>> development
 import axios from 'axios'
 
 

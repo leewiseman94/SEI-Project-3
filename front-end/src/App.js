@@ -1,6 +1,5 @@
 import './styles/App.css';
 import React, { useEffect, useState } from 'react'
-import axios from 'axios'
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
 import Home from './components/Home'
 import Navbar from './components/Navbar'
@@ -15,23 +14,23 @@ import AddandDeleteReview from './components/AddandDeleteReview'
 
 
 function App() {
-  const [recipes, setRecipes] = useState([])
+  // const [recipes, setRecipes] = useState([])
   const [isShowLoginOrRegister, setIsShowLoginOrRegister] = useState(false)
-  // const [hasError, setHasError] = useState(false)
+  // // const [hasError, setHasError] = useState(false)
 
-  useEffect(() => {
-    const getData = async () => {
-      try {
-        const { data } = await axios.get('/api/recipes')
-        setRecipes(data)
-      } catch(err) {
-        // setHasError(true)
-        console.log(err)
-      }
-    }
-    getData()
-  }, [])
-  console.log(recipes)
+  // useEffect(() => {
+  //   const getData = async () => {
+  //     try {
+  //       const { data } = await axios.get('/api/recipes')
+  //       setRecipes(data)
+  //     } catch(err) {
+  //       // setHasError(true)
+  //       console.log(err)
+  //     }
+  //   }
+  //   getData()
+  // }, [])
+  // console.log(recipes)
   const handleLoginClick = () => {
     setIsShowLoginOrRegister((isShowLoginOrRegister) => !isShowLoginOrRegister)
   }
@@ -55,9 +54,6 @@ function App() {
         <Route exact path='/profile' component={UserProfile} />
         <Route exact path='/recipes/:id/reviews' component={AddandDeleteReview}/>
 
-        {/* <Route exact path='/account' component={LoginorSignUp}/> */}
-        {/* <Route exact path='/register' component={Register} />
-        <Route exact path='/login' component={Login} />
         <Route exact path='/add' component={AddRecipe}/> */}
       </Switch>
     

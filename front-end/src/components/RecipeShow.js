@@ -1,6 +1,6 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
-import { useParams, Link } from 'react-router-dom'
+import { useParams, Link, useHistory } from 'react-router-dom'
 import recipeMethod from '../assets/recipeMethod.PNG'
 import cookingTime from '../assets/cookingTime.PNG'
 import prepTime from '../assets/prepTime.PNG'
@@ -8,6 +8,7 @@ import ingredientsIMG from '../assets/ingredientsIMG.PNG'
 import difficultyIMG from '../assets/difficultyIMG.PNG'
 import servingSize from '../assets/servingSize.PNG'
 import { getPayload } from './helpers/auth'
+<<<<<<< HEAD
 
 const RecipeShow = () => {
   const [recipe, setRecipe] = useState([])
@@ -18,6 +19,26 @@ const RecipeShow = () => {
   // console.log('ID', id)
   // window.scrollTo(0, 0)
   useEffect(() => {
+=======
+import { getTokenFromLocalStorage } from './helpers/auth'
+
+  const RecipeShow = ({ ingredients }) => {
+    const [recipe, setRecipe] = useState([])
+    const [owner, setOwner] = useState([])
+    const [deleteOptions, setDeleteOptions] = useState(false)
+    const { id } = useParams()
+    const history = useHistory()
+    const [error, setError] = useState(false)
+    // console.log('ID', id)
+  
+    window.scrollTo(0,0)
+  
+    const [visible, setVisible] = useState(false)
+  
+    // console.log('ID', id)
+    // window.scrollTo(0, 0)  
+    useEffect(() => {
+>>>>>>> development
     const getData = async () => {
       try {
         const { data } = await axios.get(`/api/recipes/${id}`)
@@ -37,6 +58,26 @@ const RecipeShow = () => {
     if (!payload) return false
     return currentUserId === payload.sub
   }
+
+  const displayDelete = () => {
+    setDeleteOptions(true)
+  }
+
+  const handleClose = () => {
+    setDeleteOptions(false)
+    } 
+
+    const handleDelete = async() => {
+      try {
+          await axios.delete(`/api/recipes/${id}`, {
+          headers: { Authorization: `Bearer ${getTokenFromLocalStorage()}`}
+        }
+        )
+        history.push('/recipes')
+      } catch (err) {
+        setError(true)
+      }
+      }
 
 
   return (
@@ -58,9 +99,36 @@ const RecipeShow = () => {
                 </div>
               </div>
             </div>
+<<<<<<< HEAD
             <div className="is-flex is-justify-content-flex-end">
               {userIsOwner(owner._id) &&
                 <Link to={`/recipes/${id}/edit`}><button id="edit-button" className='button is-danger'>Edit Recipe</button></Link>}
+=======
+            {userIsOwner(owner._id) &&
+            <>
+            <hr/>
+              <Link to={`/recipes/${id}/edit`}><button className='button is-danger'>Edit Recipe</button></Link>
+              <br/>
+              <button className='button is-danger' onClick={displayDelete}>Delete Recipe</button>
+              {deleteOptions && 
+              <div className='is-flex is-justify-content-space-around	is-align-items-center mt-4'>
+              <div className='title is-5 pt-5'>Are you Sure you want to delete your recipe?
+              </div>
+              <div className='field is-grouped is-justify-content-center '>
+                <p className='control'>
+                  <button className='button is-danger pl-6 pr-6' onClick={handleDelete}>Yes</button>
+                </p>
+                <p className='control'>
+                  <button className='button is-danger pl-6 pr-6' onClick={handleClose}>No</button>
+                </p>
+                {error && <p className='is-danger'>Something went wrong</p>}
+              </div>  
+              </div>
+              }
+              <hr/>
+              </>
+              }
+>>>>>>> development
 
             </div>
           </div>
@@ -89,7 +157,7 @@ const RecipeShow = () => {
                 recipe.method.map((step, index) => {
                   return (
                     <>
-                      <h6 className="steps">Step {index + 1}</h6>
+                      <h6 className="steps" key={index}>Step {index + 1}</h6>
                       <p>{step}</p>
                       <br />
                     </>
@@ -127,7 +195,11 @@ const RecipeShow = () => {
 
           <div className="columns">
 
+<<<<<<< HEAD
             <div className="column is-one-quarter" id="icon-info">
+=======
+            <div className="column" id="icon-info">
+>>>>>>> development
               <hr />
               <div className="icon-info-space">
                 <div className="info-icons">
@@ -154,7 +226,11 @@ const RecipeShow = () => {
             </div>
 
 
+<<<<<<< HEAD
             <div className="column is-one-quarter" id="icon-info2">
+=======
+            <div className="column" id="icon-info2">
+>>>>>>> development
               <hr />
               <div className="icon-info-space">
                 <div className="info-icons">
@@ -178,34 +254,37 @@ const RecipeShow = () => {
               <hr />
             </div>
 
+<<<<<<< HEAD
             <div className="column is-half">
               <br />
               <button className="button is-danger" id="ingredients-button" onClick={() => setVisible(!visible)}>
                 <img src={ingredientsIMG} className="method-icon" alt="method-icon" width="40px"></img>
                 <h5 className="method-title has-text-white">Ingredients</h5>
               </button>
+=======
+            <div className="column is-one-half">
+>>>>>>> development
               <div className="card" id="ingredients-list">
                 <div className="card-content">
                   <div className="content">
                     <div className="buttons recipe-info">
+                      <button class="button is-danger" id="ingredients-button" >
+                        <img src={ingredientsIMG} className="method-icon" alt="method-icon" width="40px"></img>
+                        <h5 className="method-title has-text-white">Ingredients</h5>
+                      </button>
+
                     </div>
-                    {visible &&
-                      <div>
+                    <br />
+                    {recipe.ingredients &&
+                      recipe.ingredients.map((ingredients) => {
+                        return (
+                          <>
+                            <p style={{ display: { ingredients } ? "none" : "block" }}>{ingredients}</p>
+                            <br />
+                          </>
+                        )
 
-
-                        {recipe.ingredients &&
-                          recipe.ingredients.map((ingredients) => {
-                            return (
-                              <>
-                                <p>{ingredients}</p>
-                                <br />
-                              </>
-                            )
-
-                          })}
-
-                      </div>
-                    }
+                      })}
                   </div>
                 </div>
               </div>
@@ -215,20 +294,30 @@ const RecipeShow = () => {
 
         </div>
 
-        <section className="is-flex is-flex-direction-column">
-          <div className="container is-flex is-justify-content-space-between">
+        <section className="is-flex">
+          <div className="button-container">
+            <Link to={`/recipes/${id}/reviews`}><button className="button is-danger has-text-white" id="click-review">Leave a review</button></Link>
+          </div>
+          <div className="container">
             <div className="columns">
               <div className="column is-full">
-                <h2 className="title is-5">Reviews</h2>
+                <h3>{recipe.name}</h3>
               </div>
             </div>
+<<<<<<< HEAD
             <div className="button-container">
             {userIsOwner(owner._id) &&
               <Link to={`/recipes/${id}/reviews`}><button className="button is-danger has-text-white" id="click-review">Leave a review</button></Link>}
+=======
+            <div className="columns">
+              <div className="column is-full">
+                <h3>{recipe.review}</h3>
+              </div>
+>>>>>>> development
             </div>
-          </div>
 
 
+<<<<<<< HEAD
           <div className="columns">
             <div className="column is-full">
               <div>
@@ -247,10 +336,9 @@ const RecipeShow = () => {
 
               </div>
             </div>
+=======
+>>>>>>> development
           </div>
-
-
-
         </section>
 
 

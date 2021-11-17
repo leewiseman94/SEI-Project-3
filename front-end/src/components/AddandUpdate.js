@@ -12,7 +12,7 @@ const AddandUpdate = ( { newRecipe, image, description, ingredients, method, err
         <div className='is-flex is-justify-content-space-around	'>
       <div className='subtitle is-3'>Add Your Recipe</div>
           <button className="button" type='submit' id='addRecipeSubmit' >
-            Add Recipe
+            Post Recipe
           </button>
           </div>
       <hr/>
