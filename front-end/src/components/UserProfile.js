@@ -1,5 +1,5 @@
 import axios from 'axios'
-import react, { useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useHistory } from 'react-router'
 import { getPayload } from './helpers/auth'
 import RecipeCard from './RecipeCard'

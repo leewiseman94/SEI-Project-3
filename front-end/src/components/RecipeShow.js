@@ -5,6 +5,8 @@ import recipeMethod from '../assets/recipeMethod.PNG'
 import cookingTime from '../assets/cookingTime.PNG'
 import prepTime from '../assets/prepTime.PNG'
 import ingredientsIMG from '../assets/ingredientsIMG.PNG'
+import difficultyIMG from '../assets/difficultyIMG.PNG'
+import servingSize from '../assets/servingSize.PNG'
 import { getPayload } from './helpers/auth'
 
 const RecipeShow = ({ ingredients }) => {
@@ -56,16 +58,18 @@ const RecipeShow = ({ ingredients }) => {
                 </div>
               </div>
             </div>
-            {userIsOwner(owner._id) &&
-              <Link to={`/recipes/${id}/edit`}><button className='button is-danger'>Edit Recipe</button></Link>}
+            <div className="is-flex is-justify-content-flex-end">
+              {userIsOwner(owner._id) &&
+                <Link to={`/recipes/${id}/edit`}><button id="edit-button" className='button is-danger'>Edit Recipe</button></Link>}
 
+            </div>
           </div>
 
         </section>
 
         <div className="columns">
           <div className="column is-half">
-            <figure className="image">
+            <figure className="image" >
               <img className="image" src={recipe.image} alt={recipe.name}></img>
             </figure>
 
@@ -123,7 +127,7 @@ const RecipeShow = ({ ingredients }) => {
 
           <div className="columns">
 
-            <div className="column is-4" id="icon-info">
+            <div className="column is-one-quarter" id="icon-info">
               <hr />
               <div className="icon-info-space">
                 <div className="info-icons">
@@ -150,11 +154,11 @@ const RecipeShow = ({ ingredients }) => {
             </div>
 
 
-            <div className="column is-4" id="icon-info2">
+            <div className="column is-one-quarter" id="icon-info2">
               <hr />
               <div className="icon-info-space">
                 <div className="info-icons">
-                  <img src={cookingTime} className="method-icon" alt="method-icon" width="40px"></img>
+                  <img src={difficultyIMG} className="method-icon" alt="method-icon" width="40px"></img>
                   <h4 className="title-prep is-6">Difficulty</h4>
                 </div>
                 <div className="extra-info">
@@ -164,7 +168,7 @@ const RecipeShow = ({ ingredients }) => {
 
               <div>
                 <div className="info-icons">
-                  <img src={cookingTime} className="method-icon" alt="method-icon" width="40px"></img>
+                  <img src={servingSize} className="method-icon" alt="method-icon" width="40px"></img>
                   <h4 className="title-prep is-6">Serves</h4>
                 </div>
                 <div className="extra-info">
@@ -174,7 +178,7 @@ const RecipeShow = ({ ingredients }) => {
               <hr />
             </div>
 
-            <div className="column is-6">
+            <div className="column is-half">
               <br />
               <button className="button is-danger" id="ingredients-button" onClick={() => setVisible(!visible)}>
                 <img src={ingredientsIMG} className="method-icon" alt="method-icon" width="40px"></img>
@@ -219,14 +223,29 @@ const RecipeShow = ({ ingredients }) => {
               </div>
             </div>
             <div className="button-container">
-              <Link to={`/recipes/${id}/reviews`}><button className="button is-danger has-text-white" id="click-review">Leave a review</button></Link>
+            {userIsOwner(owner._id) &&
+              <Link to={`/recipes/${id}/reviews`}><button className="button is-danger has-text-white" id="click-review">Leave a review</button></Link>}
             </div>
           </div>
 
 
           <div className="columns">
             <div className="column is-full">
-              <h3>{recipe.review}</h3>
+              <div>
+
+
+                {/* {recipe.reviews &&
+                recipe.reviews.map((reviews) => {
+                    return (
+                      <>
+                        <p key={reviews}>{reviews}</p>
+                        <br />
+                      </>
+                    )
+
+                  })} */}
+
+              </div>
             </div>
           </div>
 
