@@ -20,6 +20,7 @@ const RecipeShow = () => {
   const [error, setError] = useState(false)
   const [liked, setLiked] = useState(false)
   const [reviews, setReviews] = useState([])
+  
   // console.log('ID', id)
 
   // window.scrollTo(0, 0)
@@ -125,7 +126,7 @@ const RecipeShow = () => {
       console.log(err)
     }
   }
-
+  
   return (
 
     <>
