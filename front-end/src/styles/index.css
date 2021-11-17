@@ -540,10 +540,6 @@ i.fas.fa-filter {
   text-shadow: 2px 2px white;
 }
 
-#social {
-  align-items: center;
-}
-
 #tandc {
   margin-top: 100px;
 }
@@ -554,8 +550,25 @@ i.fas.fa-filter {
 
 #cd {
   margin-top: 200px;
+  align-items: center;
 }
 
 .lineIngredients {
   list-style-type: none;
 }
+
+#footer {
+  justify-content: space-around;
+  background-color: white;
+}
+
+#cd-button {
+  justify-content: center;
+  text-decoration: none;
+  max-width: 500px;
+}
+
+#cdh1 {
+  justify-content: center;
+}
+

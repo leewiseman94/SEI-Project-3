@@ -48,24 +48,26 @@ function App() {
   return (
     // <h1>platester</h1>
     <BrowserRouter>
-      <Navbar handleLoginClick={handleLoginClick}/>
-      <LoginorSignUp isShowLoginOrRegister={isShowLoginOrRegister} handleLoginClick={handleLoginClick} handleLoginOrRegister={handleLoginOrRegister} />
-      <Footer/>
-      <Switch>
-        <Route exact path='/' component={Home}/>
-        <Route exact path='/recipes' component={RecipeIndex}/>
-        <Route exact path='/recipes/:id' component={RecipeShow}/>
-        <Route exact path='/recipes/:id/edit' component={UpdateRecipe}/>
-        <Route exact path='/profile' component={UserProfile} />
-        <Route exact path='/recipes/:id/reviews' component={AddandDeleteReview}/>
-        <Route exact path='/Ts&amp;Cs' component={TsAndCs}/>
-        <Route exact path='/Privacy' component={Privacy}/>
-        <Route exact path='/CompanyDetails' component={CompanyDetails}/>
-        
+      <div>
+        <Navbar handleLoginClick={handleLoginClick}/>
+        <LoginorSignUp isShowLoginOrRegister={isShowLoginOrRegister} handleLoginClick={handleLoginClick} handleLoginOrRegister={handleLoginOrRegister} />
+        <Switch>
+          <Route exact path='/' component={Home} />
+          <Route exact path='/recipes' component={RecipeIndex}/>
+          <Route exact path='/recipes/:id' component={RecipeShow}/>
+          <Route exact path='/recipes/:id/edit' component={UpdateRecipe}/>
+          <Route exact path='/profile' component={UserProfile} />
+          <Route exact path='/recipes/:id/reviews' component={AddandDeleteReview}/>
+          <Route exact path='/Ts&amp;Cs' component={TsAndCs} />
+          <Route exact path='/Privacy' component={Privacy} />
+          <Route exact path='/CompanyDetails' component={CompanyDetails} />
+          
 
 
-        <Route exact path='/add' component={AddRecipe}/> */}
-      </Switch>
+          <Route exact path='/add' component={AddRecipe}/> */}
+        </Switch>
+        <Footer />
+      </div>
     
     </BrowserRouter>
   )
