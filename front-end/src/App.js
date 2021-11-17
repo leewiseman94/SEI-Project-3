@@ -11,6 +11,10 @@ import AddRecipe from './components/AddRecipe';
 import UpdateRecipe from './components/UpdateRecipe';
 import UserProfile from './components/UserProfile';
 import AddandDeleteReview from './components/AddandDeleteReview'
+import TsAndCs from './components/Ts&Cs'
+import Privacy from './components/Privacy'
+import CompanyDetails from './components/CompanyDetails'
+import Footer from './components/Footer'
 
 
 
@@ -46,6 +50,7 @@ function App() {
     // <h1>platester</h1>
     <BrowserRouter>
       <Navbar handleLoginClick={handleLoginClick}/>
+      <Footer/>
       <LoginorSignUp isShowLoginOrRegister={isShowLoginOrRegister} handleLoginClick={handleLoginClick} handleLoginOrRegister={handleLoginOrRegister} />
       <Switch>
         <Route exact path='/' component={Home}/>
@@ -54,6 +59,11 @@ function App() {
         <Route exact path='/recipes/:id/edit' component={UpdateRecipe}/>
         <Route exact path='/profile' component={UserProfile} />
         <Route exact path='/recipes/:id/reviews' component={AddandDeleteReview}/>
+        <Route exact path='/Ts&amp;Cs' component={TsAndCs}/>
+        <Route exact path='/Privacy' component={Privacy}/>
+        <Route exact path='/CompanyDetails' component={CompanyDetails}/>
+        
+
 
         {/* <Route exact path='/account' component={LoginorSignUp}/> */}
         {/* <Route exact path='/register' component={Register} />
