@@ -57,11 +57,12 @@ export const deleteRecipe = async (req, res) => {
 export const updateRecipe = async (req, res) => {
   try {
     const { id } = req.params
+    console.log(req.body)
     const updatedRecipe = await Recipe.findByIdAndUpdate(id, req.body, { new: true })
     if (!updatedRecipe) throw new Error()
-    if (!updatedRecipe.owner.equals(req.currentUser._id)) throw new Error('Unauthorized')
-    return res.status(202).json(updatedRecipe)
+    if (!req.body.likedBy) if (!updatedRecipe.owner.equals(req.currentUser._id)) throw new Error('Unauthorized')
 
+    return res.status(202).json(updatedRecipe)
   } catch (err) {
     console.log(err)
     return res.status(404).json({ 'message': 'Not found' })

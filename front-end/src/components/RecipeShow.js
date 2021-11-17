@@ -8,18 +8,22 @@ import ingredientsIMG from '../assets/ingredientsIMG.PNG'
 import { getPayload } from './helpers/auth'
 import { getTokenFromLocalStorage } from './helpers/auth'
 
-const RecipeShow = () => {
-  const [recipe, setRecipe] = useState([])
-  const [owner, setOwner] = useState([])
-  const [deleteOptions, setDeleteOptions] = useState(false)
-  const { id } = useParams()
-  const history = useHistory()
-  const [error, setError] = useState(false)
-  // console.log('ID', id)
-
-  window.scrollTo(0,0)
-
-  useEffect(() => {
+  const RecipeShow = ({ ingredients }) => {
+    const [recipe, setRecipe] = useState([])
+    const [owner, setOwner] = useState([])
+    const [deleteOptions, setDeleteOptions] = useState(false)
+    const { id } = useParams()
+    const history = useHistory()
+    const [error, setError] = useState(false)
+    // console.log('ID', id)
+  
+    window.scrollTo(0,0)
+  
+    const [visible, setVisible] = useState(false)
+  
+    // console.log('ID', id)
+    // window.scrollTo(0, 0)  
+    useEffect(() => {
     const getData = async () => {
       try {
         const { data } = await axios.get(`/api/recipes/${id}`)
@@ -59,6 +63,7 @@ const RecipeShow = () => {
         setError(true)
       }
       }
+
 
   return (
 
