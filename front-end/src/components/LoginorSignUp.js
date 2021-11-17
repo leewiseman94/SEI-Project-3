@@ -14,6 +14,8 @@ const LoginOrSignUp = ({ isShowLoginOrRegister, handleLoginClick, handleLoginOrR
     email: ''
     })
 
+  const [error, setError] = useState(false)
+
   const handleChange = (event) => {
     const newFormData = { ...formData, [event.target.name]: event.target.value }
     setFormData(newFormData)
@@ -21,12 +23,17 @@ const LoginOrSignUp = ({ isShowLoginOrRegister, handleLoginClick, handleLoginOrR
 
   const handleSubmit = async (event) => {
     event.preventDefault()
+ 
     try {
       await axios.post('/api/users', formData)
       setIsShowLogin(true)
     } catch (err) {
       console.log(err)
-      setIsShowRegister(true)
+      if (formData.email === ''){
+        setError(true)
+      } else {
+        setIsShowRegister(true)
+      }
     }
   }
 
@@ -36,6 +43,7 @@ const LoginOrSignUp = ({ isShowLoginOrRegister, handleLoginClick, handleLoginOrR
 
   const handleLoginPopup = () => {
     handleLoginClick()
+    setError(false)
   }
 
   const handleLoginOrRegisterPopup = (showLoginOrRegister, showLogin, showRegister) => {
@@ -55,15 +63,17 @@ const LoginOrSignUp = ({ isShowLoginOrRegister, handleLoginClick, handleLoginOrR
             <div className='subtitle is-4' id='signuptext'>Login or Sign Up</div>
             <hr className='mt-4 mb-5'/>
             <div className='title is-6 mb-5'>Welcome to Platester</div>
-            <div className='field mb-4'>
+            <div className='field mb-0'>
               <p className='control pb-2'>
-              <input className = 'input py-5'
+              <input 
+              className={`input py-5 ${error ? 'is-danger py-5' : 'py-5'}`}
               placeholder = 'Email'
               name='email'
               value={formData.email}
               onChange={handleChange} />
               </p>
             </div>
+            {error && <p className='is-danger subtitle mt-1 mb-1 ml-0'>this field is required</p>}
             <div className='field mb-4'>
               <p className='control'>
                 <button type='submit' className='button is-danger' id='submit'>Continue</button>

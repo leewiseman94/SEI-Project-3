@@ -57,7 +57,14 @@ const RecipeShow = () => {
               </div>
             </div>
             {userIsOwner(owner._id) &&
-              <Link to={`/recipes/${id}/edit`}><button className='button is-danger'>Edit Recipe</button></Link>}
+            <>
+            <hr/>
+              <Link to={`/recipes/${id}/edit`}><button className='button is-danger'>Edit Recipe</button></Link>
+              <br/>
+              <Link to={`/recipes/${id}/delete`}><button className='button is-danger'>Delete Recipe</button></Link>
+              <hr/>
+              </>
+              }
 
           </div>
 
