@@ -106,7 +106,6 @@ const AddRecipe = () => {
       }
       )
       const newRecipeId = data._id
-      console.log(data._id)
       history.push(`/recipes/${newRecipeId}`)
     } catch (err){
       console.log(err.response.data.errors)
