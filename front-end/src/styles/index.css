@@ -493,11 +493,15 @@ i.fas.fa-filter {
   }
 
 #box-one-button{
-  justify-content: flex-start;
+  justify-content: center;
+  text-decoration: none;
+  max-width: 450px;
 }
 
 #box-two-button{
-  justify-content: flex-start;
+  justify-content: center;
+  text-decoration: none;
+  max-width: 425px;
 }
 
 #box-two {
@@ -535,6 +539,31 @@ i.fas.fa-filter {
 }
  
 
+.overlay {
+  background-color: RGBA(0, 0, 0, 0.5);
+  
+}
+
+#courses-columns {
+  background-color: rgb(236, 236, 236);
+  text-shadow: 2px 2px white;
+}
+
+#social {
+  align-items: center;
+}
+
+#tandc {
+  margin-top: 100px;
+}
+
+#privacy {
+  margin-top: 100px;
+}
+
+#cd {
+  margin-top: 200px;
+}
 
 .lineIngredients {
   list-style-type: none;
