@@ -94,7 +94,6 @@ const UpdateRecipe = () => {
 
 
   const displayIngredient = () => {
-    console.log(newRecipe.ingredients)
   // const newIngredient = newRecipe.ingredients
   setIngredients([ ...ingredients, newRecipe.ingredients ])
   setNewRecipe({...newRecipe, ingredients: ''})
@@ -116,10 +115,8 @@ const UpdateRecipe = () => {
 
 
   const displayMethod = () => {
-  // const newStep = newRecipe.method.split(',')
   setMethod([ ...method, newRecipe.method ])
   setNewRecipe({ ...newRecipe, method: ''})
-  // recipe.method = ''
   }
 
   const editMethod = (step) => {
@@ -166,15 +163,13 @@ const UpdateRecipe = () => {
       //   newRecipe.allergens = allergensArray
       // }
     try {
-      const { data } = await axios.put(`/api/recipes/${id}`, newRecipe, {
+      await axios.put(`/api/recipes/${id}`, newRecipe, {
         headers: { Authorization: `Bearer ${getTokenFromLocalStorage()}` }
       }
       )
-      console.log(newRecipe)
 
       history.push(`/recipes/${id}`)
     } catch (err){
-      console.log(err.response.data.errors)
       setErrors(err.response.data.errors)
     }
   }

@@ -1,12 +1,10 @@
 import axios from 'axios'
 import React, { useState } from 'react'
-import { useHistory } from 'react-router-dom'
 import Login from './Login'
 import Register from './Register'
 
 
 const LoginOrSignUp = ({ isShowLoginOrRegister, handleLoginClick, handleLoginOrRegister }) => {
-  const history = useHistory()
   const [isShowLogin, setIsShowLogin] = useState(false)
   const [isShowRegister, setIsShowRegister] = useState(false)
 

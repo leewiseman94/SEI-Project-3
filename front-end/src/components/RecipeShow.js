@@ -1,16 +1,20 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
-import { useParams, Link } from 'react-router-dom'
+import { useParams, Link, useHistory } from 'react-router-dom'
 import recipeMethod from '../assets/recipeMethod.PNG'
 import cookingTime from '../assets/cookingTime.PNG'
 import prepTime from '../assets/prepTime.PNG'
 import ingredientsIMG from '../assets/ingredientsIMG.PNG'
 import { getPayload } from './helpers/auth'
+import { getTokenFromLocalStorage } from './helpers/auth'
 
 const RecipeShow = () => {
   const [recipe, setRecipe] = useState([])
   const [owner, setOwner] = useState([])
+  const [deleteOptions, setDeleteOptions] = useState(false)
   const { id } = useParams()
+  const history = useHistory()
+  const [error, setError] = useState(false)
   // console.log('ID', id)
 
   window.scrollTo(0,0)
@@ -36,6 +40,25 @@ const RecipeShow = () => {
     return currentUserId === payload.sub
   }
 
+  const displayDelete = () => {
+    setDeleteOptions(true)
+  }
+
+  const handleClose = () => {
+    setDeleteOptions(false)
+    } 
+
+    const handleDelete = async() => {
+      try {
+          await axios.delete(`/api/recipes/${id}`, {
+          headers: { Authorization: `Bearer ${getTokenFromLocalStorage()}`}
+        }
+        )
+        history.push('/recipes')
+      } catch (err) {
+        setError(true)
+      }
+      }
 
   return (
 
@@ -61,7 +84,22 @@ const RecipeShow = () => {
             <hr/>
               <Link to={`/recipes/${id}/edit`}><button className='button is-danger'>Edit Recipe</button></Link>
               <br/>
-              <Link to={`/recipes/${id}/delete`}><button className='button is-danger'>Delete Recipe</button></Link>
+              <button className='button is-danger' onClick={displayDelete}>Delete Recipe</button>
+              {deleteOptions && 
+              <div className='is-flex is-justify-content-space-around	is-align-items-center mt-4'>
+              <div className='title is-5 pt-5'>Are you Sure you want to delete your recipe?
+              </div>
+              <div className='field is-grouped is-justify-content-center '>
+                <p className='control'>
+                  <button className='button is-danger pl-6 pr-6' onClick={handleDelete}>Yes</button>
+                </p>
+                <p className='control'>
+                  <button className='button is-danger pl-6 pr-6' onClick={handleClose}>No</button>
+                </p>
+                {error && <p className='is-danger'>Something went wrong</p>}
+              </div>  
+              </div>
+              }
               <hr/>
               </>
               }
@@ -92,7 +130,7 @@ const RecipeShow = () => {
                 recipe.method.map((step, index) => {
                   return (
                     <>
-                      <h6 className="steps">Step {index + 1}</h6>
+                      <h6 className="steps" key={index}>Step {index + 1}</h6>
                       <p>{step}</p>
                       <br />
                     </>
