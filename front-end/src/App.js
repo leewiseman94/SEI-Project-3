@@ -50,8 +50,8 @@ function App() {
     // <h1>platester</h1>
     <BrowserRouter>
       <Navbar handleLoginClick={handleLoginClick}/>
-      <Footer/>
       <LoginorSignUp isShowLoginOrRegister={isShowLoginOrRegister} handleLoginClick={handleLoginClick} handleLoginOrRegister={handleLoginOrRegister} />
+      <Footer/>
       <Switch>
         <Route exact path='/' component={Home}/>
         <Route exact path='/recipes' component={RecipeIndex}/>
