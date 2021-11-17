@@ -1,10 +1,14 @@
 import axios from 'axios'
 import React, { useState } from 'react'
-import { useParams } from 'react-router-dom'
+import { useParams, Link } from 'react-router-dom'
+
+
+
 
 
 const AddandDeleteReview = () => {
   const { id } = useParams()
+  const [error, setError] = useState(false)
 
   const [formData, setFormData] = useState({
     subject: '',
@@ -31,36 +35,59 @@ const AddandDeleteReview = () => {
 
   }
 
+  const setItemToLocalStorage = (token) => {
+    window.localStorage.setItem('token', token)
+  }
+  
   const handleSubmit = async (event) => {
     event.preventDefault()
     try {
-      const { data } = await axios.post(`/api/recipes/${id}/reviews`)
+      const { data } = await axios.post(`/api/recipes/${id}/reviews`, formData)
+      setItemToLocalStorage(data.token)
+      
       console.log(data)
     } catch (err) {
       console.log(err)
+      setError(true)
     }
   }
-
+  console.log('form data', formData)
 
   return (
     <section className="review">
 
       <form className="review column is-offset-one-third box" onSubmit={handleSubmit}>
         <div className="close-review-popup" >
-          <i className="far fa-times-circle"></i>
+          <Link to={`/recipes/:id`}>
+          <i className="far fa-times-circle"></i></Link>
         </div>
 
         <div className="form-field-container is-flex is-flex-direction-column is-align-items-center">
           <div className="title is-5 mb-5">Rate & Review</div>
-          <input className="input" id="review-form" name="subject" onChange={handleChange} type="text" placeholder="Title" />
+          <input 
+          className="input" 
+          id="review-form" 
+          name="subject" 
+          value={formData.subject} 
+          onChange={handleChange} 
+          type="text" 
+          placeholder="Title" />
+          {error && <p className="is-danger subtitle mt-1 mb-1 ml-0 ">You need to put a title</p>}
           <br />
 
           <div class="field">
-            <div class="control">
+            <div class="control ">
 
-              <textarea className="textarea is-medium" name="comment" onChange={handleChange} placeholder="Type your comment here"></textarea>
-
+              <textarea 
+              className="textarea is-medium" 
+              id="review-form"
+              name="comment" 
+              value={formData.comment} 
+              onChange={handleChange} 
+              placeholder="Type your comment here"></textarea>
+              {error && <p className="is-danger subtitle mt-1 mb-1 ml-0">You need to put a comment</p>}
             </div>
+
           </div>
 
           <br />
@@ -88,7 +115,9 @@ const AddandDeleteReview = () => {
             </div>
 
           </div>
-
+          <div className="is flex is-justify-content-flex-start">
+          {error && <p className="is-danger subtitle mt-1 mb-1 ml-0">You need to choose a rating</p>}
+          </div>
         </div>
         <br />
         <div>

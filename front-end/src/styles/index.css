@@ -344,7 +344,7 @@ i.fas.fa-filter {
 
 .card.nutritional {
   margin-right: 10px;
-  background-color: rgba(231, 231, 231, 0.493);
+  background-color: rgba(226, 226, 226, 0.493);
   box-shadow: none;
 }
 
@@ -355,7 +355,10 @@ i.fas.fa-filter {
 .changeColor:hover {
   color: black;
 } */
-
+#edit-button {
+  width: 150px;
+  height: 30px;
+}
 
 .textarea.is-medium {
   width: 400px;
@@ -521,10 +524,14 @@ i.fas.fa-filter {
   margin-top: 30px;
   margin-bottom: 30px
 }
+<<<<<<< HEAD
 
 /* /* #logos {
   
 } 
+=======
+ 
+>>>>>>> 0a0e9b9f7de0e248a6fcf2b21aec52b7bff87d22
 
 
 .lineIngredients {
