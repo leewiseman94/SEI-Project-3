@@ -229,7 +229,7 @@ import { getTokenFromLocalStorage } from './helpers/auth'
                 <div className="card-content">
                   <div className="content">
                     <div className="buttons recipe-info">
-                      <button class="button is-danger" id="ingredients-button" >
+                      <button class="button is-danger" id="ingredients-button"  >
                         <img src={ingredientsIMG} className="method-icon" alt="method-icon" width="40px"></img>
                         <h5 className="method-title has-text-white">Ingredients</h5>
                       </button>
