@@ -17,6 +17,7 @@ const RecipeShow = ({ ingredients }) => {
   const { id } = useParams()
   const history = useHistory()
   const [error, setError] = useState(false)
+  const [liked, setLiked] = useState(false)
   // console.log('ID', id)
 
   // window.scrollTo(0, 0)
@@ -31,6 +32,10 @@ const RecipeShow = ({ ingredients }) => {
         const { data } = await axios.get(`/api/recipes/${id}`)
         setRecipe(data)
         setOwner(data.owner)
+
+        recipeLiked(data)
+
+
       } catch (err) {
         console.log(err)
       }
@@ -65,7 +70,61 @@ const RecipeShow = ({ ingredients }) => {
       setError(true)
     }
   }
+  const getUserData = async () => {
+    try {
+      const token = window.localStorage.getItem('token')
+      if (!token) throw new Error()
+      if (!userIsAuthenticated()) throw new Error()
+      const header = { "Authorization": `Bearer ${token}` }
+      const { data } = await axios.get('/api/profile', { headers: header })
+      return data
+    } catch (err) {
+      console.log(err)
+    }
+  }
 
+  const userIsAuthenticated = () => {
+    const payload = getPayload()
+    if (!payload) return false
+    const now = Math.round(Date.now() / 1000)
+    return now < payload.exp
+  } 
+
+  const recipeLiked = async (data) => {
+    const user = await getUserData()
+    if (!user) return false
+    if (!data.likedBy.includes(user._id)) {
+      setLiked(false)
+      return false
+    }
+    setLiked(true)
+    return true
+  }
+
+  const likeRecipe = async (event) => {
+    const user = await getUserData()
+    try {
+      const { data } = await axios.get(`/api/recipes/${id}`)
+      if (event.target.classList.contains('liked') || event.target.parentElement.classList.contains('liked')) {
+        const index = data.likedBy.indexOf(user._id)
+        data.likedBy.splice(index, 1)
+      } else {
+        if (data.likedBy) data.likedBy = [ ...data.likedBy, user._id ]
+        if(!data.likedBy) data.likedBy = [user._id]
+      }
+
+      if (!data) throw new Error()
+      const token = window.localStorage.getItem('token')
+      if (!token) throw new Error()
+      if (!userIsAuthenticated()) throw new Error()
+      const header = { "Authorization": `Bearer ${token}` }
+      const response = await axios.put(`/api/recipes/${id}`, data, { headers: header })
+      if (!response) throw new Error()
+      setLiked(!liked)
+    } catch (err) {
+      console.log(err)
+    }
+  }
 
   return (
 
@@ -78,12 +137,14 @@ const RecipeShow = ({ ingredients }) => {
               <div className="container show-links">
                 <h6 className="show-rating" id="recipe-show-rating"><i className="fas fa-utensils"></i>&nbsp;{recipe.course} · {recipe.difficulty} · <i className="far fa-star"></i>Rating: {recipe.averageRating} </h6>
                 <div className="save-share">
-                  <div className="share">
-                    <Link className="has-text-black" to="/share"><h6><i className="far fa-share-square"></i>Share</h6></Link>
-                  </div>
-                  <div className="save">
-                    <h6><i className="far fa-heart"></i>Save</h6>
-                  </div>
+                  <Link to="/share" className={`${liked ? 'liked' : ''} show-share-button`}>
+                    <i className="far fa-share-square"></i>Share
+                  </Link>
+                  {userIsAuthenticated() &&
+                    <div onClick={(event) => likeRecipe(event)} className={`${liked ? 'liked' : ''} show-like-button`}>
+                      <i className="far fa-heart" id="show-heart-icon"></i>{liked ? 'Saved' : 'Save'}
+                    </div>
+                  }
                 </div>
               </div>
               {userIsOwner(owner._id) &&

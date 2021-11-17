@@ -553,6 +553,7 @@
 }
 
 .like-recipe-button {
+  cursor: pointer;
   justify-content: flex-end;
   display: flex;
   position: absolute;
@@ -576,3 +577,23 @@
   padding: 0 !important;
 }
 
+.show-like-button, .show-share-button {
+  margin: 5px;
+  cursor: pointer;
+  color: black !important;
+  text-decoration: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  background-color: rgba(0, 0, 0,0.15);
+  justify-content: center;
+  align-items: center;
+  padding: 10px 15px;
+  border-radius: 50px;
+}
+
+.show-like-button:hover, .show-like-button.liked, .show-share-button:hover {
+  color: white !important;
+  background-color: #FF385C;
+}

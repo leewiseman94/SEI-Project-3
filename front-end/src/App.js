@@ -50,7 +50,6 @@ function App() {
     <BrowserRouter>
       <Navbar handleLoginClick={handleLoginClick}/>
       <LoginorSignUp isShowLoginOrRegister={isShowLoginOrRegister} handleLoginClick={handleLoginClick} handleLoginOrRegister={handleLoginOrRegister} />
-      <Footer/>
       <Switch>
         <Route exact path='/' component={Home}/>
         <Route exact path='/recipes' component={RecipeIndex}/>
@@ -66,7 +65,7 @@ function App() {
 
         <Route exact path='/add' component={AddRecipe}/> */
       </Switch>
-    
+      <Footer/>
     </BrowserRouter>
   )
 

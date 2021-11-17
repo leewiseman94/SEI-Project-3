@@ -45,7 +45,6 @@ const RecipeCard = ({ _id, name, image, averageRating, likedBy }) => {
     } catch (err) {
       console.log(err)
     }
-
   }
 
   const getUserData = async () => {
@@ -68,12 +67,6 @@ const RecipeCard = ({ _id, name, image, averageRating, likedBy }) => {
     return now < payload.exp
   } 
 
-  useEffect(() => {
-
-  }, [liked])
-
-
-  // console.log(liked)
   return (
     <div key={_id} className="column is-one-quarter-desktop is-one-third-tablet is-three-quarters-mobile full-card-container">
       <>

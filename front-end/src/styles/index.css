@@ -150,13 +150,6 @@ h5 {
   overflow-y: auto;
 }
 
-.share {
-  padding-right: 10px;
-}
-.save {
-  padding-right: 10px;
-}
-
 i.far {
   padding-right: 5px;
 }
@@ -188,10 +181,9 @@ i.far {
 .show-links{
   color: black;
   display: flex;
-  justify-content: flex-end;
   text-transform: lowercase;
   justify-content: space-between;
-
+  align-items: center;
 }
 
 .recipe-info {
@@ -238,7 +230,6 @@ p.subtitle.method {
 }
 .save-share {
   display: flex;
-  text-decoration: underline;
   text-transform: capitalize;
   margin-left: 50px;
 }
