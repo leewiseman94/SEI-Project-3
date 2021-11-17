@@ -413,10 +413,18 @@ i.fas.fa-filter {
 } */
 
 .hero-carousel {
-  padding-top: 170px;
+  padding-top: 80px;
 }
-.is-background {
-  height: 400px
+
+.carousel-item {
+  height: 600px;
+}
+
+.carousel-image {
+  /* width: 100vw; */
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: 50% 100%;
 }
 .hero-body {
   padding: 0px
