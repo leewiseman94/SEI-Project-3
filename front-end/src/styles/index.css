@@ -479,7 +479,7 @@ i.fas.fa-filter {
   border-radius: 0px;
 }
 
-
+/* Home */
 #box-one {
   background: url('../assets/fridge3.jpeg');
   background-size: 100%;
@@ -552,27 +552,39 @@ i.fas.fa-filter {
   margin-top: 100px;
 }
 
-#cd {
-  margin-top: 200px;
-  align-items: center;
-}
 
 .lineIngredients {
   list-style-type: none;
 }
 
+/* Footer */
 #footer {
   justify-content: space-around;
   background-color: white;
+}
+/* Company Details */
+#cd {
+  margin-top: 200px;
+  align-items: center;
 }
 
 #cd-button {
   justify-content: center;
   text-decoration: none;
-  max-width: 500px;
+  max-width: 550px;
 }
 
 #cdh1 {
   justify-content: center;
+}
+
+/* Masterclass */
+
+/* #master-class-card {
+  margin-top: 200px;
+} */
+
+#master-breadcrumb {
+  margin-top: 200px;
 }
 
