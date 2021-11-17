@@ -10,6 +10,7 @@ const RecipeCard = ({ _id, name, image, averageRating, likedBy }) => {
   useEffect(() => {
     const recipeLiked = async () => {
       const user = await getUserData()
+      if (!user) return false
       if (!likedBy.includes(user._id)) {
         setLiked(false)
         return false
@@ -79,7 +80,7 @@ const RecipeCard = ({ _id, name, image, averageRating, likedBy }) => {
       
       <div className="card-container">
         
-          <div className="card is-shadowless">
+          <div className="card">
             {userIsAuthenticated() && 
               <div onClick={(event) => likeRecipe(event)} className={`${liked ? 'liked' : ''} like-recipe-button card-content is-overlay`}>
                 <i className="fa fa-heart-o fa-lg" id="heart-icon"></i>  
