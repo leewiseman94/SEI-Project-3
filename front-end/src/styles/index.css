@@ -63,14 +63,6 @@ body {
   
 }
 
-.card-header {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  box-shadow: none;
-}
-
 .card-header-title {
   font-weight: lighter;
  
@@ -104,7 +96,8 @@ body {
 }
 
 .card-content {
-  padding: 10px 20px;
+  
+  margin-top: -10px;
 }
 
 #heart-icon {
@@ -156,6 +149,13 @@ h5 {
   overflow-x: hidden;
 }
 
+.share {
+  padding-right: 10px;
+}
+.save {
+  padding-right: 10px;
+}
+
 i.far {
   padding-right: 5px;
 }
@@ -187,9 +187,10 @@ i.far {
 .show-links{
   color: black;
   display: flex;
+  justify-content: flex-end;
   text-transform: lowercase;
   justify-content: space-between;
-  align-items: center;
+
 }
 
 .recipe-info {
@@ -236,6 +237,7 @@ p.subtitle.method {
 }
 .save-share {
   display: flex;
+  text-decoration: underline;
   text-transform: capitalize;
   margin-left: 50px;
 }
@@ -397,8 +399,9 @@ i.fas.fa-filter {
   height: 0px;
 }
 
-.review {
-  margin-top: 180px
+#review {
+  padding-top: 180px;
+  padding-bottom: 50px
 }
 #review-form {
   width: 400px;
@@ -438,10 +441,18 @@ i.fas.fa-filter {
 } */
 
 .hero-carousel {
-  padding-top: 170px;
+  padding-top: 80px;
 }
-.is-background {
-  height: 400px
+
+.carousel-item {
+  height: 600px;
+}
+
+.carousel-image {
+  /* width: 100vw; */
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: 50% 100%;
 }
 .hero-body {
   padding: 0px
@@ -504,7 +515,7 @@ i.fas.fa-filter {
   border-radius: 0px;
 }
 
-
+/* Home */
 #box-one {
   background: url('../assets/fridge3.jpeg');
   background-size: 100%;
@@ -555,7 +566,7 @@ i.fas.fa-filter {
 
 .courses-container {
   margin-top: 30px;
-  margin-bottom: 30px;
+  margin-bottom: 30px
 }
  
 
@@ -569,10 +580,6 @@ i.fas.fa-filter {
   text-shadow: 2px 2px white;
 }
 
-#social {
-  align-items: center;
-}
-
 #tandc {
   margin-top: 100px;
 }
@@ -581,10 +588,39 @@ i.fas.fa-filter {
   margin-top: 100px;
 }
 
-#cd {
-  margin-top: 200px;
-}
 
 .lineIngredients {
   list-style-type: none;
 }
+
+/* Footer */
+#footer {
+  justify-content: space-around;
+  background-color: white;
+}
+/* Company Details */
+#cd {
+  margin-top: 200px;
+  align-items: center;
+}
+
+#cd-button {
+  justify-content: center;
+  text-decoration: none;
+  max-width: 550px;
+}
+
+#cdh1 {
+  justify-content: center;
+}
+
+/* Masterclass */
+
+/* #master-class-card {
+  margin-top: 200px;
+} */
+
+#master-breadcrumb {
+  margin-top: 200px;
+}
+

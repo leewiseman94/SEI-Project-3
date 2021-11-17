@@ -80,7 +80,7 @@ export const addAReview = async (req, res) => {
     return res.status(200).json(recipe)
   } catch (err) {
     console.log(err)
-    return res.status(404).json({ 'message': 'Something went wrong' })
+    return res.status(404).json(err)
   }
 }
 

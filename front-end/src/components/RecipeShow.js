@@ -15,7 +15,8 @@ const RecipeShow = () => {
   const [recipe, setRecipe] = useState([])
   const [owner, setOwner] = useState([])
   const [deleteOptions, setDeleteOptions] = useState(false)
-  const { id } = useParams()
+  let { id } = useParams()
+  id = id.replace(' ', '')
   const history = useHistory()
   const [error, setError] = useState(false)
   const [liked, setLiked] = useState(false)
@@ -53,7 +54,7 @@ const RecipeShow = () => {
   }
 
   const displayDelete = () => {
-    setDeleteOptions(true)
+    setDeleteOptions(!deleteOptions)
   }
 
   const handleClose = () => {
@@ -126,7 +127,27 @@ const RecipeShow = () => {
       console.log(err)
     }
   }
+
+  const deleteReview = async(reviewId, review) => {
   
+    try {
+      
+      await axios.delete(`/api/recipes/${id}/reviews/${reviewId}`, {
+        headers: { Authorization: `Bearer ${getTokenFromLocalStorage()}` }
+      })
+      const index = reviews.indexOf(review)
+      console.log(reviewId)
+      console.log(review)
+      console.log(index)
+      const newReviewsArray = [...reviews.splice(index, 1)]
+      setReviews([...reviews])
+      history.push(`/recipes/${id}`)
+    } catch (err) {
+      console.log(err)
+    }
+  }
+
+
   return (
 
     <>
@@ -148,16 +169,22 @@ const RecipeShow = () => {
                   }
                 </div>
               </div>
-              <div className="is-flex is-justify-content-flex-start">
+              <div >
                 {userIsOwner(owner._id) &&
                   <>
                     <hr />
-                    <Link to={`/recipes/${id}/edit`}><button id="edit-button" className='button is-danger'>Edit Recipe</button></Link>
+                    <div className="field is-grouped is-flex is-justify-content-end is-align-items-center	">
+                      <p className='control'>
+                    <Link to={`/recipes/${id}/edit`}><button id="edit-button" className='button is-danger pl-6 pr-6'>Edit Recipe</button></Link>
+                    </p>
                     <br />
-                    <button className='button is-danger' id="delete-button" onClick={displayDelete}>Delete Recipe</button>
+                    <p className='control'>
+                    <button className='button is-danger pl-6 pr-6' id="delete-button" onClick={displayDelete}>Delete Recipe</button>
+                    </p>
+                    </div>
                     {deleteOptions &&
-                      <div className='is-flex is-justify-content-space-around	is-align-items-center mt-4'>
-                        <div className='title is-5 pt-5'>Are you Sure you want to delete your recipe?</div>
+                      <div className='is-flex is-align-items-center mt-4 is-flex-direction-column'>
+                        <div className='subtitle is-5 pt-5'>Are you Sure you want to delete your recipe?</div>
                         <div className='field is-grouped is-justify-content-center '>
                           <p className='control'>
                             <button className='button is-danger pl-6 pr-6' onClick={handleDelete}>Yes</button>
@@ -349,12 +376,13 @@ const RecipeShow = () => {
               <div className="column is-full">
                 <div className="is-flex is-flex-direction-column">
 
-
                   {reviews &&
-                    reviews.map((review) => {
-                      return (
-                        <>
-                          <div className="is-flex">
+                reviews.map((review) => {
+                  if (userIsOwner(review.owner)) {
+                    return (
+                      <>
+
+                        <div className="is-flex">
                             <div className="user-icon-review">
                               <i className="fas fa-user fa-2x" id="user-icon-review"></i>
                               <h4>{ }</h4>
@@ -368,10 +396,32 @@ const RecipeShow = () => {
                             {/* </div> */}
                           </div>
                           <hr />
-                        </>
-                      )
+                        <button className='button' onClick={() => deleteReview(review._id, review)}>Delete</button>
+                        <br />
+                      </>
+                    )
+                  }
+                
+                    return (
+                      <>
+                        <div className="is-flex">
+                            <div className="user-icon-review">
+                              <i className="fas fa-user fa-2x" id="user-icon-review"></i>
+                              <h4>{ }</h4>
+                            </div>
+                            <div className="review-content">
+                              <h3 key={review._id} className="title is-5">{review.subject}</h3>
+                              <p className="has-text-grey">{review.comments}</p>
+                            </div>
+                            {/* <div> */}
+                            <p className="has-text-grey subtitle is-7">{review.createdAt}</p>
+                            {/* </div> */}
+                          </div>
+                          <hr />
+                      </>
+                    )
 
-                    })}
+                })}
 
                 </div>
               </div>
