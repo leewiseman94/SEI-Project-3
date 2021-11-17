@@ -265,20 +265,11 @@ const RecipeShow = ({ ingredients }) => {
           </div>
 
           <section className="is-flex">
-            <div className="button-container">
-              <Link to={`/recipes/${id}/reviews`}><button className="button is-danger has-text-white" id="click-review">Leave a review</button></Link>
-            </div>
-            <div className="container">
-              <div className="columns">
-                <div className="column is-full">
-                  <h3>{recipe.name}</h3>
-                </div>
-              </div>
+     
               <div className="button-container">
                 {userIsOwner(owner._id) &&
                   <Link to={`/recipes/${id}/reviews`}><button className="button is-danger has-text-white" id="click-review">Leave a review</button></Link>}
               </div>
-            </div>
 
 
             <div className="columns">
