@@ -344,7 +344,7 @@ i.fas.fa-filter {
 
 .card.nutritional {
   margin-right: 10px;
-  background-color: rgba(231, 231, 231, 0.493);
+  background-color: rgba(226, 226, 226, 0.493);
   box-shadow: none;
 }
 
@@ -355,7 +355,10 @@ i.fas.fa-filter {
 .changeColor:hover {
   color: black;
 } */
-
+#edit-button {
+  width: 150px;
+  height: 30px;
+}
 
 .textarea.is-medium {
   width: 400px;
@@ -524,9 +527,8 @@ i.fas.fa-filter {
 .courses-container {
   margin-top: 30px;
   margin-bottom: 30px;
-
-  
-} 
+}
+ 
 
 .overlay {
   background-color: RGBA(0, 0, 0, 0.5);
@@ -554,6 +556,6 @@ i.fas.fa-filter {
   margin-top: 200px;
 }
 
-/* #lineIngredients {
+.lineIngredients {
   list-style-type: none;
-} */
+}

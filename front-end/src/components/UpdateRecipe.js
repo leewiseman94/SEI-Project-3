@@ -11,7 +11,8 @@ import recipeMethod from '../assets/recipeMethod.PNG'
 
 const UpdateRecipe = () => {
   const history = useHistory()
-  const [image, setImage] = useState(null)
+
+  const [image, setImage] = useState('')
   const [description, setDescription] = useState('')
   const [ingredients, setIngredients] = useState([])
   const [method, setMethod] = useState([])
@@ -39,7 +40,6 @@ const UpdateRecipe = () => {
   useEffect(() => {
   const getData = async () => {
     const { data } = await axios.get(`/api/recipes/${id}`)
-    // setRecipe(data)
     setNewRecipe( {...newRecipe, name: data.name, description: data.description, prepTime: data.prepTime, cookingTime: data.cookingTime, difficulty: data.difficulty, servingSize: data.servingSize, nutritionalInfo: data.nutritionalInfo, tags: data.tags, course: data.course, allergens : data.allergens})
     setDescription(data.description)
     setMethod(data.method)
@@ -47,6 +47,7 @@ const UpdateRecipe = () => {
     setTags(data.tags)
     setNutritionalInfo(data.nutritionalInfo)
     setAllergens(data.allergens)
+    setImage(data.image)
   }
   getData()
 }, [id]) 
@@ -93,7 +94,6 @@ const UpdateRecipe = () => {
 
 
   const displayIngredient = () => {
-    console.log(newRecipe.ingredients)
   // const newIngredient = newRecipe.ingredients
   setIngredients([ ...ingredients, newRecipe.ingredients ])
   setNewRecipe({...newRecipe, ingredients: ''})
@@ -115,10 +115,8 @@ const UpdateRecipe = () => {
 
 
   const displayMethod = () => {
-  // const newStep = newRecipe.method.split(',')
   setMethod([ ...method, newRecipe.method ])
   setNewRecipe({ ...newRecipe, method: ''})
-  // recipe.method = ''
   }
 
   const editMethod = (step) => {
@@ -137,8 +135,6 @@ const UpdateRecipe = () => {
 
   const handleSubmit = async (event) => {
     event.preventDefault()
-    console.log(newRecipe)
-    console.log(newRecipe.tags === tags)
     newRecipe.description = description
       if (ingredients.length === 0) {
         newRecipe.ingredients = ''
@@ -150,33 +146,34 @@ const UpdateRecipe = () => {
       } else {
         newRecipe.method = method
       }
-      newRecipe.image = image
-      if (newRecipe.tags !== '' || !newRecipe.tags.length || newRecipe.tags !== tags)  {
-        const tagsArray = newRecipe.tags.split(',')
-        newRecipe.tags = tagsArray
+      if (newRecipe.image === '') {
+        newRecipe.image = image
       }
-      if (newRecipe.nutritionalInfo !== '' || !newRecipe.nutritionalInfo.length || newRecipe.nutritionalInfo !== nutritionalInfo ) {
-        const nutritionalInfoArray = newRecipe.nutritionalInfo.split(',')
-        newRecipe.nutritionalInfo = nutritionalInfoArray
-      }
-      if (newRecipe.allergens !== '' || !newRecipe.allergens.length || newRecipe.allergens !== allergens ) {
-        const allergensArray = newRecipe.allergens.split(',')
-        newRecipe.allergens = allergensArray
-      }
+      // newRecipe.image = image
+      // if (newRecipe.tags !== '' || !newRecipe.tags.length || newRecipe.tags !== tags)  {
+      //   const tagsArray = newRecipe.tags.split(',')
+      //   newRecipe.tags = tagsArray
+      // }
+      // if (newRecipe.nutritionalInfo !== '' || !newRecipe.nutritionalInfo.length || newRecipe.nutritionalInfo !== nutritionalInfo ) {
+      //   const nutritionalInfoArray = newRecipe.nutritionalInfo.split(',')
+      //   newRecipe.nutritionalInfo = nutritionalInfoArray
+      // }
+      // if (newRecipe.allergens !== '' || !newRecipe.allergens.length || newRecipe.allergens !== allergens ) {
+      //   const allergensArray = newRecipe.allergens.split(',')
+      //   newRecipe.allergens = allergensArray
+      // }
     try {
-      const { data } = await axios.put('/api/recipes', newRecipe, {
+      await axios.put(`/api/recipes/${id}`, newRecipe, {
         headers: { Authorization: `Bearer ${getTokenFromLocalStorage()}` }
       }
       )
+
       history.push(`/recipes/${id}`)
     } catch (err){
-      console.log(err.response.data.errors)
       setErrors(err.response.data.errors)
     }
   }
 
-  console.log(newRecipe.tags === tags)
-  console.log(tags)
   return (
     // <AddandUpdate
     //   newRecipe={recipe}
@@ -196,9 +193,9 @@ const UpdateRecipe = () => {
       <form className='form' onSubmit={handleSubmit}>
       <div className="field is-vertical">
         <div className='is-flex is-justify-content-space-around	'>
-      <div className='subtitle is-3'>Add Your Recipe</div>
+      <div className='subtitle is-3'>Update Your Recipe</div>
           <button className="button" type='submit' id='addRecipeSubmit' >
-            Add Recipe
+            Post Recipe
           </button>
           </div>
       <hr/>
