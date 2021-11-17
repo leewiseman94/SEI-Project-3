@@ -5,8 +5,10 @@ import instagramLogo from '../assets/glyph-logo_May2016.png'
 
 
 const Footer = () => {
+  
   return (
-    <div className="footer is-flex is-flex-direction-row" id="footer">        
+    <>
+      <div className="footer is-flex is-flex-direction-row" id="footer">        
         <strong className="has-text-grey ml-6 mr-4">© 2021 Platester</strong> 
           <a className="has-text-grey mx-4" href="/Privacy">Privacy</a>
           <a className="has-text-grey mx-4" href="/Ts&Cs">Terms</a> 
@@ -27,6 +29,7 @@ const Footer = () => {
             </figure>
           </a>                    
       </div>
+    </>
   )
 }
 
