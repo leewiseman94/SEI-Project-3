@@ -131,14 +131,14 @@ h5 {
 
 .method-title {
   font-weight: bold;
-  align-self: flex-end;
+  /* align-self: flex-end; */
   padding-left: 5px;
 }
 
 .recipe-steps {
   margin-top: 10px;
   height: 370px;
-  overflow: scroll;
+  overflow-y: auto;
 }
 
 .share {
@@ -201,8 +201,8 @@ i.far {
 }
 
 #icon-info2 {
-  /* margin-left: 200px; */
-  margin-right: 270px;
+  
+  margin-right: 110px;
 }
 
 .info-icons {
@@ -258,14 +258,16 @@ p.subtitle.method {
 } */
 
 #ingredients-list {
+  margin-top: 20px;
   height: 200px;
-  /* overflow: scroll; */
-  width: 500px;
+  overflow-y: auto ;
+  width: 550px;
+  box-shadow: none;
 }
 
-.container {
+/* .container {
   margin-bottom: 20px;
-}
+} */
 
 
 #filter-button {
@@ -338,10 +340,7 @@ i.fas.fa-filter {
   font-size: 14px;
 }
 
-.container.nutrition-info {
-  /* display: flex; */
-  /* justify-content: center; */
-}
+
 
 .card.nutritional {
   margin-right: 10px;
@@ -521,9 +520,9 @@ i.fas.fa-filter {
 .courses-container {
   margin-top: 30px;
   margin-bottom: 30px;
-/* #logos {
+
   
-} */
+} 
 
 
 /* #lineIngredients {

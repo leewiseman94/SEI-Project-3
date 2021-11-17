@@ -7,12 +7,14 @@ import prepTime from '../assets/prepTime.PNG'
 import ingredientsIMG from '../assets/ingredientsIMG.PNG'
 import { getPayload } from './helpers/auth'
 
-const RecipeShow = () => {
+const RecipeShow = ({ ingredients }) => {
   const [recipe, setRecipe] = useState([])
   const [owner, setOwner] = useState([])
   const { id } = useParams()
-  // console.log('ID', id)
+  const [visible, setVisible] = useState(false)
 
+  // console.log('ID', id)
+  // window.scrollTo(0, 0)
   useEffect(() => {
     const getData = async () => {
       try {
@@ -121,7 +123,7 @@ const RecipeShow = () => {
 
           <div className="columns">
 
-            <div className="column" id="icon-info">
+            <div className="column is-4" id="icon-info">
               <hr />
               <div className="icon-info-space">
                 <div className="info-icons">
@@ -148,7 +150,7 @@ const RecipeShow = () => {
             </div>
 
 
-            <div className="column" id="icon-info2">
+            <div className="column is-4" id="icon-info2">
               <hr />
               <div className="icon-info-space">
                 <div className="info-icons">
@@ -172,28 +174,34 @@ const RecipeShow = () => {
               <hr />
             </div>
 
-            <div className="column is-one-half">
+            <div className="column is-6">
+              <br />
+              <button className="button is-danger" id="ingredients-button" onClick={() => setVisible(!visible)}>
+                <img src={ingredientsIMG} className="method-icon" alt="method-icon" width="40px"></img>
+                <h5 className="method-title has-text-white">Ingredients</h5>
+              </button>
               <div className="card" id="ingredients-list">
                 <div className="card-content">
                   <div className="content">
                     <div className="buttons recipe-info">
-                      <button class="button is-danger" id="ingredients-button" >
-                        <img src={ingredientsIMG} className="method-icon" alt="method-icon" width="40px"></img>
-                        <h5 className="method-title has-text-white">Ingredients</h5>
-                      </button>
-
                     </div>
-                    <br />
-                    {recipe.ingredients &&
-                      recipe.ingredients.map((ingredients) => {
-                        return (
-                          <>
-                            <p style={{ display: { ingredients } ? "none" : "block" }}>{ingredients}</p>
-                            <br />
-                          </>
-                        )
+                    {visible &&
+                      <div>
 
-                      })}
+
+                        {recipe.ingredients &&
+                          recipe.ingredients.map((ingredients) => {
+                            return (
+                              <>
+                                <p>{ingredients}</p>
+                                <br />
+                              </>
+                            )
+
+                          })}
+
+                      </div>
+                    }
                   </div>
                 </div>
               </div>
@@ -203,24 +211,27 @@ const RecipeShow = () => {
 
         </div>
 
-        <section className="is-flex">
-          <div className="button-container">
-            <Link to={`/recipes/${id}/reviews`}><button className="button is-danger has-text-white" id="click-review">Leave a review</button></Link>
-          </div>
-          <div className="container">
+        <section className="is-flex is-flex-direction-column">
+          <div className="container is-flex is-justify-content-space-between">
             <div className="columns">
               <div className="column is-full">
-                <h3>{recipe.name}</h3>
+                <h2 className="title is-5">Reviews</h2>
               </div>
             </div>
-            <div className="columns">
-              <div className="column is-full">
-                <h3>{recipe.review}</h3>
-              </div>
+            <div className="button-container">
+              <Link to={`/recipes/${id}/reviews`}><button className="button is-danger has-text-white" id="click-review">Leave a review</button></Link>
             </div>
-
-
           </div>
+
+
+          <div className="columns">
+            <div className="column is-full">
+              <h3>{recipe.review}</h3>
+            </div>
+          </div>
+
+
+
         </section>
 
 

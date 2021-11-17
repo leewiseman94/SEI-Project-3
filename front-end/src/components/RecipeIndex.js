@@ -98,7 +98,7 @@ const RecipeIndex = () => {
                     }
                     }>
                       <span className="icon is-small">
-                        <i className="fas fa-filter fa-sm" aria-hidden="true"> </i>
+                      <i class="fas fa-utensils" aria-hidden="true"> </i>
                         <span className="filterbtn">Difficulty</span>
                       </span>
                     </button>
