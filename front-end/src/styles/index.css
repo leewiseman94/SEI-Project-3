@@ -157,10 +157,7 @@ h5 {
   padding-right: 10px;
 }
 
-.edit-delete-container {
-  display: flex;
-  justify-content: center;
-}
+
 .method-title.has-text-white {
   text-align: center;
   margin-top: 12px;
@@ -636,7 +633,7 @@ i.fas.fa-filter {
   margin-top: 30px;
   margin-bottom: 30px
 }
- 
+
 
 .overlay {
   background-color: RGBA(0, 0, 0, 0.5);
@@ -648,12 +645,15 @@ i.fas.fa-filter {
   text-shadow: 2px 2px white;
 }
 
-#tandc-p {
+#tandc {
   margin-top: 100px;
+  margin-bottom: 100px;
 }
 
 #privacy-p {
   margin-top: 100px;
+  margin-bottom: 100px;
+  
 }
 
 
@@ -671,14 +671,15 @@ i.fas.fa-filter {
 /* Company Details */
 #cd {
   margin-top: 200px;
-  margin-left: 25%;
-  align-items: center;
+  margin-bottom: 100px;
 }
 
 #cd-button {
   justify-content: center;
   text-decoration: none;
-  max-width: 550px;
+  max-width: 450px;
+  color: white;
+  background-color: #ff385c;
 }
 
 #cdh1 {
@@ -939,37 +940,6 @@ i.fas.fa-filter {
     align-items: center;
   }
 
-  #cd {
-    width: auto;
-  }
-  
-  #privacy-p {
-    margin-left: 10px;    
-  }
-
-  /* #column-one {
-    margin-right: 1.5rem;
-  }
-
-  #column-two {
-    margin-left: 1.5rem;
-  } */
-/*   
-  #box-one {
-    margin-right: 1.5rem; */
-
-    
-  /* } */
-/* 
-  #box-two {
-    margin-right: 1.5rem;    
-  } */
-
-  #tandc {
-    margin-left: 5%;
-    justify-content: center;
-  }
-
   #home-h1 {
     font-size: 12px;
   }
@@ -1153,4 +1123,14 @@ i.fas.fa-filter {
     width: 340px;
     font-size: 16px;
   }
+}
+
+@media screen and (max-width: 1200px) {
+  #ingredients-container {
+    margin-left: 45px
+  }
+  .save-share {
+    margin-left: 400px
+  }
+  
 }

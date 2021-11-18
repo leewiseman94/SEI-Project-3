@@ -14,7 +14,7 @@ import TsAndCs from './components/Ts&Cs'
 import Privacy from './components/Privacy'
 import CompanyDetails from './components/CompanyDetails'
 import Footer from './components/Footer'
-import Masterclass from './components/Masterclass';
+import CookingClass from './components/CookingClass';
 
 
 
@@ -46,7 +46,7 @@ function App() {
         <Route exact path='/Ts&amp;Cs' component={TsAndCs} />
         <Route exact path='/Privacy' component={Privacy} />
         <Route exact path='/CompanyDetails' component={CompanyDetails} />
-        <Route exact path='/Masterclass' component={Masterclass} />
+        <Route exact path='/CookingClass' component={CookingClass} />
         <Route exact path='/add' component={AddRecipe}/> 
       </Switch>
       <Footer />
