@@ -9,15 +9,15 @@ const RecipeIndex = () => {
   const [recipes, setRecipes] = useState([])
   const [filteredRecipes, setFilteredRecipes] = useState([])
   const [difficulties, setDifficulties] = useState([])
-
+  const [loading, setLoading] = useState(false)
   const props = useLocation()
   const history = useHistory()
   const params = QueryString.parse(props.search)
-
   const [query, setQuery] = useState(QueryString.parse(props.search))
 
   useEffect(() => {
     const getData = async () => {
+      setLoading(true)
       const { data } = await axios.get('/api/recipes')
       setRecipes(data)
 
@@ -30,8 +30,8 @@ const RecipeIndex = () => {
       }
 
       setDifficulties(difficultyArray)
-
-      const filtered = data.filter(recipe => {
+      let filtered = null
+      filtered = data.filter(recipe => {
         const allergenArrayLowerCase = recipe.allergens.map(allergen => allergen.toLowerCase())
         return (
           ((params.name ? recipe.name.toLowerCase().includes(params.name) : recipe))
@@ -46,9 +46,12 @@ const RecipeIndex = () => {
 
         )
       })
+      console.log(filtered)
       setFilteredRecipes(filtered)
+      if (filtered) setLoading(false)
     }
     getData()
+    
   }, [props])
 
   const getSearchLink = (event) => {
@@ -61,7 +64,6 @@ const RecipeIndex = () => {
     if (event.target.id === 'remove-allergens-name' || event.target.parentElement.id === 'remove-allergens-name') delete queryParams.allergens
     if (event.target.id === 'remove-difficulty-name' || event.target.parentElement.id === 'remove-difficulty-name') delete queryParams.difficulty
     if (event.target.id === 'remove-rating-name' || event.target.parentElement.id === 'remove-rating-name') delete queryParams.rating
-
     setQuery(queryParams)
   }
 
@@ -69,23 +71,23 @@ const RecipeIndex = () => {
     history.push(`recipes?${QueryString.stringify(query)}`)
   }, [query])
   
+  
   return (
     <>
       <section className="section" id="recipe-index">
         <div className="container">
           <div className="subtitle is-flex is-flex-direction-column is-align-items-start">
-            <div className="filter-container is-flex is-flex-direction-row">
-              <div className="current-filter-links is-flex is-flex-direction-row is-justify-content-space-between">
-                <div className="current-filter-title">
+            <div className="filter-container">
+              <div className="current-filter-links">
+                <div className={params.name || params.course || params.allergens || params.difficulty || params.rating ? 'current-filter-title' : 'current-filter-title none'}>
                   <h3>{params.name || params.course || params.allergens || params.difficulty || params.rating ? 'Active Filters:' : 'Active Filters: None'}</h3>
                 </div>
-                <div className="current-filters is-flex is-flex-direction-row">
+                <div className="current-filters">
                   {params.name && <div className="active-name-filter current-filter-container">Recipe Name: {params.name}<Link to={'/recipes'} id="remove-recipe-name" onClick={(event) => { getSearchLink(event) }}><i className="far fa-times-circle remove-filter-icon"></i></Link></div>}
                   {(params.course && params.course !== 'all') && <div className="active-course-filter current-filter-container">Course: {params.course}<Link to={'/recipes'} id="remove-course-name" onClick={(event) => { getSearchLink(event) }}><i className="far fa-times-circle remove-filter-icon"></i></Link></div>}
                   {(params.allergens && params.allergens !== 'all') && <div className="active-allergens-filter current-filter-container">Allergens: {params.allergens}<Link to={'/recipes'} id="remove-allergens-name" onClick={(event) => { getSearchLink(event) }}><i className="far fa-times-circle remove-filter-icon"></i></Link></div>}
                   {(params.difficulty && params.difficulty !== 'all') && <div className="active-difficulty-filter current-filter-container">Difficulty: {params.difficulty}<Link to={'/recipes'} id="remove-difficulty-name" onClick={(event) => { getSearchLink(event) }}><i className="far fa-times-circle remove-filter-icon"></i></Link></div>}
                   {params.rating && <div className="active-rating-filter current-filter-container">Min Rating: {params.rating}<Link to={'/recipes'} id="remove-rating-name" onClick={(event) => { getSearchLink(event) }}><i className="far fa-times-circle remove-filter-icon"></i></Link></div>}
-
                 </div>
 
               </div>
@@ -107,7 +109,7 @@ const RecipeIndex = () => {
                     <div className="dropdown-content">
                       {difficulties.map(difficulty => {
                         return (
-                          <Link key={difficulty} to={`/recipes`} onClick={(event) => getSearchLink(event)} id="difficulty-name-input" className="dropdown-item">{difficulty}</Link>
+                          <button key={difficulty} onClick={(event) => getSearchLink(event)} id="difficulty-name-input" className="dropdown-item">{difficulty}</button>
                           // <Link to={`/recipes${props.search + '&difficulty=' + difficulty.toLowerCase()}`} onClick={(event) => getSearchLink(event)} id="diffulty-name-input" className="dropdown-item">{difficulty}</Link>
                         )
                       })}
@@ -130,31 +132,31 @@ const RecipeIndex = () => {
                   </div>
                   <div className="rating-dropdown-menu dropdown-menu" id="rating-dropdown-menu" role="menu">
                     <div className="rating-dropdown-content dropdown-content">
-                      <Link to={`/recipes`} onClick={(event) => getSearchLink(event)} id="rating-input" className="dropdown-item" name="1">
+                      <button onClick={(event) => getSearchLink(event)} id="rating-input" className="dropdown-item" name="1">
                         1 <i className="fas fa-star"></i>
-                      </Link>
-                      <Link to={`/recipes`} onClick={(event) => getSearchLink(event)} id="rating-input" className="dropdown-item" name="2">
+                      </button>
+                      <button onClick={(event) => getSearchLink(event)} id="rating-input" className="dropdown-item" name="2">
                         2 <i className="fas fa-star"></i>
                         <i className="fas fa-star"></i>
-                      </Link>
-                      <Link to={`/recipes`} onClick={(event) => getSearchLink(event)} id="rating-input" className="dropdown-item" name="3">
+                      </button>
+                      <button onClick={(event) => getSearchLink(event)} id="rating-input" className="dropdown-item" name="3">
                         3 <i className="fas fa-star"></i>
                         <i className="fas fa-star"></i>
                         <i className="fas fa-star"></i>
-                      </Link>
-                      <Link to={`/recipes`} onClick={(event) => getSearchLink(event)} id="rating-input" className="dropdown-item" name="4">
+                      </button>
+                      <button onClick={(event) => getSearchLink(event)} id="rating-input" className="dropdown-item" name="4">
                         4 <i className="fas fa-star"></i>
                         <i className="fas fa-star"></i>
                         <i className="fas fa-star"></i>
                         <i className="fas fa-star"></i>
-                      </Link>
-                      <Link to={`/recipes`} onClick={(event) => getSearchLink(event)} id="rating-input" className="dropdown-item" name="5">
+                      </button>
+                      <button onClick={(event) => getSearchLink(event)} id="rating-input" className="dropdown-item" name="5">
                         5 <i className="fas fa-star"></i>
                         <i className="fas fa-star"></i>
                         <i className="fas fa-star"></i>
                         <i className="fas fa-star"></i>
                         <i className="fas fa-star"></i>
-                      </Link>
+                      </button>
                     </div>
                   </div>
                 </div>
@@ -167,9 +169,9 @@ const RecipeIndex = () => {
             </div>
           </div>
         </div>
-        {filteredRecipes.length ? 
+        {filteredRecipes.length && !loading ? 
         <div className="container" id="index-cards">
-          <div className="columns is-multiline">
+          <div className="columns is-multiline is-flex recipe-index-columns">
             {filteredRecipes.map(recipe => {
               return (
                 <RecipeCard key={recipe._id} {...recipe} />
@@ -179,7 +181,7 @@ const RecipeIndex = () => {
         </div> 
         :
         <div className="container is-flex is-justify-content-center">
-          <h3>Please search again, no recipes match your conditions</h3>
+          <h3>{loading ? 'Loading...' : 'Please search again, no recipes match your conditions'}</h3>
         </div>
         }
         

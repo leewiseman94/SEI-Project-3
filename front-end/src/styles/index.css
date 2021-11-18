@@ -63,40 +63,41 @@ body {
 /* recipe index */
 .card-header-title {
   font-weight: lighter;
- 
+  white-space: nowrap;
   text-overflow: ellipsis "[...]";
   overflow: hidden;
-  height: 60px;
-  
+  height: 40px;
   text-align: center;
 }
 
 .card {
   border-radius: 15px;
   box-shadow: none;
-  
-
 }
 
 .image  {
   border-radius: 15px;
-  
 }
+
+.card-header {
+  border-radius: 0 0 15px 15px !important;
+}
+
 #image-index {
-  border-radius: 15px 15px 0 0;
+  border-radius: 15px 15px 0 0 !important;
   box-shadow: none;
   border-bottom-left-radius: 15px;
   border-bottom-right-radius: 15px;
+}
+
+.card-content {
+  padding: 10px;
 }
 
 .title-prep {
   font-weight: bold;
 }
 
-.card-content {
-  
-  margin-top: -10px;
-}
 
 #heart-icon {
   position: absolute;
@@ -189,9 +190,9 @@ i.far {
   align-items: center;
 }
 
-#recipe-show {
+/* #recipe-show {
   padding-top: 160px;
-}
+} */
 
 .show-links{
   color: black;
@@ -272,8 +273,8 @@ p.subtitle.method {
 
 
 #ingredients-list {
-  /* margin-top: 20px; */
-  height: 200px;
+  margin-top: 20px;
+  height: 300px;
   overflow-y: auto ;
   width: 550px;
   box-shadow: none;
@@ -604,11 +605,11 @@ i.fas.fa-filter {
   text-shadow: 2px 2px white;
 }
 
-#tandc {
+#tandc-p {
   margin-top: 100px;
 }
 
-#privacy {
+#privacy-p {
   margin-top: 100px;
 }
 
@@ -619,12 +620,15 @@ i.fas.fa-filter {
 
 /* Footer */
 #footer {
+  display: flex;
+  flex-flow: row;
   justify-content: space-around;
   background-color: white;
 }
 /* Company Details */
 #cd {
   margin-top: 200px;
+  margin-left: 25%;
   align-items: center;
 }
 
@@ -636,6 +640,7 @@ i.fas.fa-filter {
 
 #cdh1 {
   justify-content: center;
+  margin-right: 17%;
 }
 
 /* Masterclass */
@@ -644,6 +649,9 @@ i.fas.fa-filter {
   margin-top: 200px;
 } */
 
+#group-form {
+  margin: 28px 0 28px 3rem;
+}
 #master-breadcrumb {
   margin-top: 200px;
 }
@@ -772,3 +780,197 @@ i.fas.fa-filter {
 }
 
 
+@media only screen and (max-width: 400px) {
+  #footer {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #cd {
+    width: auto;
+  }
+  
+  #privacy-p {
+    margin-left: 10px;    
+  }
+
+  #column-one {
+    margin-right: 1.5rem;
+  }
+
+  #column-two {
+    margin-left: 1.5rem;
+  }
+  
+  #box-one {
+    margin-right: 1.5rem;
+    
+  }
+
+  #box-two {
+    margin-right: 1.5rem;    
+  }
+
+  #tandc {
+    margin-left: 5%;
+    justify-content: center;
+  }
+
+  #home-h1 {
+    display:none;
+  }
+
+}
+#details1 {
+  margin: 0 1.5rem 0 3rem;
+}
+
+#details2 {
+  margin-right:2.5rem;
+}
+
+
+@media screen and (max-width: 1100px) {
+  #method {
+  width: 370px;
+}
+#addRecipeSubmit {
+  width: 270px;
+}
+
+#addDescriptionBox {
+  width: 275px;
+}
+#addIngredientBox {
+  width: 275px;
+}
+#addMedhod {
+  margin-left: 20px
+}
+}
+  
+
+@media screen and (max-width: 955px) {
+#addRecipeSubmit {
+    width: 235px;
+  }
+#group-form {
+  flex-direction: column;
+  margin: 0 120px;
+}
+#difficultydropdown {
+  margin-left: 1rem
+}
+#servingsizedropdown {
+  margin: 0 12px 30px 13px
+}
+
+#formdetails {
+  flex-direction: column;
+  margin: 10px 40px;
+}
+#details1 {
+  margin: 1.5rem 5rem 1.5rem 5rem
+}
+#details2 {
+  margin: 0 5rem 1.5rem 5rem;
+}
+#recipedetailsform {
+  flex-direction: column;
+  /* align-items: center; */
+  margin-left: 12vw;
+  margin-right: 10vw
+}
+#label {
+  margin-bottom: 30px;
+}
+
+#addDescriptionBox, #addIngredientBox, #method {
+  width: 500px;
+  /* margin-left: 30px; */
+  /* margin-bottom: 25px; */
+}
+#flexForm {
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 50px;
+}
+#addimage {
+  margin: 50px;
+}
+}
+
+
+@media screen and (max-width: 770px) {
+  #addRecipeSubmit {
+    width: 120px;
+    font-size: 15px;
+    height: 60px;
+    }
+    #formtitle {
+      font-size: 20px;
+    }
+    #group-form {
+      margin: 0 40px;
+    }
+    #formdetails {
+      margin: 10px -50px
+    }
+    #recipedetailsform {
+      margin-left: 16vw;
+      margin-right: 10vw
+    }
+    #addDescriptionBox, #addIngredientBox {
+      width: 410px 
+    }
+}
+
+#nutritionalcard {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  width: calc(59% - 20px);
+  padding-right: 20px;
+}
+
+
+@media screen and (max-width: 1090px) {
+ #nutritionalcard {
+  width: calc(100% );
+ }
+}
+
+@media screen and (max-width: 1240px) {
+  #review-form {
+    width: 400px;
+  }
+  #reviewform{
+    margin: 0 25%; 
+  }
+}
+
+@media screen and (max-width: 7950px) {
+  #review-form {
+    width: 300px;
+  }
+}
+
+@media screen and (max-width: 660px) {
+  #reviewform{
+    margin: 0 5%; 
+  }
+  #review-form {
+    width: 350px;
+    font-size: 18px;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  /* #reviewform{
+    margin: 0 5%; 
+  } */
+  #review-form {
+    width: 340px;
+    font-size: 16px;
+  }
+}

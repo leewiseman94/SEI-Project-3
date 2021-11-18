@@ -15,7 +15,7 @@ const Masterclass = () => {
           <div className="container">
             <div className="columns is-multiline">        
               <div className="column">
-                <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/0fxL8v2dMho" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>>
+                <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/0fxL8v2dMho" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
               </div>
               <div className="column">
                 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/UZ5ChKUTiJM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>

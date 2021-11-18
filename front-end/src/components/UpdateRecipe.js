@@ -8,6 +8,7 @@ import { getTokenFromLocalStorage } from './helpers/auth'
 import logoIMG from '../images/IMG_0630.PNG'
 import ingredientsIMG from '../assets/ingredientsIMG.PNG'
 import recipeMethod from '../assets/recipeMethod.PNG'
+import { userIsAuthenticated } from './helpers/auth'
 
 
 const UpdateRecipe = () => {
@@ -40,6 +41,9 @@ const UpdateRecipe = () => {
 
   useEffect(() => {
   const getData = async () => {
+    if (!userIsAuthenticated()) {
+      history.push('/')
+    }
     const { data } = await axios.get(`/api/recipes/${id}`)
     setNewRecipe( {...newRecipe, name: data.name, description: data.description, prepTime: data.prepTime, cookingTime: data.cookingTime, difficulty: data.difficulty, servingSize: data.servingSize, nutritionalInfo: data.nutritionalInfo, tags: data.tags, course: data.course, allergens : data.allergens})
     setDescription(data.description)
@@ -49,6 +53,7 @@ const UpdateRecipe = () => {
     setNutritionalInfo(data.nutritionalInfo)
     setAllergens(data.allergens)
     setImage(data.image)
+  
   }
   getData()
 }, [id]) 
@@ -98,6 +103,7 @@ const UpdateRecipe = () => {
   // const newIngredient = newRecipe.ingredients
   setIngredients([ ...ingredients, newRecipe.ingredients ])
   setNewRecipe({...newRecipe, ingredients: ''})
+  
   }
 
   const editIngredient = (ingredient) => {
@@ -163,6 +169,7 @@ const UpdateRecipe = () => {
       //   const allergensArray = newRecipe.allergens.split(',')
       //   newRecipe.allergens = allergensArray
       // }
+  
     try {
       await axios.put(`/api/recipes/${id}`, newRecipe, {
         headers: { Authorization: `Bearer ${getTokenFromLocalStorage()}` }
@@ -175,6 +182,7 @@ const UpdateRecipe = () => {
     }
   }
 
+  console.log(newRecipe)
   return (
     // <AddandUpdate
     //   newRecipe={recipe}
@@ -194,17 +202,17 @@ const UpdateRecipe = () => {
       <form className='form' onSubmit={handleSubmit}>
       <div className="field is-vertical">
         <div className='is-flex is-justify-content-space-around	'>
-      <div className='subtitle is-3'>Update Your Recipe</div>
-          <button className="button is-danger has-text-white" type='submit' id='addRecipeSubmit' >
+      <div className='subtitle is-3' id='formtitle'>Update Your Recipe</div>
+          <button className="button" type='submit' id='addRecipeSubmit' >
             Post Recipe
           </button>
           </div>
       <hr/>
-      <div className='field is-grouped ml-6'>
-  <label className='label mr-6 mt-1'>Difficulty</label>
+      <div className='field is-grouped' id='group-form'>
+  <label className='label mr-6 mt-1' id='difficultydropdown'>Difficulty</label>
         <p className="control">
           <span class="select is-fullwidth">
-            <select onChange={handleChange} name='difficulty'  value={newRecipe.difficulty}
+            <select onChange={handleChange} name='difficulty'   value={newRecipe.difficulty}
             className={`input ${errors.difficulty && 'is-danger' } `} 
             >
               <option value=''></option>
@@ -229,7 +237,7 @@ const UpdateRecipe = () => {
           </span>
         </p>
         <label className='label ml-4 mr-5 mt-1'>Serves</label>
-        <p className="control">
+        <p className="control" id='servingsizedropdown'>
           <span class="select is-fullwidth">
             <select onChange={handleChange} name='servingSize' value={newRecipe.servingSize}
               className={`input ${errors.servingSize && 'is-danger' } `} 
@@ -250,8 +258,8 @@ const UpdateRecipe = () => {
           {errors.servingSize && <p className='is-danger subtitle mt-2 mb-2 ml-0'>Please select an option</p>}
         </p>
     </div>
-      <div className="field-body">
-      <div className="field mr-5 ml-6">
+      <div className="field-body" id ='formdetails'>
+      <div className="field" id='details1'>
         <p className="control is-expanded">
           <input type="text" placeholder="Recipe Name" name='name' value={newRecipe.name} onChange={handleChange}
             className={`input ${errors.name && 'is-danger' } `} 
@@ -268,7 +276,7 @@ const UpdateRecipe = () => {
         <input className="input"  placeholder="Nutritional Information: iron: 3mg, protein: 8g..." name='nutritionalInfo' value={newRecipe.nutritionalInfo} onChange={handleChange}/>
         </p>
       </div>
-      <div className="field mr-6">
+      <div className="field" id='details2'>
         <p className="control is-expanded ">
         <input  placeholder="Preparation Time" name='prepTime' value={newRecipe.prepTime} onChange={handleChange}
         className={`input ${errors.prepTime && 'is-danger' } `} 
@@ -290,11 +298,11 @@ const UpdateRecipe = () => {
     </div>
   </div>
 
-  <div className="field is-horizontal mt-6">
+  <div className="field is-horizontal mt-6" id='recipedetailsform'>
       <div className="field-label is-normal" id='label'>
       <label className="label" >Image</label>
       </div>
-      <div className="field-body">
+      <div className="field-body" id='flexForm'>
         <div className="control ">
             <input type="file" name="image" value={newRecipe.image} onChange={displayImage} 
               className={`${errors.image && 'is-danger' } `} 
@@ -308,11 +316,11 @@ const UpdateRecipe = () => {
     </div>
 
 
-  <div className="field is-horizontal mt-6">
+  <div className="field is-horizontal mt-6" id='recipedetailsform'>
       <div className="field-label is-normal" id='label'>
       <label className="label" >Description</label>
       </div>
-    <div className="field-body">
+    <div className="field-body" id='flexForm'>
         <div className="control ">
           <textarea id='addDescriptionBox' type='text' name='description' placeholder='Short description of your dish' value={newRecipe.description} onChange={handleChange}
             className={`input ${errors.description && 'is-danger' } `} 
@@ -324,7 +332,7 @@ const UpdateRecipe = () => {
         </button>
       </div>
     </div>
-    <div className="field-body ">
+    <div className="field-body " id='addMedhod'>
         <h4><img src={logoIMG} alt="method-icon" width="40px"></img><strong> Description</strong>
         <hr/>
         <div className='mr-6'>{description && description}</div>
@@ -332,11 +340,11 @@ const UpdateRecipe = () => {
         </div>
   </div>
 
-  <div className="field is-horizontal mt-6">
+  <div className="field is-horizontal mt-6" id='recipedetailsform'>
   <div className="field-label is-normal " id='label'>
     <label className="label " >Ingredients</label>
     </div>
-    <div className="field-body">
+    <div className="field-body" id='flexForm'>
       <div className='control'>
       <input id='addIngredientBox' type='text' name='ingredients' placeholder='eg: 2 eggs' value={newRecipe.ingredients} onChange={handleChange}
           className={`input ${errors["ingredients.0"] && 'is-danger' } `} 
@@ -348,7 +356,7 @@ const UpdateRecipe = () => {
         </button>
       </div>
   </div>
-  <div className="field-body ">
+  <div className="field-body " id='addMedhod'>
         <h4 ><img src={ingredientsIMG} alt="method-icon" width="40px"></img><strong> Ingredients added </strong>
         <hr/>
           {ingredients && ingredients.map((ingredient, index) => {
@@ -370,11 +378,11 @@ const UpdateRecipe = () => {
 
 
 
-    <div className="field is-horizontal mt-4 mb-6">
+    <div className="field is-horizontal mt-4 mb-6" id='recipedetailsform'>
       <div className="field-label is-normal" id='label'>
         <label className="label" >Method</label>
       </div>
-    <div className="field-body">
+    <div className="field-body" id='flexForm'>
         <div className="control">
           <textarea id='method' name='method' placeholder="Write each step here" value={newRecipe.method} onChange={handleChange}
             className={`textarea ${errors["method.0"] && 'is-danger' } `} 
@@ -383,7 +391,7 @@ const UpdateRecipe = () => {
           <button className='button' type='button' id='addStepButton' onClick={displayMethod}>Add another Step</button>
         </div>
     </div> 
-    <div className="field-body">
+    <div className="field-body" id='addMedhod'>
       <h4><img src={recipeMethod} alt="method-icon" width="40px"></img><strong> Method</strong>
         <hr/>
         {method && method.map((step, index) => {

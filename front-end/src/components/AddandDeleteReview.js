@@ -2,7 +2,7 @@
 import axios from 'axios'
 import React, { useState } from 'react'
 import { useParams, Link, useHistory } from 'react-router-dom'
-import { getTokenFromLocalStorage } from './helpers/auth'
+import { getTokenFromLocalStorage, userIsAuthenticated } from './helpers/auth'
 
 
 
@@ -26,6 +26,10 @@ const AddandDeleteReview = () => {
     comments: '',
     rating: '',
   })
+
+  if (!userIsAuthenticated()) {
+    history.push('/')
+  }
 
   const handleChange = (event) => {
     const newFormData = { ...formData, [event.target.name]: event.target.value }
@@ -61,7 +65,8 @@ const AddandDeleteReview = () => {
   return (
     <section id="review">
 
-      <form className="review column is-offset-one-third box" onSubmit={handleSubmit} id="review-form">
+      {/* <form className="review column is-offset-one-third box" onSubmit={handleSubmit} id="review-form"> */}
+      <form className="review column is-offset-one-third box" id='reviewform' onSubmit={handleSubmit}>
         <div className="close-review-popup" >
           <Link to={`/recipes/${id}`}>
           <i className="far fa-times-circle"></i></Link>

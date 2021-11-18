@@ -365,7 +365,7 @@ export default [{
   nutritionalInfo: ['kcal: 518', 'fat: 19g', 'saturates: 5g', 'carbs: 52g', 'sugars: 34g', 'fibre: 2g', 'protein: 33g', 'salt: 4.9g'],
   tags: ['Greek'],
   course: 'Starter',
-  allergens: ['Gluten-free, Vegetarian']
+  allergens: ['Gluten-free', 'Vegetarian']
 },
 {
   name: 'Soft-boiled eggs',
@@ -380,9 +380,9 @@ export default [{
   difficulty: 'Easy',
   servingSize: 2,
   nutritionalInfo: ['kcal: 191', 'fat: 13g', 'saturates: 4g', 'carbs: 0g', 'sugars: 0g', 'fibre: 0g', 'protein: 19g', 'salt: 0.9g'],
-  tags: ['egg, basics, breakfast'],
+  tags: ['egg', 'basics', 'breakfast'],
   course: 'Breakfast',
-  allergens: ['Gluten-free, Vegetarian']
+  allergens: ['Gluten-free', 'Vegetarian']
 },
 {
   name: 'Next level roast turkey',
@@ -400,7 +400,7 @@ export default [{
   difficulty: 'Medium',
   servingSize: 10,
   nutritionalInfo: ['kcal: 623', 'fat: 31g', 'saturates: 13g', 'carbs: 6g', 'sugars: 2g', 'fibre: 1g', 'protein: 78g', 'salt: 1.4g'],
-  tags: ['Christmas, turkey'],
+  tags: ['Christmas', 'turkey'],
   course: 'Main',
   allergens: []
 },
@@ -418,7 +418,7 @@ export default [{
   difficulty: 'Easy',
   servingSize: 6,
   nutritionalInfo: ['kcal: 335', 'fat: 13g', 'saturates: 2g', 'carbs: 38g', 'sugars: 6g', 'fibre: 9g', 'protein: 11g', 'salt: 0.3g'],
-  tags: ['healthy, salad'],
+  tags: ['healthy', 'salad'],
   course: 'side',
   allergens: ['Vegetarian']
 },
@@ -431,11 +431,31 @@ export default [{
     'Meanwhile, boil the pasta in a large pan of water following pack instructions until just cooked. Drain.',
     'Heat the oven to 200C/180C fan/gas 6. Tip the pasta into the sauce and add half the fish, stir everything together then tip into a large baking dish. Top with the rest of the fish, pushing it into the pasta a little, then scatter with the remaining cheese. Bake for 30 mins until golden, then serve with salad, if you like. Can be chilled and eaten within three days or frozen for up to a month. Defrost in the fridge, then reheat in a microwave or oven until piping hot.'],
   prepTime: '10 mins',
-  cookingTime: '40',
+  cookingTime: '40 mins',
   difficulty: 'Easy',
   servingSize: 6,
   nutritionalInfo: ['kcal: 504', 'fat: 22g', 'saturates: 12g', 'carbs: 47g', 'sugars: 8g', 'fibre: 5g', 'protein: 28g', 'salt: 1.1g'],
-  tags: ['fish, pasta'],
+  tags: ['fish', 'pasta'],
+  course: 'main',
+  allergens: []
+},
+{
+  name: 'Katsu curry',
+  image: 'https://images.immediate.co.uk/production/volatile/sites/30/2020/08/as-you-like-it-katsu-curry-f23d753.jpg',
+  description: 'Make our easy katsu curry with options to adapt the recipe for vegetarian, vegan and gluten-free diets. You\'ll need chicken or tofu depending on your preference',
+  ingredients: ['4 tbsp rapeseed oil or vegetable oil', '2 x 200g pouches cooked rice (we used brown basmati)', '½ large cucumber, peeled into ribbons', 'handful mint leaves or coriander leaves, or both', 'lime wedges, to serve',
+                'For the curry sauce', '1 tbsp rapeseed oil or vegetable oil', '2 onions, chopped', '2 large carrots, chopped, plus 1 peeled into ribbons', '2 garlic cloves, crushed', 'thumb-sized piece ginger, peeled and grated or finely chopped', '1 tbsp curry powder, mild or medium depending on your spice tolerance', '½ tsp ground turmeric', '400ml can coconut milk', '2 tsp maple syrup (or use honey if not cooking for vegans)',
+                'For the katsu', '1 tbsp cornflour', '8 chicken mini fillets, or a 280-300g block firm tofu, or half and half', '200g breadcrumbs (gluten-free if necessary)'],
+  method: ['First, make the curry sauce. Heat 1 tbsp oil in a pan, cook the onions and chopped carrots until the onions are soft and starting to caramelise, about 8 mins. Add the garlic and ginger and sizzle for another 30 secs, then stir in the curry powder and turmeric. Once the spices are warmed through, add the coconut milk, maple syrup or honey and 100ml water. Season well, cover and simmer over a low heat for 20 mins.',
+    'Now make the katsu. In a wide bowl, mix the cornflour with 4 tbsp water and some seasoning. Dip the chicken or tofu into the flour mixture (if cooking for both vegans and meat eaters, make sure you dip the tofu first to avoid mixing it with meat). Place the breadcrumbs in another bowl and dip the chicken or tofu in it, turning until well coated.',
+    'When the onions and carrots in the curry sauce are soft, blitz using a hand or table-top blender. If the sauce is too thick, add a little more water, check the seasoning, adding more salt, maple syrup or some lime juice, if you like. Keep warm.',
+    'Heat the oil in a frying pan and cook the chicken or tofu for 4-5 mins on each side until golden and cooked through. Warm the rice and divide between bowls. Top with the curry sauce, katsu chicken or tofu, and serve with the cucumber, carrot ribbons, herbs and lime wedges.'],
+  prepTime: '25 mins',
+  cookingTime: '40 mins',
+  difficulty: 'Easy',
+  servingSize: 4,
+  nutritionalInfo: ['kcal: 743', 'fat: 32g', 'saturates: 16g', 'carbs: 80g', 'sugars: 14g', 'fibre: 6g', 'protein: 29g', 'salt: 1.4g'],
+  tags: ['Japanese', 'takeaway', ],
   course: 'main',
   allergens: []
 }

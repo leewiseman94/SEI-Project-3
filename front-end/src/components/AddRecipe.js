@@ -1,14 +1,15 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useHistory } from 'react-router-dom'
 import axios from 'axios'
 import { getTokenFromLocalStorage } from './helpers/auth'
 import AddandUpdate from './AddandUpdate'
+import { userIsAuthenticated } from './helpers/auth'
 
 
 const AddRecipe = () => {
   const history = useHistory()
-  const [image, setImage] = useState(null)
+  const [image, setImage] = useState('')
   const [description, setDescription] = useState('')
   const [ingredients, setIngredients] = useState([])
   const [method, setMethod] = useState([])
@@ -43,6 +44,12 @@ const AddRecipe = () => {
     course: '',
     allergens: []
   })
+
+  useEffect(()=> {
+    if (!userIsAuthenticated()) {
+      history.push('/')
+    }
+  }, [])
 
 
   const displayImage =(event) => {
@@ -112,6 +119,7 @@ const AddRecipe = () => {
       setErrors(err.response.data.errors)
     }
   }
+
 
   return (
     <>

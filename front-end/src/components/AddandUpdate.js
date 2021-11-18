@@ -10,14 +10,14 @@ const AddandUpdate = ( { newRecipe, image, description, ingredients, method, err
       <form className='form' onSubmit={handleSubmit}>
       <div className="field is-vertical">
         <div className='is-flex is-justify-content-space-around	'>
-      <div className='subtitle is-3 is-contents'>Add Your Recipe</div>
-          <button className="button is-danger has-text-white" type='submit' id='addRecipeSubmit' >
+      <div className='subtitle is-3' id='formtitle'>Add Your Recipe</div>
+          <button className="button" type='submit' id='addRecipeSubmit' >
             Post Recipe
           </button>
           </div>
       <hr/>
-      <div className='field is-grouped ml-6'>
-  <label className='label mr-6 mt-1'>Difficulty</label>
+      <div className='field is-grouped' id='group-form'>
+  <label className='label mr-6 mt-1' id='difficultydropdown'>Difficulty</label>
         <p className="control">
           <span class="select is-fullwidth">
             <select onChange={handleChange} name='difficulty'  value={newRecipe.difficulty}
@@ -45,7 +45,7 @@ const AddandUpdate = ( { newRecipe, image, description, ingredients, method, err
           </span>
         </p>
         <label className='label ml-4 mr-5 mt-1'>Serves</label>
-        <p className="control">
+        <p className="control" id='servingsizedropdown'>
           <span class="select is-fullwidth">
             <select onChange={handleChange} name='servingSize' value={newRecipe.servingSize}
               className={`input ${errors.servingSize && 'is-danger' } `} 
@@ -66,8 +66,8 @@ const AddandUpdate = ( { newRecipe, image, description, ingredients, method, err
           {errors.servingSize && <p className='is-danger subtitle mt-2 mb-2 ml-0'>Please select an option</p>}
         </p>
     </div>
-      <div className="field-body">
-      <div className="field mr-5 ml-6">
+      <div className="field-body" id ='formdetails'>
+      <div className="field" id='details1'>
         <p className="control is-expanded">
           <input type="text" placeholder="Recipe Name" name='name' value={newRecipe.name} onChange={handleChange}
             className={`input ${errors.name && 'is-danger' } `} 
@@ -84,7 +84,7 @@ const AddandUpdate = ( { newRecipe, image, description, ingredients, method, err
         <input className="input"  placeholder="Nutritional Information: iron: 3mg, protein: 8g..." name='nutritionalInfo' value={newRecipe.nutritionalInfo} onChange={handleChange}/>
         </p>
       </div>
-      <div className="field mr-6">
+      <div className="field" id='details2'>
         <p className="control is-expanded ">
         <input  placeholder="Preparation Time" name='prepTime' value={newRecipe.prepTime} onChange={handleChange}
         className={`input ${errors.prepTime && 'is-danger' } `} 
@@ -106,11 +106,11 @@ const AddandUpdate = ( { newRecipe, image, description, ingredients, method, err
     </div>
   </div>
 
-  <div className="field is-horizontal mt-6">
+  <div className="field is-horizontal mt-6" id='recipedetailsform'>
       <div className="field-label is-normal" id='label'>
       <label className="label" >Image</label>
       </div>
-      <div className="field-body">
+      <div className="field-body" id='flexForm'>
         <div className="control ">
             <input type="file" name="image" value={newRecipe.image} onChange={displayImage} 
               className={`${errors.image && 'is-danger' } `} 
@@ -124,11 +124,11 @@ const AddandUpdate = ( { newRecipe, image, description, ingredients, method, err
     </div>
 
 
-  <div className="field is-horizontal mt-6">
+  <div className="field is-horizontal mt-6" id='recipedetailsform'>
       <div className="field-label is-normal" id='label'>
       <label className="label" >Description</label>
       </div>
-    <div className="field-body">
+    <div className="field-body" id='flexForm'>
         <div className="control ">
           <textarea id='addDescriptionBox' type='text' name='description' placeholder='Short description of your dish' value={newRecipe.description} onChange={handleChange}
             className={`input ${errors.description && 'is-danger' } `} 
@@ -140,7 +140,7 @@ const AddandUpdate = ( { newRecipe, image, description, ingredients, method, err
         </button>
       </div>
     </div>
-    <div className="field-body ">
+    <div className="field-body " id='addMedhod'>
         <h4><img src={logoIMG} alt="method-icon" width="40px"></img><strong> Description</strong>
         <hr/>
         <div className='mr-6'>{description && description}</div>
@@ -148,11 +148,11 @@ const AddandUpdate = ( { newRecipe, image, description, ingredients, method, err
         </div>
   </div>
 
-  <div className="field is-horizontal mt-6">
+  <div className="field is-horizontal mt-6" id='recipedetailsform'>
   <div className="field-label is-normal " id='label'>
     <label className="label " >Ingredients</label>
     </div>
-    <div className="field-body">
+    <div className="field-body" id='flexForm'>
       <div className='control'>
       <input id='addIngredientBox' type='text' name='ingredients' placeholder='eg: 2 eggs' value={newRecipe.ingredients} onChange={handleChange}
           className={`input ${errors["ingredients.0"] && 'is-danger' } `} 
@@ -164,7 +164,7 @@ const AddandUpdate = ( { newRecipe, image, description, ingredients, method, err
         </button>
       </div>
   </div>
-  <div className="field-body ">
+  <div className="field-body" id='addMedhod'>
         <h4 ><img src={ingredientsIMG} alt="method-icon" width="40px"></img><strong> Ingredients added </strong>
         <hr/>
           {ingredients && ingredients.map((ingredient, index) => <li key={index}>{ingredient}</li>)}
@@ -177,11 +177,11 @@ const AddandUpdate = ( { newRecipe, image, description, ingredients, method, err
 
 
 
-    <div className="field is-horizontal mt-4 mb-6">
+    <div className="field is-horizontal mt-4 mb-6" id='recipedetailsform'>
       <div className="field-label is-normal" id='label'>
         <label className="label" >Method</label>
       </div>
-    <div className="field-body">
+    <div className="field-body" id='flexForm'>
         <div className="control">
           <textarea id='method' name='method' placeholder="Write each step here" value={newRecipe.method} onChange={handleChange}
             className={`textarea ${errors["method.0"] && 'is-danger' } `} 
@@ -190,7 +190,7 @@ const AddandUpdate = ( { newRecipe, image, description, ingredients, method, err
           <button className='button' type='button' id='addStepButton' onClick={displayMethod}>Add another Step</button>
         </div>
     </div> 
-    <div className="field-body">
+    <div className="field-body" id='addMedhod'>
       <h4><img src={recipeMethod} alt="method-icon" width="40px"></img><strong> Method</strong>
         <hr/>
         {method && method.map((step, index) => {
