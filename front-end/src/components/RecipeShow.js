@@ -279,10 +279,10 @@ const RecipeShow = () => {
             </div>
           </div>
 
-          <div className="container recipe-info">
+          <div className="container recipe-info" >
 
 
-            <div className="columns">
+            <div className="columns" id="icon-info-bar">
 
               <div className="column is-one-quarter" id="icon-info">
 
