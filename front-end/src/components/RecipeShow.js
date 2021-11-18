@@ -156,7 +156,7 @@ const RecipeShow = () => {
   }
 
   const addReview = () => {
-    setAddAReview(true)
+    setAddAReview(!addaReview)
   }
 
   return (
