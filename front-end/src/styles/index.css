@@ -145,7 +145,7 @@ h5 {
 
 .recipe-steps {
   margin-top: 10px;
-  height: 370px;
+  height: 315px;
   overflow-y: auto;
   overflow-x: hidden;
 }
@@ -157,10 +157,7 @@ h5 {
   padding-right: 10px;
 }
 
-.edit-delete-container {
-  display: flex;
-  justify-content: center;
-}
+
 .method-title.has-text-white {
   text-align: center;
   margin-top: 12px;
@@ -178,6 +175,10 @@ i.far {
 .recipe-step-section {
   font-weight: lighter;
 }
+
+/* #recipe-show-method-half {
+  height: 500px;
+} */
 
 .subtitle {
   margin-bottom: 50px;
@@ -273,8 +274,8 @@ p.subtitle.method {
 
 
 #ingredients-list {
-  margin-top: 20px;
-  height: 300px;
+  margin-top: -10px;
+  height: 250px;
   overflow-y: auto ;
   width: 550px;
   box-shadow: none;
@@ -355,6 +356,8 @@ i.fas.fa-filter {
   flex-direction: row;
   width: calc(59% - 20px);
   padding-right: 20px;
+  justify-content: center;
+  
 }
 
 #ingredients-container {
@@ -376,7 +379,8 @@ i.fas.fa-filter {
   margin-right: 10px;
   background-color: rgba(226, 226, 226, 0.493);
   box-shadow: none;
-  padding: 10px;
+  /* padding: 10px; */
+  /* height: 50px; */
 }
 
 /* recipe show index review */
@@ -706,6 +710,114 @@ i.fas.fa-filter {
   #nutritionalcard {
    width: calc(100% );
   }
+  body {
+    overflow-x: clip;
+  }
+  .section.recipe-subtitle {
+    display: flex;
+  }
+
+  .container.show-links {
+    display: block;
+  }
+
+  .recipe-steps {
+    height: 120px;
+  }
+
+  #recipe-show-rating {
+    margin-top: -10px;
+    margin-bottom: 10px;
+  }
+
+  .save-share {
+    justify-content: flex-end;
+    height: 40px;
+    
+  }
+  
+  .edit-delete-container {
+    display: block;
+  }
+  #delete-button {
+    height: 30px;
+  }
+  #edit-button {
+    height: 30px;
+  }
+
+  .info.is-flex {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .card.nutritional {
+    margin-bottom: 10px;
+    
+  }
+
+  #icon-info {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin-left: -20px;
+    /* margin-top: -140px; */
+    flex-wrap: wrap;
+  }
+  #icon-info2 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin-top: -140px;
+    margin-left: -20px;
+    flex-wrap: wrap;
+  }
+
+  #nutritionalcard {
+    max-height: 300px;
+    overflow: hidden;
+    width: calc(100% );
+   }
+
+  .icon-info-space {
+    margin-right: 40px;
+  }
+  
+  .recipe-steps {
+    height: 240px;
+  }
+
+  #ingredients-button {
+    width: 240px;
+    /* margin-top: -10px; */
+    /* margin-left: 30px; */
+    
+  }
+  .buttons.recipe-info {
+    display: flex;
+    justify-content: center;
+  }
+
+  #ingredients-list {
+    margin-bottom: 20px;
+    width: 380px;
+  }
+
+  .method-title.has-text-white {
+    text-align: center;
+    margin-top: 12px;
+  }
+
+  #review-section {
+    align-content: stretch;
+  }
+
+  #users-review-section {
+    flex-wrap: wrap;
+  }
+
+  #delete-review-button {
+    width: 70px;
+  }
  }
 
 
@@ -736,7 +848,7 @@ i.fas.fa-filter {
   }
   
   .edit-delete-container {
-    display: inline-block;
+    display: block;
   }
   #delete-button {
     height: 30px;
@@ -757,17 +869,19 @@ i.fas.fa-filter {
   #icon-info {
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: flex-start;
     margin-left: -20px;
+
   }
   #icon-info2 {
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: flex-start;
     margin-bottom: -70px;
     margin-top: -50px;
     margin-right: 30px;
     margin-left: -20px;
+
   }
 
   #nutritionalcard {
@@ -786,8 +900,8 @@ i.fas.fa-filter {
 
   #ingredients-button {
     width: 240px;
-    margin-top: -10px;
-    margin-left: 30px;
+    /* margin-top: -10px; */
+    /* margin-left: 30px; */
     
   }
   .buttons.recipe-info {
@@ -836,6 +950,7 @@ i.fas.fa-filter {
     width:90% !important;
 
   }
+  
 
   .courses-container{
     width:100%;
@@ -864,6 +979,7 @@ i.fas.fa-filter {
 
 
 @media screen and (max-width: 1100px) {
+  
   #method {
   width: 370px;
 }
@@ -1006,4 +1122,14 @@ i.fas.fa-filter {
     width: 340px;
     font-size: 16px;
   }
+}
+
+@media screen and (max-width: 1200px) {
+  #ingredients-container {
+    margin-left: 45px
+  }
+  .save-share {
+    margin-left: 400px
+  }
+  
 }
