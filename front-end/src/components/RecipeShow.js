@@ -12,6 +12,7 @@ import servingSize from '../assets/servingSize.PNG'
 import { getPayload } from './helpers/auth'
 import { getTokenFromLocalStorage } from './helpers/auth'
 import { userIsAuthenticated } from './helpers/auth'
+import AddandDeleteReview from './AddandDeleteReview'
 
 
 const RecipeShow = () => {
@@ -23,6 +24,8 @@ const RecipeShow = () => {
   const history = useHistory()
   const [error, setError] = useState(false)
   const [liked, setLiked] = useState(false)
+  const [addaReview, setAddAReview] = useState(false)
+  const [rating, setRating] = useState()
   const [reviews, setReviews] = useState([])
   
   // console.log('ID', id)
@@ -41,6 +44,7 @@ const RecipeShow = () => {
         setOwner(data.owner)
         recipeLiked(data)
         setReviews(data.reviews)
+        setRating(data.averageRating)
         window.scrollTo(0, 0)
       } catch (err) {
         console.log(err)
@@ -151,6 +155,9 @@ const RecipeShow = () => {
     }
   }
 
+  const addReview = () => {
+    setAddAReview(true)
+  }
 
   return (
 
@@ -168,7 +175,7 @@ const RecipeShow = () => {
             <div>
               <h2 className="title" id="recipe-title">{recipe.name}</h2>
               <div className="container show-links">
-                <h6 className="show-rating" id="recipe-show-rating"><i className="fas fa-utensils"></i>&nbsp;{recipe.course} · {recipe.difficulty} · <i className="far fa-star"></i>Rating: {recipe.averageRating} </h6>
+                <h6 className="show-rating" id="recipe-show-rating"><i className="fas fa-utensils"></i>&nbsp;{recipe.course} · {recipe.difficulty} · <i className="far fa-star"></i>Rating: {rating} </h6>
                 <div className="save-share">
                   <Link to="/share" className={`${liked ? 'liked' : ''} show-share-button`}>
                     <i className="far fa-share-square"></i>Share
@@ -368,21 +375,23 @@ const RecipeShow = () => {
             <div className="is-flex is-justify-content-space-between" id="review-section">
               <div className="button-container">
 
-                <Link to={`/recipes/${id}/reviews`}><button className="button is-danger has-text-white" id="click-review">Leave a review</button></Link>
+                {/* <Link to={`/recipes/${id}/reviews`}><button className="button is-danger has-text-white" id="click-review" onClick={addReview}>Leave a review</button></Link> */}
+                <button className="button is-danger has-text-white" id="click-review" onClick={addReview}>Leave a review</button>
               </div>
               <div className="is-flex is-flex-direction-column">
                 <div>
                   <h4 className="title is-5">Overall rating</h4>
                 </div>
                 <div className="is-flex is-align-self-center">
-                  <p className="has-text-grey"><i className="fas fa-star"></i>&nbsp;{recipe.averageRating}</p>
+                  <p className="has-text-grey"><i className="fas fa-star"></i>&nbsp;{rating}</p>
                 </div>
               </div>
             </div>
             <hr />
 
+            {addaReview && <AddandDeleteReview id={id} setAddAReview= {setAddAReview} addaReview={addaReview} setReviews={setReviews} setRating={setRating}/>}
 
-            <div className="columns">
+
               <div className="column is-full">
                 <div className="is-flex is-flex-direction-column" id="users-review-section">
 
@@ -438,13 +447,12 @@ const RecipeShow = () => {
 
                 </div>
               </div>
-            </div>
+            {/* </div> */}
           </section>
 
 
 
         </div>
-
       </section >
     </>
   )

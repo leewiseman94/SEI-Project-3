@@ -21,6 +21,8 @@ const UpdateRecipe = () => {
   const [tags, setTags] = useState([])
   const [nutritionalInfo, setNutritionalInfo] = useState([])
   const [allergens, setAllergens] = useState([])
+  const [stepIndex, setStepIndex] = useState(null)
+  const [ingredientIndex, setIngredientIndex] = useState(null)
   const [newRecipe, setNewRecipe] = useState({
     name: '',
     image: '',
@@ -98,15 +100,19 @@ const UpdateRecipe = () => {
 
 
 
-
   const displayIngredient = () => {
-  // const newIngredient = newRecipe.ingredients
+    if (ingredientIndex === null) {
   setIngredients([ ...ingredients, newRecipe.ingredients ])
+    } else {
+      const newIngredient = ingredients.splice(ingredientIndex, 1, newRecipe.ingredients)
+    }
   setNewRecipe({...newRecipe, ingredients: ''})
+  setIngredientIndex(null)
   
   }
 
   const editIngredient = (ingredient) => {
+    setIngredientIndex(ingredients.indexOf(ingredient))
     setNewRecipe({ ...newRecipe, ingredients: ingredient } )
   }
 
@@ -120,13 +126,19 @@ const UpdateRecipe = () => {
 
 
 
-
   const displayMethod = () => {
-  setMethod([ ...method, newRecipe.method ])
+    if (stepIndex === null) {
+      setMethod([...method, newRecipe.method])
+
+    } else {
+      const newMethod = method.splice(stepIndex, 1, newRecipe.method)
+    }
   setNewRecipe({ ...newRecipe, method: ''})
+  setStepIndex(null)
   }
 
   const editMethod = (step) => {
+    setStepIndex(method.indexOf(step))
     setNewRecipe({ ...newRecipe, method: step })
   }
 
@@ -182,7 +194,6 @@ const UpdateRecipe = () => {
     }
   }
 
-  console.log(newRecipe)
   return (
     // <AddandUpdate
     //   newRecipe={recipe}
