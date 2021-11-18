@@ -1,3 +1,5 @@
+/* eslint-disable no-unused-vars */
+/* eslint-disable react-hooks/exhaustive-deps */
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import { useParams, Link, useHistory } from 'react-router-dom'
@@ -12,7 +14,7 @@ import { getTokenFromLocalStorage } from './helpers/auth'
 import { userIsAuthenticated } from './helpers/auth'
 
 
-const RecipeShow = ({ ingredients }) => {
+const RecipeShow = () => {
   const [recipe, setRecipe] = useState([])
   const [owner, setOwner] = useState([])
   const [deleteOptions, setDeleteOptions] = useState(false)
@@ -22,6 +24,7 @@ const RecipeShow = ({ ingredients }) => {
   const [error, setError] = useState(false)
   const [liked, setLiked] = useState(false)
   const [reviews, setReviews] = useState([])
+  
   // console.log('ID', id)
 
   
@@ -112,8 +115,8 @@ const RecipeShow = ({ ingredients }) => {
         const index = data.likedBy.indexOf(user._id)
         data.likedBy.splice(index, 1)
       } else {
-        if (data.likedBy) data.likedBy = [ ...data.likedBy, user._id ]
-        if(!data.likedBy) data.likedBy = [user._id]
+        if (data.likedBy) data.likedBy = [...data.likedBy, user._id]
+        if (!data.likedBy) data.likedBy = [user._id]
       }
 
       if (!data) throw new Error()
@@ -217,7 +220,7 @@ const RecipeShow = ({ ingredients }) => {
           <div className="columns">
             <div className="column is-half">
               <figure className="image" >
-                <img className="image" src={recipe.image} alt={recipe.name}></img>
+                <img className="image" id="" src={recipe.image} alt={recipe.name}></img>
               </figure>
 
             </div>
@@ -362,42 +365,76 @@ const RecipeShow = ({ ingredients }) => {
           </div>
 
           <section className="is-flex is-flex-direction-column">
+            <div className="is-flex is-justify-content-space-between">
+              <div className="button-container">
 
-            <div className="button-container">
-              {userIsAuthenticated() &&
-                <Link to={`/recipes/${id}/reviews`}><button className="button is-danger has-text-white mb-6" id="click-review">Leave a review</button></Link>}
+                <Link to={`/recipes/${id}/reviews`}><button className="button is-danger has-text-white" id="click-review">Leave a review</button></Link>
+              </div>
+              <div className="is-flex is-flex-direction-column">
+                <div>
+                  <h4 className="title is-5">Overall rating</h4>
+                </div>
+                <div className="is-flex is-align-self-center">
+                  <p className="has-text-grey"><i className="fas fa-star"></i>&nbsp;{recipe.averageRating}</p>
+                </div>
+              </div>
             </div>
-
+            <hr />
 
 
             <div className="columns">
               <div className="column is-full">
-                <div>
-                
+                <div className="is-flex is-flex-direction-column">
 
                   {reviews &&
                 reviews.map((review) => {
                   if (userIsOwner(review.owner)) {
                     return (
                       <>
-                        <p key={review._id} className='title is-5  ml-4'>{review.subject}</p>
-                        <p className='subtitle is-5 mt-3 mb-2  ml-4'>{review.comments}</p>
-                        <p className='mb-3  ml-3'> <i className="far fa-star"></i>{review.rating}</p>
-                        <button className='button' onClick={() => deleteReview(review._id, review)}>Delete</button>
+
+                        <div className="is-flex">
+                            <div className="user-icon-review">
+                              <i className="fas fa-user fa-2x" id="user-icon-review"></i>
+                              <h4>{ }</h4>
+                            </div>
+                            <div className="review-content">
+                              <h3 key={review._id} className="title is-5">{review.subject}</h3>
+                              <p className="has-text-grey">{review.comments}</p>
+                            </div>
+                            
+                            <p className="has-text-grey subtitle is-7">{review.createdAt}</p>
+                            
+                          </div>
+                          <div className="is-flex is-justify-content-flex-end">
+                        <button className='button' id="delete-review-button"onClick={() => deleteReview(review._id, review)}>Delete</button>
+                        </div>
+                          <hr />
                         <br />
+
                       </>
                     )
                   }
+                
                     return (
                       <>
-                        <p key={review._id} className='title is-5  ml-4'>{review.subject}</p>
-                        <p className='subtitle is-5 mt-3 mb-2  ml-4'>{review.comments}</p>
-                        <p className='mb-3  ml-3'> <i className="far fa-star"></i>{review.rating}</p>
-                        <br />
+                        <div className="is-flex">
+                            <div className="user-icon-review">
+                              <i className="fas fa-user fa-2x" id="user-icon-review"></i>
+                              <h4>{ }</h4>
+                            </div>
+                            <div className="review-content">
+                              <h3 key={review._id} className="title is-5">{review.subject}</h3>
+                              <p className="has-text-grey">{review.comments}</p>
+                            </div>
+                            {/* <div> */}
+                            <p className="has-text-grey subtitle is-7">{review.createdAt}</p>
+                            {/* </div> */}
+                          </div>
+                          <hr />
                       </>
                     )
 
-                  })}
+                })}
 
                 </div>
               </div>

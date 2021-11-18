@@ -21,21 +21,7 @@ import Masterclass from './components/Masterclass';
 function App() {
   // const [recipes, setRecipes] = useState([])
   const [isShowLoginOrRegister, setIsShowLoginOrRegister] = useState(false)
-  // // const [hasError, setHasError] = useState(false)
 
-  // useEffect(() => {
-  //   const getData = async () => {
-  //     try {
-  //       const { data } = await axios.get('/api/recipes')
-  //       setRecipes(data)
-  //     } catch(err) {
-  //       // setHasError(true)
-  //       console.log(err)
-  //     }
-  //   }
-  //   getData()
-  // }, [])
-  // console.log(recipes)
   const handleLoginClick = () => {
     setIsShowLoginOrRegister((isShowLoginOrRegister) => !isShowLoginOrRegister)
   }
@@ -47,30 +33,23 @@ function App() {
 
 
   return (
-    // <h1>platester</h1>
     <BrowserRouter>
-      <div>
-        <Navbar handleLoginClick={handleLoginClick}/>
-        <LoginorSignUp isShowLoginOrRegister={isShowLoginOrRegister} handleLoginClick={handleLoginClick} handleLoginOrRegister={handleLoginOrRegister} />
-        <Switch>
-          <Route exact path='/' component={Home} />
-          <Route exact path='/recipes' component={RecipeIndex}/>
-          <Route exact path='/recipes/:id' component={RecipeShow}/>
-          <Route exact path='/recipes/:id/edit' component={UpdateRecipe}/>
-          <Route exact path='/profile' component={UserProfile} />
-          <Route exact path='/recipes/:id/reviews' component={AddandDeleteReview}/>
-          <Route exact path='/Ts&amp;Cs' component={TsAndCs} />
-          <Route exact path='/Privacy' component={Privacy} />
-          <Route exact path='/CompanyDetails' component={CompanyDetails} />
-          <Route exact path='/Masterclass' component={Masterclass} />
-          
-
-
-          <Route exact path='/add' component={AddRecipe}/> 
-        </Switch>
-        <Footer />
-      </div>
-    
+      <Navbar handleLoginClick={handleLoginClick}/>
+      <LoginorSignUp isShowLoginOrRegister={isShowLoginOrRegister} handleLoginClick={handleLoginClick} handleLoginOrRegister={handleLoginOrRegister} />
+      <Switch>
+        <Route exact path='/' component={Home} />
+        <Route exact path='/recipes' component={RecipeIndex}/>
+        <Route exact path='/recipes/:id' component={RecipeShow}/>
+        <Route exact path='/recipes/:id/edit' component={UpdateRecipe}/>
+        <Route exact path='/profile' component={UserProfile} />
+        <Route exact path='/recipes/:id/reviews' component={AddandDeleteReview}/>
+        <Route exact path='/Ts&amp;Cs' component={TsAndCs} />
+        <Route exact path='/Privacy' component={Privacy} />
+        <Route exact path='/CompanyDetails' component={CompanyDetails} />
+        <Route exact path='/Masterclass' component={Masterclass} />
+        <Route exact path='/add' component={AddRecipe}/> 
+      </Switch>
+      <Footer />
     </BrowserRouter>
   )
 

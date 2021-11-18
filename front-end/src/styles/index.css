@@ -65,33 +65,41 @@ body {
 
 .card-header-title {
   font-weight: lighter;
-  /* text-overflow: ellipsis "[...]"; */
+  white-space: nowrap;
   text-overflow: ellipsis "[...]";
   overflow: hidden;
   height: 40px;
+  text-align: center;
 }
 
 .card {
   border-radius: 15px;
+  box-shadow: none;
 }
 
 .image  {
   border-radius: 15px;
-  
 }
+
+.card-header {
+  border-radius: 0 0 15px 15px !important;
+}
+
 #image-index {
-  border-radius: 15px;
-  
+  border-radius: 15px 15px 0 0 !important;
+  box-shadow: none;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+}
+
+.card-content {
+  padding: 10px;
 }
 
 .title-prep {
   font-weight: bold;
 }
 
-.card-content {
-  
-  margin-top: -10px;
-}
 
 #heart-icon {
   position: absolute;
@@ -139,6 +147,7 @@ h5 {
   margin-top: 10px;
   height: 370px;
   overflow-y: auto;
+  overflow-x: hidden;
 }
 
 .share {
@@ -247,6 +256,7 @@ p.subtitle.method {
   color: gray;
   display: flex;
   flex-wrap: wrap;
+  margin-bottom: -50px;
 }
 
 #recipe-index {
@@ -332,15 +342,32 @@ i.fas.fa-filter {
   padding-right: 11px;
   font-weight: bold;
 }
-
+.p-nutri-p {
+  margin-left: 10px;
+}
 #nutri-info {
   /* width: 60px; */
   height: 80px;
   margin-right: 10px;
   font-size: 14px;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  
+}
+.user-icon-review {
+  border: 2px solid lightgrey;
+  border-radius: 30px;
+  width: 60px;
+  height: 60px;
+  text-align: center;
+  margin-right: 20px;
 }
 
-
+#user-icon-review {
+  color: lightgrey;
+  margin-top: 10px;
+}
 
 .card.nutritional {
   margin-right: 10px;
@@ -356,8 +383,14 @@ i.fas.fa-filter {
   color: black;
 } */
 #edit-button {
-  width: 150px;
-  height: 30px;
+  width: 120px;
+  height: 40px;
+  margin-top: 10px;
+  margin: 5px;
+}
+#delete-button {
+  width: 120px;
+  height: 40px;
 }
 
 .textarea.is-medium {
@@ -443,8 +476,9 @@ i.fas.fa-filter {
   height: 36px;
   width: 65px;
   font-size: 16px;
-  border-radius: 0;
-  padding-left: 0;
+  border-radius: 5px;
+  margin-left: 10px;
+  padding-left: 5px;
 }
 
 #addIngredientBox {
@@ -458,15 +492,15 @@ i.fas.fa-filter {
 
 #addStepButton {
   width: 180px;
-  border-radius:0;
+  border-radius: 5px;
   font-size: 16px;
-  padding-left: 0;
-
+  margin-top: 10px;
+  padding-left: 5px;
 }
 #addRecipeSubmit {
   width: 300px;
   border-radius: 6px;
-  height: 75px;
+  height: 65px;
   font-size: 25px;
 }
 
@@ -480,8 +514,15 @@ i.fas.fa-filter {
 }
 
 #addimage {
-  padding-right: 100px;
-  border-radius: 0px;
+  /* padding-right: 100px; */
+  border-radius: 20px;
+}
+
+#delete-review-button {
+  width: 150px;
+  height: 30px;
+  margin-top: -30px;
+  padding-right: 10px;
 }
 
 /* Home */
