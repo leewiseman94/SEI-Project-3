@@ -553,9 +553,8 @@ i.fas.fa-filter {
   justify-content: space-around;
   border-radius: 15px;
   }
-.box-one {
 
-}
+
 #box-one-button{
   justify-content: center;
   text-decoration: none;
@@ -629,7 +628,7 @@ i.fas.fa-filter {
   margin-top: 30px;
   margin-bottom: 30px
 }
- 
+
 
 .overlay {
   background-color: RGBA(0, 0, 0, 0.5);
@@ -641,12 +640,15 @@ i.fas.fa-filter {
   text-shadow: 2px 2px white;
 }
 
-#tandc-p {
+#tandc {
   margin-top: 100px;
+  margin-bottom: 100px;
 }
 
 #privacy-p {
   margin-top: 100px;
+  margin-bottom: 100px;
+  
 }
 
 
@@ -664,14 +666,15 @@ i.fas.fa-filter {
 /* Company Details */
 #cd {
   margin-top: 200px;
-  margin-left: 25%;
-  align-items: center;
+  margin-bottom: 100px;
 }
 
 #cd-button {
   justify-content: center;
   text-decoration: none;
-  max-width: 550px;
+  max-width: 450px;
+  color: white;
+  background-color: #ff385c;
 }
 
 #cdh1 {
@@ -820,37 +823,6 @@ i.fas.fa-filter {
   #footer {
     flex-direction: column;
     align-items: center;
-  }
-
-  #cd {
-    width: auto;
-  }
-  
-  #privacy-p {
-    margin-left: 10px;    
-  }
-
-  /* #column-one {
-    margin-right: 1.5rem;
-  }
-
-  #column-two {
-    margin-left: 1.5rem;
-  } */
-/*   
-  #box-one {
-    margin-right: 1.5rem; */
-
-    
-  /* } */
-/* 
-  #box-two {
-    margin-right: 1.5rem;    
-  } */
-
-  #tandc {
-    margin-left: 5%;
-    justify-content: center;
   }
 
   #home-h1 {

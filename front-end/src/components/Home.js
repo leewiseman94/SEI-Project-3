@@ -173,7 +173,7 @@ console.log(heroImages)
                 Want to sharpen up your knife skills?
               </p>
             </div>
-            <Link to={`/Masterclass`}>
+            <Link to={`/CookingClass`}>
               <button class="button is-normal is-rounded is-shadowless" id="box-two-button">Cooking classes</button>
             </Link>
           </div>
