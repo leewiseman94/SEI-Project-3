@@ -194,7 +194,7 @@ const UpdateRecipe = () => {
       <div className="field is-vertical">
         <div className='is-flex is-justify-content-space-around	'>
       <div className='subtitle is-3'>Update Your Recipe</div>
-          <button className="button" type='submit' id='addRecipeSubmit' >
+          <button className="button is-danger has-text-white" type='submit' id='addRecipeSubmit' >
             Post Recipe
           </button>
           </div>
@@ -242,6 +242,8 @@ const UpdateRecipe = () => {
               <option value='6'>6</option>
               <option value='7'>7</option>
               <option value='8'>8</option>
+              <option value='9'>9</option>
+              <option value='10'>10</option>
             </select>
           </span>
           {errors.servingSize && <p className='is-danger subtitle mt-2 mb-2 ml-0'>Please select an option</p>}
@@ -352,7 +354,7 @@ const UpdateRecipe = () => {
           return (
             <>
             <div >
-            <li id='lineIngredients'key={index}  ><i class="fas fa-edit" onClick={() => editIngredient(ingredient)}></i><i class="fas fa-trash" onClick={() => deleteIngredient(ingredient)}></i> {ingredient} </li>
+            <li id='lineIngredients'key={index}  ><i class="fas fa-edit" onClick={() => editIngredient(ingredient)}>&nbsp;</i><i class="fas fa-trash" onClick={() => deleteIngredient(ingredient)}>&nbsp;</i> {ingredient} </li>
             </div>
             </>
           )

@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import axios from 'axios'
 import React, { useState } from 'react'
 import { useParams, Link, useHistory } from 'react-router-dom'

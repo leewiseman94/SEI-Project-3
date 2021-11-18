@@ -255,6 +255,7 @@ p.subtitle.method {
   color: gray;
   display: flex;
   flex-wrap: wrap;
+  margin-bottom: -50px;
 }
 
 #recipe-index {
@@ -474,8 +475,9 @@ i.fas.fa-filter {
   height: 36px;
   width: 65px;
   font-size: 16px;
-  border-radius: 0;
-  padding-left: 0;
+  border-radius: 5px;
+  margin-left: 10px;
+  padding-left: 5px;
 }
 
 #addIngredientBox {
@@ -489,15 +491,15 @@ i.fas.fa-filter {
 
 #addStepButton {
   width: 180px;
-  border-radius:0;
+  border-radius: 5px;
   font-size: 16px;
-  padding-left: 0;
-
+  margin-top: 10px;
+  padding-left: 5px;
 }
 #addRecipeSubmit {
   width: 300px;
   border-radius: 6px;
-  height: 75px;
+  height: 65px;
   font-size: 25px;
 }
 
@@ -511,8 +513,15 @@ i.fas.fa-filter {
 }
 
 #addimage {
-  padding-right: 100px;
-  border-radius: 0px;
+  /* padding-right: 100px; */
+  border-radius: 20px;
+}
+
+#delete-review-button {
+  width: 150px;
+  height: 30px;
+  margin-top: -30px;
+  padding-right: 10px;
 }
 
 /* Home */
