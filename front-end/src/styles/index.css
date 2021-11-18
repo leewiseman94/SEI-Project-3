@@ -699,3 +699,53 @@ i.fas.fa-filter {
       width: 410px 
     }
 }
+
+#nutritionalcard {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  width: calc(59% - 20px);
+  padding-right: 20px;
+}
+
+
+@media screen and (max-width: 1090px) {
+ #nutritionalcard {
+  width: calc(100% );
+ }
+}
+
+@media screen and (max-width: 1240px) {
+  #review-form {
+    width: 400px;
+  }
+  #reviewform{
+    margin: 0 25%; 
+  }
+}
+
+@media screen and (max-width: 7950px) {
+  #review-form {
+    width: 300px;
+  }
+}
+
+@media screen and (max-width: 660px) {
+  #reviewform{
+    margin: 0 5%; 
+  }
+  #review-form {
+    width: 350px;
+    font-size: 18px;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  /* #reviewform{
+    margin: 0 5%; 
+  } */
+  #review-form {
+    width: 340px;
+    font-size: 16px;
+  }
+}

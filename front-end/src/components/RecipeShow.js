@@ -24,7 +24,7 @@ const RecipeShow = ({ ingredients }) => {
   const [reviews, setReviews] = useState([])
   // console.log('ID', id)
 
-  // window.scrollTo(0, 0)
+  
 
   const [visible, setVisible] = useState(false)
 
@@ -38,6 +38,7 @@ const RecipeShow = ({ ingredients }) => {
         setOwner(data.owner)
         recipeLiked(data)
         setReviews(data.reviews)
+        window.scrollTo(0, 0)
       } catch (err) {
         console.log(err)
       }
@@ -245,17 +246,17 @@ const RecipeShow = ({ ingredients }) => {
 
               </div>
               <br />
-              <div className="container nutrition-info is-flex-wrap-wrap">
-                <div className="info is-flex justify-content-space-evenly">
-                  <div className="info is-flex is-flex-direction-row ">
+              <div className="container nutrition-info ">
+                <div className="info is-flex">
+                  <div className="info" id='nutritionalcard'>
                     {recipe.nutritionalInfo &&
                       recipe.nutritionalInfo.map((nutritionalInfo) => {
                         return (
                           <>
-                            <div className="card nutritional" >
-                              <div className="card-content" id="nutri-info">
+                            <div className="card nutritional p-3 mb-3" >
+                              {/* <div className="card-content" id="nutri-info"> */}
                                 <p className="nutri-p">{nutritionalInfo}</p>
-                              </div>
+                              {/* </div> */}
                             </div>
                             <br />
                           </>
