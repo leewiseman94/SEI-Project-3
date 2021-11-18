@@ -20,6 +20,9 @@ const UserProfile = () => {
         console.log(data)
         setUserProfile(data)
         setIsLoading(false)
+
+
+        
       } catch (err) {
         console.log(err)
         setIsLoading(false)
@@ -28,7 +31,7 @@ const UserProfile = () => {
     }
     getUserData()
     
-  }, [])
+  }, [history])
 
   const userIsAuthenticated = () => {
     const payload = getPayload()
@@ -37,13 +40,12 @@ const UserProfile = () => {
     return now < payload.exp
   } 
 
-  console.log(userProfile)
   return (
     <>
     <section className="section my-profile">
       <div className="container">
         <div className="page-title">
-          <h2>My Profile</h2>
+          <h2>{userProfile.fullName}</h2>
           <hr></hr>
         </div>
       </div>
@@ -56,10 +58,10 @@ const UserProfile = () => {
         <div className="my-recipes-container">
           {userProfile.createdRecipes && userProfile.createdRecipes.length ? 
             <div className="container" id="index-cards">
-              <div className="columns is-multiline">
+              <div className="columns is-multiline is-flex">
                 {userProfile.createdRecipes.map(recipe => {
                   return (
-                    <RecipeCard key={recipe._id} {...recipe} />
+                    <RecipeCard key={recipe._id} {...recipe}  />
                   )
                 })}
               </div>
@@ -74,14 +76,14 @@ const UserProfile = () => {
       </div>
     </section>
     <section className="section my-liked-recipes">
-      <div className="container">
+      <div className="container liked-recipes-container">
         <div className="my-liked-recipes-title">
           <h3>Recipes I have liked</h3>
         </div>
         <div className="my-liked-recipes-container">
           {userProfile.likedRecipes && userProfile.likedRecipes.length ?  
             <div className="container" id="index-cards">
-              <div className="columns is-multiline">
+              <div className="columns is-multiline is-flex">
                 {userProfile.likedRecipes.map(recipe => {
                   return (
                     <RecipeCard key={recipe._id} {...recipe} />

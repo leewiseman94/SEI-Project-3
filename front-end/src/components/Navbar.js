@@ -347,7 +347,7 @@ const Navbar = ({ handleLoginClick }) => {
                   </div>
                   <div className="dropdown-menu allergens-dropdown-menu" id="dropdown-menu" role="menu">
                     <div className="dropdown-content allergens-dropdown-content">
-                      {courses.map(allergen => {
+                      {allergens.map(allergen => {
                         return (
                         <Link key={allergen} to="#" className="dropdown-item allergens-dropdown-item" onClick={(event) => {
                           setFilterLink(event)
@@ -364,8 +364,13 @@ const Navbar = ({ handleLoginClick }) => {
 
               </div>
               <div className="bottom-search-form-buttons">
-                <Link to='#' onClick={closeSearchMobile} className="form-search-icon">Close</Link>
-                <Link to={`/recipes${getSearchLink()}`} onClick={() => getSearchLink()} className="form-search-icon"><span className="icon has-background-transparent has-text-white"><i className="fas fa-search"></i></span></Link>
+                <Link to='#' onClick={closeSearchMobile} className="form-search-icon"><i className="far fa-times-circle form-close-icon"></i></Link>
+                <Link to={`/recipes${getSearchLink()}`} onClick={() => {
+                  closeSearchMobile()
+                  getSearchLink()
+                }
+                  
+                  } className="form-search-icon"><span className="icon has-background-transparent has-text-white"><i className="fas fa-search"></i></span></Link>
               </div>
             </div>
             }

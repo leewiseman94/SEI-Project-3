@@ -209,6 +209,10 @@
   border-radius: 50px;
   color: white;
 }
+.form-close-icon {
+  font-size: 35px;
+  padding: 0 !important;
+}
 
 .search-form-button {
   height: 100%;
@@ -430,10 +434,14 @@
 
 .current-filter-title {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   font-size: 16px;
   color: black;
+  width: 110px;
+}
+.current-filter-title.none {
+  width: 165px;
 }
 
 .current-filters {
@@ -568,8 +576,11 @@
   z-index: 10;
 }
 
-.like-recipe-button:hover, .like-recipe-button.liked {
+.like-recipe-button.liked {
   background-color: #FF385C;
+}
+.liked-recipes-container {
+  width: 100%;
 }
 
 #heart-icon {
@@ -637,4 +648,103 @@
 @keyframes fade {
   from {opacity: .4} 
   to {opacity: 1}
+}
+
+
+/* * Recipe Index */
+
+.filter-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.recipe-index-columns {
+  margin-top: -40px;
+}
+
+.current-filter-links {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px;
+}
+
+.filter-buttons {
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.dropdown-filter, .dropdown-rating {
+  margin: 5px;
+}
+
+.dropdown-item {
+  color: black;
+  background-color: transparent;
+  border: 0;
+}
+
+.dropdown-item:hover, .dropdown-item:active {
+  color: white !important;
+  background-color: #FF385C !important;
+  border: 0;
+}
+
+.current-filters {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.showing-count {
+  margin: 10px;
+  flex-wrap: nowrap;
+}
+
+.card-header-title {
+  font-size: 14px;
+}
+
+@media screen and (max-width: 1024px) {
+  .filter-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .current-filter-links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10px;
+  }
+  .current-filters {
+    justify-content: center;
+    align-items: center;
+  }
+  .current-filter-title {
+    justify-content: center;
+    align-items: center;
+  }
+}
+@media screen and (max-width: 768px) {
+  .recipe-index-columns {
+    justify-content: center !important;
+  }
+  .card-header-title {
+    font-size: 14px;
+  }
+  .column.is-three-quarters-mobile {
+    width: 50% !important;
+  }
+}
+@media screen and (max-width: 500px) {
+  .column.is-three-quarters-mobile {
+    width: 100% !important;
+  }
 }
