@@ -288,7 +288,7 @@ const Navbar = ({ handleLoginClick }) => {
                   }} className="dropdown-item search-recipes">
                     Search Recipes
                   </Link>
-                  <Link to="/recipes" className="dropdown-item cooking-classes">
+                  <Link to="/Masterclass" className="dropdown-item cooking-classes">
                     Cooking Classes
                   </Link>
                   <Link to="/recipes" className="dropdown-item inspiration">

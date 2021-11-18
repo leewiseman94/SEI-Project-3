@@ -9,7 +9,7 @@ const Footer = () => {
   
   return (
     <>
-      <div className="footer is-flex is-flex-direction-row is white" id="footer">        
+      <div className="footer" id="footer">        
         <strong className="has-text-grey">© 2021 Platester</strong> 
           <a className="has-text-grey" href="/Privacy">Privacy</a>
           <a className="has-text-grey" href="/Ts&Cs">Terms</a> 

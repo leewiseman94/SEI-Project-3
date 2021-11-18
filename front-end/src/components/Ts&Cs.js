@@ -4,12 +4,12 @@ import { Link } from 'react-router-dom'
 const TsAndCs = () => {
   return(
     <>
-      <div className="columns">
-        <div className="column is-half is-offset-one-quarter mt-6">
+      <div className="columns is-full-mobile">
+        <div className="column is-half is-offset-one-quarter mt-6" id="tandc"> 
           <h1>
           Platester terms and conditions
           </h1>
-          <p id="tandc">
+          <p id="tandc-p">
           Welcome to our website. If you continue to browse and use this website, you are agreeing to comply with and be bound by the following terms and conditions of use, which together with our privacy policy govern Platester's relationship with you in relation to this website. If you disagree with any part of these terms and conditions, please do not use our website.
 
           The term 'Platester' or 'us' or 'we' refers to the owner of the website whose registered office is 29 Acacia avenue, London, N27. Our company registration number is 12345 London. The term 'you' refers to the user or viewer of our website.
@@ -27,7 +27,7 @@ const TsAndCs = () => {
           Your use of this website and any dispute arising out of such use of the website is subject to the laws of England, Northern Ireland, Scotland and Wales.
           </p>
           <Link to={`/`}>
-            <button class="button is-centered is-normal is-rounded is-danger is-ghost has-text-black is-shadowless mt-6 ml-6" id="box-one-button">Enough of the boring bits, take me back to the food</button>
+            <button class="button is-centered is-normal is-rounded is-danger is-ghost has-text-black is-shadowless mt-6 ml-6 is-full-mobile" id="tandc-button">Enough of the boring bits, take me back to the food</button>
           </Link>
 
         </div>

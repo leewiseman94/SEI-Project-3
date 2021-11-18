@@ -580,11 +580,11 @@ i.fas.fa-filter {
   text-shadow: 2px 2px white;
 }
 
-#tandc {
+#tandc-p {
   margin-top: 100px;
 }
 
-#privacy {
+#privacy-p {
   margin-top: 100px;
 }
 
@@ -595,12 +595,15 @@ i.fas.fa-filter {
 
 /* Footer */
 #footer {
+  display: flex;
+  flex-flow: row;
   justify-content: space-around;
   background-color: white;
 }
 /* Company Details */
 #cd {
   margin-top: 200px;
+  margin-left: 25%;
   align-items: center;
 }
 
@@ -612,6 +615,7 @@ i.fas.fa-filter {
 
 #cdh1 {
   justify-content: center;
+  margin-right: 17%;
 }
 
 /* Masterclass */
@@ -624,3 +628,44 @@ i.fas.fa-filter {
   margin-top: 200px;
 }
 
+@media only screen and (max-width: 400px) {
+  #footer {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #cd {
+    width: auto;
+  }
+  
+  #privacy-p {
+    margin-left: 10px;    
+  }
+
+  #column-one {
+    margin-right: 1.5rem;
+  }
+
+  #column-two {
+    margin-left: 1.5rem;
+  }
+  
+  #box-one {
+    margin-right: 1.5rem;
+    
+  }
+
+  #box-two {
+    margin-right: 1.5rem;    
+  }
+
+  #tandc {
+    margin-left: 5%;
+    justify-content: center;
+  }
+
+  #home-h1 {
+    display:none;
+  }
+
+}

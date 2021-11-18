@@ -89,7 +89,7 @@ console.log(heroImages)
           </div>
       </section>       */}
       
-      <h1 className="is-size-3 ha-text-weight-medium ml-5">Inspiration for your next meal</h1>              
+      <h1 className="is-size-3 ha-text-weight-medium ml-5" id="home-h1">Inspiration for your next meal</h1>              
             
       <Link to={`/recipes`}>
         <div className="container courses-container">
@@ -131,17 +131,12 @@ console.log(heroImages)
 
       <div className="tile is-ancestor mt-3">
         <div className="tile is-parent">            
-          <div className="tile is child column is-one-half ml-5">
+          <div className="tile is child column is-one-half-tablet is-full-mobile is-one-half ml-5">
             <Link to={`/recipes/add`}> 
               <div className="overlay card is-shadowless is-flex is-flex-direction-column is-justify-content-space-between" id="column-one">
                 <div className="media-content">
                   <p className="title pt-1 pl-2">Fancy yourself as the next Gordon or Pru?</p>
                 </div>
-                  {/* <div className="card-image"> */}
-                    {/* <figure className="image is-4by3">
-                      <img src="front-end/src/assets/pru.jpeg"></img>
-                    </figure> */}
-                  {/* </div> */}
                   <div className="card-content has-text-grey">
                     <p className="content">Upload a your latest creation to our Add Recipe page</p>                       
                   </div>
@@ -149,7 +144,7 @@ console.log(heroImages)
             
             </Link> 
           </div>             
-          <div className="tile is child column is-one-half mr-5 ">
+          <div className="tile is child column is-one-half-tablet is-full-mobile mr-5 ">
             <Link to={`/recipes`}>  
               <div className="overlay card is-shadowless" id="column-two">
                 <div className="media-content">
