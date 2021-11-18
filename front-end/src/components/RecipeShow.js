@@ -164,7 +164,7 @@ const RecipeShow = () => {
     <>
         
       <section className="section" id="recipe-show">
-      <nav className="breadcrumb pl-6" aria-label="breadcrumbs" id="master-breadcrumb">
+      <nav className="breadcrumb" aria-label="breadcrumbs" id="master-breadcrumb">
         <ul>
           <li><a href="/recipes" className="has-text-grey">Recipes&nbsp;&nbsp;&nbsp;</a></li>
           <li class="is-active"><a href={`/recipes/${recipe.name}`} className="has-text-grey" aria-current="page">{recipe.name}</a></li>
@@ -225,7 +225,7 @@ const RecipeShow = () => {
           </section>
 
           <div className="columns">
-            <div className="column is-half" >
+            <div className="column is-half" id='recipeImage'>
               <figure className="image" >
                 <img className="image" id="" src={recipe.image} alt={recipe.name}></img>
               </figure>
@@ -372,7 +372,7 @@ const RecipeShow = () => {
           </div>
 
           <section className="is-flex is-flex-direction-column">
-            <div className="is-flex is-justify-content-space-between" id="review-section">
+            <div className="is-flex " id="review-section">
               <div className="button-container">
 
                 {/* <Link to={`/recipes/${id}/reviews`}><button className="button is-danger has-text-white" id="click-review" onClick={addReview}>Leave a review</button></Link> */}

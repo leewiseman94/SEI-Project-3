@@ -201,7 +201,7 @@ i.far {
   justify-content: flex-end;
   text-transform: lowercase;
   justify-content: space-between;
-
+  margin-bottom: 20px;
 }
 
 .recipe-info {
@@ -697,12 +697,18 @@ i.fas.fa-filter {
 }
 #master-breadcrumb {
   margin-top: 200px;
+  padding-left: 3rem
 }
 
 
+#review-section {
+  justify-content: space-between;
+}
 
 
-
+#recipeImage {
+  justify-content: center;
+}
 
 
 
@@ -1120,10 +1126,10 @@ i.fas.fa-filter {
 
 @media screen and (max-width: 1200px) {
   #ingredients-container {
-    margin-left: 45px
+    margin-left: 30px
   }
   .save-share {
-    margin-left: 400px
+    margin-left: 0
   }
   
 }
@@ -1132,4 +1138,43 @@ i.fas.fa-filter {
   #nutritionalcard {
     width: calc(100% );
   }
+  #icon-info,#icon-info2  {
+    padding: 0; 
+  }
+  #review-section {
+    justify-content: space-around;
+  }
+  #master-breadcrumb {
+    margin-top: 135px;
+    padding:0;
+  }
+  .container.recipe-info {
+    margin-bottom: 30px;
+  }
 }
+
+@media screen and (max-width: 768px) {
+  .container.recipe-info {
+    flex-direction: column;
+    margin-top: 50px;
+  }
+  #ingredients-container {
+    align-items: center;
+    margin-bottom: 50px;
+    margin-top: 20px;
+  }
+  #nutritionalcard {
+    margin-top:40px
+  }
+  #recipe-title {
+    font-size: 32px;
+  }
+  #icon-info,#icon-info2  {
+    justify-content: center;
+
+  }
+  #ingredients-list {
+    margin-bottom: 0;
+  }
+}
+
