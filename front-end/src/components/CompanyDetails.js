@@ -10,7 +10,7 @@ const CompanyDetails = () => {
           This super website was hand crafted by Ed Steer, Issra Hashim, Lee Wiseman & Ree Gilling.
           </h1>
           <Link to={`/`}>
-            <button className="button is-centered is-normal is-rounded is-danger has-text-black is-shadowless mt-6 is-full-mobile" id="cd-button">yeah nice, please take me back to the food!</button>
+            <button className="button is-centered is-normal is-rounded is-danger has-text-black is-shadowless mt-6 is-full-mobile" id="cd-button">Yseah nice, please take me back to the food!</button>
           </Link>
         </div>
       </div>
