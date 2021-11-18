@@ -61,7 +61,7 @@ const AddandDeleteReview = () => {
   return (
     <section id="review">
 
-      <form className="review column is-offset-one-third box" onSubmit={handleSubmit}>
+      <form className="review column is-offset-one-third box" onSubmit={handleSubmit} id="review-form">
         <div className="close-review-popup" >
           <Link to={`/recipes/${id}`}>
           <i className="far fa-times-circle"></i></Link>
