@@ -528,28 +528,46 @@ i.fas.fa-filter {
 /* Home */
 #box-one {
   background: url('../assets/fridge3.jpeg');
-  background-size: 100%;
+  background-size: cover;
   background-repeat: no-repeat;
-  height: 500px;    
+  height: 500px;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  border-radius: 15px;
   }
+.box-one {
 
+}
 #box-one-button{
   justify-content: center;
   text-decoration: none;
   max-width: 450px;
+  color: white;
+  background-color: #ff385c;
 }
 
 #box-two-button{
   justify-content: center;
   text-decoration: none;
-  max-width: 425px;
+  max-width: 450px;
+  color: white;
+  background-color: #ff385c;
 }
 
 #box-two {
   background: url('../assets/chef2.jpeg');
-  background-size: 100%;
+  background-size: cover;
   background-repeat: no-repeat;
   height: 500px;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  border-radius: 15px;
 }
 
 #box-twop{
@@ -558,6 +576,7 @@ i.fas.fa-filter {
 
 #box-onep {
   text-shadow: 2px 2px black;
+  text-align: center;
 }
 
 #column-one {
@@ -565,14 +584,31 @@ i.fas.fa-filter {
   background-size: cover;
   background-repeat: no-repeat;
   height: 350px;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  border-radius: 15px;
   }
 
 #column-two {
   background: url('../assets/GraceDent.jpeg');
-  background-size: 100%;
+  background-size: cover;
   background-repeat: no-repeat;
-  height: 350px;    
+  height: 350px;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  border-radius: 15px;    
   }
+
+.home-section {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
 
 .courses-container {
   margin-top: 30px;
@@ -655,22 +691,23 @@ i.fas.fa-filter {
     margin-left: 10px;    
   }
 
-  #column-one {
+  /* #column-one {
     margin-right: 1.5rem;
   }
 
   #column-two {
     margin-left: 1.5rem;
-  }
-  
+  } */
+/*   
   #box-one {
-    margin-right: 1.5rem;
-    
-  }
+    margin-right: 1.5rem; */
 
+    
+  /* } */
+/* 
   #box-two {
     margin-right: 1.5rem;    
-  }
+  } */
 
   #tandc {
     margin-left: 5%;
@@ -678,8 +715,32 @@ i.fas.fa-filter {
   }
 
   #home-h1 {
-    display:none;
+    font-size: 12px;
   }
+
+}
+
+@media only screen and (max-width: 768px){
+  .course-column-3{
+    width:90% !important;
+
+  }
+
+  .courses-container{
+    width:100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+  .courses-columns-multiline {
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+  }
+
 
 }
 #details1 {
