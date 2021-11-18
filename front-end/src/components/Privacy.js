@@ -13,7 +13,7 @@ const Privacy = () => {
           Don't worry about it. We just sell on your info to the highest bidder. 
           </p>
           <Link to={`/`}>
-            <button class="button is-normal is-rounded is-danger is-ghost has-text-black is-shadowless mt-6 is-full-mobile" id="box-one-button">OK great, thanks. Please take me back to the food</button>
+            <button class="button is-normal is-rounded is-shadowless is-full-mobile" id="box-one-button">OK great. Please take me back to the food!</button>
           </Link>
         </div>
       </div>
