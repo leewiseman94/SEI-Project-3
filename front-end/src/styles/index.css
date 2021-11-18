@@ -756,7 +756,7 @@ i.fas.fa-filter {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
-    margin-left: -20px;
+    /* margin-left: -20px; */
     /* margin-top: -140px; */
     flex-wrap: wrap;
   }
@@ -764,8 +764,8 @@ i.fas.fa-filter {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
-    margin-top: -140px;
-    margin-left: -20px;
+    /* margin-top: -140px;
+    margin-left: -20px; */
     flex-wrap: wrap;
   }
 
@@ -1111,12 +1111,6 @@ i.fas.fa-filter {
 }
 
 
-@media screen and (max-width: 1090px) {
- #nutritionalcard {
-  width: calc(100% );
- }
-}
-
 @media screen and (max-width: 1240px) {
   #review-form {
     width: 400px;
@@ -1160,4 +1154,10 @@ i.fas.fa-filter {
     margin-left: 400px
   }
   
+}
+
+@media screen and (max-width: 1090px) {
+  #nutritionalcard {
+    width: calc(100% );
+  }
 }

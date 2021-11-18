@@ -171,7 +171,7 @@ const RecipeShow = () => {
         </ul>
       </nav>
         <div className="container">
-          <section className="section recipe-subtitle">
+          <section className="section recipe-subtitle is-flex-direction-column">
             <div>
               <h2 className="title" id="recipe-title">{recipe.name}</h2>
               <div className="container show-links">
@@ -436,7 +436,7 @@ const RecipeShow = () => {
                               <p className="has-text-grey">{review.comments}</p>
                             </div>
                             {/* <div> */}
-                            <p className="has-text-grey subtitle is-7">{review.createdAt.toDateString()}</p>
+                            <p className="has-text-grey subtitle is-7">{review.createdAt}</p>
                             {/* </div> */}
                           </div>
                           <hr />
