@@ -9,7 +9,24 @@ export default [{
   difficulty: 'Easy',
   servingSize: 4,
   tags: ['Mediterranean', 'Pasta', 'Fish'],
-  course: 'main'
+  course: 'main',
+  reviews: [
+    {
+      subject: 'Very easy to make',
+      comments: 'I\'m no chef and this is a great recipe if you have no experience in the kitchen',
+      rating: 5
+    },
+    {
+      subject: 'Great for a fancy lunch',
+      comments: 'I added more salt and it turned out perfect',
+      rating: 4
+    },
+    {
+      subject: 'Nothing like the original',
+      comments: 'don\'t make this if you\'ve tried the original',
+      rating: 1
+    }
+  ]
 }, 
 {
   name: 'Pasta With Vegan Cream Sauce',
@@ -23,7 +40,19 @@ export default [{
   servingSize: 4,
   tags: ['Pasta', 'American'],
   course: 'main',
-  allergens: ['Vegetarian', 'Vegan']
+  allergens: ['Vegetarian', 'Vegan'],
+  reviews: [
+    {
+      subject: 'Great for quick lunch',
+      comments: 'I loved making this for my kids!',
+      rating: 5
+    },
+    {
+      subject: 'preferred a carbonara',
+      comments: 'i didn\'t find it very easy to make and it wasn\'t as tasty as i expected....',
+      rating: 2
+    }
+  ]
 },
 {
   name: 'Gratin Dauphinois',
@@ -38,7 +67,14 @@ export default [{
   nutritionalInfo: ['Serving: 110g', 'Calories: 167', 'Carbohydrates: 14.2g', 'Protein: 5.7g', 'Fat: 10g', 'Saturated Fat: 6g', 'Cholesterol: 31mg', 'Sodium: 281mg', 'Potassium: 364mg','Fiber: 2.1g', 'Sugar: 1.6g', 'Vitamin A: 300IU',' Vitamin C: 23.1mg','Calcium: 160mg', 'Iron: 0.7mg'],
   tags: ['French', 'Gratin', 'Winter'],
   course: 'main',
-  allergens: ['Vegetarian', 'Vegan']
+  allergens: ['Vegetarian', 'Vegan'],
+  reviews: [
+    {
+      subject: 'Heaven',
+      comments: 'We make this all the time for christmas eve! I add more cheese adn nutmeg because you can never have enough',
+      rating: 4
+    }
+  ]
 },
 {
   name: 'Feta, Beetroot & Pomegranate salad',
@@ -64,7 +100,14 @@ export default [{
   nutritionalInfo: ['Serving: 226g', 'Calories: 264', 'Carbohydrates: 16g', 'Protein: 6.3g', 'Fat: 21g', 'Saturated Fat: 5.1g', 'Cholesterol: 19mg', 'Sodium: 514mg', 'Potassium: 560mg','Fiber: 2.8g', 'Sugar: 9.7g', 'Vitamin A: 233%',' Vitamin C: 17%','Calcium: 0.3%', 'Iron:16%'],
   tags: ['Salad', 'Autumn', 'Healthy'],
   course: 'starter',
-  allergens: ['Vegetarian', 'Gluten-free']
+  allergens: ['Vegetarian', 'Gluten-free'],
+  reviews: [
+    {
+      subject: 'my type of salad',
+      comments: 'I love to see recipes with pomegranate seeds, they\'re the best thing1',
+      rating: 4
+    }
+  ]
 },
 {
   name: 'Butter Chicken',
@@ -79,7 +122,19 @@ export default [{
   nutritionalInfo: ['Serving: 310g', 'Calories: 402', 'Carbohydrates: 9.8g', 'Protein: 39.8g', 'Fat: 23.4g', 'Saturated Fat: 9.3g', 'Cholesterol: 193mg', 'Sodium: 928mg','Fiber: 0.9g', 'Sugar: 6.5g'],
   tags: ['Indian', 'Chicken'],
   course: 'Main',
-  allergens: []
+  allergens: [],
+  reviews: [
+    {
+      subject: 'too long to make',
+      comments: 'really not the best recipe to make butter chicken. I/ve tried it with no ghee and less lemon, found it okay',
+      rating: 3
+    },
+    {
+      subject: 'i\'m addicted!',
+      comments: 'i\'m making this every month as a treat!',
+      rating: 5
+    }
+  ]
 },
 {
   name: 'Dal (Indian Lentil Curry)',
@@ -94,7 +149,19 @@ export default [{
   nutritionalInfo: ['Serving: 407g', 'Calories: 310', 'Carbohydrates: 40g', 'Protein: 14g', 'Fat: 12g', 'Saturated Fat: 7.1g', 'Cholesterol: 29mg', 'Sodium: 457mg','Fiber: 6.7g', 'Sugar: 4.7g', 'Vitamin A: 22%',' Vitamin C: 152%','Calcium: 5.8%', 'Iron:25%'],
   tags: ['Indian', 'Curry'],
   course: 'Main',
-  allergens: ['Vegetarian', 'Vegan']
+  allergens: ['Vegetarian', 'Vegan'],
+  reviews: [
+    {
+      subject: 'just, no',
+      comments: 'don\'t follow this recipe if you want a good dhal, just look at dishooom\s recipe',
+      rating: 1
+    },
+    {
+      subject: 'alright',
+      comments: 'tried it for the first time yesterday with some homemade naan, but needs more spices',
+      rating: 3
+    }
+  ]
 },
 {
   name: 'French Toast',
@@ -137,7 +204,34 @@ export default [{
   difficulty: 'Easy',
   servingSize: 4,
   course: 'breakfast',
-  allergens: ['Vegetarian']
+  allergens: ['Vegetarian'], 
+  reviews: [
+    {
+      subject: 'so good!',
+      comments: 'Great recipe for an original brunch!',
+      rating: 5
+    },
+    {
+      subject: 'no',
+      comments: 'Regular pancakes are so much better than this',
+      rating: 1
+    },
+    {
+      subject: 'alright but heavy',
+      comments: 'Felt it was a little too heavy on the stomach for breakfast',
+      rating: 2
+    },
+    {
+      subject: 'Great pancakes!',
+      comments: 'loved making thism super easy to follow!',
+      rating: 4
+    },
+    {
+      subject: 'Will make it again',
+      comments: 'loved it!',
+      rating: 5
+    }
+  ]
 },
 {
   name: 'Lahmacun',
@@ -151,7 +245,19 @@ export default [{
   servingSize: 6,
   nutritionalInfo: ['Calories: 167', 'Carbohydrates: 16.1g', 'Protein: 9.9g', 'Fat: 6.3g',  'Sodium: 82.5mg','Fiber: 1.2g', 'Sugar: 0.8g', 'Calcium: 3%', 'Iron: 15%', 'Vitamin C: 25%'],
   tags: ['Middle Eastern', 'Turkish'],
-  course: 'starter'
+  course: 'starter',
+  reviews: [
+    {
+      subject: 'cooking issues',
+      comments: 'I followed the recipe and it wasn\'t done yet so left them for another 15 min.',
+      rating: 4
+    },
+    {
+      subject: 'too hard for a beginner',
+      comments: 'i tried this because it said "medium" difficulty but i found it really hard to find the right portions',
+      rating: 3
+    }
+  ]
 },
 {
   name: 'Baba Ganoush',
@@ -166,7 +272,19 @@ export default [{
   nutritionalInfo: ['Calories: 86.6', 'Carbohydrates: 8.6g', 'Protein: 3g', 'Fat: 5.6g', 'Saturated Fat: 0.8g', 'Cholesterol: 0.1mg', 'Sodium: 204.4mg','Fiber: 3.3g', 'Calcium: 30.3mg', 'Iron: 0.8mg'],
   tags: ['Middle Eastern', 'Mediterranean'],
   course: 'appetizer',
-  allergens: ['Vegetarian', 'Vegan']
+  allergens: ['Vegetarian', 'Vegan'],
+  reviews: [
+    {
+      subject: 'My favorite',
+      comments: 'I always follow this recipe when i want some Baba Ganoush!',
+      rating: 5
+    },
+    {
+      subject: 'Great option for vegans',
+      comments: 'I recently turned vegan and i was scared I had to stop eating what i wanted, but there are so many yummy vegan options, and this is one of them!',
+      rating: 4
+    }
+  ]
 },
 {
   name: 'Healthy Shakshuka',
@@ -193,7 +311,19 @@ export default [{
   nutritionalInfo: ['Calories: 342', 'Carbohydrates: 21g', 'Protein: 21g', 'Fat: 17g', 'Saturated Fat: 3g', 'Fiber: 10g'],
   tags: ['Middle Eastern', 'Healthy'],
   course: 'brunch',
-  allergens: ['Vegetarian', 'Gluten-free']
+  allergens: ['Vegetarian', 'Gluten-free'],
+  reviews: [
+    {
+      subject: 'Great option for brunch',
+      comments: 'Shakshuka is great for lunch, this recipe is okay but i usually just cut everything up and cook it',
+      rating: 3
+    },
+    {
+      subject: 'alright',
+      comments: 'it was okay, i\'m not a fan of the dill and found the baby spinach too soft',
+      rating: 2
+    }
+  ]
 },
 {
   name: 'French Onion Soup',
@@ -222,7 +352,19 @@ export default [{
   nutritionalInfo: ['Calories: 618', 'Carbohydrates: 59g', 'Protein: 26g', 'Fat: 27g', 'Saturated Fat: 14g', 'Fiber: 9g'],
   tags: ['French', 'Winter'],
   course: 'Starter',
-  allergens: []
+  allergens: [],
+  reviews: [
+    {
+      subject: 'a Winter special',
+      comments: 'reminds me of winter in Paris',
+      rating: 5
+    },
+    {
+      subject: 'quick and easy',
+      comments: 'great recipe to make when you\'re sick, it always makes me feel better',
+      rating: 4
+    }
+  ]
 },
 {
   name: 'Ratatouille',
@@ -253,7 +395,14 @@ export default [{
   nutritionalInfo: ['Calories: 261', 'Carbohydrates: 19g', 'Protein: 6g', 'Fat: 15g', 'Saturated Fat: 2g', 'Fiber: 11g', 'sugar: 17g'],
   tags: ['French', 'Healthy'],
   course: 'Main',
-  allergens: ['Vegetarian']
+  allergens: ['Vegetarian'],
+  reviews: [
+    {
+      subject: 'This is not ratatouille',
+      comments: 'Ratatouille is a classic, but it shouldn\'t be this hard, you just cut up vegetables and cook them.',
+      rating: 2
+    }
+  ]
 },
 {
   name: 'Ultimate Quiche Lorraine',
@@ -287,7 +436,14 @@ export default [{
   nutritionalInfo: ['Calories: 525', 'Carbohydrates: 18g', 'Protein: 12g', 'Fat: 45g', 'Saturated Fat: 25g', 'Fiber: 1g'],
   tags: ['French'],
   course: 'Main',
-  allergens: []
+  allergens: [],
+  reviews: [
+    {
+      subject: 'Yummy',
+      comments: 'Super easy to follow',
+      rating: 5
+    }
+  ]
 },
 {
   name: 'Beignets',
@@ -311,6 +467,23 @@ export default [{
   nutritionalInfo: ['Calories: 120', 'Carbohydrates: 11g', 'Protein: 2g', 'Fat: 7g', 'Saturated Fat: 2g', 'Fiber: 0.4g', 'sugar: 2g'],
   tags: ['French'],
   course: 'Dessert',
-  allergens: ['Vegetarian']
+  allergens: ['Vegetarian'],
+  reviews: [
+    {
+      subject: 'You can\'t not like it',
+      comments: 'Made this for my friend\'s birthday and she loved it!',
+      rating: 4
+    },
+    {
+      subject: 'don\'t add milk',
+      comments: 'I didn\'t add the milk because i had tried making beignets before and never had to add them. It turned out okay',
+      rating: 2
+    }, 
+    {
+      subject: 'Will make this again!',
+      comments: 'I discovered this snack here and I\'m so happy I made it because now it\'s become my favourite dessert',
+      rating: 5
+    }
+  ]
 },
 ]

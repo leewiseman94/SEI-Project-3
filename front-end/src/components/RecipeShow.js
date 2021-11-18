@@ -376,12 +376,13 @@ const RecipeShow = () => {
               <div className="button-container">
 
                 {/* <Link to={`/recipes/${id}/reviews`}><button className="button is-danger has-text-white" id="click-review" onClick={addReview}>Leave a review</button></Link> */}
-                <button className="button is-danger has-text-white" id="click-review" onClick={addReview}>Leave a review</button>
+                {userIsAuthenticated() && <button className="button is-danger has-text-white" id="click-review" onClick={addReview}>Leave a review</button>}
               </div>
               <div className="is-flex is-flex-direction-column">
                 <div>
                   <h4 className="title is-5">Overall rating</h4>
                 </div>
+                <br/>
                 <div className="is-flex is-align-self-center">
                   <p className="has-text-grey"><i className="fas fa-star"></i>&nbsp;{rating}</p>
                 </div>

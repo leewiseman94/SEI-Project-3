@@ -138,7 +138,7 @@ const AddandDeleteReview = ({ id, setAddAReview, setReviews, setRating }) => {
     //   </form>
     // </section>
     <form onSubmit={handleSubmit}>
-    <div className="column is-full">
+    <div className="column is-full" id='leaveareview'>
                 <div className="is-flex is-flex-direction-column" id="users-review-section">
                   <div className="is-flex is-flex-direction-column">
                     <div className="user-icon-review">
@@ -148,7 +148,7 @@ const AddandDeleteReview = ({ id, setAddAReview, setReviews, setRating }) => {
                   <div className="review-content">
                     <h3 className="title is-5">Rate & Review</h3>
                     <input 
-                      className={`input ${error["reviews."] && 'is-danger' } `} 
+                      className={`input ${error["reviews.0.subject"] && 'is-danger' } `} 
                       id="review-form" 
                       name="subject" 
                       value={formData.subject} 

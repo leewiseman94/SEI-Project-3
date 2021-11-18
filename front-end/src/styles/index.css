@@ -852,7 +852,7 @@ i.fas.fa-filter {
   }
 
   .save-share {
-    justify-content: flex-end;
+    justify-content: center;
     height: 40px;
     margin-left: 165px;
     
@@ -919,7 +919,7 @@ i.fas.fa-filter {
   .buttons.recipe-info {
     display: flex;
     justify-content: center;
-    margin-right: 100px;
+    /* margin-right: 100px; */
   }
 
   #ingredients-list {
@@ -1171,6 +1171,7 @@ i.fas.fa-filter {
     align-items: center;
     margin-bottom: 50px;
     margin-top: 20px;
+    margin-left: 0;
   }
   #nutritionalcard {
     margin-top:40px
@@ -1180,10 +1181,14 @@ i.fas.fa-filter {
   }
   #icon-info,#icon-info2  {
     justify-content: center;
-
+    margin-top: 20px;
+    margin-left: 0;
   }
   #ingredients-list {
     margin-bottom: 0;
+  }
+  #leaveareview {
+    align-items: center;
   }
 }
 
