@@ -427,7 +427,7 @@ const RecipeShow = () => {
                               <p className="has-text-grey">{review.comments}</p>
                             </div>
                             {/* <div> */}
-                            <p className="has-text-grey subtitle is-7">{review.createdAt.toDateString()}</p>
+                            <p className="has-text-grey subtitle is-7">{review.createdAt}</p>
                             {/* </div> */}
                           </div>
                           <hr />
