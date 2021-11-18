@@ -180,7 +180,7 @@ const RecipeShow = () => {
                   }
                 </div>
               </div>
-              <div >
+              <div className="edit-delete-container">
                 {userIsOwner(owner._id) &&
                   <>
                     <hr />
@@ -218,13 +218,13 @@ const RecipeShow = () => {
           </section>
 
           <div className="columns">
-            <div className="column is-half">
+            <div className="column is-half" >
               <figure className="image" >
                 <img className="image" id="" src={recipe.image} alt={recipe.name}></img>
               </figure>
 
             </div>
-            <div className="column is-half">
+            <div className="column is-half" id="recipe-show-method-half">
               <p className="desc">{recipe.description}</p>
               <hr />
               <div className="recipe-info">
@@ -257,9 +257,9 @@ const RecipeShow = () => {
                         return (
                           <>
                             <div className="card nutritional p-3 mb-3" >
-                              {/* <div className="card-content" id="nutri-info"> */}
+                              
                                 <p className="nutri-p">{nutritionalInfo}</p>
-                              {/* </div> */}
+                              
                             </div>
                             <br />
                           </>
@@ -308,7 +308,7 @@ const RecipeShow = () => {
               <div className="column is-one-quarter" id="icon-info2">
 
                 <hr />
-                <div className="icon-info-space">
+                <div className="icon-info-space" id="diff-icons">
                   <div className="info-icons">
                     <img src={difficultyIMG} className="method-icon" alt="method-icon" width="40px"></img>
                     <h4 className="title-prep is-6">Difficulty</h4>
@@ -318,7 +318,7 @@ const RecipeShow = () => {
                   </div>
                 </div>
 
-                <div>
+                <div className="serving-icon">
                   <div className="info-icons">
                     <img src={servingSize} className="method-icon" alt="method-icon" width="40px"></img>
                     <h4 className="title-prep is-6">Serves</h4>
@@ -330,7 +330,7 @@ const RecipeShow = () => {
                 <hr />
               </div>
 
-              <div className="column is-half">
+              <div className="column is-half" id="ingredients-container">
                 <br />
 
                 <div className="card" id="ingredients-list">
@@ -365,7 +365,7 @@ const RecipeShow = () => {
           </div>
 
           <section className="is-flex is-flex-direction-column">
-            <div className="is-flex is-justify-content-space-between">
+            <div className="is-flex is-justify-content-space-between" id="review-section">
               <div className="button-container">
 
                 <Link to={`/recipes/${id}/reviews`}><button className="button is-danger has-text-white" id="click-review">Leave a review</button></Link>
@@ -384,7 +384,7 @@ const RecipeShow = () => {
 
             <div className="columns">
               <div className="column is-full">
-                <div className="is-flex is-flex-direction-column">
+                <div className="is-flex is-flex-direction-column" id="users-review-section">
 
                   {reviews &&
                 reviews.map((review) => {
