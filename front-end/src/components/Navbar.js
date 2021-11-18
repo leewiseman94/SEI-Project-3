@@ -9,6 +9,7 @@ import { Link, useHistory, useLocation } from 'react-router-dom'
 import axios from 'axios'
 import { getPayload } from './helpers/auth'
 import * as QueryString from "query-string"
+import { userIsAuthenticated } from './helpers/auth'
 
 const Navbar = ({ handleLoginClick }) => {
 
@@ -96,12 +97,7 @@ const Navbar = ({ handleLoginClick }) => {
     return `?${QueryString.stringify(query)}`
   }
 
-  const userIsAuthenticated = () => {
-    const payload = getPayload()
-    if (!payload) return false
-    const now = Math.round(Date.now() / 1000)
-    return now < payload.exp
-  } 
+
 
   const handleLoginPopup = () => {
     handleLoginClick()
@@ -110,6 +106,7 @@ const Navbar = ({ handleLoginClick }) => {
   const handleLogout = () => {
     window.localStorage.removeItem('token')
     document.querySelector('.account-dropdown').classList.toggle('is-active')
+    history.push('/')
   }
 
   return (
@@ -143,7 +140,7 @@ const Navbar = ({ handleLoginClick }) => {
                   <div className="user-account-icon"><span className="icon has-background-transparent has-text-white"><i className="fas fa-user"></i></span></div>
                 </button>
               </div>
-              <div className="dropdown-menu" id="dropdown-menu" role="menu">
+              <div className="dropdown-menu" id="dropdown-menu" role="menu" >
                 <div className="dropdown-content">
                 {!userIsAuthenticated() ? 
                   <>

@@ -589,7 +589,113 @@ i.fas.fa-filter {
   margin-top: 200px;
 } */
 
+#group-form {
+  margin: 28px 0 28px 3rem;
+}
 #master-breadcrumb {
   margin-top: 200px;
 }
 
+#details1 {
+  margin: 0 1.5rem 0 3rem;
+}
+
+#details2 {
+  margin-right:2.5rem;
+}
+
+
+@media screen and (max-width: 1100px) {
+  #method {
+  width: 370px;
+}
+#addRecipeSubmit {
+  width: 270px;
+}
+
+#addDescriptionBox {
+  width: 275px;
+}
+#addIngredientBox {
+  width: 275px;
+}
+#addMedhod {
+  margin-left: 20px
+}
+}
+  
+
+@media screen and (max-width: 955px) {
+#addRecipeSubmit {
+    width: 235px;
+  }
+#group-form {
+  flex-direction: column;
+  margin: 0 120px;
+}
+#difficultydropdown {
+  margin-left: 1rem
+}
+#servingsizedropdown {
+  margin: 0 12px 30px 13px
+}
+
+#formdetails {
+  flex-direction: column;
+  margin: 10px 40px;
+}
+#details1 {
+  margin: 1.5rem 5rem 1.5rem 5rem
+}
+#details2 {
+  margin: 0 5rem 1.5rem 5rem;
+}
+#recipedetailsform {
+  flex-direction: column;
+  /* align-items: center; */
+  margin-left: 12vw;
+  margin-right: 10vw
+}
+#label {
+  margin-bottom: 30px;
+}
+
+#addDescriptionBox, #addIngredientBox, #method {
+  width: 500px;
+  /* margin-left: 30px; */
+  /* margin-bottom: 25px; */
+}
+#flexForm {
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 50px;
+}
+#addimage {
+  margin: 50px;
+}
+}
+
+
+@media screen and (max-width: 770px) {
+  #addRecipeSubmit {
+    width: 120px;
+    font-size: 15px;
+    height: 60px;
+    }
+    #formtitle {
+      font-size: 20px;
+    }
+    #group-form {
+      margin: 0 40px;
+    }
+    #formdetails {
+      margin: 10px -50px
+    }
+    #recipedetailsform {
+      margin-left: 16vw;
+      margin-right: 10vw
+    }
+    #addDescriptionBox, #addIngredientBox {
+      width: 410px 
+    }
+}

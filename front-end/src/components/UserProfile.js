@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react'
 import { useHistory } from 'react-router'
 import { getPayload } from './helpers/auth'
 import RecipeCard from './RecipeCard'
+import { userIsAuthenticated } from './helpers/auth'
 
 const UserProfile = () => {
   const [userProfile, setUserProfile] = useState([])
@@ -30,12 +31,12 @@ const UserProfile = () => {
     
   }, [])
 
-  const userIsAuthenticated = () => {
-    const payload = getPayload()
-    if (!payload) return false
-    const now = Math.round(Date.now() / 1000)
-    return now < payload.exp
-  } 
+  // const userIsAuthenticated = () => {
+  //   const payload = getPayload()
+  //   if (!payload) return false
+  //   const now = Math.round(Date.now() / 1000)
+  //   return now < payload.exp
+  // } 
 
   console.log(userProfile)
   return (

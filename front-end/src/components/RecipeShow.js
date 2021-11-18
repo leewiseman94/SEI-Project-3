@@ -9,6 +9,8 @@ import difficultyIMG from '../assets/difficultyIMG.PNG'
 import servingSize from '../assets/servingSize.PNG'
 import { getPayload } from './helpers/auth'
 import { getTokenFromLocalStorage } from './helpers/auth'
+import { userIsAuthenticated } from './helpers/auth'
+
 
 const RecipeShow = ({ ingredients }) => {
   const [recipe, setRecipe] = useState([])
@@ -83,12 +85,12 @@ const RecipeShow = ({ ingredients }) => {
     }
   }
 
-  const userIsAuthenticated = () => {
-    const payload = getPayload()
-    if (!payload) return false
-    const now = Math.round(Date.now() / 1000)
-    return now < payload.exp
-  } 
+  // const userIsAuthenticated = () => {
+  //   const payload = getPayload()
+  //   if (!payload) return false
+  //   const now = Math.round(Date.now() / 1000)
+  //   return now < payload.exp
+  // } 
 
   const recipeLiked = async (data) => {
     const user = await getUserData()

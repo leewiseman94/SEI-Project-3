@@ -1,7 +1,7 @@
 import axios from 'axios'
 import React, { useState } from 'react'
 import { useParams, Link, useHistory } from 'react-router-dom'
-import { getTokenFromLocalStorage } from './helpers/auth'
+import { getTokenFromLocalStorage, userIsAuthenticated } from './helpers/auth'
 
 
 
@@ -25,6 +25,10 @@ const AddandDeleteReview = () => {
     comments: '',
     rating: '',
   })
+
+  if (!userIsAuthenticated()) {
+    history.push('/')
+  }
 
   const handleChange = (event) => {
     const newFormData = { ...formData, [event.target.name]: event.target.value }
