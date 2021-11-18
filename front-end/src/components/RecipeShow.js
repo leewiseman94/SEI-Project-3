@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 /* eslint-disable react-hooks/exhaustive-deps */
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
@@ -10,6 +11,8 @@ import difficultyIMG from '../assets/difficultyIMG.PNG'
 import servingSize from '../assets/servingSize.PNG'
 import { getPayload } from './helpers/auth'
 import { getTokenFromLocalStorage } from './helpers/auth'
+import { userIsAuthenticated } from './helpers/auth'
+
 
 const RecipeShow = () => {
   const [recipe, setRecipe] = useState([])
@@ -24,7 +27,7 @@ const RecipeShow = () => {
   
   // console.log('ID', id)
 
-  // window.scrollTo(0, 0)
+  
 
   const [visible, setVisible] = useState(false)
 
@@ -38,6 +41,7 @@ const RecipeShow = () => {
         setOwner(data.owner)
         recipeLiked(data)
         setReviews(data.reviews)
+        window.scrollTo(0, 0)
       } catch (err) {
         console.log(err)
       }
@@ -85,12 +89,12 @@ const RecipeShow = () => {
     }
   }
 
-  const userIsAuthenticated = () => {
-    const payload = getPayload()
-    if (!payload) return false
-    const now = Math.round(Date.now() / 1000)
-    return now < payload.exp
-  }
+  // const userIsAuthenticated = () => {
+  //   const payload = getPayload()
+  //   if (!payload) return false
+  //   const now = Math.round(Date.now() / 1000)
+  //   return now < payload.exp
+  // } 
 
   const recipeLiked = async (data) => {
     const user = await getUserData()
@@ -151,7 +155,14 @@ const RecipeShow = () => {
   return (
 
     <>
+        
       <section className="section" id="recipe-show">
+      <nav className="breadcrumb pl-6" aria-label="breadcrumbs" id="master-breadcrumb">
+        <ul>
+          <li><a href="/recipes">Recipes</a></li>
+          <li class="is-active"><a href={`/recipes/${recipe.name}`} aria-current="page">{recipe.name}</a></li>
+        </ul>
+      </nav>
         <div className="container">
           <section className="section recipe-subtitle">
             <div>
@@ -173,13 +184,13 @@ const RecipeShow = () => {
                 {userIsOwner(owner._id) &&
                   <>
                     <hr />
-                    <div className="field is-grouped is-flex is-justify-content-end is-align-items-center	">
+                    <div className="field is-grouped is-flex is-justify-content-center is-align-items-center	">
                       <p className='control'>
-                    <Link to={`/recipes/${id}/edit`}><button id="edit-button" className='button is-danger pl-6 pr-6'>Edit Recipe</button></Link>
+                    <Link to={`/recipes/${id}/edit`}><button className='button is-danger pl-6 pr-6'>Edit Recipe</button></Link>
                     </p>
                     <br />
                     <p className='control'>
-                    <button className='button is-danger pl-6 pr-6' id="delete-button" onClick={displayDelete}>Delete Recipe</button>
+                    <button className='button is-danger pl-6 pr-6' onClick={displayDelete}>Delete Recipe</button>
                     </p>
                     </div>
                     {deleteOptions &&
@@ -238,17 +249,17 @@ const RecipeShow = () => {
 
               </div>
               <br />
-              <div className="container nutrition-info">
-                <div className="info is-flex justify-content-space-evenly">
-                  <div className="info is-flex is-flex-direction-row">
+              <div className="container nutrition-info ">
+                <div className="info is-flex">
+                  <div className="info" id='nutritionalcard'>
                     {recipe.nutritionalInfo &&
                       recipe.nutritionalInfo.map((nutritionalInfo) => {
                         return (
                           <>
-                            <div className="card nutritional" >
-                              <div className="card-content" id="nutri-info">
+                            <div className="card nutritional p-3 mb-3" >
+                              {/* <div className="card-content" id="nutri-info"> */}
                                 <p className="nutri-p">{nutritionalInfo}</p>
-                              </div>
+                              {/* </div> */}
                             </div>
                             <br />
                           </>
@@ -340,7 +351,6 @@ const RecipeShow = () => {
                           return (
                             <>
                               <p>{ingredients}</p>
-                              <br />
                             </>
                           )
 
@@ -391,13 +401,16 @@ const RecipeShow = () => {
                               <h3 key={review._id} className="title is-5">{review.subject}</h3>
                               <p className="has-text-grey">{review.comments}</p>
                             </div>
-                            {/* <div> */}
+                            
                             <p className="has-text-grey subtitle is-7">{review.createdAt}</p>
-                            {/* </div> */}
+                            
                           </div>
+                          <div className="is-flex is-justify-content-flex-end">
+                        <button className='button' id="delete-review-button"onClick={() => deleteReview(review._id, review)}>Delete</button>
+                        </div>
                           <hr />
-                        <button className='button' onClick={() => deleteReview(review._id, review)}>Delete</button>
                         <br />
+
                       </>
                     )
                   }

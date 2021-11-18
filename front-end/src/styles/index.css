@@ -65,40 +65,41 @@ body {
 
 .card-header-title {
   font-weight: lighter;
- 
+  white-space: nowrap;
   text-overflow: ellipsis "[...]";
   overflow: hidden;
-  height: 60px;
-  
+  height: 40px;
   text-align: center;
 }
 
 .card {
   border-radius: 15px;
   box-shadow: none;
-  
-
 }
 
 .image  {
   border-radius: 15px;
-  
 }
+
+.card-header {
+  border-radius: 0 0 15px 15px !important;
+}
+
 #image-index {
-  border-radius: 15px 15px 0 0;
+  border-radius: 15px 15px 0 0 !important;
   box-shadow: none;
   border-bottom-left-radius: 15px;
   border-bottom-right-radius: 15px;
+}
+
+.card-content {
+  padding: 10px;
 }
 
 .title-prep {
   font-weight: bold;
 }
 
-.card-content {
-  
-  margin-top: -10px;
-}
 
 #heart-icon {
   position: absolute;
@@ -180,9 +181,9 @@ i.far {
   align-items: center;
 }
 
-#recipe-show {
+/* #recipe-show {
   padding-top: 160px;
-}
+} */
 
 .show-links{
   color: black;
@@ -255,6 +256,7 @@ p.subtitle.method {
   color: gray;
   display: flex;
   flex-wrap: wrap;
+  margin-bottom: -50px;
 }
 
 #recipe-index {
@@ -266,8 +268,8 @@ p.subtitle.method {
 } */
 
 #ingredients-list {
-  /* margin-top: 20px; */
-  height: 200px;
+  margin-top: 20px;
+  height: 300px;
   overflow-y: auto ;
   width: 550px;
   box-shadow: none;
@@ -344,8 +346,8 @@ i.fas.fa-filter {
   margin-left: 10px;
 }
 #nutri-info {
-  width: 60px;
-  height: 70px;
+  /* width: 60px; */
+  height: 80px;
   margin-right: 10px;
   font-size: 14px;
   display: flex;
@@ -474,8 +476,9 @@ i.fas.fa-filter {
   height: 36px;
   width: 65px;
   font-size: 16px;
-  border-radius: 0;
-  padding-left: 0;
+  border-radius: 5px;
+  margin-left: 10px;
+  padding-left: 5px;
 }
 
 #addIngredientBox {
@@ -489,15 +492,15 @@ i.fas.fa-filter {
 
 #addStepButton {
   width: 180px;
-  border-radius:0;
+  border-radius: 5px;
   font-size: 16px;
-  padding-left: 0;
-
+  margin-top: 10px;
+  padding-left: 5px;
 }
 #addRecipeSubmit {
   width: 300px;
   border-radius: 6px;
-  height: 75px;
+  height: 65px;
   font-size: 25px;
 }
 
@@ -511,8 +514,15 @@ i.fas.fa-filter {
 }
 
 #addimage {
-  padding-right: 100px;
-  border-radius: 0px;
+  /* padding-right: 100px; */
+  border-radius: 20px;
+}
+
+#delete-review-button {
+  width: 150px;
+  height: 30px;
+  margin-top: -30px;
+  padding-right: 10px;
 }
 
 /* Home */
@@ -624,6 +634,9 @@ i.fas.fa-filter {
   margin-top: 200px;
 } */
 
+#group-form {
+  margin: 28px 0 28px 3rem;
+}
 #master-breadcrumb {
   margin-top: 200px;
 }
@@ -668,4 +681,157 @@ i.fas.fa-filter {
     display:none;
   }
 
+}
+#details1 {
+  margin: 0 1.5rem 0 3rem;
+}
+
+#details2 {
+  margin-right:2.5rem;
+}
+
+
+@media screen and (max-width: 1100px) {
+  #method {
+  width: 370px;
+}
+#addRecipeSubmit {
+  width: 270px;
+}
+
+#addDescriptionBox {
+  width: 275px;
+}
+#addIngredientBox {
+  width: 275px;
+}
+#addMedhod {
+  margin-left: 20px
+}
+}
+  
+
+@media screen and (max-width: 955px) {
+#addRecipeSubmit {
+    width: 235px;
+  }
+#group-form {
+  flex-direction: column;
+  margin: 0 120px;
+}
+#difficultydropdown {
+  margin-left: 1rem
+}
+#servingsizedropdown {
+  margin: 0 12px 30px 13px
+}
+
+#formdetails {
+  flex-direction: column;
+  margin: 10px 40px;
+}
+#details1 {
+  margin: 1.5rem 5rem 1.5rem 5rem
+}
+#details2 {
+  margin: 0 5rem 1.5rem 5rem;
+}
+#recipedetailsform {
+  flex-direction: column;
+  /* align-items: center; */
+  margin-left: 12vw;
+  margin-right: 10vw
+}
+#label {
+  margin-bottom: 30px;
+}
+
+#addDescriptionBox, #addIngredientBox, #method {
+  width: 500px;
+  /* margin-left: 30px; */
+  /* margin-bottom: 25px; */
+}
+#flexForm {
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 50px;
+}
+#addimage {
+  margin: 50px;
+}
+}
+
+
+@media screen and (max-width: 770px) {
+  #addRecipeSubmit {
+    width: 120px;
+    font-size: 15px;
+    height: 60px;
+    }
+    #formtitle {
+      font-size: 20px;
+    }
+    #group-form {
+      margin: 0 40px;
+    }
+    #formdetails {
+      margin: 10px -50px
+    }
+    #recipedetailsform {
+      margin-left: 16vw;
+      margin-right: 10vw
+    }
+    #addDescriptionBox, #addIngredientBox {
+      width: 410px 
+    }
+}
+
+#nutritionalcard {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  width: calc(59% - 20px);
+  padding-right: 20px;
+}
+
+
+@media screen and (max-width: 1090px) {
+ #nutritionalcard {
+  width: calc(100% );
+ }
+}
+
+@media screen and (max-width: 1240px) {
+  #review-form {
+    width: 400px;
+  }
+  #reviewform{
+    margin: 0 25%; 
+  }
+}
+
+@media screen and (max-width: 7950px) {
+  #review-form {
+    width: 300px;
+  }
+}
+
+@media screen and (max-width: 660px) {
+  #reviewform{
+    margin: 0 5%; 
+  }
+  #review-form {
+    width: 350px;
+    font-size: 18px;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  /* #reviewform{
+    margin: 0 5%; 
+  } */
+  #review-form {
+    width: 340px;
+    font-size: 16px;
+  }
 }

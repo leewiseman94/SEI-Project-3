@@ -9,6 +9,7 @@ import { Link, useHistory, useLocation } from 'react-router-dom'
 import axios from 'axios'
 import { getPayload } from './helpers/auth'
 import * as QueryString from "query-string"
+import { userIsAuthenticated } from './helpers/auth'
 
 const Navbar = ({ handleLoginClick }) => {
 
@@ -96,12 +97,7 @@ const Navbar = ({ handleLoginClick }) => {
     return `?${QueryString.stringify(query)}`
   }
 
-  const userIsAuthenticated = () => {
-    const payload = getPayload()
-    if (!payload) return false
-    const now = Math.round(Date.now() / 1000)
-    return now < payload.exp
-  } 
+
 
   const handleLoginPopup = () => {
     handleLoginClick()
@@ -110,6 +106,7 @@ const Navbar = ({ handleLoginClick }) => {
   const handleLogout = () => {
     window.localStorage.removeItem('token')
     document.querySelector('.account-dropdown').classList.toggle('is-active')
+    history.push('/')
   }
 
   return (
@@ -143,7 +140,7 @@ const Navbar = ({ handleLoginClick }) => {
                   <div className="user-account-icon"><span className="icon has-background-transparent has-text-white"><i className="fas fa-user"></i></span></div>
                 </button>
               </div>
-              <div className="dropdown-menu" id="dropdown-menu" role="menu">
+              <div className="dropdown-menu" id="dropdown-menu" role="menu" >
                 <div className="dropdown-content">
                 {!userIsAuthenticated() ? 
                   <>
@@ -219,7 +216,7 @@ const Navbar = ({ handleLoginClick }) => {
             <div className="navbar-links is-flex is-flex-direction-row">
               <div className="button-container"></div>
               <button className="button nav-transparent nav-center active" href="#"><div>Search Recipes</div><div className="button-bottom-border active"></div></button>
-              <button className="button nav-transparent nav-center" href="#"><div>Cooking Classes</div><div className="button-bottom-border"></div></button>
+              <Link to='/Masterclass'><button className="button nav-transparent nav-center" href="#"><div>Cooking Classes</div><div className="button-bottom-border"></div></button></Link>
               <button className="button nav-transparent nav-center" href="#"><div>Inspiration</div><div className="button-bottom-border"></div></button>
             </div>
           </div>
@@ -347,7 +344,7 @@ const Navbar = ({ handleLoginClick }) => {
                   </div>
                   <div className="dropdown-menu allergens-dropdown-menu" id="dropdown-menu" role="menu">
                     <div className="dropdown-content allergens-dropdown-content">
-                      {courses.map(allergen => {
+                      {allergens.map(allergen => {
                         return (
                         <Link key={allergen} to="#" className="dropdown-item allergens-dropdown-item" onClick={(event) => {
                           setFilterLink(event)
@@ -364,8 +361,13 @@ const Navbar = ({ handleLoginClick }) => {
 
               </div>
               <div className="bottom-search-form-buttons">
-                <Link to='#' onClick={closeSearchMobile} className="form-search-icon">Close</Link>
-                <Link to={`/recipes${getSearchLink()}`} onClick={() => getSearchLink()} className="form-search-icon"><span className="icon has-background-transparent has-text-white"><i className="fas fa-search"></i></span></Link>
+                <Link to='#' onClick={closeSearchMobile} className="form-search-icon"><i className="far fa-times-circle form-close-icon"></i></Link>
+                <Link to={`/recipes${getSearchLink()}`} onClick={() => {
+                  closeSearchMobile()
+                  getSearchLink()
+                }
+                  
+                  } className="form-search-icon"><span className="icon has-background-transparent has-text-white"><i className="fas fa-search"></i></span></Link>
               </div>
             </div>
             }
