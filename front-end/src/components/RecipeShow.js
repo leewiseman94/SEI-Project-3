@@ -159,8 +159,8 @@ const RecipeShow = () => {
       <section className="section" id="recipe-show">
       <nav className="breadcrumb pl-6" aria-label="breadcrumbs" id="master-breadcrumb">
         <ul>
-          <li><a href="/recipes">Recipes</a></li>
-          <li class="is-active"><a href={`/recipes/${recipe.name}`} aria-current="page">{recipe.name}</a></li>
+          <li><a href="/recipes" className="has-text-grey">Recipes&nbsp;&nbsp;&nbsp;</a></li>
+          <li class="is-active"><a href={`/recipes/${recipe.name}`} className="has-text-grey" aria-current="page">{recipe.name}</a></li>
         </ul>
       </nav>
         <div className="container">
@@ -186,11 +186,11 @@ const RecipeShow = () => {
                     <hr />
                     <div className="field is-grouped is-flex is-justify-content-center is-align-items-center	">
                       <p className='control'>
-                    <Link to={`/recipes/${id}/edit`}><button className='button is-danger pl-6 pr-6'>Edit Recipe</button></Link>
+                    <Link to={`/recipes/${id}/edit`}><button id="edit-button" className='button is-danger pl-6 pr-6'>Edit Recipe</button></Link>
                     </p>
                     <br />
                     <p className='control'>
-                    <button className='button is-danger pl-6 pr-6' onClick={displayDelete}>Delete Recipe</button>
+                    <button className='button is-danger pl-6 pr-6' id="delete-button" onClick={displayDelete}>Delete Recipe</button>
                     </p>
                     </div>
                     {deleteOptions &&
@@ -427,7 +427,7 @@ const RecipeShow = () => {
                               <p className="has-text-grey">{review.comments}</p>
                             </div>
                             {/* <div> */}
-                            <p className="has-text-grey subtitle is-7">{review.createdAt}</p>
+                            <p className="has-text-grey subtitle is-7">{review.createdAt.toDateString()}</p>
                             {/* </div> */}
                           </div>
                           <hr />
