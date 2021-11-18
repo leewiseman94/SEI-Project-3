@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 /* eslint-disable react-hooks/exhaustive-deps */
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
@@ -391,13 +392,16 @@ const RecipeShow = () => {
                               <h3 key={review._id} className="title is-5">{review.subject}</h3>
                               <p className="has-text-grey">{review.comments}</p>
                             </div>
-                            {/* <div> */}
+                            
                             <p className="has-text-grey subtitle is-7">{review.createdAt}</p>
-                            {/* </div> */}
+                            
                           </div>
+                          <div className="is-flex is-justify-content-flex-end">
+                        <button className='button' id="delete-review-button"onClick={() => deleteReview(review._id, review)}>Delete</button>
+                        </div>
                           <hr />
-                        <button className='button' onClick={() => deleteReview(review._id, review)}>Delete</button>
                         <br />
+
                       </>
                     )
                   }

@@ -10,8 +10,8 @@ const AddandUpdate = ( { newRecipe, image, description, ingredients, method, err
       <form className='form' onSubmit={handleSubmit}>
       <div className="field is-vertical">
         <div className='is-flex is-justify-content-space-around	'>
-      <div className='subtitle is-3'>Add Your Recipe</div>
-          <button className="button" type='submit' id='addRecipeSubmit' >
+      <div className='subtitle is-3 is-contents'>Add Your Recipe</div>
+          <button className="button is-danger has-text-white" type='submit' id='addRecipeSubmit' >
             Post Recipe
           </button>
           </div>
@@ -59,6 +59,8 @@ const AddandUpdate = ( { newRecipe, image, description, ingredients, method, err
               <option value='6'>6</option>
               <option value='7'>7</option>
               <option value='8'>8</option>
+              <option value='9'>9</option>
+              <option value='10'>10</option>
             </select>
           </span>
           {errors.servingSize && <p className='is-danger subtitle mt-2 mb-2 ml-0'>Please select an option</p>}
