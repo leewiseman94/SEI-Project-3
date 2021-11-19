@@ -93,10 +93,10 @@ console.log(heroImages)
             
       <Link to={`/recipes`}>
         <div className="container courses-container">
-          <div className="columns is-multiline">                        
+          <div className="columns is-multiline courses-columns-multiline">                        
             { courses.length && courses.map(recipe => {
             return(
-            <div key={recipe._id} className="column is-one-third-tablet is-full-mobile pl-4 pr-4">
+            <div key={recipe._id} className="column is-one-third-tablet pl-4 pr-4 course-column-3">
               <div className="card is-shadowless" id="courses-columns">
                 <div className="card-header has-text-centered">
                   <div className="card-header-title">{`${recipe.course[0].toUpperCase()}${recipe.course.slice(1).toLowerCase()}`}</div>
@@ -115,65 +115,71 @@ console.log(heroImages)
       </Link>
             
 
-
-      <div className="column is-one-half-tablet is-full-mobile mx-5 mt-5">
-        <div className="box is-shadowless is-large" id="box-one">
-          <p className="title has-text-white" id="box-onep">
-            Not sure what to make for dinner?
-          </p> 
-          <Link to={`/recipes`}>
-            <button class="button is-normal is-rounded is-danger is-ghost has-text-grey-light is-shadowless is-full-mobile" id="box-one-button">Let our recipe search help you find your perfect meal</button>
-          </Link>         
-        </div>
-        
-
-      </div>
-
-      <div className="tile is-ancestor mt-3">
-        <div className="tile is-parent">            
-          <div className="tile is child column is-one-half-tablet is-full-mobile is-one-half ml-5">
-            <Link to={`/recipes/add`}> 
-              <div className="overlay card is-shadowless is-flex is-flex-direction-column is-justify-content-space-between" id="column-one">
-                <div className="media-content">
-                  <p className="title pt-1 pl-2">Fancy yourself as the next Gordon or Pru?</p>
-                </div>
-                  <div className="card-content has-text-grey">
-                    <p className="content">Upload a your latest creation to our Add Recipe page</p>                       
-                  </div>
-              </div>
-            
-            </Link> 
-          </div>             
-          <div className="tile is child column is-one-half-tablet is-full-mobile mr-5 ">
-            <Link to={`/recipes`}>  
-              <div className="overlay card is-shadowless" id="column-two">
-                <div className="media-content">
-                  <p className="title pt-1 pl-2">Are you a budding Jay Rayner or Grace Dent?</p>
-                </div>
-                  <div className="card-content has-text-grey">
-                    <p className="content">Rate and comment on recipes</p>                       
-                  </div>
-              </div>
-            </Link> 
+      <section className="section home-section">
+        <div className="container p-2">
+          <div className="box is-shadowless is-large" id="box-one">
+            <p className="title has-text-white" id="box-onep">
+              Not sure what to make for dinner?
+            </p> 
+            <Link to={`/recipes`}>
+              <button class="button is-normal is-rounded is-shadowless is-full-mobile" id="box-one-button">Search recipes</button>
+            </Link>         
           </div>
-            
-        </div>          
+        </div>
+      </section>
+
+      <section className="section home-section">
+        <div className="container">
+          <div className="tile is-ancestor mt-3">
+            <div className="tile is-parent">            
+              <div className="tile is child column is-one-half-tablet is-full-mobile is-one-half">
+                <Link to={`/recipes/add`}> 
+                  <div className="overlay card is-shadowless is-flex is-flex-direction-column is-justify-content-space-between" id="column-one">
+                    <div className="media-content">
+                      <p className="title pt-1 pr-1 pl-1 has-text-centered">Fancy yourself as the next Gordon or Pru?</p>
+                    </div>
+                      <div className="card-content has-text-grey">
+                        <p className="content has-text-centered">Upload a your latest creation to our Add Recipe page</p>                       
+                      </div>
+                  </div>
+                
+                </Link> 
+              </div>             
+              <div className="tile is child column is-one-half-tablet is-full-mobile mr-5 ">
+                <Link to={`/recipes`}>  
+                  <div className="overlay card is-shadowless" id="column-two">
+                    <div className="media-content">
+                      <p className="title pt-1 pr-1 pl-1 has-text-centered">Are you a budding Jay Rayner or Grace Dent?</p>
+                    </div>
+                      <div className="card-content has-text-grey">
+                        <p className="content has-text-centered">Rate and comment on recipes</p>                       
+                      </div>
+                  </div>
+                </Link> 
+              </div>
+                
+            </div>          
+          </div>
       </div>
+      </section>
       
                 
-      
-    <div className="column is-one-half-tablet is-full-mobile mx-5">
-      <div className="overlay box is-shadowless is-large" id="box-two">
-        <div className="media">
-          <p className="title has-text-white" id="box-twop">
-            Want to sharpen up your knife skills?
-          </p>
+    <section className="section home-section">
+      <div className="container"> 
+        <div className="column is-one-half-tablet is-full-mobile">
+          <div className="overlay box is-shadowless is-large" id="box-two">
+            <div className="media">
+              <p className="title has-text-white" id="box-twop">
+                Want to sharpen up your knife skills?
+              </p>
+            </div>
+            <Link to={`/CookingClass`}>
+              <button class="button is-normal is-rounded is-shadowless" id="box-two-button">Cooking classes</button>
+            </Link>
+          </div>
         </div>
-        <Link to={`/Masterclass`}>
-          <button class="button is-normal is-rounded is-danger is-ghost has-text-grey-light is-shadowless mt-5" id="box-two-button">Check out one of our masterclasses</button>
-        </Link>
-      </div>
-    </div>
+      </div> 
+    </section>
 
       {/* <div className="footer is-flex is-flex-direction-row" id="footer">        
         <strong className="has-text-grey ml-6 mr-4">© 2021 Platester</strong> 

@@ -171,7 +171,7 @@ const RecipeIndex = () => {
         </div>
         {filteredRecipes.length && !loading ? 
         <div className="container" id="index-cards">
-          <div className="columns is-multiline is-flex recipe-index-columns">
+          <div className="columns is-multiline is-flex recipe-index-columns is-flex-wrap-wrap">
             {filteredRecipes.map(recipe => {
               return (
                 <RecipeCard key={recipe._id} {...recipe} />

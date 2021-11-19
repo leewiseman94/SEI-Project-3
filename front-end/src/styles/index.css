@@ -145,7 +145,7 @@ h5 {
 
 .recipe-steps {
   margin-top: 10px;
-  height: 370px;
+  height: 315px;
   overflow-y: auto;
   overflow-x: hidden;
 }
@@ -157,10 +157,7 @@ h5 {
   padding-right: 10px;
 }
 
-.edit-delete-container {
-  display: flex;
-  justify-content: center;
-}
+
 .method-title.has-text-white {
   text-align: center;
   margin-top: 12px;
@@ -179,6 +176,10 @@ i.far {
   font-weight: lighter;
 }
 
+/* #recipe-show-method-half {
+  height: 500px;
+} */
+
 .subtitle {
   margin-bottom: 50px;
   /* margin-left: 40px; */
@@ -190,9 +191,12 @@ i.far {
   align-items: center;
 }
 
-/* #recipe-show {
-  padding-top: 160px;
-} */
+#icon-info {
+  margin-top: -50px;
+}
+#icon-info2 {
+  margin-top: -50px;
+}
 
 .show-links{
   color: black;
@@ -200,7 +204,7 @@ i.far {
   justify-content: flex-end;
   text-transform: lowercase;
   justify-content: space-between;
-
+  margin-bottom: 20px;
 }
 
 .recipe-info {
@@ -273,8 +277,8 @@ p.subtitle.method {
 
 
 #ingredients-list {
-  margin-top: 20px;
-  height: 300px;
+  margin-top: -10px;
+  height: 250px;
   overflow-y: auto ;
   width: 550px;
   box-shadow: none;
@@ -355,6 +359,8 @@ i.fas.fa-filter {
   flex-direction: row;
   width: calc(59% - 20px);
   padding-right: 20px;
+  justify-content: center;
+  
 }
 
 #ingredients-container {
@@ -376,7 +382,8 @@ i.fas.fa-filter {
   margin-right: 10px;
   background-color: rgba(226, 226, 226, 0.493);
   box-shadow: none;
-  padding: 10px;
+  /* padding: 10px; */
+  /* height: 50px; */
 }
 
 /* recipe show index review */
@@ -543,28 +550,46 @@ i.fas.fa-filter {
 /* Home */
 #box-one {
   background: url('../assets/fridge3.jpeg');
-  background-size: 100%;
+  background-size: cover;
   background-repeat: no-repeat;
-  height: 500px;    
+  height: 500px;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  border-radius: 15px;
   }
+/* .box-one {
 
+} */
 #box-one-button{
   justify-content: center;
   text-decoration: none;
   max-width: 450px;
+  color: white;
+  background-color: #ff385c;
 }
 
 #box-two-button{
   justify-content: center;
   text-decoration: none;
-  max-width: 425px;
+  max-width: 450px;
+  color: white;
+  background-color: #ff385c;
 }
 
 #box-two {
   background: url('../assets/chef2.jpeg');
-  background-size: 100%;
+  background-size: cover;
   background-repeat: no-repeat;
   height: 500px;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  border-radius: 15px;
 }
 
 #box-twop{
@@ -573,6 +598,7 @@ i.fas.fa-filter {
 
 #box-onep {
   text-shadow: 2px 2px black;
+  text-align: center;
 }
 
 #column-one {
@@ -580,20 +606,37 @@ i.fas.fa-filter {
   background-size: cover;
   background-repeat: no-repeat;
   height: 350px;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  border-radius: 15px;
   }
 
 #column-two {
   background: url('../assets/GraceDent.jpeg');
-  background-size: 100%;
+  background-size: cover;
   background-repeat: no-repeat;
-  height: 350px;    
+  height: 350px;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  border-radius: 15px;    
   }
+
+.home-section {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
 
 .courses-container {
   margin-top: 30px;
   margin-bottom: 30px
 }
- 
+
 
 .overlay {
   background-color: RGBA(0, 0, 0, 0.5);
@@ -605,12 +648,15 @@ i.fas.fa-filter {
   text-shadow: 2px 2px white;
 }
 
-#tandc-p {
+#tandc {
   margin-top: 100px;
+  margin-bottom: 100px;
 }
 
 #privacy-p {
   margin-top: 100px;
+  margin-bottom: 100px;
+  
 }
 
 
@@ -628,14 +674,15 @@ i.fas.fa-filter {
 /* Company Details */
 #cd {
   margin-top: 200px;
-  margin-left: 25%;
-  align-items: center;
+  margin-bottom: 100px;
 }
 
 #cd-button {
   justify-content: center;
   text-decoration: none;
-  max-width: 550px;
+  max-width: 450px;
+  color: white;
+  background-color: #ff385c;
 }
 
 #cdh1 {
@@ -654,18 +701,132 @@ i.fas.fa-filter {
 }
 #master-breadcrumb {
   margin-top: 200px;
+  padding-left: 3rem
 }
 
 
+#review-section {
+  justify-content: space-between;
+}
 
 
-
+#recipeImage {
+  justify-content: center;
+}
 
 
 
 @media screen and (max-width: 1090px) {
   #nutritionalcard {
    width: calc(100% );
+  }
+  body {
+    overflow-x: clip;
+  }
+  .section.recipe-subtitle {
+    display: flex;
+  }
+
+  .container.show-links {
+    display: block;
+  }
+
+  .recipe-steps {
+    height: 120px;
+  }
+
+  #recipe-show-rating {
+    margin-top: -10px;
+    margin-bottom: 10px;
+  }
+
+  .save-share {
+    justify-content: flex-end;
+    height: 40px;
+    
+  }
+  
+  .edit-delete-container {
+    display: block;
+  }
+  #delete-button {
+    height: 30px;
+  }
+  #edit-button {
+    height: 30px;
+  }
+
+  .info.is-flex {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .card.nutritional {
+    margin-bottom: 10px;
+    
+  }
+
+  #icon-info {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    /* margin-left: -20px; */
+    /* margin-top: -140px; */
+    flex-wrap: wrap;
+  }
+  #icon-info2 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    /* margin-top: -140px;
+    margin-left: -20px; */
+    flex-wrap: wrap;
+  }
+
+  #nutritionalcard {
+    max-height: 300px;
+    overflow: hidden;
+    width: calc(100% );
+   }
+
+  .icon-info-space {
+    margin-right: 40px;
+  }
+  
+  .recipe-steps {
+    height: 240px;
+  }
+
+  #ingredients-button {
+    width: 240px;
+    /* margin-top: -10px; */
+    /* margin-left: 30px; */
+    
+  }
+  .buttons.recipe-info {
+    display: flex;
+    justify-content: center;
+  }
+
+  #ingredients-list {
+    margin-bottom: 20px;
+    width: 380px;
+  }
+
+  .method-title.has-text-white {
+    text-align: center;
+    margin-top: 12px;
+  }
+
+  #review-section {
+    align-content: stretch;
+  }
+
+  #users-review-section {
+    flex-wrap: wrap;
+  }
+
+  #delete-review-button {
+    width: 70px;
   }
  }
 
@@ -693,11 +854,12 @@ i.fas.fa-filter {
   .save-share {
     justify-content: flex-end;
     height: 40px;
+    margin-left: 165px;
     
   }
   
   .edit-delete-container {
-    display: inline-block;
+    display: flex;
   }
   #delete-button {
     height: 30px;
@@ -718,17 +880,20 @@ i.fas.fa-filter {
   #icon-info {
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
-    margin-left: -20px;
+    justify-content: flex-start;
+    margin-left: 20px;
+    margin-top: 20px;
+
   }
   #icon-info2 {
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: flex-start;
     margin-bottom: -70px;
     margin-top: -50px;
     margin-right: 30px;
-    margin-left: -20px;
+    margin-left: 20px;
+
   }
 
   #nutritionalcard {
@@ -747,13 +912,14 @@ i.fas.fa-filter {
 
   #ingredients-button {
     width: 240px;
-    margin-top: -10px;
-    margin-left: 30px;
+    /* margin-top: -10px; */
+    /* margin-left: 30px; */
     
   }
   .buttons.recipe-info {
     display: flex;
     justify-content: center;
+    margin-right: 100px;
   }
 
   #ingredients-list {
@@ -786,39 +952,34 @@ i.fas.fa-filter {
     align-items: center;
   }
 
-  #cd {
-    width: auto;
-  }
-  
-  #privacy-p {
-    margin-left: 10px;    
-  }
-
-  #column-one {
-    margin-right: 1.5rem;
-  }
-
-  #column-two {
-    margin-left: 1.5rem;
-  }
-  
-  #box-one {
-    margin-right: 1.5rem;
-    
-  }
-
-  #box-two {
-    margin-right: 1.5rem;    
-  }
-
-  #tandc {
-    margin-left: 5%;
-    justify-content: center;
-  }
-
   #home-h1 {
-    display:none;
+    font-size: 12px;
   }
+
+}
+
+@media only screen and (max-width: 768px){
+  .course-column-3{
+    width:90% !important;
+
+  }
+  
+
+  .courses-container{
+    width:100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+  .courses-columns-multiline {
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+  }
+
 
 }
 #details1 {
@@ -831,6 +992,7 @@ i.fas.fa-filter {
 
 
 @media screen and (max-width: 1100px) {
+  
   #method {
   width: 370px;
 }
@@ -923,6 +1085,8 @@ i.fas.fa-filter {
     #addDescriptionBox, #addIngredientBox {
       width: 410px 
     }
+
+    
 }
 
 #nutritionalcard {
@@ -933,12 +1097,6 @@ i.fas.fa-filter {
   padding-right: 20px;
 }
 
-
-@media screen and (max-width: 1090px) {
- #nutritionalcard {
-  width: calc(100% );
- }
-}
 
 @media screen and (max-width: 1240px) {
   #review-form {
@@ -974,3 +1132,58 @@ i.fas.fa-filter {
     font-size: 16px;
   }
 }
+
+@media screen and (max-width: 1200px) {
+  #ingredients-container {
+    margin-left: 30px
+  }
+  .save-share {
+    margin-left: 0
+  }
+  
+}
+
+@media screen and (max-width: 1090px) {
+  #nutritionalcard {
+    width: calc(100% );
+  }
+  #icon-info,#icon-info2  {
+    padding: 0; 
+  }
+  #review-section {
+    justify-content: space-around;
+  }
+  #master-breadcrumb {
+    margin-top: 135px;
+    padding:0;
+  }
+  .container.recipe-info {
+    margin-bottom: 30px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .container.recipe-info {
+    flex-direction: column;
+    margin-top: 50px;
+  }
+  #ingredients-container {
+    align-items: center;
+    margin-bottom: 50px;
+    margin-top: 20px;
+  }
+  #nutritionalcard {
+    margin-top:40px
+  }
+  #recipe-title {
+    font-size: 32px;
+  }
+  #icon-info,#icon-info2  {
+    justify-content: center;
+
+  }
+  #ingredients-list {
+    margin-bottom: 0;
+  }
+}
+

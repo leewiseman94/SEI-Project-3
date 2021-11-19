@@ -8,12 +8,8 @@ import { getTokenFromLocalStorage, userIsAuthenticated } from './helpers/auth'
 
 
 
-const AddandDeleteReview = () => {
-  let { id } = useParams()
+const AddandDeleteReview = ({ id, setAddAReview, setReviews, setRating }) => {
   id = id.replace(' ', '')
-  // const idArray = id.split('')
-  // idArray.pop()
-  // const newId = idArray.join('')
   const [error, setError] = useState({
     subject: '',
     comments: '',
@@ -50,92 +46,164 @@ const AddandDeleteReview = () => {
   const handleSubmit = async (event) => {
     event.preventDefault()
     try {
-      const { data } = await axios.post(`/api/recipes/${id}/reviews`, formData, {
+      await axios.post(`/api/recipes/${id}/reviews`, formData, {
         headers: { Authorization: `Bearer ${getTokenFromLocalStorage()}` }
       })
       history.push(`/recipes/${id}`)
-      
+      const { data } = await axios.get(`/api/recipes/${id}`)
+      setAddAReview(false)
+      setReviews(data.reviews)
+      setRating(data.averageRating)
+      console.log('average Rating', data.averageRating)
     } catch (err) {
       console.log(err.response.data.errors)
       setError(err.response.data.errors)
     }
   }
-  // console.log('form data', formData)
 
+  console.log('id', id)
   return (
-    <section id="review">
+    // <section id="review">
 
-      {/* <form className="review column is-offset-one-third box" onSubmit={handleSubmit} id="review-form"> */}
-      <form className="review column is-offset-one-third box" id='reviewform' onSubmit={handleSubmit}>
-        <div className="close-review-popup" >
-          <Link to={`/recipes/${id}`}>
-          <i className="far fa-times-circle"></i></Link>
-        </div>
 
-        <div className="form-field-container is-flex is-flex-direction-column is-align-items-center">
-          <div className="title is-5 mb-5">Rate & Review</div>
-          <input 
-          className={`input ${error["reviews.0.subject"] && 'is-danger' } `} 
-          id="review-form" 
-          name="subject" 
-          value={formData.subject} 
-          onChange={handleChange} 
-          type="text" 
-          placeholder="Title" />
-          {error["reviews.0.subject"] && <p className="is-danger subtitle mt-1 mb-1 ml-0 ">You need to put a title</p>}
-          <br />
+      
+    //   <form className="review column is-offset-one-third box" id='reviewform' onSubmit={handleSubmit}>
+    //     <div className="close-review-popup" >
+    //       <Link to={`/recipes/${id}`}>
+    //       <i className="far fa-times-circle"></i></Link>
+    //     </div>
 
-          <div class="field">
-            <div class="control ">
+    //     <div className="form-field-container is-flex is-flex-direction-column is-align-items-center">
+    //       <div className="title is-5 mb-5">Rate & Review</div>
+    //       <input 
+    //       className={`input ${error["reviews.0.subject"] && 'is-danger' } `} 
+    //       id="review-form" 
+    //       name="subject" 
+    //       value={formData.subject} 
+    //       onChange={handleChange} 
+    //       type="text" 
+    //       placeholder="Title" />
+    //       {error["reviews.0.subject"] && <p className="is-danger subtitle mt-1 mb-1 ml-0 ">You need to put a title</p>}
+    //       <br />
 
-              <textarea 
-              className={`textarea is-medium ${error["reviews.0.comments"] && 'is-danger' } `} 
-              id="review-form"
-              name="comments" 
-              value={formData.comments} 
-              onChange={handleChange} 
-              placeholder="Type your comment here"></textarea>
-              {error["reviews.0.comments"] && <p className="is-danger subtitle mt-1 mb-1 ml-0">You need to put a comment</p>}
-            </div>
+    //       <div class="field">
+    //         <div class="control ">
 
-          </div>
+    //           <textarea 
+    //           className={`textarea is-medium ${error["reviews.0.comments"] && 'is-danger' } `} 
+    //           id="review-form"
+    //           name="comments" 
+    //           value={formData.comments} 
+    //           onChange={handleChange} 
+    //           placeholder="Type your comment here"></textarea>
+    //           {error["reviews.0.comments"] && <p className="is-danger subtitle mt-1 mb-1 ml-0">You need to put a comment</p>}
+    //         </div>
 
-          <br />
+    //       </div>
 
-          <div className="is-flex is-flex-direction-row">
-            <div className="rating" id="rating-1" onClick={handleRatingClick} name="rating" value="1">
-              <i className="fas fa-star fa-2x" onMouseOver={({ target }) => target.style.color = "yellow"}
-                onMouseOut={({ target }) => target.style.color = "black"}></i>
-            </div>
-            <div className="rating" id="rating-1" onClick={handleRatingClick} name="rating" value="2">
-              <i className="fas fa-star fa-2x" onMouseOver={({ target }) => target.style.color = "yellow"}
-                onMouseOut={({ target }) => target.style.color = "black"}></i>
-            </div>
-            <div className="rating" id="rating-1" onClick={handleRatingClick} name="rating" value="3">
-              <i className="fas fa-star fa-2x" onMouseOver={({ target }) => target.style.color = "yellow"}
-                onMouseOut={({ target }) => target.style.color = "black"}></i>
-            </div>
-            <div className="rating" id="rating-1" onClick={handleRatingClick} name="rating" value="4">
-              <i className="fas fa-star fa-2x" onMouseOver={({ target }) => target.style.color = "yellow"}
-                onMouseOut={({ target }) => target.style.color = "black"}></i>
-            </div>
-            <div className="rating" id="rating-1" onClick={handleRatingClick} name="rating" value="5">
-              <i className="fas fa-star fa-2x" onMouseOver={({ target }) => target.style.color = "yellow"}
-                onMouseOut={({ target }) => target.style.color = "black"}></i>
-            </div>
-          {choseRating && <p className="title is-5 mt-1 mb-1 ml-0 pl-6">{formData.rating}</p>}
-          </div>
-          <div className="is flex is-justify-content-flex-start">
-          {error["reviews.0.rating"] && <p className="is-danger subtitle mt-1 mb-1 ml-0">You need to choose a rating</p>}
-          </div>
-        </div>
-        <br />
-        <div>
-          <input className="button is-danger has-text-white" id="submit-review" type="submit" value="Submit"></input>
-        </div>
-        <br />
-      </form>
-    </section>
+    //       <br />
+
+    //       <div className="is-flex is-flex-direction-row">
+    //         <div className="rating" id="rating-1" onClick={handleRatingClick} name="rating" value="1">
+    //           <i className="fas fa-star fa-2x" onMouseOver={({ target }) => target.style.color = "yellow"}
+    //             onMouseOut={({ target }) => target.style.color = "black"}></i>
+    //         </div>
+    //         <div className="rating" id="rating-1" onClick={handleRatingClick} name="rating" value="2">
+    //           <i className="fas fa-star fa-2x" onMouseOver={({ target }) => target.style.color = "yellow"}
+    //             onMouseOut={({ target }) => target.style.color = "black"}></i>
+    //         </div>
+    //         <div className="rating" id="rating-1" onClick={handleRatingClick} name="rating" value="3">
+    //           <i className="fas fa-star fa-2x" onMouseOver={({ target }) => target.style.color = "yellow"}
+    //             onMouseOut={({ target }) => target.style.color = "black"}></i>
+    //         </div>
+    //         <div className="rating" id="rating-1" onClick={handleRatingClick} name="rating" value="4">
+    //           <i className="fas fa-star fa-2x" onMouseOver={({ target }) => target.style.color = "yellow"}
+    //             onMouseOut={({ target }) => target.style.color = "black"}></i>
+    //         </div>
+    //         <div className="rating" id="rating-1" onClick={handleRatingClick} name="rating" value="5">
+    //           <i className="fas fa-star fa-2x" onMouseOver={({ target }) => target.style.color = "yellow"}
+    //             onMouseOut={({ target }) => target.style.color = "black"}></i>
+    //         </div>
+    //       {choseRating && <p className="title is-5 mt-1 mb-1 ml-0 pl-6">{formData.rating}</p>}
+    //       </div>
+    //       <div className="is flex is-justify-content-flex-start">
+    //       {error["reviews.0.rating"] && <p className="is-danger subtitle mt-1 mb-1 ml-0">You need to choose a rating</p>}
+    //       </div>
+    //     </div>
+    //     <br />
+    //     <div>
+    //       <input className="button is-danger has-text-white" id="submit-review" type="submit" value="Submit"></input>
+    //     </div>
+    //     <br />
+    //   </form>
+    // </section>
+    <form onSubmit={handleSubmit}>
+    <div className="column is-full">
+                <div className="is-flex is-flex-direction-column" id="users-review-section">
+                  <div className="is-flex is-flex-direction-column">
+                    <div className="user-icon-review">
+                      <i className="fas fa-user fa-2x" id="user-icon-review"></i>
+                    </div>
+                    <br/>
+                  <div className="review-content">
+                    <h3 className="title is-5">Rate & Review</h3>
+                    <input 
+                      className={`input ${error["reviews."] && 'is-danger' } `} 
+                      id="review-form" 
+                      name="subject" 
+                      value={formData.subject} 
+                      onChange={handleChange} 
+                      type="text" 
+                      placeholder="Title" />
+                      {error["reviews.0.subject"] && <p className="is-danger subtitle mt-1 mb-1 ml-0 ">You need to put a title</p>}                            </div>
+                      <br />
+
+                      <textarea 
+                        className={`textarea is-medium ${error["reviews.0.comments"] && 'is-danger' } `} 
+                        id="review-form"
+                        name="comments" 
+                        value={formData.comments} 
+                        onChange={handleChange} 
+                        placeholder="Type your comment here"></textarea>
+                        {error["reviews.0.comments"] && <p className="is-danger subtitle mt-1 mb-1 ml-0">You need to put a comment</p>}
+                        <br />
+                        <div className="is-flex is-flex-direction-row">
+                          <div className="rating" id="rating-1" onClick={handleRatingClick} name="rating" value="1">
+                            <i className="fas fa-star fa-2x" onMouseOver={({ target }) => target.style.color = "yellow"}
+                              onMouseOut={({ target }) => target.style.color = "black"}></i>
+                          </div>
+                          <div className="rating" id="rating-1" onClick={handleRatingClick} name="rating" value="2">
+                            <i className="fas fa-star fa-2x" onMouseOver={({ target }) => target.style.color = "yellow"}
+                              onMouseOut={({ target }) => target.style.color = "black"}></i>
+                          </div>
+                          <div className="rating" id="rating-1" onClick={handleRatingClick} name="rating" value="3">
+                            <i className="fas fa-star fa-2x" onMouseOver={({ target }) => target.style.color = "yellow"}
+                              onMouseOut={({ target }) => target.style.color = "black"}></i>
+                          </div>
+                          <div className="rating" id="rating-1" onClick={handleRatingClick} name="rating" value="4">
+                            <i className="fas fa-star fa-2x" onMouseOver={({ target }) => target.style.color = "yellow"}
+                              onMouseOut={({ target }) => target.style.color = "black"}></i>
+                          </div>
+                          <div className="rating" id="rating-1" onClick={handleRatingClick} name="rating" value="5">
+                            <i className="fas fa-star fa-2x" onMouseOver={({ target }) => target.style.color = "yellow"}
+                              onMouseOut={({ target }) => target.style.color = "black"}></i>
+                          </div>
+                          {choseRating && <p className="title is-5 mt-1 mb-1 ml-0 pl-6">{formData.rating}</p>}
+                        </div>
+                          <div className="is flex is-justify-content-flex-start">
+                            {error["reviews.0.rating"] && <p className="is-danger subtitle mt-1 mb-1 ml-0">You need to choose a rating</p>}
+                          </div>
+                        </div>
+                        <br />
+                        <div>
+                          <input className="button is-danger has-text-white" id="submit-review" type="submit" value="Submit"></input>
+                        </div>
+                        <br />
+                        <hr />
+                        <br />
+                    </div>
+                  </div>
+                  </form>
   )
 }
 
