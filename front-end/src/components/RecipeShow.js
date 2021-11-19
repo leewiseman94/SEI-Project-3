@@ -144,9 +144,6 @@ const RecipeShow = () => {
         headers: { Authorization: `Bearer ${getTokenFromLocalStorage()}` }
       })
       const index = reviews.indexOf(review)
-      console.log(reviewId)
-      console.log(review)
-      console.log(index)
       const newReviewsArray = [...reviews.splice(index, 1)]
       setReviews([...reviews])
       history.push(`/recipes/${id}`)
@@ -163,7 +160,7 @@ const RecipeShow = () => {
 
     <>
         
-      <section className="section" id="recipe-show">
+      <section className="section pt-0" id="recipe-show">
       <nav className="breadcrumb" aria-label="breadcrumbs" id="master-breadcrumb">
         <ul>
           <li><a href="/recipes" className="has-text-grey">Recipes&nbsp;&nbsp;&nbsp;</a></li>
