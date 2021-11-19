@@ -1,60 +1,70 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
-import { Link, useHistory } from 'react-router-dom'
+import { Link } from 'react-router-dom'
+import difficultyIMG from '../assets/difficultyIMG.PNG'
+
 
 
 const Inspiration = () => {
+  const [starters, setStarters] = useState([])
+  const [main, setMain] = useState([])
+  const [dessert, setDessert] = useState([])
   const [courses, setCourses] = useState([])
-  const [recipes, setRecipes] = useState([])
-  const [index, setIndex] = useState()
-  const history = useHistory()
 
   useEffect(() => {
 
     const getData = async () => {
       try {
         const { data } = await axios.get(`/api/recipes`)
-        setRecipes(data)
-        coursesRefresh(data)
+        getAllrecipes(data)
       } catch (err) {
-        // setHasError(true)
         console.log(err)
       }
     }
     getData()
   }, [])
 
-  const coursesRefresh = (recipes) => {
-    const getCourses = recipes.filter(recipe => {
-      return (
-        recipe.course.toLowerCase() === 'starter' || recipe.course.toLowerCase() === 'main' || recipe.course.toLowerCase() === 'dessert'
-      )
 
-    })
-    const newIndex = Math.floor(Math.random() * recipes.length)
-    setIndex(newIndex)
 
-    const newArray = []
-    for (let i = newIndex; i < getCourses.length; i++) {
-      let coursesOnly = false
-      coursesOnly = (newArray.some(course => {
-        return (course.course.toLowerCase() === (getCourses[i].course.toLowerCase()))
-      }))
-      if (!coursesOnly) newArray.push(getCourses[i])
-    }
-    setCourses(newArray)
+  const getAllrecipes =(data) => {
+    const coursesStarterOnly = (data.filter(course => {
+      return (course.course.toLowerCase() === 'starter')
+    }))
+
+    const coursesMainOnly = (data.filter(course => {
+      return (course.course.toLowerCase() === 'main')
+    }))
+
+    const coursesDessertOnly = (data.filter(course => {
+      return (course.course.toLowerCase() === 'dessert')
+    }))
+
+    setStarters(coursesStarterOnly)
+    setMain(coursesMainOnly)
+    setDessert(coursesDessertOnly)
+    const newStarterIndex = Math.floor(Math.random() * coursesStarterOnly.length)
+    const newMainIndex = Math.floor(Math.random() * coursesMainOnly.length)
+    const newDessertIndex = Math.floor(Math.random() * coursesDessertOnly.length)
+    setCourses([coursesStarterOnly[newStarterIndex], coursesMainOnly[newMainIndex], coursesDessertOnly[newDessertIndex]])
   }
 
-  const refreshInspo = () => {
-    coursesRefresh(recipes)
+  const refreshInspo = async() => {
+    const newStarterIndex = Math.floor(Math.random() * starters.length)
+    const newMainIndex = Math.floor(Math.random() * main.length)
+    const newDessertIndex = Math.floor(Math.random() * dessert.length)
+    setCourses([starters[newStarterIndex], main[newMainIndex], dessert[newDessertIndex]])
   }
 
-  console.log('courses ->', courses.length)
+
+  console.log('starter ->', starters)
+  console.log('main ->', main)
+  console.log('dessert ->', dessert)
+  console.log('courses ->', courses)
   return (
     <section className="section" id="inspiration-page">
       <div className="container courses-container" >
         
-          {courses.length ? <div className="columns is-multiline courses-columns-multiline is-flex is-justify-content-center">
+          {starters.length ? <div className="columns is-multiline courses-columns-multiline is-flex is-justify-content-center">
             { courses.map(recipe => {
             return (
               <>
