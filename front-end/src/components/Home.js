@@ -64,9 +64,9 @@ const Home = () => {
 console.log(heroImages)
   return (
     <>
-      <section class="hero home-hero is-large is-white">
-        <div class="hero-body home-hero-body">
-          <div class='hero-background fade'>
+      <section className="hero home-hero is-large is-white">
+        <div className="hero-body home-hero-body">
+          <div className='hero-background fade'>
           </div>
         </div>
       </section>
