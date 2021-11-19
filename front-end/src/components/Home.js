@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import { Link } from 'react-router-dom'
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
@@ -98,14 +99,16 @@ console.log(heroImages)
             return(
             <div key={recipe._id} className="column is-one-third-tablet pl-4 pr-4 course-column-3">
               <div className="card is-shadowless" id="courses-columns">
-                <div className="card-header has-text-centered">
-                  <div className="card-header-title">{`${recipe.course[0].toUpperCase()}${recipe.course.slice(1).toLowerCase()}`}</div>
-                </div>
-                <div className="card-image">
-                  <figure className="image is-4by3">
-                    <img src={recipe.image} alt={recipe.name}></img>
+                
+                <div className="card-image"id="home-card-image">
+                  <figure className="image is-1by1" >
+                    <img id="course-img" src={recipe.image} alt={recipe.name}></img>
                   </figure>
                 </div>
+                <div className="card-header  has-text-centered">
+                  <div className="card-header-title has-text-white" id="home-course-headers">{`${recipe.course[0].toUpperCase()}${recipe.course.slice(1).toLowerCase()}`}</div>
+                </div>
+                
               </div>
             </div>
               )
