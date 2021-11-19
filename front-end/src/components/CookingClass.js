@@ -2,12 +2,13 @@ import React from 'react'
 // import { Link } from 'react-router-dom'
 
 const CookingClass = () => {
+
   return(
     <>
       <nav className="breadcrumb" aria-label="breadcrumbs" id="master-breadcrumb">
         <ul>
-          <li><a href="/">Platester</a></li>
-          <li><a href="/recipes">Recipes</a></li>
+          <li><a href="/" className="has-text-grey">Platester</a></li>
+          <li><a href="/recipes" className="has-text-grey">Recipes</a></li>
           <li class="is-active"><a href="/Masterclass" aria-current="page">Cooking classes</a></li>
         </ul>
       </nav>

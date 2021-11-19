@@ -107,7 +107,6 @@ const AddRecipe = () => {
         newRecipe.allergens = allergensArray
       }
     try {
-      console.log(newRecipe)
       const { data } = await axios.post('/api/recipes', newRecipe, {
         headers: { Authorization: `Bearer ${getTokenFromLocalStorage()}` }
       }

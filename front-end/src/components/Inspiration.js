@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
-import difficultyIMG from '../assets/difficultyIMG.PNG'
 
 
 
@@ -55,11 +54,6 @@ const Inspiration = () => {
     setCourses([starters[newStarterIndex], main[newMainIndex], dessert[newDessertIndex]])
   }
 
-
-  console.log('starter ->', starters)
-  console.log('main ->', main)
-  console.log('dessert ->', dessert)
-  console.log('courses ->', courses)
   return (
     <section className="section" id="inspiration-page">
       <div className="container courses-container" >
@@ -68,7 +62,7 @@ const Inspiration = () => {
             { courses.map(recipe => {
             return (
               <>
-                <div key={recipe._id} className="column is-one-third-tablet pl-4 pr-4 course-column-3 ">
+                <div key={recipe.name} className="column is-one-third-tablet pl-4 pr-4 course-column-3 ">
                   <Link to={`/recipes/${recipe._id}`}>
                     <div className="card is-shadowless" id="courses-columns">
                       <div className="card-image">
@@ -91,7 +85,7 @@ const Inspiration = () => {
           })}
           
             <div>
-            <button className="button is-danger has-text-white" id="refresh-btn" onClick={refreshInspo}><i class="fas fa-sync"></i>&nbsp;Refresh</button>
+            <button className="button is-danger has-text-white" id="refresh-btn" onClick={refreshInspo}><i className="fas fa-sync"></i>&nbsp;Refresh</button>
           </div>
           </div>
         

@@ -104,7 +104,6 @@ const Navbar = ({ handleLoginClick }) => {
   }
 
   const handleBlur = async (event, name) => {
-    console.log(event)
       const dropdown = document.querySelector(name)
       dropdown.classList.remove('is-active')
   
