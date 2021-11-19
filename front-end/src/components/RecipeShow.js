@@ -357,7 +357,7 @@ const RecipeShow = () => {
                         recipe.ingredients.map((ingredients) => {
                           return (
                             <>
-                              <p>{ingredients}</p>
+                              <p key={ingredients}>{ingredients}</p>
                             </>
                           )
 
