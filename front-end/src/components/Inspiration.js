@@ -50,6 +50,7 @@ const Inspiration = () => {
   }
 
   console.log('courses ->', courses.length)
+  
   return (
     <section className="section" id="inspiration-page">
       <div className="container courses-container" >

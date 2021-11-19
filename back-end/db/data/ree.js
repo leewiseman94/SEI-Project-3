@@ -19,7 +19,29 @@ export default [
     nutritionalInfo: ['kcal: 644', 'fat: 26g', 'saturates: 4g', 'carbs: 56g', 'sugar: 19g', 'fibre: 11g', 'protein: 41g', 'salt: 3.11g'],
     tags: ['breakfast', 'vegan', 'british', 'sausages'],
     course: 'Main',
-    allergens: ['Vegan']
+    allergens: ['Vegan'],
+    reviews: [
+      {
+        subject: 'Love breakfast? You’ll love this!',
+        comments: 'Great recipe for vegan friendly brekkie!',
+        rating: 5
+      },
+      {
+        subject: 'Homemade hashbrowns',
+        comments: 'Loved the hashbrowns',
+        rating: 4
+      },
+      {
+        subject: 'ok',
+        comments: 'the tofu scramble wasn’t that great, maybe I needed to season more',
+        rating: 2
+      },
+      {
+        subject: 'Veganized brekkie',
+        comments: 'what more could you ask for!',
+        rating: 4
+      }
+    ]
   },
   {
     name: 'Chickpea, tomato & spinach curry',
@@ -39,7 +61,24 @@ export default [
     nutritionalInfo: ['kcal: 204', 'fat: 7g', 'saturates: 3g', 'carbs: 20g', 'sugar: 6g', 'fibre: 7g', 'protein: 11g', 'salt: 0.5g'],
     tags: ['curry', 'vegan', 'chickpeas', 'lentils'],
     course: 'Main',
-    allergens: ['Vegan', 'Vegetarian']
+    allergens: ['Vegan', 'Vegetarian'],
+    reviews: [
+      {
+        subject: 'very easy!',
+        comments: 'nice easy curry thanks!',
+        rating: 5
+      },
+      {
+        subject: 'Simple and tasty',
+        comments: 'Easy, and simple to make, substituted the chickpeas for vegan chick’n instead',
+        rating: 4
+      },
+      {
+        subject: 'thank u next',
+        comments: 'I hate marmite, why is it in this curry',
+        rating: 1
+      }
+    ]
   },
   {
     name: 'Vegan pizza Margherita',
@@ -61,7 +100,24 @@ export default [
     nutritionalInfo: ['kcal: 688', 'fat: 20g', 'saturates: 11g', 'carbs: 107g', 'sugar: 4g', 'fibre: 5g', 'protein: 18g', 'salt: 2g'],
     tags: ['pizza', 'vegan', 'italian'],
     course: 'Main',
-    allergens: ['Vegan', 'Vegetarian']
+    allergens: ['Vegan', 'Vegetarian'],
+    reviews: [
+      {
+        subject: 'Not so easy?',
+        comments: 'it  tasted nice, though didn’t look as nice as the photo lol',
+        rating: 4
+      },
+      {
+        subject: 'PIZZA PARTY',
+        comments: 'who doenst love pizza! nice activity for date night too!',
+        rating: 5
+      },
+      {
+        subject: 'its ok',
+        comments: 'less hassle to buy a piza for 1.79 from aldi tbh',
+        rating: 2
+      }
+    ]
   },
   {
     name: 'Vegan ramen',
@@ -84,7 +140,19 @@ export default [
     nutritionalInfo: ['kcal: 556', 'fat: 19g', 'saturates: 3g', 'carbs: 69g', 'sugar: 9g', 'fibre: 9g', 'protein: 22g', 'salt: 3.92g'],
     tags: ['japanese', 'vegan', 'ramen', 'tofu'],
     course: 'Main',
-    allergens: ['Vegan', 'Vegetarian', 'Dairy-free', 'Egg-free']
+    allergens: ['Vegan', 'Vegetarian', 'Dairy-free', 'Egg-free'],
+    reviews: [
+      {
+        subject: 'not sure',
+        comments: 'not sure i’ll make again tbh',
+        rating: 2
+      },
+      {
+        subject: 'Great on a cold day!',
+        comments: 'Will 100% be making this again!',
+        rating: 4
+      }
+    ]
   },
   {
     name: 'Vegan Thai green curry',
@@ -106,7 +174,14 @@ export default [
     nutritionalInfo: ['kcal: 436', 'fat: 17g', 'saturates: 7g', 'carbs: 57g', 'sugar: 5g', 'fibre: 3g', 'protein: 13g', 'salt: 0.1g'],
     tags: ['thai', 'vegan', 'ramen'],
     course: 'Main',
-    allergens: ['Vegan', 'Vegetarian', 'Dairy-free', 'Egg-free']
+    allergens: ['Vegan', 'Vegetarian', 'Dairy-free', 'Egg-free'],
+    reviews: [
+      {
+        subject: 'Yum',
+        comments: 'used coconut cream to make it a bit more thicker - turned out well!',
+        rating: 4
+      }
+    ]
   },
   {
     name: 'Vegan banana pancakes',
@@ -125,7 +200,19 @@ export default [
     nutritionalInfo: ['kcal: 94', 'fat: 4g', 'saturates: 0g', 'carbs: 14g', 'sugar: 6g', 'fibre: 1g', 'protein: 1g', 'salt: 0.2g'],
     tags: ['pancakes', 'vegan', 'banana'],
     course: 'Breakfast',
-    allergens: ['Vegan', 'Vegetarian', 'Dairy-free', 'Egg-free']
+    allergens: ['Vegan', 'Vegetarian', 'Dairy-free', 'Egg-free'],
+    reviews: [
+      {
+        subject: 'only make if you like bananas',
+        comments: 'the flavour of bananas is so heavy and just not like real pancakes soz',
+        rating: 1
+      },
+      {
+        subject: 'banana pancakes',
+        comments: 'im new to being vegan and really liked these! they keep well for up to 5 days in the fridge too!',
+        rating: 5
+      }
+    ]
   },
   {
     name: 'Cauliflower fritters with herby dipping sauce',
@@ -145,7 +232,19 @@ export default [
     nutritionalInfo: ['kcal: 408', 'fat: 30g', 'saturates: 4g', 'carbs: 25g', 'sugar: 6g', 'fibre: 5g', 'protein: 10g', 'salt: 0.06g'],
     tags: ['cauliflower', 'vegan', 'fritters'],
     course: 'starter',
-    allergens: ['Vegan', 'Vegetarian', 'Dairy-free', 'Egg-free']
+    allergens: ['Vegan', 'Vegetarian', 'Dairy-free', 'Egg-free'],
+    reviews: [
+      {
+        subject: 'is the fizzy water important?',
+        comments: 'i want to make this but with water but not sure how important fizzy water is?',
+        rating: 2
+      },
+      {
+        subject: 'Surprisingly good!',
+        comments: 'these are great!',
+        rating: 5
+      }
+    ]
   },
   {
     name: 'No-knead grape & rosemary focaccia',
@@ -165,7 +264,31 @@ export default [
     nutritionalInfo: ['kcal: 203', 'fat: 5g', 'saturates: 1g', 'carbs: 33g', 'sugar: 3g', 'fibre: 2g', 'protein: 15g', 'salt: 1.5g'],
     tags: ['focaccia', 'vegan', 'bread'],
     course: 'starter',
-    allergens: ['Vegan', 'Vegetarian', 'Dairy-free', 'Egg-free']
+    allergens: ['Vegan', 'Vegetarian', 'Dairy-free', 'Egg-free'],
+    reviews: [
+      {
+        subject: 'AMAZING!',
+        comments: 'made this millions of times now and always goes down a treat! you must make this!',
+        rating: 5
+      },
+      {
+        subject: 'easy peasy',
+        comments: 'So easy and perfect every time. I leave the grapes out too though and substitute with olives or cherry tomatoes and rosemary.',
+        rating: 5
+      }, 
+      {
+        subject: 'LOVE the recipe!',
+        comments: 'Super easy, turns out perfectly every time, minimal effort. We skip the grapes and just have rosemary and rock salt on top, serve with olive oil for dipping.',
+        rating: 5
+      }, 
+      {
+        subject: 'Must make for bread lovers!',
+        comments: 'Absolutely delicious and so easy to make. I swapped the grapes with green olives which worked well too.',
+        rating: 5
+      }
+      
+    ]
+
   },
   {
     name: 'Steam-fried bao buns (Sheng jian bao)',
@@ -192,7 +315,19 @@ export default [
     nutritionalInfo: ['kcal: 98', 'fat: 2g', 'saturates: 0g', 'carbs: 16g', 'sugar: 2g', 'fibre: 1g', 'protein: 2g', 'salt: 0.2g'],
     tags: ['chinese', 'bao', 'buns', 'vegan'],
     course: 'starter',
-    allergens: ['Vegan', 'Vegetarian', 'Dairy-free', 'Egg-free']
+    allergens: ['Vegan', 'Vegetarian', 'Dairy-free', 'Egg-free'],
+    reviews: [
+      {
+        subject: 'nice!',
+        comments: 'Fantastic recipe for the dough simple and easy to make :) (Not saying the filling was bad lol I just used a different filling)',
+        rating: 5
+      },
+      {
+        subject: 'Happy food memories',
+        comments: 'These were delicious and worth the time it took. I was unsure if they were cooked properly as they felt a little doughy so I steamed them for a further minute and they were fine. There was too much filling for the dumplings, but I happily ate it with a spoon whilst waiting for them to cook. We used to live in Hong Kong and would have similar dumplings there and these tasted just as good.',
+        rating: 5
+      }
+    ]
   },
   {
     name: 'Butternut soup with crispy sage & apple croutons',
@@ -213,7 +348,24 @@ export default [
     nutritionalInfo: ['kcal: 231', 'fat: 7g', 'saturates: 1g', 'carbs: 31g', 'sugar: 20g', 'fibre: 8g', 'protein: 4g', 'salt: 0.4g'],
     tags: ['soup', 'vegan', 'starter' ,'low fat'],
     course: 'starter',
-    allergens: ['Vegan', 'Vegetarian', 'Dairy-free', 'Egg-free']
+    allergens: ['Vegan', 'Vegetarian', 'Dairy-free', 'Egg-free'],
+    reviews: [
+      {
+        subject: 'good soup',
+        comments: 'good soup - adam driver',
+        rating: 5
+      },
+      {
+        subject: 'Lasts!',
+        comments: 'I made this on 10th December and put what was left over in the freezer. Just had the one I had frozen for lunch, tasted excellent on both occasions. I used Kallo organic stock powder/cube.',
+        rating: 4
+      },
+      {
+        subject: 'meh',
+        comments: 'This soup was edible but quite bland. I feel butternut squash soup needs a little spice to give it a boost.',
+        rating: 3
+      }
+    ]
   },
   {
     name: 'Vegan tiffin',
@@ -230,7 +382,24 @@ export default [
     nutritionalInfo: ['kcal: 127', 'fat: 9g', 'saturates: 5g', 'carbs: 10g', 'sugar: 6g', 'fibre: 1g', 'protein: 1g', 'salt: 0.1g'],
     tags: ['dessert', 'vegan', 'tiffin' ,'snack'],
     course: 'dessert',
-    allergens: ['Vegan', 'Vegetarian', 'Dairy-free', 'Egg-free']
+    allergens: ['Vegan', 'Vegetarian', 'Dairy-free', 'Egg-free'],
+    reviews: [
+      {
+        subject: 'WOW',
+        comments: 'This was amazing!!! I bought a bag of mixed dried berries and used this along with pistachios. I also made the non vegan version and this was tastier by far!',
+        rating: 5
+      },
+      {
+        subject: 'Wonderful recipe',
+        comments: 'Went down a treat with vegans and non-vegans alike at Christmas. I added a thin layer of dark chocolate on top and it held together really well.',
+        rating: 5
+      },
+      {
+        subject: 'I would recommend!',
+        comments: 'I made this recipe for a party out of store cupboard things. It tasted delicious with a mix of nuts and berries. I would recommend!',
+        rating: 4
+      }
+    ]
   },
   {
     name: 'Vegan Eton mess',
@@ -248,7 +417,19 @@ export default [
     nutritionalInfo: ['kcal: 383', 'fat: 19g', 'saturates: 17g', 'carbs: 46g', 'sugar: 42g', 'fibre: 5g', 'protein: 4g', 'salt: 0.2g'],
     tags: ['dessert', 'vegan', 'eton' ,'meringue'],
     course: 'dessert',
-    allergens: ['Vegan', 'Vegetarian', 'Dairy-free', 'Egg-free']
+    allergens: ['Vegan', 'Vegetarian', 'Dairy-free', 'Egg-free'],
+    reviews: [
+      {
+        subject: 'Don’t bother',
+        comments: 'Honestly, do not waste your time with this. At the start, it was going quite well until when I put it in the oven. I kept it in for the required amount of time but when I took it out, they were completely flat, soft (even after 1hr+ of cooling) and tasted very bad. To be honest I think it is because of the aquafaba- in standard meringues there is something to combine it all together (the protein in the egg) but in this it is like trying to make cake with milk and butter. Do not bother trying this- it is a waste of time and energy. You are much better off buying vegan meringues from a supermarket. Hope this helped.',
+        rating: 1
+      },
+      {
+        subject: 'Try it yourself',
+        comments: 'I couldn’t disagree more than with the other review. The aquafaba worked brilliantly, although I discovered that it only set crisp and detached easily from the parchment as it cooled; I had been cooking it for longer and longer to no avail, so it ended up a little over-done. It went down a treat with my vegan and omnivorous guests, and with me.',
+        rating: 5
+      }
+    ]
   },
   {
     name: 'Sticky toffee pear pudding',
@@ -269,7 +450,19 @@ export default [
     nutritionalInfo: ['kcal: 646', 'fat: 27g', 'saturates: 2g', 'carbs: 94g', 'sugar: 75g', 'fibre: 6g', 'protein: 4g', 'salt: 0.9g'],
     tags: ['dessert', 'vegan', 'pudding' ,'pear'],
     course: 'dessert',
-    allergens: ['Vegan', 'Vegetarian', 'Dairy-free', 'Egg-free']
+    allergens: ['Vegan', 'Vegetarian', 'Dairy-free', 'Egg-free'],
+    reviews: [
+      {
+        subject: 'Everyone will love this! Trust!',
+        comments: 'This is not some poor replacement for a non-vegan sticky toffee. This is a fabulous pudding in its own right. We served it to the vegans with vegan whipped cream and to the non-vegan with ice cream and double cream. Both loved it',
+        rating: 5
+      },
+      {
+        subject: 'My fave!',
+        comments: 'This is an absolute winner of a pudding, the non vegans loved it just as much as the vegans, my guests even passed this recipe onto their friends as they loved it so much - a great tasting pudding I can’t wait to make again!',
+        rating: 5
+      }
+    ]
   },
   {
     name: 'Easy vegan chocolate cake',
@@ -296,7 +489,19 @@ export default [
     nutritionalInfo: ['kcal: 452', 'fat: 24g', 'saturates: 6g', 'carbs: 53g', 'sugar: 34g', 'fibre: 3g', 'protein: 4g', 'salt: 0.9g'],
     tags: ['dessert', 'vegan', 'pudding' ,'cake'],
     course: 'dessert',
-    allergens: ['Vegan', 'Vegetarian', 'Dairy-free', 'Egg-free', 'Gluten-free']
+    allergens: ['Vegan', 'Vegetarian', 'Dairy-free', 'Egg-free', 'Gluten-free'],
+    reviews: [
+      {
+        subject: 'Instructions not great',
+        comments: 'The baking time was definitely wrong. It was around an hour, not 25 mins. It was soft, moist & uncooked after 25 mins on gm3. The icing part was misleading. You need to let it cool before applying it & there was no warning of instruction to do so. Mine looked terrible, at first, & the icing made such a mess. It looks great, now that it’s cooled, thickened & set. I decorated mine with apple slices from my apple tree, sprinkles of cinnamon, nutmeg, cocoa, icing sugar & a sugar rose in the centre.',
+        rating: 4
+      },
+      {
+        subject: 'not clear',
+        comments: 'i found this recipie really unhelpful. The baking time wasnt right and didnt hold at all',
+        rating: 1
+      }
+    ]
   },
   {
     name: 'Protein pancakes',
@@ -316,7 +521,14 @@ export default [
     nutritionalInfo: ['kcal: 798', 'fat: 32g', 'saturates: 8g', 'carbs: 91g', 'sugar: 39g', 'fibre: 15g', 'protein: 29g', 'salt: 0.3g'],
     tags: ['pancakes', 'vegan', 'breakfast' ,'protein'],
     course: 'Breakfast',
-    allergens: ['Vegan', 'Vegetarian', 'Dairy-free', 'Egg-free', 'Gluten-Free']
+    allergens: ['Vegan', 'Vegetarian', 'Dairy-free', 'Egg-free', 'Gluten-Free'],
+    reviews: [
+      {
+        subject: 'Hmm',
+        comments: 'This is also high calorie and high sugar. Need to watch that too when promoting it as high protein!',
+        rating: 2
+      }
+    ]
   },
   {
     name: 'Strawberry & rose sorbet',
@@ -332,7 +544,14 @@ export default [
     nutritionalInfo: ['kcal: 238', 'fat: 0g', 'saturates: 0g', 'carbs: 58g', 'sugar: 58g', 'fibre: 2g', 'protein: 1g', 'salt: 0g'],
     tags: ['sorbet', 'vegan', 'breakfast' ,'protein'],
     course: 'Dessert',
-    allergens: ['Vegan', 'Vegetarian', 'Dairy-free', 'Egg-free', 'Gluten-Free']
+    allergens: ['Vegan', 'Vegetarian', 'Dairy-free', 'Egg-free', 'Gluten-Free'],
+    reviews: [
+      {
+        subject: 'Pretty good!',
+        comments: 'I loved this recipe, but a tip for any who make it in the future, instead of 2 tablespoons of rose water i think there was a typo in the writing up of the recipe and i think it was supposed to be 2 teaspoons',
+        rating: 4
+      }
+    ]
   },
   {
     name: 'Slow cooker ratatouille',
@@ -350,7 +569,14 @@ export default [
     nutritionalInfo: ['kcal: 162', 'fat: 5g', 'saturates: 1g', 'carbs: 17g', 'sugar: 16g', 'fibre: 11g', 'protein: 6g', 'salt: 0.8g'],
     tags: ['slow', 'vegan', 'cooker' ,'ratatouille', 'vegetables'],
     course: 'Main',
-    allergens: ['Vegan', 'Vegetarian', 'Dairy-free', 'Egg-free', 'Gluten-Free']
+    allergens: ['Vegan', 'Vegetarian', 'Dairy-free', 'Egg-free', 'Gluten-Free'],
+    reviews: [
+      {
+        subject: 'Delish',
+        comments: 'Fabulous recipe. Will definitely make again.',
+        rating: 4
+      }
+    ]
   },
   {
     name: 'Falafel burgers',
