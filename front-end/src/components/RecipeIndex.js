@@ -55,7 +55,6 @@ const RecipeIndex = () => {
   }, [props])
 
   const getSearchLink = (event) => {
-    console.log(event.target.innerText)
     const queryParams = QueryString.parse(props.search)
     if (event.target.id === 'difficulty-name-input') queryParams.difficulty = `${event.target.innerHTML.toLowerCase()}`
     if (event.target.id === 'rating-input') queryParams.rating = `${event.target.name}`
@@ -73,7 +72,17 @@ const RecipeIndex = () => {
     history.push(`recipes?${QueryString.stringify(query)}`)
   }, [query])
   
+  const handleBlur = async (event, name) => {
+      const dropdown = document.querySelector(name)
+      dropdown.classList.remove('is-active')
   
+  }
+
+  const handleDropdown = async (name) => {
+    const dropdown = document.querySelector(name)
+    dropdown.classList.toggle('is-active')
+  }
+
   return (
     <>
       <section className="section" id="recipe-index">
@@ -97,10 +106,8 @@ const RecipeIndex = () => {
               <div className="filter-buttons">
                 <div className="dropdown dropdown-filter">
                   <div className="dropdown-trigger">
-                    <button className="button filter" id="filterbtn" aria-haspopup="true" aria-controls="dropdown-menu" aria-pressed="false" onClick={() => {
-                      document.querySelector('.dropdown-filter').classList.toggle('is-active')
-                    }
-                    }>
+                    <button className="button filter" id="filterbtn" aria-haspopup="true" aria-controls="dropdown-menu" aria-pressed="false" onClick={() => handleDropdown('.dropdown-filter')} 
+                  onBlur={(event) => handleBlur(event, '.dropdown-filter')}>
                       <span className="icon is-small">
                       <i class="fas fa-utensils" aria-hidden="true"> </i>
                         <span className="filterbtn">Difficulty</span>
@@ -111,21 +118,15 @@ const RecipeIndex = () => {
                     <div className="dropdown-content">
                       {difficulties.map(difficulty => {
                         return (
-                          <button key={difficulty} onClick={(event) => getSearchLink(event)} id="difficulty-name-input" className="dropdown-item">{difficulty}</button>
-                          // <Link to={`/recipes${props.search + '&difficulty=' + difficulty.toLowerCase()}`} onClick={(event) => getSearchLink(event)} id="diffulty-name-input" className="dropdown-item">{difficulty}</Link>
+                          <button key={difficulty} onMouseDown={(event) => event.preventDefault()} onClick={(event) => getSearchLink(event)} id="difficulty-name-input" className="dropdown-item">{difficulty}</button>
                         )
                       })}
                     </div>
                   </div>
-
                 </div>
-
                 <div className="dropdown dropdown-rating">
                   <div className="dropdown-trigger">
-                    <button className="button rating" id="ratingbtn" aria-haspopup="true" aria-controls="rating-dropdown-menu" aria-pressed="false" onClick={() => {
-                      document.querySelector('.dropdown-rating').classList.toggle('is-active')
-                    }
-                    }>
+                    <button className="button rating" id="ratingbtn" onClick={() => handleDropdown('.dropdown-rating')} onBlur={(event) => handleBlur(event, '.dropdown-rating')} >
                       <span className="icon is-small">
                         <i className="fas fa-star fa-sm" aria-hidden="true"> </i>
                         <span className="ratingbtn">&nbsp;Minimum Rating</span>
@@ -134,25 +135,25 @@ const RecipeIndex = () => {
                   </div>
                   <div className="rating-dropdown-menu dropdown-menu" id="rating-dropdown-menu" role="menu">
                     <div className="rating-dropdown-content dropdown-content">
-                      <button onClick={(event) => getSearchLink(event)} id="rating-input" className="dropdown-item" name="1">
+                      <button onMouseDown={(event) => event.preventDefault()} onClick={(event) => getSearchLink(event)} id="rating-input" className="dropdown-item" name="1">
                         1 <i className="fas fa-star"></i>
                       </button>
-                      <button onClick={(event) => getSearchLink(event)} id="rating-input" className="dropdown-item" name="2">
+                      <button onMouseDown={(event) => event.preventDefault()} onClick={(event) => getSearchLink(event)} id="rating-input" className="dropdown-item" name="2">
                         2 <i className="fas fa-star"></i>
                         <i className="fas fa-star"></i>
                       </button>
-                      <button onClick={(event) => getSearchLink(event)} id="rating-input" className="dropdown-item" name="3">
+                      <button onMouseDown={(event) => event.preventDefault()} onClick={(event) => getSearchLink(event)} id="rating-input" className="dropdown-item" name="3">
                         3 <i className="fas fa-star"></i>
                         <i className="fas fa-star"></i>
                         <i className="fas fa-star"></i>
                       </button>
-                      <button onClick={(event) => getSearchLink(event)} id="rating-input" className="dropdown-item" name="4">
+                      <button onMouseDown={(event) => event.preventDefault()} onClick={(event) => getSearchLink(event)} id="rating-input" className="dropdown-item" name="4">
                         4 <i className="fas fa-star"></i>
                         <i className="fas fa-star"></i>
                         <i className="fas fa-star"></i>
                         <i className="fas fa-star"></i>
                       </button>
-                      <button onClick={(event) => getSearchLink(event)} id="rating-input" className="dropdown-item" name="5">
+                      <button onMouseDown={(event) => event.preventDefault()} onClick={(event) => getSearchLink(event)} id="rating-input" className="dropdown-item" name="5">
                         5 <i className="fas fa-star"></i>
                         <i className="fas fa-star"></i>
                         <i className="fas fa-star"></i>
