@@ -98,7 +98,6 @@ const Navbar = ({ handleLoginClick }) => {
   }
 
 
-
   const handleLoginPopup = () => {
     handleLoginClick()
   }

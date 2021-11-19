@@ -549,7 +549,7 @@ i.fas.fa-filter {
 
 /* Home */
 #box-one {
-  background: url('../assets/fridge3.jpeg');
+  background: url('../assets/fridge3_overlay.png');
   background-size: cover;
   background-repeat: no-repeat;
   height: 500px;
@@ -602,7 +602,7 @@ i.fas.fa-filter {
 }
 
 #column-one {
-  background: url('../assets/pru2.jpeg');
+  background: url('../assets/pru2_overlay.png');
   background-size: cover;
   background-repeat: no-repeat;
   height: 350px;
@@ -615,7 +615,7 @@ i.fas.fa-filter {
   }
 
 #column-two {
-  background: url('../assets/GraceDent.jpeg');
+  background: url('../assets/GraceDent_overlay.png');
   background-size: cover;
   background-repeat: no-repeat;
   height: 350px;
@@ -952,19 +952,18 @@ i.fas.fa-filter {
     align-items: center;
   }
 
-  #home-h1 {
-    font-size: 12px;
-  }
+  
 
 }
 
 @media only screen and (max-width: 768px){
   .course-column-3{
     width:90% !important;
-
   }
   
-
+  #home-h1 {
+    font-size: 18px !important;
+  }
   .courses-container{
     width:100%;
     display: flex;
