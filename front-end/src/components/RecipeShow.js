@@ -412,7 +412,7 @@ const RecipeShow = () => {
                               <p className="has-text-grey">{review.comments}</p>
                             </div>
                             
-                            <p className="has-text-grey subtitle is-7">{review.createdAt}</p>
+                            {/* <p className="has-text-grey subtitle is-7">{review.createdAt}</p> */}
                             
                           </div>
                           <div className="is-flex is-justify-content-flex-end">
