@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import { Link } from 'react-router-dom'
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
@@ -69,52 +70,34 @@ console.log(heroImages)
           </div>
         </div>
       </section>
-
-      {/* <section className="hero-carousel is-medium">
-      <div className="hero-head"></div>
-          <div className='carousel-container'>
-            <div className='carousel'>
-            {heroImages.length && heroImages.map((image, index) => {
-
-              return (
-                // <div  className={`item-${index+1}`}>
-                  <div key={image._id} className='carousel-item has-background'>
-                  <img className='carousel-image is-background' src={image.image} alt={image.name}/>
+      <section className="section">
+        <div className="container">
+        <h1 className="is-size-3 ha-text-weight-medium ml-5" id="home-h1">Inspiration for your next meal</h1>              
+        
+            <div className="container courses-container">
+              <div className="columns is-multiline courses-columns-multiline">                        
+                { courses.length && courses.map(recipe => {
+                return(
+                  <div  className="column is-one-third-tablet pl-4 pr-4 course-column-3">
+                    <Link key={recipe._id} to={`/recipes?course=${recipe.course.toLowerCase()}`}>
+                      <div className="card is-shadowless" id="courses-columns">
+                        <div className="card-image">
+                          <figure className="image is-4by3">
+                            <img src={recipe.image} alt={recipe.name} id="course-img"></img>
+                          </figure>
+                        </div>
+                        <div className="card-header has-text-centered">
+                          <div className="card-header-title has-text-white" id="home-course-headers">{`${recipe.course[0].toUpperCase()}${recipe.course.slice(1).toLowerCase()}`}</div>
+                        </div>
+                      </div>
+                    </Link>
                   </div>
-                // </div>
-              )
-            })}
-          </div>
-          <div className="hero-body"></div>
-          </div>
-      </section>       */}
-      
-      <h1 className="is-size-3 ha-text-weight-medium ml-5" id="home-h1">Inspiration for your next meal</h1>              
-            
-      <Link to={`/recipes`}>
-        <div className="container courses-container">
-          <div className="columns is-multiline courses-columns-multiline">                        
-            { courses.length && courses.map(recipe => {
-            return(
-            <div key={recipe._id} className="column is-one-third-tablet pl-4 pr-4 course-column-3">
-              <div className="card is-shadowless" id="courses-columns">
-                <div className="card-header has-text-centered">
-                  <div className="card-header-title">{`${recipe.course[0].toUpperCase()}${recipe.course.slice(1).toLowerCase()}`}</div>
-                </div>
-                <div className="card-image">
-                  <figure className="image is-4by3">
-                    <img src={recipe.image} alt={recipe.name}></img>
-                  </figure>
-                </div>
+                  )
+                })}                  
               </div>
             </div>
-              )
-            })}                  
-          </div>
         </div>
-      </Link>
-            
-
+      </section>
       <section className="section home-section">
         <div className="container p-2">
           <div className="box is-shadowless is-large" id="box-one">
@@ -136,10 +119,10 @@ console.log(heroImages)
                 <Link to={`/recipes/add`}> 
                   <div className="overlay card is-shadowless is-flex is-flex-direction-column is-justify-content-space-between" id="column-one">
                     <div className="media-content">
-                      <p className="title pt-1 pr-1 pl-1 has-text-centered">Fancy yourself as the next Gordon or Pru?</p>
+                      <p className="title pt-1 pr-1 pl-1 has-text-centered has-text-white">Fancy yourself as the next Gordon or Pru?</p>
                     </div>
                       <div className="card-content has-text-grey">
-                        <p className="content has-text-centered">Upload a your latest creation to our Add Recipe page</p>                       
+                        <p className="content has-text-centered" id='homecardtext'>Upload a your latest creation to our Add Recipe page</p>                       
                       </div>
                   </div>
                 
@@ -149,10 +132,10 @@ console.log(heroImages)
                 <Link to={`/recipes`}>  
                   <div className="overlay card is-shadowless" id="column-two">
                     <div className="media-content">
-                      <p className="title pt-1 pr-1 pl-1 has-text-centered">Are you a budding Jay Rayner or Grace Dent?</p>
+                      <p className="title pt-1 pr-1 pl-1 has-text-centered has-text-white">Are you a budding Jay Rayner or Grace Dent?</p>
                     </div>
                       <div className="card-content has-text-grey">
-                        <p className="content has-text-centered">Rate and comment on recipes</p>                       
+                        <p className="content has-text-centered" id='homecardtext'>Rate and comment on recipes</p>                       
                       </div>
                   </div>
                 </Link> 

@@ -156,7 +156,7 @@ const RecipeShow = () => {
   }
 
   const addReview = () => {
-    setAddAReview(true)
+    setAddAReview(!addaReview)
   }
 
   return (
@@ -164,14 +164,14 @@ const RecipeShow = () => {
     <>
         
       <section className="section" id="recipe-show">
-      <nav className="breadcrumb pl-6" aria-label="breadcrumbs" id="master-breadcrumb">
+      <nav className="breadcrumb" aria-label="breadcrumbs" id="master-breadcrumb">
         <ul>
           <li><a href="/recipes" className="has-text-grey">Recipes&nbsp;&nbsp;&nbsp;</a></li>
           <li class="is-active"><a href={`/recipes/${recipe.name}`} className="has-text-grey" aria-current="page">{recipe.name}</a></li>
         </ul>
       </nav>
         <div className="container">
-          <section className="section recipe-subtitle">
+          <section className="section recipe-subtitle is-flex-direction-column">
             <div>
               <h2 className="title" id="recipe-title">{recipe.name}</h2>
               <div className="container show-links">
@@ -225,7 +225,7 @@ const RecipeShow = () => {
           </section>
 
           <div className="columns">
-            <div className="column is-half" >
+            <div className="column is-half" id='recipeImage'>
               <figure className="image" >
                 <img className="image" id="" src={recipe.image} alt={recipe.name}></img>
               </figure>
@@ -279,10 +279,10 @@ const RecipeShow = () => {
             </div>
           </div>
 
-          <div className="container recipe-info">
+          <div className="container recipe-info" >
 
 
-            <div className="columns">
+            <div className="columns" id="icon-info-bar">
 
               <div className="column is-one-quarter" id="icon-info">
 
@@ -372,16 +372,17 @@ const RecipeShow = () => {
           </div>
 
           <section className="is-flex is-flex-direction-column">
-            <div className="is-flex is-justify-content-space-between" id="review-section">
+            <div className="is-flex " id="review-section">
               <div className="button-container">
 
                 {/* <Link to={`/recipes/${id}/reviews`}><button className="button is-danger has-text-white" id="click-review" onClick={addReview}>Leave a review</button></Link> */}
-                <button className="button is-danger has-text-white" id="click-review" onClick={addReview}>Leave a review</button>
+                {userIsAuthenticated() && <button className="button is-danger has-text-white" id="click-review" onClick={addReview}>Leave a review</button>}
               </div>
               <div className="is-flex is-flex-direction-column">
                 <div>
                   <h4 className="title is-5">Overall rating</h4>
                 </div>
+                <br/>
                 <div className="is-flex is-align-self-center">
                   <p className="has-text-grey"><i className="fas fa-star"></i>&nbsp;{rating}</p>
                 </div>
@@ -436,7 +437,7 @@ const RecipeShow = () => {
                               <p className="has-text-grey">{review.comments}</p>
                             </div>
                             {/* <div> */}
-                            <p className="has-text-grey subtitle is-7">{review.createdAt.toDateString()}</p>
+                            <p className="has-text-grey subtitle is-7">{review.createdAt}</p>
                             {/* </div> */}
                           </div>
                           <hr />

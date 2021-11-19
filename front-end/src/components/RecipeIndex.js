@@ -55,6 +55,7 @@ const RecipeIndex = () => {
   }, [props])
 
   const getSearchLink = (event) => {
+    console.log(event.target.innerText)
     const queryParams = QueryString.parse(props.search)
     if (event.target.id === 'difficulty-name-input') queryParams.difficulty = `${event.target.innerHTML.toLowerCase()}`
     if (event.target.id === 'rating-input') queryParams.rating = `${event.target.name}`
@@ -64,6 +65,7 @@ const RecipeIndex = () => {
     if (event.target.id === 'remove-allergens-name' || event.target.parentElement.id === 'remove-allergens-name') delete queryParams.allergens
     if (event.target.id === 'remove-difficulty-name' || event.target.parentElement.id === 'remove-difficulty-name') delete queryParams.difficulty
     if (event.target.id === 'remove-rating-name' || event.target.parentElement.id === 'remove-rating-name') delete queryParams.rating
+    if (event.target.id === 'difficulty-name-input' && event.target.innerText === 'All') delete queryParams.difficulty
     setQuery(queryParams)
   }
 
@@ -171,7 +173,7 @@ const RecipeIndex = () => {
         </div>
         {filteredRecipes.length && !loading ? 
         <div className="container" id="index-cards">
-          <div className="columns is-multiline is-flex recipe-index-columns">
+          <div className="columns is-multiline is-flex recipe-index-columns is-flex-wrap-wrap">
             {filteredRecipes.map(recipe => {
               return (
                 <RecipeCard key={recipe._id} {...recipe} />

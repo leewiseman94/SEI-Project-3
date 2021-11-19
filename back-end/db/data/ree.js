@@ -413,6 +413,24 @@ export default [
     tags: ['indian', 'vegan', 'starter'],
     course: 'Starter',
     allergens: ['Vegan', 'Vegetarian', 'Dairy-free', 'Egg-free']
+  },
+  {
+    name: '‘Cheesy’ vegan scones',
+    image: 'https://images.immediate.co.uk/production/volatile/sites/30/2020/08/cheesy-vegan-scones-453fe9b.jpg',
+    description: 'Try these dairy-free vegan scones that use nutritional yeast for a cheesy flavour, pepped up by mustard and smoked paprika. Serve with vegan onion chutney.',
+    ingredients: ['3 tbsp olive oil , plus extra for the tray', '1 tsp white wine vinegar', '250ml almond milk', '1 cauliflower stalk (around 100g)', '300g self-raising flour , plus extra for dusting', 
+      '½ tsp baking powder', '3 tbsp nutritional yeast', '¼ tsp mustard powder', '¼ tsp smoked paprika', '3 thyme sprigs , leaves picked', 'vegan onion chutney , to serve' ],
+    method: [ ' Heat oven to 220C/200C fan/gas 7 and lightly oil a baking tray. Mix the vinegar with the almond milk and set aside. Bring a saucepan of water to the boil, add the cauliflower stalk and cook for 5 mins until almost tender. Drain well, leave to cool, then finely chop.', 
+      'Mix the flour, baking powder, nutritional yeast, spices, thyme leaves and 1 tsp salt in a large bowl. Add the cauliflower, then add the oil and pour in 230ml of the soured almond milk. Working quickly, bring the mixture together with a wooden spoon; if there is any dry mixture in the bowl, add more almond milk to make a soft but not sticky dough. Tip the dough onto a floured work surface and pat to a thickness of about 2.5cm. Cut out rounds with a 6cm fluted cutter and transfer to the baking tray. Gather together any offcuts and cut out more rounds.', 
+      'Bake on the top shelf of the oven for 10-12 mins until golden. Serve warm with onion chutney.' ],
+    prepTime: '15 mins',
+    cookingTime: '20 mins',
+    difficulty: 'Easy',
+    servingSize: 7,
+    nutritionalInfo: ['kcal: 235', 'fat: 6g', 'saturates: 1g', 'carbs: 35g', 'sugar: 1g', 'fibre: 3g', 'protein: 8g', 'salt: 1g'],
+    tags: ['scones', 'vegan', 'dessert', 'snack', 'british'],
+    course: 'Dessert',
+    allergens: ['Vegan', 'Vegetarian', 'Dairy-free', 'Egg-free']
   }
   
   
