@@ -1,13 +1,10 @@
 import React, { useState, useEffect } from 'react'
-// import { Link } from 'react-router-dom'
 import logoWhite from '../images/platester_logo_white_withText.PNG'
 import logoRed from '../images/platester_logo_red_withText.PNG'
 import smallLogoRed from '../images/platester_smalllogo_red_withText.PNG'
 import smallLogoWhite from '../images/platester_smalllogo_white_withText.PNG'
 import { Link, useHistory, useLocation } from 'react-router-dom'
-// import 'animate.css';
 import axios from 'axios'
-import { getPayload } from './helpers/auth'
 import * as QueryString from "query-string"
 import { userIsAuthenticated } from './helpers/auth'
 
@@ -15,12 +12,12 @@ const Navbar = ({ handleLoginClick }) => {
 
   const [scrollState, setScrollState] = useState("big")
   const [searching, setSearching] = useState(false)
-  // const [recipeData, setRecipeData] = useState([])
   const [courses, setCourses] = useState([])
   const [allergens, setAllergens] = useState([])
   const [query, setQuery] = useState({})
   const history = useHistory() 
   const location = useLocation()
+  const [openDropdown, setOpenDropdown] = useState(null)
 
   useEffect(() => {
     
@@ -28,9 +25,7 @@ const Navbar = ({ handleLoginClick }) => {
   
   useEffect(() => {
     const getRecipeData = async () => {
-      const { data } = await axios.get('/api/recipes')
-      // setRecipeData(data)
-      
+      const { data } = await axios.get('/api/recipes')      
       const coursesArray = ['All']
       const allergensArray  = ['All']
       for(let i = 0; i < data.length; i++) {
@@ -108,6 +103,18 @@ const Navbar = ({ handleLoginClick }) => {
     history.push('/')
   }
 
+  const handleBlur = async (event, name) => {
+    console.log(event)
+      const dropdown = document.querySelector(name)
+      dropdown.classList.remove('is-active')
+  
+  }
+
+  const handleDropdown = async (name) => {
+    const dropdown = document.querySelector(name)
+    dropdown.classList.toggle('is-active')
+  }
+
   return (
     scrollState === 'small' ? 
     <header>
@@ -124,17 +131,10 @@ const Navbar = ({ handleLoginClick }) => {
           </div>
 
           <div className="navbar-end">
-            {/* <div className="navbar-links is-flex is-flex-direction-row mr-4">
-              <button className="button nav-white nav-right" href="#">Become a host</button>
-              <button className="button nav-white nav-right" href="#"><span className="icon has-background-transparent has-text-black"><i className="fas fa-globe"></i></span></button>
-            </div> */}
-            <div className="dropdown account-dropdown">
+            <div className="dropdown account-dropdown" >
               <div className="dropdown-trigger">
-                <button className="button account-button" aria-haspopup="true" aria-controls="dropdown-menu" onClick={() => {
-                const dropdown = document.querySelector('.account-dropdown')
-                dropdown.classList.toggle('is-active')
-                }
-                }>
+                <button className="button account-button" aria-haspopup="true" aria-controls="dropdown-menu" onClick={() => handleDropdown('.account-dropdown')} 
+                onBlur={(event) => handleBlur(event, '.account-dropdown')}>
                   <div className="menu-icon"><span className="icon has-background-transparent has-text-black"><i className="fas fa-bars"></i></span></div>
                   <div className="user-account-icon"><span className="icon has-background-transparent has-text-white"><i className="fas fa-user"></i></span></div>
                 </button>
@@ -143,22 +143,16 @@ const Navbar = ({ handleLoginClick }) => {
                 <div className="dropdown-content">
                 {!userIsAuthenticated() ? 
                   <>
-                    <Link to="#" onClick={() => {
-                      handleLoginPopup()
-                      document.querySelector('.account-dropdown').classList.toggle('is-active')
-                    }} className="dropdown-item">
+                    <Link to="#" onClick={handleLoginPopup} onMouseDown={(event) => event.preventDefault()} className="dropdown-item">
                       <strong>Sign up</strong>
                     </Link>
-                    <Link to="#" onClick={() => {
-                      handleLoginPopup()
-                      document.querySelector('.account-dropdown').classList.toggle('is-active')
-                    }} className="dropdown-item">
+                    <Link to="#" onMouseDown={handleLoginPopup} className="dropdown-item">
                       Login
                     </Link>
                     <hr className="dropdown-divider" />
                   </> :
                   <>
-                    <Link to="#" onClick={handleLogout} className="dropdown-item">
+                    <Link to="#" onMouseDown={handleLogout} className="dropdown-item">
                       <strong>Logout</strong>
                     </Link>
                     <hr className="dropdown-divider" />
@@ -166,32 +160,32 @@ const Navbar = ({ handleLoginClick }) => {
                   }
                   {userIsAuthenticated() ? 
                   <>
-                  <Link to="/add" className="dropdown-item">
+                  <Link to="/add" onMouseDown={(event) => event.preventDefault()} className="dropdown-item">
                     Create a recipe
                   </Link>
-                  <Link to="/profile" className="dropdown-item">
+                  <Link to="/profile" onMouseDown={(event) => event.preventDefault()} className="dropdown-item">
                     My Profile
                   </Link>
-                  <Link to="/recipes" className="dropdown-item">
+                  <button className="dropdown-item">
                     Help
-                  </Link>
+                  </button>
                   </>
                   :
-                  <Link to="/recipes" className="dropdown-item">
+                  <button className="dropdown-item">
                     Help
-                  </Link>}
+                  </button>}
                   <hr className="dropdown-divider" />
-                  <Link to="#" onClick={() => {
+                  <Link to="#" onMouseDown={(event) => event.preventDefault()} onClick={() => {
                     setScrollState("large")
                     setSearching(true)
                     document.querySelector('.account-dropdown').classList.toggle('is-active')
                   }} className="dropdown-item search-recipes">
                     Search Recipes
                   </Link>
-                  <Link to="/recipes" className="dropdown-item">
+                  <Link to="/CookingClass" onMouseDown={(event) => event.preventDefault()} className="dropdown-item">
                     Cooking Classes
                   </Link>
-                  <Link to="/recipes" className="dropdown-item">
+                  <Link to="/recipes" onMouseDown={(event) => event.preventDefault()} className="dropdown-item">
                     Inspiration
                   </Link>
                 </div>
@@ -215,22 +209,15 @@ const Navbar = ({ handleLoginClick }) => {
             <div className="navbar-links is-flex is-flex-direction-row">
               <div className="button-container"></div>
               <button className="button nav-transparent nav-center active" href="#"><div>Search Recipes</div><div className="button-bottom-border active"></div></button>
-              <Link to='/Masterclass'><button className="button nav-transparent nav-center" href="#"><div>Cooking Classes</div><div className="button-bottom-border"></div></button></Link>
-              <button className="button nav-transparent nav-center" href="#"><div>Inspiration</div><div className="button-bottom-border"></div></button>
+              <Link to='/CookingClass'><button className="button nav-transparent nav-center" href="#"><div>Cooking Classes</div><div className="button-bottom-border"></div></button></Link>
+              <Link to='/recipes'><button className="button nav-transparent nav-center" href="#"><div>Inspiration</div><div className="button-bottom-border"></div></button></Link>
             </div>
           </div>
           <div className="navbar-end">
-            {/* <div className="navbar-links is-flex is-flex-direction-row mr-4">
-              <button className="button nav-transparent nav-right" href="#">Become a host</button>
-              <button className="button nav-transparent nav-right" href="#"><span className="icon has-background-transparent has-text-white"><i className="fas fa-globe"></i></span></button>
-            </div> */}
             <div className="dropdown account-dropdown">
               <div className="dropdown-trigger">
-                <button className="button account-button" aria-haspopup="true" aria-controls="dropdown-menu" onClick={() => {
-                  const dropdown = document.querySelector('.account-dropdown')
-                  dropdown.classList.toggle('is-active')
-                }
-                }>
+                <button className="button account-button" aria-haspopup="true" aria-controls="dropdown-menu" onClick={() => handleDropdown('.account-dropdown')} 
+                onBlur={(event) => handleBlur(event, '.account-dropdown')}>
                     <div className="menu-icon"><span className="icon has-background-transparent has-text-black"><i className="fas fa-bars"></i></span></div>
                     <div className="user-account-icon"><span className="icon has-background-transparent has-text-white"><i className="fas fa-user"></i></span></div>
                 </button>
@@ -239,22 +226,16 @@ const Navbar = ({ handleLoginClick }) => {
                 <div className="dropdown-content">
                   {!userIsAuthenticated() ? 
                   <>
-                    <Link to="#" onClick={() => {
-                      handleLoginPopup()
-                      document.querySelector('.account-dropdown').classList.toggle('is-active')
-                    }} className="dropdown-item">
+                    <Link to="#" onMouseDown={(event) => event.preventDefault()} onClick={handleLoginPopup} className="dropdown-item">
                       <strong>Sign up</strong>
                     </Link>
-                    <Link to="#" onClick={() => {
-                      handleLoginPopup()
-                      document.querySelector('.account-dropdown').classList.toggle('is-active')
-                    }} className="dropdown-item">
+                    <Link to="#" onMouseDown={(event) => event.preventDefault()} onClick={handleLoginPopup} className="dropdown-item">
                       Login
                     </Link>
                     <hr className="dropdown-divider" />
                   </> :
                   <>
-                    <Link to="#" onClick={handleLogout} className="dropdown-item">
+                    <Link to="#" onMouseDown={(event) => event.preventDefault()} onClick={handleLogout} className="dropdown-item">
                       <strong>Logout</strong>
                     </Link>
                     <hr className="dropdown-divider" />
@@ -262,32 +243,31 @@ const Navbar = ({ handleLoginClick }) => {
                   }
                   {userIsAuthenticated() ? 
                   <>
-                  <Link to="/add" className="dropdown-item">
+                  <Link to="/add" onMouseDown={(event) => event.preventDefault()} className="dropdown-item">
                     Create a recipe
                   </Link>
-                  <Link to="/profile" className="dropdown-item">
+                  <Link to="/profile" onMouseDown={(event) => event.preventDefault()} className="dropdown-item">
                     My Profile
                   </Link>
-                  <Link to="/recipes" className="dropdown-item">
+                  <button className="dropdown-item">
                     Help
-                  </Link>
+                  </button>
                   </>
                   :
-                  <Link to="/recipes" className="dropdown-item">
+                  <button className="dropdown-item">
                     Help
-                  </Link>}
+                  </button>}
                   <hr className="dropdown-divider bottom-divider" />
-                  <Link to="#" onClick={() => {
+                  <Link to="#" onMouseDown={(event) => event.preventDefault()} onClick={() => {
                     setScrollState("large")
                     setSearching(true)
-                    document.querySelector('.account-dropdown').classList.toggle('is-active')
                   }} className="dropdown-item search-recipes">
                     Search Recipes
                   </Link>
-                  <Link to="/CookingClass" className="dropdown-item cooking-classes">
+                  <Link to="/CookingClass" onMouseDown={(event) => event.preventDefault()} className="dropdown-item cooking-classes">
                     Cooking Classes
                   </Link>
-                  <Link to="/recipes" className="dropdown-item inspiration">
+                  <Link to="/recipes" onMouseDown={(event) => event.preventDefault()} className="dropdown-item inspiration">
                     Inspiration
                   </Link>
                 </div>
@@ -311,9 +291,8 @@ const Navbar = ({ handleLoginClick }) => {
                 </button>
                 <div className="dropdown course-dropdown bottom-dropdown">
                   <div className="dropdown-trigger">
-                    <button className="button bottom-search-form-dropdown search-form-button" onClick={() => {
-                      document.querySelector('.course-dropdown').classList.toggle('is-active')
-                    }}>
+                    <button className="button bottom-search-form-dropdown search-form-button" onClick={() => handleDropdown('.course-dropdown')} 
+                onBlur={(event) => handleBlur(event, '.course-dropdown')}>
                       <h3><strong>Course</strong></h3><input readOnly className="search-input-box" id="course-input" name="course-name" placeholder="Select course"></input>
                     </button>
                   </div>
@@ -321,7 +300,8 @@ const Navbar = ({ handleLoginClick }) => {
                     <div className="dropdown-content course-dropdown-content">
                       {courses.map(course => {
                         return (
-                        <Link key={course} to="#" className="dropdown-item course-dropdown-item" onClick={(event) => {
+                        <Link key={course} to="#" onMouseDown={(event) => event.preventDefault} className="dropdown-item course-dropdown-item" onClick={(event) => {
+                          event.preventDefault()
                           setFilterLink(event)
                           document.querySelector("#course-input").value = event.target.innerText
                           document.querySelector('.course-dropdown').classList.remove('is-active')
@@ -335,9 +315,8 @@ const Navbar = ({ handleLoginClick }) => {
                 </div>
                 <div className="dropdown allergens-dropdown bottom-dropdown">
                   <div className="dropdown-trigger">
-                    <button className="button bottom-search-form-dropdown search-form-button" onClick={() => {
-                      document.querySelector('.allergens-dropdown').classList.toggle('is-active')
-                    }}>
+                    <button className="button bottom-search-form-dropdown search-form-button" onClick={() => handleDropdown('.allergens-dropdown')} 
+                    onBlur={(event) => handleBlur(event, '.allergens-dropdown')}>
                       <h3><strong>Allergens</strong></h3><input readOnly className="search-input-box" id="allergens-input" name="allergens-name" placeholder="Select allergens"></input>
                     </button>
                   </div>
@@ -345,7 +324,8 @@ const Navbar = ({ handleLoginClick }) => {
                     <div className="dropdown-content allergens-dropdown-content">
                       {allergens.map(allergen => {
                         return (
-                        <Link key={allergen} to="#" className="dropdown-item allergens-dropdown-item" onClick={(event) => {
+                        <Link key={allergen} to="#" onMouseDown={(event) => event.preventDefault()} className="dropdown-item allergens-dropdown-item" onClick={(event) => {
+                          event.preventDefault()
                           setFilterLink(event)
                           document.querySelector("#allergens-input").value = event.target.innerText
                           document.querySelector('.allergens-dropdown').classList.remove('is-active')
@@ -360,7 +340,12 @@ const Navbar = ({ handleLoginClick }) => {
 
               </div>
               <div className="bottom-search-form-buttons">
-                <Link to='#' onClick={closeSearchMobile} className="form-search-icon"><i className="far fa-times-circle form-close-icon"></i></Link>
+                <Link to='#' onClick={(event) => {
+                  event.preventDefault()
+                  closeSearchMobile()
+                }
+                  
+                  } className="form-search-icon"><i className="far fa-times-circle form-close-icon"></i></Link>
                 <Link to={`/recipes${getSearchLink()}`} onClick={() => {
                   closeSearchMobile()
                   getSearchLink()
@@ -378,9 +363,8 @@ const Navbar = ({ handleLoginClick }) => {
               </button>
               <div className="dropdown course-dropdown">
                 <div className="dropdown-trigger">
-                  <button className="button search-form-dropdown search-form-button" onClick={() => {
-                    document.querySelector('.course-dropdown').classList.toggle('is-active')
-                  }}>
+                  <button className="button search-form-dropdown search-form-button" onClick={() => handleDropdown('.course-dropdown')} 
+                  onBlur={(event) => handleBlur(event, '.course-dropdown')}>
                     <h3><strong>Course</strong></h3><input readOnly className="search-input-box" id="course-input" name="course-name" placeholder="Select course"></input>
                   </button>
                 </div>
@@ -388,7 +372,7 @@ const Navbar = ({ handleLoginClick }) => {
                   <div className="dropdown-content course-dropdown-content">
                     {courses.map(course => {
                       return (
-                      <Link key={course} to="#" className="dropdown-item course-dropdown-item" onClick={(event) => {
+                      <Link key={course} to="#" onMouseDown={(event) => event.preventDefault()} className="dropdown-item course-dropdown-item" onClick={(event) => {
                         event.preventDefault()
                         setFilterLink(event)
                         document.querySelector("#course-input").value = event.target.innerText
@@ -404,9 +388,8 @@ const Navbar = ({ handleLoginClick }) => {
 
               <div className="dropdown allergens-dropdown bottom-dropdown">
                 <div className="dropdown-trigger">
-                  <button className="button bottom-search-form-dropdown search-form-button" onClick={() => {
-                    document.querySelector('.allergens-dropdown').classList.toggle('is-active')
-                  }}>
+                  <button className="button bottom-search-form-dropdown search-form-button" onClick={() => handleDropdown('.allergens-dropdown')} 
+                  onBlur={(event) => handleBlur(event, '.allergens-dropdown')}>
                     <h3><strong>Allergens</strong></h3><input readOnly className="search-input-box" id="allergens-input" name="allergens-name" placeholder="Select allergens"></input>
                   </button>
                 </div>
@@ -414,7 +397,7 @@ const Navbar = ({ handleLoginClick }) => {
                   <div className="dropdown-content allergens-dropdown-content">
                     {allergens.map(allergen => {
                       return (
-                      <Link key={allergen} to="#" className="dropdown-item allergens-dropdown-item" onClick={(event) => {
+                      <Link key={allergen} to="#" onMouseDown={(event) => event.preventDefault()} className="dropdown-item allergens-dropdown-item" onClick={(event) => {
                         event.preventDefault()
                         setFilterLink(event)
                         document.querySelector("#allergens-input").value = event.target.innerText
