@@ -46,7 +46,6 @@ const RecipeIndex = () => {
 
         )
       })
-      console.log(filtered)
       setFilteredRecipes(filtered)
       if (filtered) setLoading(false)
     }

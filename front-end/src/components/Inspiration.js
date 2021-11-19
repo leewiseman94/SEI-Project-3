@@ -55,11 +55,6 @@ const Inspiration = () => {
     setCourses([starters[newStarterIndex], main[newMainIndex], dessert[newDessertIndex]])
   }
 
-
-  console.log('starter ->', starters)
-  console.log('main ->', main)
-  console.log('dessert ->', dessert)
-  console.log('courses ->', courses)
   return (
     <section className="section" id="inspiration-page">
       <div className="container courses-container" >
