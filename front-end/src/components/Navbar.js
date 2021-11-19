@@ -191,7 +191,7 @@ const Navbar = ({ handleLoginClick }) => {
                   <Link to="/recipes" className="dropdown-item">
                     Cooking Classes
                   </Link>
-                  <Link to="/recipes" className="dropdown-item">
+                  <Link to="/inspiration" className="dropdown-item">
                     Inspiration
                   </Link>
                 </div>
@@ -216,7 +216,7 @@ const Navbar = ({ handleLoginClick }) => {
               <div className="button-container"></div>
               <button className="button nav-transparent nav-center active" href="#"><div>Search Recipes</div><div className="button-bottom-border active"></div></button>
               <Link to='/Masterclass'><button className="button nav-transparent nav-center" href="#"><div>Cooking Classes</div><div className="button-bottom-border"></div></button></Link>
-              <button className="button nav-transparent nav-center" href="#"><div>Inspiration</div><div className="button-bottom-border"></div></button>
+              <Link to='/inspiration'><button className="button nav-transparent nav-center" href="#"><div>Inspiration</div><div className="button-bottom-border"></div></button></Link>
             </div>
           </div>
           <div className="navbar-end">
@@ -287,7 +287,7 @@ const Navbar = ({ handleLoginClick }) => {
                   <Link to="/CookingClass" className="dropdown-item cooking-classes">
                     Cooking Classes
                   </Link>
-                  <Link to="/recipes" className="dropdown-item inspiration">
+                  <Link to="/inspiration" className="dropdown-item inspiration">
                     Inspiration
                   </Link>
                 </div>

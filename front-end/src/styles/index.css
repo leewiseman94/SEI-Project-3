@@ -662,7 +662,15 @@ i.fas.fa-filter {
   color: white;
   font-size: 18px;
   margin-bottom: 16px;
+}
+#inspiration-page {
+  padding-top: 230px;
+}
 
+#refresh-btn {
+  margin: 20px;
+  padding: 5px 30px;
+  font-size: 20px;
 }
 
 .overlay {
