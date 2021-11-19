@@ -408,7 +408,7 @@ const RecipeShow = () => {
                               <h4>{ }</h4>
                             </div>
                             <div className="review-content">
-                              <h3 key={review._id} className="title is-5">{review.subject}</h3>
+                              <h3 key={review._id} className="title is-5 has-text-grey">{review.subject}</h3>
                               <p className="has-text-grey">{review.comments}</p>
                             </div>
                             
