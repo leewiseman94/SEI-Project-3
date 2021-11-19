@@ -485,5 +485,5 @@ export default [{
       rating: 5
     }
   ]
-},
+}
 ]
