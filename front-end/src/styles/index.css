@@ -116,8 +116,15 @@ h5 {
 }
 .title {
   font-weight: lighter;
+  color: white;
+  margin-top: 17px;
 }
 
+#homecardtext {
+  color: white;
+  font-size: 18px ;
+  margin-bottom: 16px;
+}
 
 .card-rating {
   text-align: right;
@@ -550,6 +557,8 @@ i.fas.fa-filter {
 /* Home */
 #box-one {
   background: url('../assets/fridge3_overlay.png');
+  /* background: url('../assets/fridge3.jpeg'); */
+  /* background-image: linear-gradient(rgba(0, 0, 0, 0.3),rgba(0, 0, 0, 0.35)), url('../assets/fridge3.jpeg'); */
   background-size: cover;
   background-repeat: no-repeat;
   height: 500px;
@@ -560,15 +569,22 @@ i.fas.fa-filter {
   justify-content: space-around;
   border-radius: 15px;
   }
-/* .box-one {
+#course-img {
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+}
+#home-h1 {
+  margin-top: 20px;
+  
+}
 
-} */
 #box-one-button{
   justify-content: center;
   text-decoration: none;
   max-width: 450px;
   color: white;
   background-color: #ff385c;
+  border-color: #ff385c;
 }
 
 #box-two-button{
@@ -577,10 +593,12 @@ i.fas.fa-filter {
   max-width: 450px;
   color: white;
   background-color: #ff385c;
+  border-color: #ff385c;;
 }
 
 #box-two {
-  background: url('../assets/chef2.jpeg');
+  /* background: url('../assets/chef2.jpeg'); */
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3),rgba(0, 0, 0, 0.45)), url('../assets/chef2.jpeg');
   background-size: cover;
   background-repeat: no-repeat;
   height: 500px;
@@ -599,10 +617,14 @@ i.fas.fa-filter {
 #box-onep {
   text-shadow: 2px 2px black;
   text-align: center;
+  
+  font-size: 40px;
 }
 
 #column-one {
   background: url('../assets/pru2_overlay.png');
+  /* background: url('../assets/pru2.jpeg'); */
+  /* background-image: linear-gradient(rgba(0, 0, 0, 0.3),rgba(0, 0, 0, 0.45)), url('../assets/pru2.jpeg'); */
   background-size: cover;
   background-repeat: no-repeat;
   height: 350px;
@@ -616,6 +638,8 @@ i.fas.fa-filter {
 
 #column-two {
   background: url('../assets/GraceDent_overlay.png');
+  /* background: url('../assets/GraceDent.jpeg'); */
+  /* background-image: linear-gradient(rgba(0, 0, 0, 0.3),rgba(0, 0, 0, 0.45)), url('../assets/GraceDent.jpeg'); */
   background-size: cover;
   background-repeat: no-repeat;
   height: 350px;
@@ -644,8 +668,8 @@ i.fas.fa-filter {
 }
 
 #courses-columns {
-  background-color: rgb(236, 236, 236);
-  text-shadow: 2px 2px white;
+  background-color: #ff385c;
+  /* text-shadow: 2px 2px white; */
 }
 
 #tandc {
@@ -658,7 +682,12 @@ i.fas.fa-filter {
   margin-bottom: 100px;
   
 }
-
+#home-course-headers {
+  font-size: 22px;
+  letter-spacing: 1px;
+  padding-bottom: 5px;
+  margin-bottom: 10px;
+}
 
 .lineIngredients {
   list-style-type: none;
@@ -852,7 +881,7 @@ i.fas.fa-filter {
   }
 
   .save-share {
-    justify-content: flex-end;
+    justify-content: center;
     height: 40px;
     margin-left: 165px;
     
@@ -919,7 +948,7 @@ i.fas.fa-filter {
   .buttons.recipe-info {
     display: flex;
     justify-content: center;
-    margin-right: 100px;
+    /* margin-right: 100px; */
   }
 
   #ingredients-list {
@@ -1170,6 +1199,7 @@ i.fas.fa-filter {
     align-items: center;
     margin-bottom: 50px;
     margin-top: 20px;
+    margin-left: 0;
   }
   #nutritionalcard {
     margin-top:40px
@@ -1179,10 +1209,14 @@ i.fas.fa-filter {
   }
   #icon-info,#icon-info2  {
     justify-content: center;
-
+    margin-top: 20px;
+    margin-left: 0;
   }
   #ingredients-list {
     margin-bottom: 0;
+  }
+  #leaveareview {
+    align-items: center;
   }
 }
 
