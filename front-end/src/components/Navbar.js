@@ -125,10 +125,10 @@ const Navbar = ({ handleLoginClick }) => {
           </div>
 
           <div className="navbar-end">
-            <div className="navbar-links is-flex is-flex-direction-row mr-4">
+            {/* <div className="navbar-links is-flex is-flex-direction-row mr-4">
               <button className="button nav-white nav-right" href="#">Become a host</button>
               <button className="button nav-white nav-right" href="#"><span className="icon has-background-transparent has-text-black"><i className="fas fa-globe"></i></span></button>
-            </div>
+            </div> */}
             <div className="dropdown account-dropdown">
               <div className="dropdown-trigger">
                 <button className="button account-button" aria-haspopup="true" aria-controls="dropdown-menu" onClick={() => {
@@ -221,10 +221,10 @@ const Navbar = ({ handleLoginClick }) => {
             </div>
           </div>
           <div className="navbar-end">
-            <div className="navbar-links is-flex is-flex-direction-row mr-4">
+            {/* <div className="navbar-links is-flex is-flex-direction-row mr-4">
               <button className="button nav-transparent nav-right" href="#">Become a host</button>
               <button className="button nav-transparent nav-right" href="#"><span className="icon has-background-transparent has-text-white"><i className="fas fa-globe"></i></span></button>
-            </div>
+            </div> */}
             <div className="dropdown account-dropdown">
               <div className="dropdown-trigger">
                 <button className="button account-button" aria-haspopup="true" aria-controls="dropdown-menu" onClick={() => {
