@@ -15,6 +15,7 @@ import Privacy from './components/Privacy'
 import CompanyDetails from './components/CompanyDetails'
 import Footer from './components/Footer'
 import CookingClass from './components/CookingClass';
+import Inspiration from './components/Inspiration';
 
 
 
@@ -48,6 +49,8 @@ function App() {
         <Route exact path='/CompanyDetails' component={CompanyDetails} />
         <Route exact path='/CookingClass' component={CookingClass} />
         <Route exact path='/add' component={AddRecipe}/> 
+        <Route exact path='/inspiration' component={Inspiration}/> 
+
       </Switch>
       <Footer />
     </BrowserRouter>

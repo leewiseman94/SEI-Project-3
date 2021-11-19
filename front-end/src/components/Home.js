@@ -3,13 +3,10 @@ import { Link } from 'react-router-dom'
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import bulmaCarousel from 'bulma-carousel/dist/js/bulma-carousel.min.js'
-// import fbLogo from '../assets/f_logo_RGB-Black_58.png'
-// import twitterLogo from '../assets/2021 Twitter logo - black.png'
-// import instagramLogo from '../assets/glyph-logo_May2016.png'
 import heroImage1 from '../assets/heroImages/1.png'
 import heroImage2 from '../assets/heroImages/2.png'
 import heroImage3 from '../assets/heroImages/3.png'
-// import heroImage4 from '../assets/heroImages/4.png'
+import { userIsAuthenticated } from './helpers/auth'
 
 const Home = () => {  
   const [courses, setCourses] = useState([])
@@ -48,11 +45,18 @@ const Home = () => {
           } ))
           if (!coursesOnly) newArray.push(getCourses[i])
         }
-        newArray.sort((a, b) => b.course.toLowerCase() - a.course.toLowerCase())
-        setCourses(newArray)
+        const newSortedArray = newArray.sort((a, b) => {
+          if (a.course.toLowerCase() < b.course.toLowerCase()) {
+            return 1
+          } else if (b.course.toLowerCase() < a.course.toLowerCase()) {
+            return -1
+          } else {
+            return 0
+          }
+        })
+        setCourses(newSortedArray)
 
       } catch (err) {
-        // setHasError(true)
         console.log(err)
       }
     }
@@ -64,9 +68,9 @@ const Home = () => {
 console.log(heroImages)
   return (
     <>
-      <section class="hero home-hero is-large is-white">
-        <div class="hero-body home-hero-body">
-          <div class='hero-background fade'>
+      <section className="hero home-hero is-large is-white">
+        <div className="hero-body home-hero-body">
+          <div className='hero-background fade'>
           </div>
         </div>
       </section>
@@ -116,26 +120,26 @@ console.log(heroImages)
           <div className="tile is-ancestor mt-3">
             <div className="tile is-parent">            
               <div className="tile is child column is-one-half-tablet is-full-mobile is-one-half">
-                <Link to={`/recipes/add`}> 
+                <Link to={userIsAuthenticated() ? '/add' : '/'}> 
                   <div className="overlay card is-shadowless is-flex is-flex-direction-column is-justify-content-space-between" id="column-one">
                     <div className="media-content">
                       <p className="title pt-1 pr-1 pl-1 has-text-centered has-text-white">Fancy yourself as the next Gordon or Pru?</p>
                     </div>
                       <div className="card-content has-text-grey">
-                        <p className="content has-text-centered" id='homecardtext'>Upload a your latest creation to our Add Recipe page</p>                       
+                        <p className="content has-text-centered has-text-white" id='homecardtext'>Upload a your latest creation to our Add Recipe page</p>                       
                       </div>
                   </div>
                 
                 </Link> 
               </div>             
-              <div className="tile is child column is-one-half-tablet is-full-mobile mr-5 ">
-                <Link to={`/recipes`}>  
+              <div className="tile is child column is-one-half-tablet is-full-mobile">
+                <Link to={'/recipes'}>  
                   <div className="overlay card is-shadowless" id="column-two">
                     <div className="media-content">
                       <p className="title pt-1 pr-1 pl-1 has-text-centered has-text-white">Are you a budding Jay Rayner or Grace Dent?</p>
                     </div>
                       <div className="card-content has-text-grey">
-                        <p className="content has-text-centered" id='homecardtext'>Rate and comment on recipes</p>                       
+                        <p className="content has-text-centered has-text-white" id='homecardtext'>Rate and comment on recipes</p>                       
                       </div>
                   </div>
                 </Link> 
