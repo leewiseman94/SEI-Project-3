@@ -154,7 +154,7 @@ const RecipeShow = () => {
         <div className="container">
           <section className="section recipe-subtitle is-flex-direction-column">
             <div>
-              <h2 className="title" id="recipe-title">{recipe.name}</h2>
+              <h2 className="title has-text-grey" id="recipe-title">{recipe.name}</h2>
               <div className="container show-links">
                 <h6 className="show-rating" id="recipe-show-rating"><i className="fas fa-utensils"></i>&nbsp;{recipe.course} · {recipe.difficulty} · <i className="far fa-star"></i>Rating: {rating} </h6>
                 <div className="save-share">
