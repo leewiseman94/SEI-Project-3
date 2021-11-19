@@ -614,9 +614,9 @@ i.fas.fa-filter {
 
 #column-one {
   /* background: url('../assets/pru2.jpeg'); */
-  background: url('../assets/pru2_overlay.png');
-  /* background: url('../assets/pru2.jpeg'); */
-  /* background-image: linear-gradient(rgba(0, 0, 0, 0.3),rgba(0, 0, 0, 0.45)), url('../assets/pru2.jpeg'); */
+  /* background: url('../assets/pru2_overlay.png'); */
+  background: url('../assets/pru2.jpeg');
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3),rgba(0, 0, 0, 0.45)), url('../assets/pru2.jpeg');
   background-size: cover;
   background-repeat: no-repeat;
   height: 350px;
@@ -630,9 +630,9 @@ i.fas.fa-filter {
 
 #column-two {
   /* background: url('../assets/GraceDent.jpeg'); */
-  background: url('../assets/GraceDent_overlay.png');
-  /* background: url('../assets/GraceDent.jpeg'); */
-  /* background-image: linear-gradient(rgba(0, 0, 0, 0.3),rgba(0, 0, 0, 0.45)), url('../assets/GraceDent.jpeg'); */
+  /* background: url('../assets/GraceDent_overlay.png'); */
+  background: url('../assets/GraceDent.jpeg');
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3),rgba(0, 0, 0, 0.45)), url('../assets/GraceDent.jpeg');
   background-size: cover;
   background-repeat: no-repeat;
   height: 350px;
