@@ -122,7 +122,7 @@ console.log(heroImages)
                       <p className="title pt-1 pr-1 pl-1 has-text-centered has-text-white">Fancy yourself as the next Gordon or Pru?</p>
                     </div>
                       <div className="card-content has-text-grey">
-                        <p className="content has-text-centered" id='homecardtext'>Upload a your latest creation to our Add Recipe page</p>                       
+                        <p className="content has-text-centered has-text-white" id='homecardtext'>Upload a your latest creation to our Add Recipe page</p>                       
                       </div>
                   </div>
                 
@@ -135,7 +135,7 @@ console.log(heroImages)
                       <p className="title pt-1 pr-1 pl-1 has-text-centered has-text-white">Are you a budding Jay Rayner or Grace Dent?</p>
                     </div>
                       <div className="card-content has-text-grey">
-                        <p className="content has-text-centered" id='homecardtext'>Rate and comment on recipes</p>                       
+                        <p className="content has-text-centered has-text-white" id='homecardtext'>Rate and comment on recipes</p>                       
                       </div>
                   </div>
                 </Link> 
