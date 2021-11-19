@@ -120,11 +120,6 @@ h5 {
   margin-top: 17px;
 }
 
-#homecardtext {
-  color: white;
-  font-size: 18px ;
-  margin-bottom: 16px;
-}
 
 .card-rating {
   text-align: right;
@@ -556,6 +551,7 @@ i.fas.fa-filter {
 
 /* Home */
 #box-one {
+  /* background: url('../assets/fridge3.jpeg'); */
   background: url('../assets/fridge3_overlay.png');
   /* background: url('../assets/fridge3.jpeg'); */
   /* background-image: linear-gradient(rgba(0, 0, 0, 0.3),rgba(0, 0, 0, 0.35)), url('../assets/fridge3.jpeg'); */
@@ -593,7 +589,7 @@ i.fas.fa-filter {
   max-width: 450px;
   color: white;
   background-color: #ff385c;
-  border-color: #ff385c;;
+  border-color: #ff385c;
 }
 
 #box-two {
@@ -622,6 +618,7 @@ i.fas.fa-filter {
 }
 
 #column-one {
+  /* background: url('../assets/pru2.jpeg'); */
   background: url('../assets/pru2_overlay.png');
   /* background: url('../assets/pru2.jpeg'); */
   /* background-image: linear-gradient(rgba(0, 0, 0, 0.3),rgba(0, 0, 0, 0.45)), url('../assets/pru2.jpeg'); */
@@ -637,6 +634,7 @@ i.fas.fa-filter {
   }
 
 #column-two {
+  /* background: url('../assets/GraceDent.jpeg'); */
   background: url('../assets/GraceDent_overlay.png');
   /* background: url('../assets/GraceDent.jpeg'); */
   /* background-image: linear-gradient(rgba(0, 0, 0, 0.3),rgba(0, 0, 0, 0.45)), url('../assets/GraceDent.jpeg'); */
@@ -660,7 +658,20 @@ i.fas.fa-filter {
   margin-top: 30px;
   margin-bottom: 30px
 }
+#homecardtext {
+  color: white;
+  font-size: 18px;
+  margin-bottom: 16px;
+}
+#inspiration-page {
+  padding-top: 230px;
+}
 
+#refresh-btn {
+  margin: 20px;
+  padding: 5px 30px;
+  font-size: 20px;
+}
 
 .overlay {
   background-color: RGBA(0, 0, 0, 0.5);
@@ -881,7 +892,7 @@ i.fas.fa-filter {
   }
 
   .save-share {
-    justify-content: center;
+    justify-content: flex-end;
     height: 40px;
     margin-left: 165px;
     
@@ -948,7 +959,7 @@ i.fas.fa-filter {
   .buttons.recipe-info {
     display: flex;
     justify-content: center;
-    /* margin-right: 100px; */
+    margin-right: 100px;
   }
 
   #ingredients-list {
@@ -1199,7 +1210,6 @@ i.fas.fa-filter {
     align-items: center;
     margin-bottom: 50px;
     margin-top: 20px;
-    margin-left: 0;
   }
   #nutritionalcard {
     margin-top:40px
@@ -1209,14 +1219,10 @@ i.fas.fa-filter {
   }
   #icon-info,#icon-info2  {
     justify-content: center;
-    margin-top: 20px;
-    margin-left: 0;
+
   }
   #ingredients-list {
     margin-bottom: 0;
-  }
-  #leaveareview {
-    align-items: center;
   }
 }
 
