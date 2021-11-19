@@ -50,14 +50,11 @@ const AddandDeleteReview = ({ id, setAddAReview, setReviews, setRating }) => {
       setAddAReview(false)
       setReviews(data.reviews)
       setRating(data.averageRating)
-      console.log('average Rating', data.averageRating)
     } catch (err) {
-      console.log(err.response.data.errors)
       setError(true)
     }
   }
 
-  console.log('id', id)
   return (
     <form onSubmit={handleSubmit}>
     <div className="column is-full" id='leaveareview'>
