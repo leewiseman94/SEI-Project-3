@@ -27,15 +27,8 @@ const RecipeShow = () => {
   const [addaReview, setAddAReview] = useState(false)
   const [rating, setRating] = useState()
   const [reviews, setReviews] = useState([])
-  
-  // console.log('ID', id)
-
-  
-
   const [visible, setVisible] = useState(false)
 
-  // console.log('ID', id)
-  // window.scrollTo(0, 0)  
   useEffect(() => {
     const getData = async () => {
       try {
@@ -55,8 +48,6 @@ const RecipeShow = () => {
 
   const userIsOwner = (currentUserId) => {
     const payload = getPayload()
-    // console.log('PAYLOAD',payload.sub)
-    // console.log(currentUserId)
     if (!payload) return false
     return currentUserId === payload.sub
   }
@@ -92,13 +83,6 @@ const RecipeShow = () => {
       console.log(err)
     }
   }
-
-  // const userIsAuthenticated = () => {
-  //   const payload = getPayload()
-  //   if (!payload) return false
-  //   const now = Math.round(Date.now() / 1000)
-  //   return now < payload.exp
-  // } 
 
   const recipeLiked = async (data) => {
     const user = await getUserData()
@@ -144,9 +128,6 @@ const RecipeShow = () => {
         headers: { Authorization: `Bearer ${getTokenFromLocalStorage()}` }
       })
       const index = reviews.indexOf(review)
-      console.log(reviewId)
-      console.log(review)
-      console.log(index)
       const newReviewsArray = [...reviews.splice(index, 1)]
       setReviews([...reviews])
       history.push(`/recipes/${id}`)
@@ -408,7 +389,7 @@ const RecipeShow = () => {
                               <h4>{ }</h4>
                             </div>
                             <div className="review-content">
-                              <h3 key={review._id} className="title is-5">{review.subject}</h3>
+                              <h3 key={review._id} className="title is-5 has-text-grey">{review.subject}</h3>
                               <p className="has-text-grey">{review.comments}</p>
                             </div>
                             
@@ -433,11 +414,11 @@ const RecipeShow = () => {
                               <h4>{ }</h4>
                             </div>
                             <div className="review-content">
-                              <h3 key={review._id} className="title is-5">{review.subject}</h3>
+                              <h3 key={review._id} className="title is-5 has-text-grey">{review.subject}</h3>
                               <p className="has-text-grey">{review.comments}</p>
                             </div>
                             {/* <div> */}
-                            <p className="has-text-grey subtitle is-7">{review.createdAt}</p>
+                            {/* <p className="has-text-grey subtitle is-7">{review.createdAt}</p> */}
                             {/* </div> */}
                           </div>
                           <hr />

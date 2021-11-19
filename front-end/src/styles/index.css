@@ -390,7 +390,7 @@ i.fas.fa-filter {
 
 /* recipe show index review */
 .user-icon-review {
-  border: 2px solid lightgrey;
+  /* border: 2px solid lightgrey; */
   border-radius: 30px;
   width: 60px;
   height: 60px;

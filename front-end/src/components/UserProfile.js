@@ -18,11 +18,8 @@ const UserProfile = () => {
         if (!userIsAuthenticated()) throw new Error()
         const header = { "Authorization": `Bearer ${token}` }
         const { data } = await axios.get('/api/profile', { headers: header })
-        console.log(data)
         setUserProfile(data)
         setIsLoading(false)
-
-
         
       } catch (err) {
         console.log(err)
@@ -33,13 +30,6 @@ const UserProfile = () => {
     getUserData()
     
   }, [history])
-
-  // const userIsAuthenticated = () => {
-  //   const payload = getPayload()
-  //   if (!payload) return false
-  //   const now = Math.round(Date.now() / 1000)
-  //   return now < payload.exp
-  // } 
 
   const responsive = {
     desktop: {

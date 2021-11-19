@@ -54,7 +54,6 @@ const Inspiration = () => {
     setCourses([starters[newStarterIndex], main[newMainIndex], dessert[newDessertIndex]])
   }
 
-
   return (
     <section className="section" id="inspiration-page">
       <div className="container courses-container" >

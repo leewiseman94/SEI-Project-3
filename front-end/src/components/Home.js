@@ -11,8 +11,7 @@ import { userIsAuthenticated } from './helpers/auth'
 const Home = () => {  
   const [courses, setCourses] = useState([])
   const [recipes, setRecipes] = useState([])
-  // const { id } = useParams()
-  // console.log('ID', id)
+
   
   // * Import all images from the Hero Images folder so we can use them in the carosel
   const heroImages = [{ name: "1", image: heroImage1 }, { name: "2", image: heroImage2 }, { name: "3", image: heroImage3 }]
@@ -36,7 +35,6 @@ const Home = () => {
           ) 
 
         }) 
-        console.log(getCourses)
         const newArray = []
         for(let i = 0; i < getCourses.length; i++){
           let coursesOnly = false
@@ -63,9 +61,6 @@ const Home = () => {
   getData()
 }, [])
   
-
-  
-console.log(heroImages)
   return (
     <>
       <section className="hero home-hero is-large is-white">

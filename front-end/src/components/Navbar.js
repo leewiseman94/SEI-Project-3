@@ -104,7 +104,6 @@ const Navbar = ({ handleLoginClick }) => {
   }
 
   const handleBlur = async (event, name) => {
-    console.log(event)
       const dropdown = document.querySelector(name)
       dropdown.classList.remove('is-active')
   
@@ -293,14 +292,14 @@ const Navbar = ({ handleLoginClick }) => {
                   <div className="dropdown-trigger">
                     <button className="button bottom-search-form-dropdown search-form-button" onClick={() => handleDropdown('.course-dropdown')} 
                 onBlur={(event) => handleBlur(event, '.course-dropdown')}>
-                      <h3><strong>Course</strong></h3><input readOnly className="search-input-box" id="course-input" name="course-name" placeholder="Select course"></input>
+                      <h3><strong>Courses</strong></h3><input readOnly className="search-input-box" id="course-input" name="course-name" placeholder="Select course"></input>
                     </button>
                   </div>
                   <div className="dropdown-menu course-dropdown-menu" id="dropdown-menu" role="menu">
                     <div className="dropdown-content course-dropdown-content">
                       {courses.map(course => {
                         return (
-                        <Link key={course} to="#" onMouseDown={(event) => event.preventDefault} className="dropdown-item course-dropdown-item" onClick={(event) => {
+                        <Link key={course} to="#" onMouseDown={(event) => event.preventDefault()} className="dropdown-item course-dropdown-item" onClick={(event) => {
                           event.preventDefault()
                           setFilterLink(event)
                           document.querySelector("#course-input").value = event.target.innerText
